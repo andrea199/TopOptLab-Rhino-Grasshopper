@@ -13,6 +13,7 @@ the repository root:
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -c requirements-runtime-lock.txt -r tool/requirements-tested.txt threadpoolctl==3.7.0 psutil==7.2.2
 .\.venv\Scripts\python.exe -m pip install --no-deps ./vendor/topoptlab
+New-Item -ItemType Directory -Force tool/build | Out-Null
 .\.venv\Scripts\python.exe -m pytest tool/tests -q --basetemp tool/build/dev-tests
 .\.venv\Scripts\python.exe tool/tools/verify_repository.py
 ```
