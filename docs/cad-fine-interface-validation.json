@@ -1,0 +1,50 @@
+{
+  "status": "automatic_final_meshing_failed",
+  "source_density_cell_mm": 2.5,
+  "threshold": 0.32,
+  "source_surface_hash": "824fcac2ce8692d412b950adbf8a81b6c2591cd54dbcb78d718d903de98d4821",
+  "cad_contract_hash": "1cb6b285816b7a1f8474e790dc326b5e90054864336bbde0eba422b6c3777d14",
+  "source_surface_vertices": 7506,
+  "source_surface_triangles": 15028,
+  "surface_volume_mm3": 297786.9653106106,
+  "surface_mass_kg": 0.309698443923035,
+  "cad_interfaces": {
+    "mode": "nominal_cad_interfaces",
+    "planar_dimensions": "nominal",
+    "circular_geometry": "circumscribed polygon; nominal clearance never narrowed",
+    "chord_tolerance_mm": 0.05,
+    "radial_overcut_bound_mm": 0.049860503152011404,
+    "circle_segments": [
+      20,
+      32,
+      20,
+      32,
+      20,
+      32,
+      20,
+      32
+    ],
+    "protected_volume_mm3": 95472.67916384594,
+    "protected_volume_loss_mm3": 8.559819519859957e-14,
+    "forbidden_intrusion_mm3": 0.0,
+    "outside_envelope_mm3": 0.0,
+    "exact_brep": false,
+    "boolean_cleanup_tolerance_mm": 1e-07,
+    "web_cleanup_tolerance_mm": 0.01,
+    "envelope_snap_tolerance_mm": 0.0,
+    "envelope_snapped_vertices": 0,
+    "maximum_snapped_vertex_displacement_mm": 0.0
+  },
+  "mesh_size_mm": 4,
+  "production_classification_angle_degrees": 0.5,
+  "production_error": "Wrong topology of boundary mesh for parametrization",
+  "isolated_diagnostic": {
+    "surface_classification_angle_degrees": 0.1,
+    "curve_angle_degrees": 45,
+    "parameterization": "passed",
+    "tetrahedralization": "timeout_after_210_seconds",
+    "production_code_changed": false
+  },
+  "structurally_verified": false,
+  "note": "The four-case voxel result and passed CAD extraction do not verify this final shape. The diagnostic did not produce an accepted tetrahedral mesh. No mesh accuracy or safe load rating is claimed."
+}

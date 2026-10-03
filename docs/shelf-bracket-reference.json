@@ -1,0 +1,924 @@
+{
+  "example": "engineering_shelf_bracket_3d",
+  "date": "2026-09-21",
+  "source_request_sha256": "5e49acfb7274ccd6964893db12a4b16271b691f7cf06742e1120ab39df2166d2",
+  "defaults": {
+    "length_mm": 250,
+    "height_mm": 150,
+    "width_mm": 25,
+    "payload_kg": 4,
+    "shelf_share_kg": 0.5,
+    "cell_mm": 5,
+    "volume_fraction": 0.35,
+    "threshold": 0.35,
+    "iterations": 60,
+    "backend": "cpu-direct"
+  },
+  "stages": {
+    "baseline": {
+      "termination_reason": "fem_completed",
+      "mass_kg": 0.95264,
+      "elapsed_seconds": 3.193890399998054,
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.01196501581477441,
+                "limit": 1.0,
+                "utilization": 0.01196501581477441,
+                "status": "within_limit",
+                "aggregated_utilization": 0.1890837116392013,
+                "grid_node_id": 9483
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.024378975634112166,
+                "limit": 1.0,
+                "utilization": 0.024378975634112166,
+                "status": "within_limit",
+                "aggregated_utilization": 0.19394505437018741,
+                "grid_node_id": 9485
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.02892184089406334,
+                "limit": 1.0,
+                "utilization": 0.02892184089406334,
+                "status": "within_limit",
+                "aggregated_utilization": 0.19425163271272994,
+                "grid_node_id": 9480
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.028921840893781168,
+                "limit": 1.0,
+                "utilization": 0.028921840893781168,
+                "status": "within_limit",
+                "aggregated_utilization": 0.19425163271273896,
+                "grid_node_id": 9485
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.02892184089406334,
+        "scope": "full_solid_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "accuracy": null,
+      "mesh_quality_status": null,
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "max_displacement": 0.01196501581477441,
+          "max_von_mises": 0.14215314768120252,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -53.472132055999424
+          ],
+          "reaction_force": [
+            -2.3391066861222498e-11,
+            -3.5640823625726625e-11,
+            53.47213205609396
+          ],
+          "residual": 3.384587377003013e-12,
+          "equilibrium": 5.220329485160285e-10
+        },
+        {
+          "name": "02 Front payload",
+          "max_displacement": 0.024378975634112166,
+          "max_von_mises": 0.23551039475037389,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -53.47213205599917
+          ],
+          "reaction_force": [
+            -3.871303277946936e-11,
+            -6.014699849288263e-11,
+            53.47213205615801
+          ],
+          "residual": 6.48479930462413e-13,
+          "equilibrium": 8.008631259406193e-11
+        },
+        {
+          "name": "03 Front right payload",
+          "max_displacement": 0.02892184089406334,
+          "max_von_mises": 0.2672936677174963,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -53.47213205599918
+          ],
+          "reaction_force": [
+            -3.927169700546074e-11,
+            -5.856737317344596e-11,
+            53.47213205615524
+          ],
+          "residual": 3.569688723930236e-13,
+          "equilibrium": 3.1675716590074114e-11
+        },
+        {
+          "name": "04 Front left payload",
+          "max_displacement": 0.028921840893781168,
+          "max_von_mises": 0.2672936677197355,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -53.472132055999175
+          ],
+          "reaction_force": [
+            -3.802380632578206e-11,
+            -6.174816213899703e-11,
+            53.47213205616068
+          ],
+          "residual": 2.473084159902639e-13,
+          "equilibrium": 3.2778886222391345e-11
+        }
+      ]
+    },
+    "density_design": {
+      "termination_reason": "iteration_limit",
+      "mass_kg": 0.3334240035404685,
+      "elapsed_seconds": 242.36979430000065,
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.11066686041038934,
+                "limit": 1.0,
+                "utilization": 0.11066686041038934,
+                "status": "within_limit",
+                "aggregated_utilization": 0.2615848646243134,
+                "grid_node_id": 303
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.22038069980286984,
+                "limit": 1.0,
+                "utilization": 0.22038069980286984,
+                "status": "within_limit",
+                "aggregated_utilization": 0.343608852391435,
+                "grid_node_id": 9483
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.2830977603186652,
+                "limit": 1.0,
+                "utilization": 0.2830977603186652,
+                "status": "within_limit",
+                "aggregated_utilization": 0.37646214523268523,
+                "grid_node_id": 300
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.283097760318832,
+                "limit": 1.0,
+                "utilization": 0.283097760318832,
+                "status": "within_limit",
+                "aggregated_utilization": 0.37646214523275756,
+                "grid_node_id": 305
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.283097760318832,
+        "scope": "relaxed_density_model_only",
+        "enforced_during_optimization": true,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.",
+        "sampled_checks_status": "within_limits",
+        "optimizer_feasible": true
+      },
+      "accuracy": null,
+      "mesh_quality_status": null,
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "max_displacement": 0.11066686041038934,
+          "max_von_mises": null,
+          "max_von_mises_relaxed": 0.7193208781061677,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.399697504320336
+          ],
+          "reaction_force": [
+            -3.522870883898577e-11,
+            -3.11866088509305e-11,
+            47.399697504471
+          ],
+          "residual": 1.5683677453175717e-11,
+          "equilibrium": 8.387684212449999e-10
+        },
+        {
+          "name": "02 Front payload",
+          "max_displacement": 0.22038069980286984,
+          "max_von_mises": null,
+          "max_von_mises_relaxed": 0.7534592474859519,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.39969750432016
+          ],
+          "reaction_force": [
+            -5.482547749124933e-11,
+            -4.29163371507002e-11,
+            47.39969750453929
+          ],
+          "residual": 2.375630764512787e-12,
+          "equilibrium": 1.109509551064432e-10
+        },
+        {
+          "name": "03 Front right payload",
+          "max_displacement": 0.2830977603186652,
+          "max_von_mises": null,
+          "max_von_mises_relaxed": 1.009638702423229,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.399697504320166
+          ],
+          "reaction_force": [
+            -4.722089386177686e-11,
+            -8.942357965224801e-11,
+            47.39969750454817
+          ],
+          "residual": 1.5709462494698351e-12,
+          "equilibrium": 4.64597663082515e-11
+        },
+        {
+          "name": "04 Front left payload",
+          "max_displacement": 0.283097760318832,
+          "max_von_mises": null,
+          "max_von_mises_relaxed": 1.0096387024233644,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.399697504320166
+          ],
+          "reaction_force": [
+            -6.234657234926999e-11,
+            3.647304680498564e-12,
+            47.39969750453071
+          ],
+          "residual": 1.0380885861050514e-12,
+          "equilibrium": 4.291631416482142e-11
+        }
+      ]
+    },
+    "voxel_verification": {
+      "termination_reason": "voxel_reanalysis_completed",
+      "mass_kg": 0.31473,
+      "elapsed_seconds": 0.5160791999951471,
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.22302728186321624,
+                "limit": 1.0,
+                "utilization": 0.22302728186321624,
+                "status": "within_limit",
+                "aggregated_utilization": 0.3253887573314602,
+                "grid_node_id": 9018
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.1350300289906299,
+                "limit": 1.0,
+                "utilization": 0.1350300289906299,
+                "status": "within_limit",
+                "aggregated_utilization": 0.27295387788541925,
+                "grid_node_id": 9384
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.14611156159888067,
+                "limit": 1.0,
+                "utilization": 0.14611156159888067,
+                "status": "within_limit",
+                "aggregated_utilization": 0.2756550023861225,
+                "grid_node_id": 9390
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.1461115615978975,
+                "limit": 1.0,
+                "utilization": 0.1461115615978975,
+                "status": "within_limit",
+                "aggregated_utilization": 0.27565500238545027,
+                "grid_node_id": 9395
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.22302728186321624,
+        "scope": "binary_voxel_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": true,
+        "final_shape_verified": true,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "accuracy": null,
+      "mesh_quality_status": null,
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "max_displacement": 0.22302728186321624,
+          "max_von_mises": 1.0393362170567588,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.21637195450016
+          ],
+          "reaction_force": [
+            -1.2605649857277967e-10,
+            -1.2770096091685446e-10,
+            47.21637195494272
+          ],
+          "residual": 3.180970115717376e-11,
+          "equilibrium": 2.4554415300862956e-09
+        },
+        {
+          "name": "02 Front payload",
+          "max_displacement": 0.1350300289906299,
+          "max_von_mises": 0.9036203281437012,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.216371954499984
+          ],
+          "reaction_force": [
+            -1.3645440333220904e-10,
+            -1.2537526572486968e-10,
+            47.216371954919666
+          ],
+          "residual": 3.558733567287304e-12,
+          "equilibrium": 2.1191264610321036e-10
+        },
+        {
+          "name": "03 Front right payload",
+          "max_displacement": 0.14611156159888067,
+          "max_von_mises": 0.9687089363776701,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.21637195449999
+          ],
+          "reaction_force": [
+            -1.2998135900943453e-10,
+            -1.7252421713465083e-10,
+            47.2163719549241
+          ],
+          "residual": 1.505636864161613e-12,
+          "equilibrium": 8.618261028992732e-11
+        },
+        {
+          "name": "04 Front left payload",
+          "max_displacement": 0.1461115615978975,
+          "max_von_mises": 0.9687089363838484,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -47.21637195449999
+          ],
+          "reaction_force": [
+            -1.4370460377222116e-10,
+            -7.823031111797718e-11,
+            47.216371954914635
+          ],
+          "residual": 1.4670466321239324e-12,
+          "equilibrium": 8.427702016993613e-11
+        }
+      ]
+    },
+    "final_fem": {
+      "termination_reason": "conforming_fem_completed",
+      "mass_kg": 0.2544503631006756,
+      "elapsed_seconds": 17.02182090000133,
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.23327880648569735,
+                "limit": 1.0,
+                "utilization": 0.23327880648569735,
+                "status": "within_limit",
+                "field": "nodal displacement"
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.20585303600496596,
+                "limit": 1.0,
+                "utilization": 0.20585303600496596,
+                "status": "within_limit",
+                "field": "nodal displacement"
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.22440467756184285,
+                "limit": 1.0,
+                "utilization": 0.22440467756184285,
+                "status": "within_limit",
+                "field": "nodal displacement"
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.2233768421305137,
+                "limit": 1.0,
+                "utilization": 0.2233768421305137,
+                "status": "within_limit",
+                "field": "nodal displacement"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.23327880648569735,
+        "scope": "conforming_tetrahedral_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": true,
+        "final_shape_verified": false,
+        "note": "Limits apply to this discrete model. Final shape verification additionally requires stable mesh refinements and no flagged poor tetrahedra; it is not code compliance.",
+        "numerical_limits_passed": true
+      },
+      "accuracy": {
+        "status": "not_studied",
+        "tolerance": 0.05,
+        "levels": [
+          {
+            "mesh_size": 5.0,
+            "nodes": 7518,
+            "elements": 26690,
+            "minimum_quality": 0.05035619968217176,
+            "elements_below_quality_005": 0,
+            "surface_volume_relative_error": 0.0034305896268807742,
+            "cases": [
+              {
+                "name": "01 Distributed payload",
+                "weight": 1,
+                "compliance": 6.910956454273454,
+                "max_displacement": 0.23327880648569735,
+                "max_von_mises": 2.1994361323881875,
+                "performance": {
+                  "backend": "cpu-direct",
+                  "linear_iterations": 0,
+                  "linear_residual": 5.641808888817415e-11,
+                  "setup_seconds": 0.8112752000015462,
+                  "solve_seconds": 0.015647699998226017,
+                  "matrix_preparations": 1,
+                  "cpu_threads": 4
+                },
+                "residual": 5.641808888817415e-11,
+                "equilibrium": 6.735764655751405e-13,
+                "transfer": {
+                  "force_relative_error": 1.1429585320074835e-14,
+                  "moment_relative_error": 7.809961091694693e-17,
+                  "moment_reference": [
+                    95.97194499541195,
+                    0.05034657426169272,
+                    92.36355390172425
+                  ],
+                  "loads": [
+                    {
+                      "kind": "traction",
+                      "faces": 246,
+                      "mapped_area": 6150.0
+                    },
+                    {
+                      "kind": "traction",
+                      "faces": 246,
+                      "mapped_area": 6150.0
+                    },
+                    {
+                      "kind": "gravity",
+                      "acceleration_m_s2": [
+                        0.0,
+                        0.0,
+                        -9.80665
+                      ],
+                      "mass_kg": 0.2544503631006756
+                    }
+                  ]
+                },
+                "applied_force": [
+                  0.0,
+                  0.0,
+                  -46.62523065330109
+                ],
+                "reaction_force": [
+                  8.058942402300318e-12,
+                  2.2169557856166477e-12,
+                  46.62523065329216
+                ]
+              },
+              {
+                "name": "02 Front payload",
+                "weight": 1,
+                "compliance": 7.306797626688194,
+                "max_displacement": 0.20585303600496596,
+                "max_von_mises": 2.3612006949438826,
+                "performance": {
+                  "backend": "cpu-direct",
+                  "linear_iterations": 0,
+                  "linear_residual": 1.8035749442809364e-11,
+                  "setup_seconds": 0.8112752000015462,
+                  "solve_seconds": 0.031418699996720534,
+                  "matrix_preparations": 1,
+                  "cpu_threads": 4
+                },
+                "residual": 1.803574944280936e-11,
+                "equilibrium": 6.507979245703758e-13,
+                "transfer": {
+                  "force_relative_error": 1.188676873287783e-14,
+                  "moment_relative_error": 1.3264539503470047e-15,
+                  "moment_reference": [
+                    95.97194499541195,
+                    0.05034657426169272,
+                    92.36355390172425
+                  ],
+                  "loads": [
+                    {
+                      "kind": "traction",
+                      "faces": 20,
+                      "mapped_area": 500.0
+                    },
+                    {
+                      "kind": "traction",
+                      "faces": 246,
+                      "mapped_area": 6150.0
+                    },
+                    {
+                      "kind": "gravity",
+                      "acceleration_m_s2": [
+                        0.0,
+                        0.0,
+                        -9.80665
+                      ],
+                      "mass_kg": 0.2544503631006756
+                    }
+                  ]
+                },
+                "applied_force": [
+                  0.0,
+                  0.0,
+                  -46.62523065330107
+                ],
+                "reaction_force": [
+                  6.8723915447321815e-12,
+                  9.464803940595345e-12,
+                  46.62523065328042
+                ]
+              },
+              {
+                "name": "03 Front right payload",
+                "weight": 1,
+                "compliance": 7.679497117077274,
+                "max_displacement": 0.22440467756184285,
+                "max_von_mises": 2.255682647550343,
+                "performance": {
+                  "backend": "cpu-direct",
+                  "linear_iterations": 0,
+                  "linear_residual": 1.296132936668484e-11,
+                  "setup_seconds": 0.8112752000015462,
+                  "solve_seconds": 0.05875940000260016,
+                  "matrix_preparations": 1,
+                  "cpu_threads": 4
+                },
+                "residual": 1.296132936668484e-11,
+                "equilibrium": 5.749588499746805e-13,
+                "transfer": {
+                  "force_relative_error": 1.2496346616615156e-14,
+                  "moment_relative_error": 1.4066331623704e-15,
+                  "moment_reference": [
+                    95.97194499541195,
+                    0.05034657426169272,
+                    92.36355390172425
+                  ],
+                  "loads": [
+                    {
+                      "kind": "traction",
+                      "faces": 8,
+                      "mapped_area": 200.0
+                    },
+                    {
+                      "kind": "traction",
+                      "faces": 246,
+                      "mapped_area": 6150.0
+                    },
+                    {
+                      "kind": "gravity",
+                      "acceleration_m_s2": [
+                        0.0,
+                        0.0,
+                        -9.80665
+                      ],
+                      "mass_kg": 0.2544503631006756
+                    }
+                  ]
+                },
+                "applied_force": [
+                  0.0,
+                  0.0,
+                  -46.625230653301045
+                ],
+                "reaction_force": [
+                  6.448286349325372e-12,
+                  5.858473428599353e-12,
+                  46.62523065328714
+                ]
+              },
+              {
+                "name": "04 Front left payload",
+                "weight": 1,
+                "compliance": 7.6666855249756525,
+                "max_displacement": 0.2233768421305137,
+                "max_von_mises": 2.4835334141271233,
+                "performance": {
+                  "backend": "cpu-direct",
+                  "linear_iterations": 0,
+                  "linear_residual": 1.3373733497109496e-11,
+                  "setup_seconds": 0.8112752000015462,
+                  "solve_seconds": 0.07482200000231387,
+                  "matrix_preparations": 1,
+                  "cpu_threads": 4
+                },
+                "residual": 1.3373733497109496e-11,
+                "equilibrium": 7.43915865153847e-13,
+                "transfer": {
+                  "force_relative_error": 1.1886768732877826e-14,
+                  "moment_relative_error": 1.0986156200522962e-15,
+                  "moment_reference": [
+                    95.97194499541195,
+                    0.05034657426169272,
+                    92.36355390172425
+                  ],
+                  "loads": [
+                    {
+                      "kind": "traction",
+                      "faces": 8,
+                      "mapped_area": 200.0
+                    },
+                    {
+                      "kind": "traction",
+                      "faces": 246,
+                      "mapped_area": 6150.0
+                    },
+                    {
+                      "kind": "gravity",
+                      "acceleration_m_s2": [
+                        0.0,
+                        0.0,
+                        -9.80665
+                      ],
+                      "mass_kg": 0.2544503631006756
+                    }
+                  ]
+                },
+                "applied_force": [
+                  0.0,
+                  0.0,
+                  -46.625230653301074
+                ],
+                "reaction_force": [
+                  7.44115880024765e-12,
+                  1.2878198507593197e-11,
+                  46.62523065327384
+                ]
+              }
+            ]
+          }
+        ],
+        "comparisons": [],
+        "note": "Three meshes and two stable successive refinements are required by this screen. TET4 stress is constant within an element; concentrated-load peaks can remain mesh dependent. This is a discretization study, not code certification."
+      },
+      "mesh_quality_status": "no_poor_elements",
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "max_displacement": 0.23327880648569735,
+          "max_von_mises": 2.1994361323881875,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -46.62523065330109
+          ],
+          "reaction_force": [
+            8.058942402300318e-12,
+            2.2169557856166477e-12,
+            46.62523065329216
+          ],
+          "residual": 5.641808888817415e-11,
+          "equilibrium": 6.735764655751405e-13
+        },
+        {
+          "name": "02 Front payload",
+          "max_displacement": 0.20585303600496596,
+          "max_von_mises": 2.3612006949438826,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -46.62523065330107
+          ],
+          "reaction_force": [
+            6.8723915447321815e-12,
+            9.464803940595345e-12,
+            46.62523065328042
+          ],
+          "residual": 1.803574944280936e-11,
+          "equilibrium": 6.507979245703758e-13
+        },
+        {
+          "name": "03 Front right payload",
+          "max_displacement": 0.22440467756184285,
+          "max_von_mises": 2.255682647550343,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -46.625230653301045
+          ],
+          "reaction_force": [
+            6.448286349325372e-12,
+            5.858473428599353e-12,
+            46.62523065328714
+          ],
+          "residual": 1.296132936668484e-11,
+          "equilibrium": 5.749588499746805e-13
+        },
+        {
+          "name": "04 Front left payload",
+          "max_displacement": 0.2233768421305137,
+          "max_von_mises": 2.4835334141271233,
+          "max_von_mises_relaxed": null,
+          "applied_force": [
+            0.0,
+            0.0,
+            -46.625230653301074
+          ],
+          "reaction_force": [
+            7.44115880024765e-12,
+            1.2878198507593197e-11,
+            46.62523065327384
+          ],
+          "residual": 1.3373733497109496e-11,
+          "equilibrium": 7.43915865153847e-13
+        }
+      ]
+    }
+  },
+  "surface": {
+    "closed": true,
+    "oriented": true,
+    "solid_components": 1,
+    "boundary_shells": 1,
+    "vertices": 2538,
+    "triangles": 5092,
+    "volume": 245506.0411518386,
+    "area": 54888.10471916279,
+    "threshold": 0.35,
+    "smoothing_cells": 0.5,
+    "protected_voxels": 764,
+    "protected_volume_loss": 0.0,
+    "source_density_volume": 320600.00340429664,
+    "domain": "clipped to original voxel domain",
+    "structurally_verified": false,
+    "mass_kg": 0.25532628279791214
+  },
+  "scope": {
+    "native_dataflow": "four size/grid/translation variants; invalid inputs and unresolved hole rejected",
+    "regressions": "207 passed, then 54 affected tests passed after calibrated defaults",
+    "interactive_rhino_acceptance": false,
+    "printed_part_qualification": false,
+    "mesh_study": "one final mesh; convergence not established"
+  }
+}

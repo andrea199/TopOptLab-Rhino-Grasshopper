@@ -1,0 +1,76 @@
+{
+  "schema": "topoptlab-shelf-load-summary-v1",
+  "payload_kg": 3.0,
+  "shelf_kg_per_bracket": 0.0,
+  "gravity_m_s2": 9.80665,
+  "origin_mm": [
+    32.0,
+    -17.0,
+    5.0
+  ],
+  "wall_pad_faces": 120,
+  "top_faces": 392,
+  "hole_cells": 2.5,
+  "cases": [
+    {
+      "name": "01 Distributed payload",
+      "payload_force_n": 29.41995,
+      "area_mm2": 6272.0,
+      "payload_centroid_mm": [
+        132.0,
+        -16.0,
+        185.0
+      ],
+      "payload_moment_about_wall_origin_nmm": [
+        -29.41995,
+        2941.995,
+        0.0
+      ]
+    },
+    {
+      "name": "02 Front payload",
+      "payload_force_n": 29.41995,
+      "area_mm2": 768.0,
+      "payload_centroid_mm": [
+        220.0,
+        -16.0,
+        185.0
+      ],
+      "payload_moment_about_wall_origin_nmm": [
+        -29.41995,
+        5530.9506,
+        0.0
+      ]
+    },
+    {
+      "name": "03 Front right payload",
+      "payload_force_n": 29.41995,
+      "area_mm2": 288.0,
+      "payload_centroid_mm": [
+        220.0,
+        -6.0,
+        185.0
+      ],
+      "payload_moment_about_wall_origin_nmm": [
+        -323.61945000000003,
+        5530.9506,
+        0.0
+      ]
+    },
+    {
+      "name": "04 Front left payload",
+      "payload_force_n": 29.41995,
+      "area_mm2": 288.0,
+      "payload_centroid_mm": [
+        220.0,
+        -26.0,
+        185.0
+      ],
+      "payload_moment_about_wall_origin_nmm": [
+        264.77955,
+        5530.9506,
+        0.0
+      ]
+    }
+  ]
+}

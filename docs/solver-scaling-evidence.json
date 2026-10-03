@@ -1,0 +1,385 @@
+{
+  "python": "3.13.5",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "pyamg": "5.3.0",
+    "psutil": "7.2.2",
+    "threadpoolctl": "3.7.0"
+  },
+  "source_sha256": "1440c00e5e5c78e0a5bc957d82f436551015cea446b1638aaf6cc17b1f7d5e1e",
+  "baseline_sha256": "285de61dd7a738658912a5fd94e7b9f5267c7bf9128661e350da6d32d8690472",
+  "runs": [
+    {
+      "implementation": "baseline",
+      "backend": "cpu-amg",
+      "solve": true,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 4.446035600005416,
+          "compliance": 0.2112543575007457,
+          "residual": 4.804450555125695e-10,
+          "iterations": 103
+        },
+        {
+          "step": 1,
+          "seconds": 5.685405700001866,
+          "compliance": 0.34512673130754234,
+          "residual": 7.443447817738301e-10,
+          "iterations": 110
+        },
+        {
+          "step": 2,
+          "seconds": 5.54499080000096,
+          "compliance": 0.30351253913842813,
+          "residual": 6.125527134295049e-10,
+          "iterations": 106
+        }
+      ],
+      "peak_rss_bytes": 362110976,
+      "rss_bytes": 134275072,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "file": "tool/build/solver-scaling-baseline/amg-8000-1.json"
+    },
+    {
+      "implementation": "baseline",
+      "backend": "cpu-amg",
+      "solve": true,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 2.8918092000021716,
+          "compliance": 0.2112543575007513,
+          "residual": 4.811627280314904e-10,
+          "iterations": 103
+        },
+        {
+          "step": 1,
+          "seconds": 2.975458200002322,
+          "compliance": 0.3451267313074825,
+          "residual": 7.443107156519307e-10,
+          "iterations": 110
+        },
+        {
+          "step": 2,
+          "seconds": 3.4708548999988125,
+          "compliance": 0.30351253913843207,
+          "residual": 6.125365397537361e-10,
+          "iterations": 106
+        }
+      ],
+      "peak_rss_bytes": 364175360,
+      "rss_bytes": 135446528,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "file": "tool/build/solver-scaling-baseline/amg-8000-2.json"
+    },
+    {
+      "implementation": "baseline",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        60,
+        30,
+        15
+      ],
+      "cells": 27000,
+      "dofs": 90768,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.5363662000017939
+        },
+        {
+          "step": 1,
+          "seconds": 0.5657063999969978
+        },
+        {
+          "step": 2,
+          "seconds": 0.612724699996761
+        }
+      ],
+      "peak_rss_bytes": 1019056128,
+      "rss_bytes": 252141568,
+      "nnz": 6705972,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "file": "tool/build/solver-scaling-baseline/assembly-27000-1.json"
+    },
+    {
+      "implementation": "baseline",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        60,
+        30,
+        15
+      ],
+      "cells": 27000,
+      "dofs": 90768,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.7237941999992472
+        },
+        {
+          "step": 1,
+          "seconds": 0.5549379000003682
+        },
+        {
+          "step": 2,
+          "seconds": 0.5636528999966686
+        }
+      ],
+      "peak_rss_bytes": 1020088320,
+      "rss_bytes": 252493824,
+      "nnz": 6705972,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "file": "tool/build/solver-scaling-baseline/assembly-27000-2.json"
+    },
+    {
+      "implementation": "baseline",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.3035329999984242
+        },
+        {
+          "step": 1,
+          "seconds": 0.28977170000143815
+        },
+        {
+          "step": 2,
+          "seconds": 0.2764289999977336
+        }
+      ],
+      "peak_rss_bytes": 357048320,
+      "rss_bytes": 129556480,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "file": "tool/build/solver-scaling-baseline/assembly-8000-1.json"
+    },
+    {
+      "implementation": "current",
+      "backend": "cpu-amg",
+      "solve": true,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 1.120172900002217,
+          "compliance": 0.2112543575008087,
+          "residual": 5.570324850701083e-10,
+          "iterations": 17
+        },
+        {
+          "step": 1,
+          "seconds": 1.0080603000023984,
+          "compliance": 0.3451267313072084,
+          "residual": 7.733269586029837e-10,
+          "iterations": 18
+        },
+        {
+          "step": 2,
+          "seconds": 1.0424356000003172,
+          "compliance": 0.30351253913825116,
+          "residual": 2.4445277365805075e-10,
+          "iterations": 17
+        }
+      ],
+      "peak_rss_bytes": 216346624,
+      "rss_bytes": 142688256,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "assembly_pattern_bytes": 3001132,
+      "file": "tool/build/solver-scaling-baseline/current-amg-8000-1.json"
+    },
+    {
+      "implementation": "current",
+      "backend": "cpu-amg",
+      "solve": true,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 1.4657156000030227,
+          "compliance": 0.21125435750078858,
+          "residual": 5.576559052060263e-10,
+          "iterations": 17
+        },
+        {
+          "step": 1,
+          "seconds": 1.4683030999949551,
+          "compliance": 0.34512673130718885,
+          "residual": 7.729218667822475e-10,
+          "iterations": 18
+        },
+        {
+          "step": 2,
+          "seconds": 1.392680199998722,
+          "compliance": 0.30351253913828496,
+          "residual": 2.4423594449404475e-10,
+          "iterations": 17
+        }
+      ],
+      "peak_rss_bytes": 217546752,
+      "rss_bytes": 143839232,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "assembly_pattern_bytes": 3001132,
+      "file": "tool/build/solver-scaling-baseline/current-amg-8000-2.json"
+    },
+    {
+      "implementation": "current",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        60,
+        30,
+        15
+      ],
+      "cells": 27000,
+      "dofs": 90768,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.5612769000072149
+        },
+        {
+          "step": 1,
+          "seconds": 0.36208800000167685
+        },
+        {
+          "step": 2,
+          "seconds": 0.35226669999974547
+        }
+      ],
+      "peak_rss_bytes": 479838208,
+      "rss_bytes": 234434560,
+      "nnz": 6705972,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "assembly_pattern_bytes": 10063692,
+      "file": "tool/build/solver-scaling-baseline/current-assembly-27000-1.json"
+    },
+    {
+      "implementation": "current",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        60,
+        30,
+        15
+      ],
+      "cells": 27000,
+      "dofs": 90768,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.5484900000010384
+        },
+        {
+          "step": 1,
+          "seconds": 0.32877219999500085
+        },
+        {
+          "step": 2,
+          "seconds": 0.34425609999743756
+        }
+      ],
+      "peak_rss_bytes": 481169408,
+      "rss_bytes": 235053056,
+      "nnz": 6705972,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "assembly_pattern_bytes": 10063692,
+      "file": "tool/build/solver-scaling-baseline/current-assembly-27000-2.json"
+    },
+    {
+      "implementation": "current",
+      "backend": "cpu-cg",
+      "solve": false,
+      "shape": [
+        40,
+        20,
+        10
+      ],
+      "cells": 8000,
+      "dofs": 28413,
+      "records": [
+        {
+          "step": 0,
+          "seconds": 0.17100550000031944
+        },
+        {
+          "step": 1,
+          "seconds": 0.1226340000066557
+        },
+        {
+          "step": 2,
+          "seconds": 0.09641549999651033
+        }
+      ],
+      "peak_rss_bytes": 198262784,
+      "rss_bytes": 125140992,
+      "nnz": 2008242,
+      "versions": {
+        "numpy": "2.4.4"
+      },
+      "assembly_pattern_bytes": 3001132,
+      "file": "tool/build/solver-scaling-baseline/current-assembly-8000-1.json"
+    }
+  ]
+}

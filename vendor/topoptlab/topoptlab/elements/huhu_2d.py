@@ -1,0 +1,219 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+from typing import Any,Callable,Union
+
+import numpy as np
+
+from topoptlab.elements.strain_measures import dispgrad_matrix
+from topoptlab.elements.bilinear_quadrilateral import shape_functions_dxi,\
+                                                      shape_functions_hessian#,invjacobian
+from topoptlab.elements.isoparam_mapping import invjacobian
+from topoptlab.fem import get_integrpoints
+
+def _lk_huhu_2d(xe: np.ndarray, 
+                ue: np.ndarray,
+                exponent: Union[None,np.ndarray],
+                kr: np.ndarray,
+                mode="newton",
+                quadr_method: str = "gauss-lobatto",
+                t: np.ndarray = np.array([1.]),
+                nquad: int = 3,
+                shape_functions_grad: Callable = shape_functions_dxi,
+                invjac: Callable = invjacobian, 
+                **kwargs: Any) -> np.ndarray:
+    """
+    Create element stiffness matrix for 2D HuHu regularization with
+    bilinear quadrilateral Lagrangian elements:
+        
+        eng_dens = kr/2*exp(-a * det(F)) (Hu)^T Hu
+    
+    where H is the spatial hessian, F the deformation gradient with the 
+    regularizations strength kr and exponent a. If A is None, then instead:
+        
+        eng_dens = kr/2*(Hu)^T Hu
+
+    Parameters
+    ----------
+    xe : np.ndarray, shape (nels,4,2)
+        coordinates of element nodes. Please look at the
+        definition/function of the shape function, then the node ordering is
+        clear.
+    ue : np.ndarray,shape (nels,8).
+        nodal displacements.
+    exponent : None or np.ndarray
+        exponent with shape (nels), float or None. If None, the exponential 
+        part is ignored.
+    kr : np.ndarray, shape (nels) or float
+        regularization strength.
+    quadr_method: str or callable
+        name of quadrature method or function/callable that returns coordinates of
+        quadrature points and weights. Check function get_integrpoints for
+        available options.
+    t : np.ndarray of shape (nels) or (1)
+        thickness of element.
+    nquad : int
+        number of quadrature points.
+    shape_functions_grad : Callable
+        gradients of shape functions of shape (...,4,2).
+    invjac : Callable
+        inverse jacobian of parametric mapping of shape (...,2,2).
+        
+    Returns
+    -------
+    Ke : np.ndarray, shape (nels,8,8)
+        element stiffness matrix.
+
+    """
+    #
+    ndim=2
+    #
+    if len(xe.shape) == 2:
+        xe = xe[None,:,:]
+    nel = xe.shape[0]
+    #
+    if isinstance(exponent,float):
+        exponent = np.array([exponent])
+    #
+    if isinstance(kr,float):
+        kr = np.array([kr])
+    #
+    if isinstance(t,float):
+        t = np.array([t])
+    # get integration points
+    x,w=get_integrpoints(ndim=ndim,nq=nquad,method=quadr_method)
+    nq =w.shape[0]
+    #
+    xi,eta,zeta = [_x[:,0] for _x in np.split(x, ndim,axis=1)] + \
+                  (2*[None])[:(3-ndim)]
+    # get jacobian for isoparametric map
+    Jinv,detJ = invjac(xi=xi,
+                       eta=eta,
+                       zeta=zeta,
+                       xe=xe,
+                       shape_functions_dxi=shape_functions_grad,
+                       all_elems=True,
+                       return_det=True)
+    Jinv = Jinv.reshape(nel,nq,ndim,ndim)
+    detJ = detJ.reshape(nel,nq)
+    # collect hessian in ref. space
+    B_hessian = shape_functions_hessian(xi=xi, eta=eta) # (nq,n_basis,2,2)
+    # apply isop. map
+    B_hessian = Jinv.transpose((0,1,3,2))[:,:,None,:,:]@B_hessian[None,:,:,:]@\
+                Jinv[:,:,None,:,:]
+    # flatten hessian
+    B_hessian = B_hessian.reshape(B_hessian.shape[:3]+tuple([ndim**2]))
+    B_hessian = B_hessian.transpose((0,1,3,2))
+    # convert to hessian of a vector field
+    B_hessian = np.kron(B_hessian,np.eye(ndim))
+    #
+    if exponent:
+        # calculate def. grad
+        B_F = dispgrad_matrix(xi=xi, eta=eta, zeta=None, xe=xe,
+                              shape_functions_dxi=shape_functions_dxi,
+                              invjacobian=invjac,
+                              all_elems=True,
+                              return_detJ=False) 
+        B_F = B_F.reshape(nel, nq,  B_F.shape[-2], B_F.shape[-1])
+        F = (B_F@ue[:,None,:,None]).reshape(nel,nq,ndim,ndim) + np.eye(ndim)[None,None,:,:]
+        Fdet = np.linalg.det(F)
+        # picard part of tangent stiffness matrix
+        if mode in ["picard","newton"]:
+            Ke = np.exp(-exponent[:,None]*Fdet[:,:])[:,:,None,None]\
+                       *B_hessian.transpose([0,1,3,2])@B_hessian
+        # inner forces
+        fe = (Ke@ue[:,None,:,None])[...,0]
+        # other part of tangent stiffness matrix needed for newton
+        if mode == "newton":
+            finv = np.linalg.inv(F).transpose((0,1,3,2)).reshape((nel,nq,1,ndim**2))
+            #
+            Ke = Ke - (np.exp(-exponent[:,None]*Fdet[:,:])[:,:,None,None]*\
+                  (exponent[:,None]*Fdet[:,:])[:,:,None,None]*\
+                   B_hessian.transpose([0,1,3,2])@B_hessian@ue[:,None,:,None]@\
+                   finv@B_F)
+    else:
+        Ke = B_hessian.transpose([0,1,3,2])@B_hessian 
+    # multiply by determinant and quadrature
+    Ke = (kr[:,None,None,None]*w[None,:,None,None]*Ke*detJ[:,:,None,None]\
+          ).sum(axis=1)
+    # multiply thickness
+    if exponent:
+        fe = (kr[:,None,None]*w[None,:,None]*fe*detJ[:,:,None]\
+              ).sum(axis=1)
+        return t[:,None,None] * Ke, t[:,None]*fe 
+    else:
+        return t[:,None,None] * Ke
+
+def lk_huhu_2d(kr: np.ndarray = np.array(1.),
+               l: np.ndarray = np.array([1.,1.]),
+               g: np.ndarray = np.array([0.]),
+               t: float = 1.,
+               **kwargs: Any) -> np.ndarray:
+    """
+    Create element stiffness matrix for 2D HuHu regularization with
+    bilinear quadrilateral Lagrangian elements:
+        
+        eng_dens = kr*exp(-a * det(F)) (Hu)^T Hu
+    
+    where H is the spatial hessian, F the deformation gradient with the 
+    regularizations strength kr and exponent a. If A is None, then instead:
+        
+        eng_dens = kr*(Hu)^T Hu
+
+    Parameters
+    ----------
+    kr : float or np.ndarray 
+        regularization strength.
+    l : np.ndarray (2)
+        side length of element.
+    g : np.ndarray (1)
+        angle of parallelogram.
+    t : float
+        thickness of element.
+        
+    Returns
+    -------
+    Ke : np.ndarray, shape (nels,8,8)
+        element stiffness matrix.
+
+    """ 
+    # 
+    return t*kr*np.column_stack((l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0,
+                 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4),
+                 l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0,
+                 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4),
+                 l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0,
+                 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4),
+                 l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0,
+                 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(-2/(l[0]**2*l[1]**2) - 4*np.tan(g[0])**2/l[0]**4), 0, l[0]*l[1]*(2/(l[0]**2*l[1]**2) + 4*np.tan(g[0])**2/l[0]**4))).reshape(-1,8,8) 
+
+def e_huhu_2d(u: np.ndarray,
+              kr: np.ndarray = np.array([0,-1]),
+              l: np.ndarray = np.array([1.,1.]),
+              g: np.ndarray = np.array([0.]),
+              t: float = 1.,
+              **kwargs: Any) -> np.ndarray:
+    """
+    Calculate elastic energy for 2D HuHu regularization with bilinear 
+    quadrilateral Lagrangian elements:
+        
+        eng_dens = kr * (Hu)^T Hu / 2
+    
+    where H is the spatial hessian, kr the regularizations strength . 
+
+    Parameters
+    ----------
+    kr : float or np.ndarray 
+        regularization strength.
+    l : np.ndarray (2)
+        side length of element.
+    g : np.ndarray (1)
+        angle of parallelogram.
+    t : float
+        thickness of element.
+        
+    Returns
+    -------
+    eng : np.ndarray, shape (nels,1)
+        elastic energy.
+
+    """ 
+    return t*kr*np.column_stack(((u[:,0] - u[:,2] + u[:,4] - u[:,6])**2*np.tan(g[0])**2/2 + (u[:,0] - u[:,2] + u[:,4] - u[:,6])**2/4 + (u[:,1] - u[:,3] + u[:,5] - u[:,7])**2*np.tan(g[0])**2/2 + (u[:,1] - u[:,3] + u[:,5] - u[:,7])**2/4))

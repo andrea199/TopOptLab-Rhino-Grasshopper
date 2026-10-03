@@ -1,0 +1,177 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+from typing import Any,Dict,Union
+
+from sympy import ln,exp,simplify,symbols
+from sympy.core.symbol import Symbol,Expr
+from symfem.symbols import x,t
+from symfem.functions import ScalarFunction,MatrixFunction
+
+from topoptlab.symbolic.matrix_utils import generate_constMatrix, \
+                                            generate_FunctMatrix, \
+                                            is_voigt,to_voigt,\
+                                            to_column, trace, inverse, eye, \
+                                            simplify_matrix,integrate, factor
+from topoptlab.symbolic.strain_measures import def_grad, dispgrad_matrix
+from topoptlab.symbolic.operators import hessian_matrix
+from topoptlab.symbolic.cell import base_cell
+from topoptlab.symbolic.parametric_map import jacobian
+from topoptlab.symbolic.scalar_utils import integral
+
+def huhu_engdensity(u : Union[None,MatrixFunction], 
+                    ndim: int,
+                    kr : Union[None,Symbol,ScalarFunction] = None,
+                    element_type: str = "Lagrange",
+                    order: int = 1,
+                    do_integral: bool = True,
+                    parallel: bool = False,
+                    **kwargs: Any) -> ScalarFunction:
+    """
+    Return elastic energy density for HuHu regularization defined as 
+    
+        engdensity = kr/2*B_h@u)^T B_h@u 
+    
+    where u are the nodal displacements, B_h the matrix that generates the 
+    flattened hessian h via the matrix vector product 
+        
+        h=B_h@u
+        
+    and kr the regularization strength and a an optional exponent. Often people
+    modify the HuHu regularization with an exponential exp(-a * det(F)). This
+    (to my knowledge) does not stem from a sensible scalar potential, therefor
+    this exponential is not included here.
+    
+    """
+    #
+    if element_type:
+        vertices, nd_inds, ref, basis  = base_cell(ndim,
+                                                   element_type=element_type,
+                                                   order=order)
+        Jinv, Jdet = jacobian(ndim=ndim, element_type=element_type, order=order,
+                              return_J=False, return_inv=True, return_det=True)
+    # regularization strength
+    if kr is None:
+        kr =  Symbol("kr")
+    #
+    B_hessian = hessian_matrix(scalarfield=False,
+                               ndim=ndim, 
+                               element_type=element_type, 
+                               order=order)
+    #
+    if u is None:
+        u = generate_constMatrix(ncol=1, 
+                                 nrow=B_hessian.shape[1], 
+                                 name="u")
+    h = simplify_matrix(B_hessian@u)
+    huhu = (h.transpose()@h)[0,0].as_sympy()/2
+    #
+    huhu = ScalarFunction( huhu )
+    #
+    if element_type is not None and do_integral:
+        huhu = integral(scalar_function=huhu,
+                        domain=ref, 
+                        vars=x, 
+                        dummy_vars=t,
+                        parallel=parallel)
+    return ScalarFunction(factor(huhu._f))
+
+def huhu_tangent(u : Union[None,MatrixFunction], 
+                 ndim: int,
+                 F : Union[None,MatrixFunction] = None,
+                 a : Union[None,Symbol,ScalarFunction] = None,
+                 kr : Union[None,Symbol,ScalarFunction] = None,
+                 Fdet: Union[None,Expr,ScalarFunction] = None,
+                 element_type: str = "Lagrange",
+                 order: int = 1,
+                 do_integral: bool = True,
+                 mode : str = "picard",
+                 **kwargs: Any) -> MatrixFunction:
+    """
+    Return consistent tangent for HuHu regularization defined as 
+    
+        K_T = kr*exp(-a * det(F)) (H)^T H
+    
+    where det(F) is the determinant of the deformation gradient, u the nodal 
+    displacements, H the hessian of the shape functions, kr the regularization
+    strength and a an optional exponent. If a is None, then the expression 
+    reduces to 
+    
+        engdensity = kr/2*(H@u)^T H@u  
+    
+    """
+    #
+    if element_type:
+        vertices, nd_inds, ref, basis  = base_cell(ndim,
+                                                   element_type=element_type,
+                                                   order=order)
+        Jinv, Jdet = jacobian(ndim=ndim, element_type=element_type, order=order,
+                              return_J=False, return_inv=True, return_det=True)
+    # regularization strength
+    if kr is None:
+        kr =  Symbol("kr",nonzero=True)
+    #
+    B_hessian = hessian_matrix(scalarfield=False,
+                               ndim=ndim, 
+                               element_type=element_type, 
+                               order=order) 
+    #
+    Ke = simplify_matrix(M=B_hessian.transpose()@B_hessian, 
+                         symmetry=True)
+    # exponential
+    if a is not None:
+        #
+        if u is None:
+            u = generate_constMatrix(ncol=1, 
+                                     nrow=B_hessian.shape[1], 
+                                     name="u")
+        #
+        if F is None and element_type is None:
+            F = generate_constMatrix(ncol=ndim,
+                                     nrow=ndim,
+                                     name="F")
+        elif F is None and element_type is not None:
+            F = def_grad(ndim=ndim,
+                         u=u,
+                         element_type=element_type,
+                         order=order,
+                         shape="square")
+        #
+        B_F = dispgrad_matrix(ndim=ndim, 
+                              nd_inds=nd_inds,
+                              basis=basis,
+                              isoparam_kws={})
+        # 
+        if Fdet is None:
+            Fdet = F.det().as_sympy()
+        elif isinstance(Fdet,ScalarFunction):
+            Fdet = Fdet.as_sympy()
+        #
+        fe = exp(-a*simplify(Fdet))*Ke@u
+        if mode == "newton":
+            Finv = to_column(M=F,order="C").transpose()
+            Ke = Ke - a*Fdet*Ke@u@Finv@B_F
+        elif mode == "picard":
+            pass
+        else:
+            raise NotImplementedError("Unknown mode: ", mode)
+        #
+        Ke = exp(-a*simplify(Fdet))*Ke
+    #
+    if element_type is not None and do_integral:
+        Ke = integrate(M=Ke*Jdet,
+                       domain=ref,
+                       variables=x,
+                       dummy_vars=t,
+                       parallel=None, 
+                       symmetry=any([mode=="picard",a is None]))
+        if a is not None:
+            fe = integrate(M=fe*Jdet,
+                           domain=ref,
+                           variables=x,
+                           dummy_vars=t,
+                           parallel=None)
+            return Ke, fe
+        else:
+            return Ke
+    return simplify_matrix(Ke*Jdet,
+                           eliminate_piecewise=True, 
+                           symmetry=any([mode=="picard",a is None]))

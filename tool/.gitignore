@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+build/
+validation/
+*.user
+local-settings.json

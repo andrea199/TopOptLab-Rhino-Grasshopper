@@ -1,0 +1,30 @@
+name: Numerical validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+concurrency:
+  group: numerics-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  cpu:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: |
+            requirements-runtime-lock.txt
+            tool/requirements-tested.txt
+      - name: Check repository, example and course integrity
+        run: python tool/tools/verify_repository.py --tracked
+      - name: Install numerical dependencies
+        run: python -m pip install -c requirements-runtime-lock.txt -r tool/requirements-tested.txt threadpoolctl==3.7.0 psutil==7.2.2
+      - name: Install included upstream snapshot
+        run: python -m pip install --no-deps ./vendor/topoptlab
+      - name: Run CPU and archive regressions
+        run: python -m pytest tool/tests -q --basetemp=tool/build/ci-tests
+# Licensed Rhino SDK/UI and NVIDIA CUDA acceptance are separate checks.
+# This hosted job does not compile the GHA or qualify a physical design.

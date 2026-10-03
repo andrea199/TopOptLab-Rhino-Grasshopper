@@ -1,0 +1,41 @@
+from numpy.testing import assert_almost_equal
+
+import pytest
+
+from topoptlab.topology_optimization import main
+from topoptlab.example_bc.lin_elast import mbb_2d
+from topoptlab.accelerators import anderson
+
+@pytest.mark.parametrize('obj_ref',
+                         [(237.195764619)])
+
+def test_anderson(obj_ref):
+    """
+    Test anderson acceleration..
+    """
+    #
+    # Default input parameters
+    nelx = 60
+    nely = int(nelx/3)
+    volfrac = 0.5
+    rmin = 2.4  # 5.4
+    penal = 3.0
+    ft = 1 # ft==0 -> sens, ft==1 -> dens
+    x, obj = main(nelx=nelx, nely=nely, volfrac=volfrac, 
+                  rmin=rmin, ft=ft, filter_mode="matrix", 
+                  optimizer="mma", lin_solver_kw={"name":"scipy-direct"},
+                  nouteriter=1000,
+                  accelerator_kw={"accel_freq": 4, 
+                                  "accel_start": 20,
+                                  "max_history": 4,
+                                  "accelerator": anderson,
+                                  "damp": 0.9},
+                  bcs=mbb_2d,
+                  output_kw = {"file": None,
+                               "display": False,
+                               "export": False,
+                               "write_log": False,
+                               "profile": False})
+    #
+    assert_almost_equal(obj,obj_ref,decimal=0)
+    return 

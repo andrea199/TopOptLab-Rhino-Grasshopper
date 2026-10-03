@@ -1,0 +1,107 @@
+{
+  "version": "0.2.0-dev",
+  "mode": "optimize",
+  "termination_reason": "converged",
+  "converged": true,
+  "display_case": "Down",
+  "objective": "sum(weight * compliance) over independent cases",
+  "cases": [
+    {
+      "name": "Down",
+      "weight": 1.0,
+      "compliance": 0.524574991863939,
+      "max_displacement": 0.005304048219423553,
+      "residual": 1.5024909316707636e-10,
+      "equilibrium": 1.6822175652464467e-10,
+      "performance": {
+        "backend": "cuda-cg",
+        "linear_iterations": 274,
+        "linear_residual": 7.724080652728027e-10,
+        "setup_seconds": 2.0936728000524454,
+        "solve_seconds": 10.470175200141966,
+        "matrix_preparations": 35,
+        "cpu_threads": 4
+      }
+    },
+    {
+      "name": "Side",
+      "weight": 1.0,
+      "compliance": 0.16825411922179412,
+      "max_displacement": 0.0017199327436370193,
+      "residual": 2.2063725596543904e-10,
+      "equilibrium": 8.058587397385964e-10,
+      "performance": {
+        "backend": "cuda-cg",
+        "linear_iterations": 204,
+        "linear_residual": 8.902881312951604e-10,
+        "setup_seconds": 2.0936728000524454,
+        "solve_seconds": 10.620926400122698,
+        "matrix_preparations": 35,
+        "cpu_threads": 4
+      }
+    }
+  ],
+  "material": {
+    "name": "Structural steel / S235 reference",
+    "young_pa": 210000000000,
+    "poisson": 0.3,
+    "density_kg_m3": 7850,
+    "reference_yield_pa": 235000000,
+    "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+    "notes": [
+      "Isotropic elastic reference, ambient conditions.",
+      "Yield is not automatically an allowable design stress.",
+      "Stock thickness must be declared to enable the reference yield comparison."
+    ],
+    "sources": [
+      "https://steelconstruction.info/topics/design/steel-material-properties/",
+      "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+      "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+    ],
+    "preset": "steel",
+    "length_unit": "mm",
+    "force_unit": "N",
+    "length_m": 0.001,
+    "force_n": 1.0,
+    "safety_factor": 1.5,
+    "young": 210000.0,
+    "allowable": null,
+    "allowable_status": "not_available"
+  },
+  "mass_kg": 0.8478000000000003,
+  "manufacturing": {
+    "process": "machining",
+    "symmetry": "none",
+    "extrusion": "none",
+    "threshold": 0.5,
+    "connected_components": 1,
+    "retained_cells": 904,
+    "minimum_feature_requested": 0.0,
+    "cells_surviving_radius_erosion": null,
+    "notes": [
+      "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+      "Thresholded geometry requires FEM reanalysis; no smoothing is applied.",
+      "Cutter diameter, tool reach, fixtures and toolpaths are not checked."
+    ]
+  },
+  "elapsed_seconds": 13.782679700001609,
+  "verification": "not a final-shape verification",
+  "metrics": {
+    "compliance": 0.6928291110857331,
+    "max_displacement": 0.005304048219423553,
+    "residual": 1.5024909316707636e-10,
+    "equilibrium": 1.6822175652464467e-10,
+    "initial_compliance": 2.50168527804798,
+    "improvement_percent": 72.30550472654438,
+    "volume": 0.5000000000000001,
+    "target_volume": 0.5
+  },
+  "completed_iterations": 34,
+  "verified_threshold_05_metrics": {
+    "compliance": 0.403455978732725,
+    "max_displacement": 0.0030863573922710963,
+    "residual": 1.4569977224709875e-10,
+    "equilibrium": 1.4430125094833103e-09,
+    "max_von_mises": 1.6496157682890074
+  }
+}

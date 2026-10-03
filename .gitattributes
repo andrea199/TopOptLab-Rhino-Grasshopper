@@ -1,0 +1,15 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.gh binary
+*.ghx -text
+*.3dm binary
+*.stl binary
+*.pptx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary
+# Preserve exact upstream and course-manifest bytes on every platform.
+vendor/topoptlab/** -text
+teaching/roof_2d/output/** -text

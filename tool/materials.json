@@ -1,0 +1,18 @@
+{
+  "schema": "topoptlab-materials-v1",
+  "retrieved": "2026-09-18",
+  "materials": {
+    "steel": {
+      "name": "Structural steel / S235 reference", "young_pa": 210000000000, "poisson": 0.3, "density_kg_m3": 7850,
+      "reference_yield_pa": 235000000, "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+      "notes": ["Isotropic elastic reference, ambient conditions.", "Yield is not automatically an allowable design stress.", "Stock thickness must be declared to enable the reference yield comparison."],
+      "sources": ["https://steelconstruction.info/topics/design/steel-material-properties/", "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf", "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"]
+    },
+    "abs": {
+      "name": "ABS / INEOS Terluran GP-22 reference", "young_pa": 2300000000, "poisson": 0.35, "density_kg_m3": 1040,
+      "reference_yield_pa": 45000000, "yield_scope": "Typical tensile yield at 23 C for injection-molded uncolored GP-22; not a guaranteed design allowable.",
+      "notes": ["Poisson ratio 0.35 is an explicit modeling assumption, not provided by the cited datasheet.", "Typical injection-molding data; not validated for FDM or other additive processes.", "Linear isotropic approximation does not represent creep, temperature, strain-rate or print anisotropy."],
+      "sources": ["https://www.ineos-styrolution.com/Product/Terluran_TERLURAN-GP-22_SKU300600120827.html"]
+    }
+  }
+}

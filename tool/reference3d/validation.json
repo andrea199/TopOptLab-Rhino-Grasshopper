@@ -1,0 +1,23 @@
+{
+  "fem": {
+    "compliance": 0.20634615341659496,
+    "max_displacement": 0.0020846096268009235,
+    "residual": 4.0031977732724047e-13,
+    "equilibrium": 6.614868652832229e-12,
+    "max_von_mises": 1.1660912460487185
+  },
+  "optimization": {
+    "compliance": 0.9431008268648964,
+    "max_displacement": 0.009656624888056931,
+    "residual": 6.161471333143709e-13,
+    "equilibrium": 6.583533718185209e-12,
+    "initial_compliance": 7.283749601118506,
+    "improvement_percent": 87.05198725227908,
+    "volume": 0.34998269251704245,
+    "target_volume": 0.35
+  },
+  "threshold": 0.5,
+  "mesh_valid": true,
+  "mesh_closed": true,
+  "mesh_faces": 1332
+}

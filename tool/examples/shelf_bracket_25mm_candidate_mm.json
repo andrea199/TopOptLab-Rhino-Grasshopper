@@ -1,0 +1,11 @@
+{
+  "status": "preliminary_surface_not_final_FEM_verified",
+  "units": "mm",
+  "source_job": "tool/build/resolution-runs/final-25mm-th032/surface",
+  "source_optimization_job": "design-25mm-cuda",
+  "geometry_hash": "824fcac2ce8692d412b950adbf8a81b6c2591cd54dbcb78d718d903de98d4821",
+  "threshold": 0.32,
+  "cell_mm": 2.5,
+  "surface_mass_kg": 0.309698443923035,
+  "note": "Fine voxel reanalysis passed the chosen displacement limit. Conforming FEM of this surface remains blocked by meshing; no printed-part load rating."
+}

@@ -1,0 +1,130 @@
+{
+  "source_file": "tool\\build\\resolution-runs\\design-25mm-cuda\\job\\result.json",
+  "source_sha256": "2aedb63f2e22073d5e9b77cece69b3c2ef68dc3fe4658f923a0b64cd5fbd1182",
+  "source_cell_size_mm": 2.5,
+  "source_termination": "iteration_limit",
+  "source_not_converged": true,
+  "source_rho_quantiles": {
+    "0": 0.06986092639962518,
+    "0.1": 0.13940613275154976,
+    "0.25": 0.2382216720356845,
+    "0.5": 0.28780108324755876,
+    "0.65": 0.32209743924088935,
+    "0.75": 0.3441235042772123,
+    "0.9": 1.0,
+    "1": 1.0
+  },
+  "selection": "Tested0.25first; densities and retained-mass estimates supported0.30and0.32instead of nearly-solid0.15and0.20. Exactly3FEMcandidates evaluated.",
+  "proposed_threshold": 0.32,
+  "qualification": "Candidate for extraction and exact CAD-interface reanalysis only. Same-grid binary FEM is not final-surface verification, mesh convergence, anchorage qualification or print strength.",
+  "backend": "cpu-amg",
+  "threads": 4,
+  "cases": 4,
+  "records": [
+    {
+      "threshold": 0.25,
+      "cells": 40098,
+      "mass_kg": 0.6515925,
+      "max_displacement": 0.05637503423575088,
+      "limits": "within_limits",
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "u": 0.026235370744388864,
+          "iterations": 54,
+          "residual": 7.344774027351748e-10
+        },
+        {
+          "name": "02 Front payload",
+          "u": 0.05068702713435378,
+          "iterations": 53,
+          "residual": 6.887057880944641e-10
+        },
+        {
+          "name": "03 Front right payload",
+          "u": 0.05637503423398014,
+          "iterations": 53,
+          "residual": 7.521151867880013e-10
+        },
+        {
+          "name": "04 Front left payload",
+          "u": 0.05637503423575088,
+          "iterations": 53,
+          "residual": 7.600610289786689e-10
+        }
+      ],
+      "seconds": 72.0089633000025,
+      "scope": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification"
+    },
+    {
+      "threshold": 0.3,
+      "cells": 26252,
+      "mass_kg": 0.426595,
+      "max_displacement": 0.1929964226498028,
+      "limits": "within_limits",
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "u": 0.1929964226498028,
+          "iterations": 71,
+          "residual": 8.50513931367601e-10
+        },
+        {
+          "name": "02 Front payload",
+          "u": 0.1008240053874688,
+          "iterations": 70,
+          "residual": 8.02775500689757e-10
+        },
+        {
+          "name": "03 Front right payload",
+          "u": 0.11125261246099613,
+          "iterations": 70,
+          "residual": 6.379530074340585e-10
+        },
+        {
+          "name": "04 Front left payload",
+          "u": 0.11125261246694691,
+          "iterations": 70,
+          "residual": 8.687376619349946e-10
+        }
+      ],
+      "seconds": 53.47713819999626,
+      "scope": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification"
+    },
+    {
+      "threshold": 0.32,
+      "cells": 21084,
+      "mass_kg": 0.34261500000000006,
+      "max_displacement": 0.2429063874255306,
+      "limits": "within_limits",
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "u": 0.2429063874255306,
+          "iterations": 72,
+          "residual": 8.375952592098733e-10
+        },
+        {
+          "name": "02 Front payload",
+          "u": 0.134986460299823,
+          "iterations": 70,
+          "residual": 7.427274134273924e-10
+        },
+        {
+          "name": "03 Front right payload",
+          "u": 0.1459862924308283,
+          "iterations": 69,
+          "residual": 7.213134436170754e-10
+        },
+        {
+          "name": "04 Front left payload",
+          "u": 0.14598629243644978,
+          "iterations": 69,
+          "residual": 8.114040550318833e-10
+        }
+      ],
+      "seconds": 49.216548299998976,
+      "scope": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification"
+    }
+  ]
+}

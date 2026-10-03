@@ -1,0 +1,1270 @@
+[
+  {
+    "dimension": 2,
+    "cells": 1152,
+    "backend": "cpu-cg",
+    "baseline_compliance": 9.811091340694765e-05,
+    "optimization": {
+      "version": "0.2.0-dev",
+      "mode": "optimize",
+      "input_signature": "7351cd93246bbfddc1a8b77a21db7b5590b827b49672f81d3288bba149c093b5",
+      "termination_reason": "iteration_limit",
+      "converged": false,
+      "display_case": "Surface load + self-weight",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "pressure",
+              "faces": 48,
+              "area": 24.0,
+              "total_force": [
+                0.0,
+                -2.3999999999999995
+              ],
+              "interface": "fixed grid boundary; preserved in optimization"
+            },
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -2.4049884467220166
+          ],
+          "reaction_force": [
+            -3.259237324471087e-11,
+            2.40498844674696
+          ],
+          "name": "Surface load + self-weight",
+          "weight": 1.0,
+          "compliance": 0.00022842096064375921,
+          "max_displacement": 0.00026085368485731123,
+          "residual": 8.528539286925305e-10,
+          "equilibrium": 6.51784745112674e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 0,
+            "linear_residual": 9.98140095615887e-10,
+            "setup_seconds": 0.16264889988815412,
+            "solve_seconds": 3.772762199747376,
+            "matrix_preparations": 41,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "loads": [
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -0.004988446722000052
+          ],
+          "reaction_force": [
+            -8.316871497049405e-14,
+            0.004988446722023107
+          ],
+          "name": "Self-weight only",
+          "weight": 1.0,
+          "compliance": 4.5801192454930206e-10,
+          "max_displacement": 4.624520150755141e-06,
+          "residual": 2.164894590850967e-09,
+          "equilibrium": 8.642903140683099e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 0,
+            "linear_residual": 9.624850479361498e-10,
+            "setup_seconds": 0.16264889988815412,
+            "solve_seconds": 3.773120899742935,
+            "matrix_preparations": 41,
+            "cpu_threads": 4
+          }
+        }
+      ],
+      "load_coordinate_system": "domain axes",
+      "automatically_preserved_interface_cells": 71,
+      "optimization_update": "projected gradient with Armijo line search",
+      "volume_policy": "fixed budget with self-weight; minimum design density 0.001",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison.",
+          "poisson overridden by user"
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": 156.66666666666666,
+        "allowable_status": "screening_only_not_code_verification"
+      },
+      "mass_kg": 0.0005086799999999995,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.5,
+        "connected_components": 1,
+        "retained_cells": 528,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 5.139333700004499,
+      "verification": "not a final-shape verification"
+    },
+    "history": [
+      {
+        "iteration": 0,
+        "compliance": 0.0008105382614970392,
+        "volume": 0.4499999999999999,
+        "objective_change": null,
+        "design_change": null,
+        "projected_stationarity": 0.5861239592969473
+      },
+      {
+        "iteration": 1,
+        "compliance": 0.0005903848520268257,
+        "volume": 0.44999999999999996,
+        "objective_change": 0.2716138397508797,
+        "design_change": 0.15000000000000013,
+        "projected_stationarity": 0.43612395929694725
+      },
+      {
+        "iteration": 2,
+        "compliance": 0.0004790963535726495,
+        "volume": 0.45000000000000007,
+        "objective_change": 0.18850161563616732,
+        "design_change": 0.15000000000000024,
+        "projected_stationarity": 0.3066181635702431
+      },
+      {
+        "iteration": 3,
+        "compliance": 0.00040962463523777957,
+        "volume": 0.45000000000000007,
+        "objective_change": 0.14500573385043586,
+        "design_change": 0.15000000000000013,
+        "projected_stationarity": 0.19229813114327274
+      },
+      {
+        "iteration": 4,
+        "compliance": 0.000353626214980825,
+        "volume": 0.4499999999999998,
+        "objective_change": 0.13670667103419826,
+        "design_change": 0.15,
+        "projected_stationarity": 0.1960491712925081
+      },
+      {
+        "iteration": 5,
+        "compliance": 0.0003277700968002258,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.07311708545703044,
+        "design_change": 0.14999999999999997,
+        "projected_stationarity": 0.1760423510913546
+      },
+      {
+        "iteration": 6,
+        "compliance": 0.0003108008380761308,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.05177183303099687,
+        "design_change": 0.14395024847620363,
+        "projected_stationarity": 0.17360922831192166
+      },
+      {
+        "iteration": 7,
+        "compliance": 0.00029752493360464245,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.042715150170336474,
+        "design_change": 0.1385070260867778,
+        "projected_stationarity": 0.1536018916920594
+      },
+      {
+        "iteration": 8,
+        "compliance": 0.00028519526106216133,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.04144080428185241,
+        "design_change": 0.1258466914320988,
+        "projected_stationarity": 0.14783982611758364
+      },
+      {
+        "iteration": 9,
+        "compliance": 0.0002741193950568712,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.038836080108904894,
+        "design_change": 0.11563495023747059,
+        "projected_stationarity": 0.14083993177894003
+      },
+      {
+        "iteration": 10,
+        "compliance": 0.0002658628020066665,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.030120426351049383,
+        "design_change": 0.1043354126917879,
+        "projected_stationarity": 0.13452131550586083
+      },
+      {
+        "iteration": 11,
+        "compliance": 0.00025973866425411436,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.023034955271398108,
+        "design_change": 0.096653449580545,
+        "projected_stationarity": 0.1338060394972522
+      },
+      {
+        "iteration": 12,
+        "compliance": 0.0002550237016100528,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.018152717684913736,
+        "design_change": 0.08814675859223153,
+        "projected_stationarity": 0.12731482091042032
+      },
+      {
+        "iteration": 13,
+        "compliance": 0.0002513404382597527,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0144428275765993,
+        "design_change": 0.08311034069236939,
+        "projected_stationarity": 0.1189547311901441
+      },
+      {
+        "iteration": 14,
+        "compliance": 0.0002483311009085174,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.011973152319107777,
+        "design_change": 0.06805581557104567,
+        "projected_stationarity": 0.1255713081432741
+      },
+      {
+        "iteration": 15,
+        "compliance": 0.0002459832608702027,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.00945447440826043,
+        "design_change": 0.06570681788711213,
+        "projected_stationarity": 0.1121425255249455
+      },
+      {
+        "iteration": 16,
+        "compliance": 0.00024407452083865502,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.007759633825469289,
+        "design_change": 0.05043721391781164,
+        "projected_stationarity": 0.11069174832092041
+      },
+      {
+        "iteration": 17,
+        "compliance": 0.00024242934107852315,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.006740481368063053,
+        "design_change": 0.05095815398001363,
+        "projected_stationarity": 0.09770610289449694
+      },
+      {
+        "iteration": 18,
+        "compliance": 0.00024093750475653463,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.006153695403995339,
+        "design_change": 0.053264884956100156,
+        "projected_stationarity": 0.10404865540766037
+      },
+      {
+        "iteration": 19,
+        "compliance": 0.0002395965555319077,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.005565547904141928,
+        "design_change": 0.059329938980997865,
+        "projected_stationarity": 0.07699705242360638
+      },
+      {
+        "iteration": 20,
+        "compliance": 0.00023842679938266745,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.0048821910091461085,
+        "design_change": 0.055403695983685025,
+        "projected_stationarity": 0.08056134369826834
+      },
+      {
+        "iteration": 21,
+        "compliance": 0.00023740453362859715,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.004287545513831246,
+        "design_change": 0.04867785366486588,
+        "projected_stationarity": 0.08277458266365406
+      },
+      {
+        "iteration": 22,
+        "compliance": 0.00023647538517370623,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.0039137772168433395,
+        "design_change": 0.04821163775198323,
+        "projected_stationarity": 0.08904201849439142
+      },
+      {
+        "iteration": 23,
+        "compliance": 0.000235648564676747,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0034964336620147193,
+        "design_change": 0.04641433761566138,
+        "projected_stationarity": 0.08081563716654844
+      },
+      {
+        "iteration": 24,
+        "compliance": 0.00023495848430295392,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0029284302017272596,
+        "design_change": 0.04509996164784902,
+        "projected_stationarity": 0.08532028817556908
+      },
+      {
+        "iteration": 25,
+        "compliance": 0.00023434963887811959,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.002591289378804882,
+        "design_change": 0.04277399129706794,
+        "projected_stationarity": 0.0719620036929211
+      },
+      {
+        "iteration": 26,
+        "compliance": 0.0002338058651153692,
+        "volume": 0.4499999999999995,
+        "objective_change": 0.0023203524671663585,
+        "design_change": 0.04005126233202294,
+        "projected_stationarity": 0.07181754061979628
+      },
+      {
+        "iteration": 27,
+        "compliance": 0.00023331335327562373,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0021064990799201846,
+        "design_change": 0.03828132526020234,
+        "projected_stationarity": 0.058298102785363626
+      },
+      {
+        "iteration": 28,
+        "compliance": 0.00023286615935828018,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.0019167094856129153,
+        "design_change": 0.0359298124871682,
+        "projected_stationarity": 0.060894981270054244
+      },
+      {
+        "iteration": 29,
+        "compliance": 0.00023243348989589012,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0018580177711625865,
+        "design_change": 0.031509547680832695,
+        "projected_stationarity": 0.06458587638257374
+      },
+      {
+        "iteration": 30,
+        "compliance": 0.00023201456958615643,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0018023233653692882,
+        "design_change": 0.03130578475113732,
+        "projected_stationarity": 0.07036875810106541
+      },
+      {
+        "iteration": 31,
+        "compliance": 0.00023163353903224218,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.001642269942762194,
+        "design_change": 0.026281434550169624,
+        "projected_stationarity": 0.06191886388286283
+      },
+      {
+        "iteration": 32,
+        "compliance": 0.00023128489471129345,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0015051547474746385,
+        "design_change": 0.025877498709890756,
+        "projected_stationarity": 0.06314990918232116
+      },
+      {
+        "iteration": 33,
+        "compliance": 0.00023092674113420376,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.0015485385569029787,
+        "design_change": 0.025779061669861658,
+        "projected_stationarity": 0.06600293114589328
+      },
+      {
+        "iteration": 34,
+        "compliance": 0.00023058572703885908,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0014767198188905463,
+        "design_change": 0.027711080100627644,
+        "projected_stationarity": 0.049627248499610976
+      },
+      {
+        "iteration": 35,
+        "compliance": 0.00023027307071389017,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0013559222809841022,
+        "design_change": 0.022408359994856963,
+        "projected_stationarity": 0.04976529072097935
+      },
+      {
+        "iteration": 36,
+        "compliance": 0.00022995231665819718,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.0013929290763292183,
+        "design_change": 0.024315590624582106,
+        "projected_stationarity": 0.05104622833228323
+      },
+      {
+        "iteration": 37,
+        "compliance": 0.00022962222938539045,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0014354596535653714,
+        "design_change": 0.026229157675252635,
+        "projected_stationarity": 0.05528583595147557
+      },
+      {
+        "iteration": 38,
+        "compliance": 0.00022928340213451343,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.001475585581517655,
+        "design_change": 0.020283505354101727,
+        "projected_stationarity": 0.06001281125844682
+      },
+      {
+        "iteration": 39,
+        "compliance": 0.00022888934290269552,
+        "volume": 0.4499999999999997,
+        "objective_change": 0.0017186557254010213,
+        "design_change": 0.02314874764040664,
+        "projected_stationarity": 0.06480462550718194
+      },
+      {
+        "iteration": 40,
+        "compliance": 0.00022842141865568377,
+        "volume": 0.44999999999999957,
+        "objective_change": 0.00204432517948497,
+        "design_change": 0.027721972751434176,
+        "projected_stationarity": 0.052353100470385716
+      }
+    ],
+    "verification": {
+      "version": "0.2.0-dev",
+      "mode": "verify",
+      "input_signature": "7351cd93246bbfddc1a8b77a21db7b5590b827b49672f81d3288bba149c093b5",
+      "termination_reason": "voxel_reanalysis_completed",
+      "converged": false,
+      "display_case": "Surface load + self-weight",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "pressure",
+              "faces": 48,
+              "area": 24.0,
+              "total_force": [
+                0.0,
+                -2.3999999999999995
+              ],
+              "interface": "fixed grid boundary; preserved in optimization"
+            },
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -2.4050808253650118
+          ],
+          "reaction_force": [
+            1.0330503119604373e-10,
+            2.4050808253852507
+          ],
+          "name": "Surface load + self-weight",
+          "weight": 1.0,
+          "compliance": 0.00022703955936468034,
+          "max_displacement": 0.00020853979856803027,
+          "residual": 1.048944357517535e-09,
+          "equilibrium": 2.065901826829902e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 468,
+            "linear_residual": 9.79972467467353e-10,
+            "setup_seconds": 0.0011841999948956072,
+            "solve_seconds": 0.06299209996359423,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 3.4932042332676216,
+          "stress_utilization_screening": 0.022297048297452906
+        },
+        {
+          "loads": [
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -0.005080825364999987
+          ],
+          "reaction_force": [
+            5.43163604371788e-14,
+            0.005080825365000584
+          ],
+          "name": "Self-weight only",
+          "weight": 1.0,
+          "compliance": 4.3556150524138544e-10,
+          "max_displacement": 2.543585595879727e-07,
+          "residual": 1.6485145955361582e-09,
+          "equilibrium": 5.6445628909802934e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 463,
+            "linear_residual": 8.099533385079772e-10,
+            "setup_seconds": 0.0011841999948956072,
+            "solve_seconds": 0.1276862999657169,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 0.004947618739591498,
+          "stress_utilization_screening": 3.158054514632871e-05
+        }
+      ],
+      "load_coordinate_system": "domain axes",
+      "automatically_preserved_interface_cells": 71,
+      "optimization_update": "projected gradient with Armijo line search",
+      "volume_policy": "fixed budget with self-weight; minimum design density 0.001",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison.",
+          "poisson overridden by user"
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": 156.66666666666666,
+        "allowable_status": "screening_only_not_code_verification"
+      },
+      "mass_kg": 0.0005181000000000001,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.5,
+        "connected_components": 1,
+        "retained_cells": 528,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.1982663000235334,
+      "verification": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification"
+    },
+    "verified_compliance": 0.00022703999492618558
+  },
+  {
+    "dimension": 3,
+    "cells": 1728,
+    "backend": "cpu-cg",
+    "baseline_compliance": 1.7377316807009715,
+    "optimization": {
+      "version": "0.2.0-dev",
+      "mode": "optimize",
+      "input_signature": "dc45b65ed2ae7861a1829a4a08e97bb96329f00546a0bb213dd0da57ef4b355a",
+      "termination_reason": "iteration_limit",
+      "converged": false,
+      "display_case": "Surface load + self-weight",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "pressure",
+              "faces": 288,
+              "area": 7200.0,
+              "total_force": [
+                0.0,
+                0.0,
+                -720.0
+              ],
+              "interface": "fixed grid boundary; preserved in optimization"
+            },
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -728.3140778699993
+          ],
+          "reaction_force": [
+            2.5333946496175486e-08,
+            -2.419398015263141e-11,
+            728.314077870299
+          ],
+          "name": "Surface load + self-weight",
+          "weight": 1.0,
+          "compliance": 3.4079859148298457,
+          "max_displacement": 0.013908152125666273,
+          "residual": 1.5689057223586899e-09,
+          "equilibrium": 1.0114113430265278e-08,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 0,
+            "linear_residual": 9.655487119022535e-10,
+            "setup_seconds": 3.3552960001979955,
+            "solve_seconds": 22.918536199897062,
+            "matrix_preparations": 41,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "loads": [
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -8.314077870000151
+          ],
+          "reaction_force": [
+            -2.6796853624944106e-10,
+            1.4185874697147938e-13,
+            8.314077870050168
+          ],
+          "name": "Self-weight only",
+          "weight": 1.0,
+          "compliance": 0.00030543324562969305,
+          "max_displacement": 0.00015251242380030398,
+          "residual": 1.4674257286987229e-09,
+          "equilibrium": 2.78473234121293e-08,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 0,
+            "linear_residual": 8.385616794644301e-10,
+            "setup_seconds": 3.3552960001979955,
+            "solve_seconds": 22.9198555998737,
+            "matrix_preparations": 41,
+            "cpu_threads": 4
+          }
+        }
+      ],
+      "load_coordinate_system": "world XYZ",
+      "automatically_preserved_interface_cells": 264,
+      "optimization_update": "projected gradient with Armijo line search",
+      "volume_policy": "fixed budget with self-weight; minimum design density 0.001",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison.",
+          "poisson overridden by user"
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 0.8478000000000004,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.5,
+        "connected_components": 1,
+        "retained_cells": 868,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 29.273133000009693,
+      "verification": "not a final-shape verification"
+    },
+    "history": [
+      {
+        "iteration": 0,
+        "compliance": 13.914402383033366,
+        "volume": 0.5000000000000001,
+        "objective_change": null,
+        "design_change": null,
+        "projected_stationarity": 0.6545454545454545
+      },
+      {
+        "iteration": 1,
+        "compliance": 8.356297967515909,
+        "volume": 0.5,
+        "objective_change": 0.39944974009769724,
+        "design_change": 0.15000000000000008,
+        "projected_stationarity": 0.5045454545454545
+      },
+      {
+        "iteration": 2,
+        "compliance": 6.596877462579266,
+        "volume": 0.5,
+        "objective_change": 0.21055023549617022,
+        "design_change": 0.15000000000000013,
+        "projected_stationarity": 0.42363517421062075
+      },
+      {
+        "iteration": 3,
+        "compliance": 5.979265892913615,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.09362180412915769,
+        "design_change": 0.1500000000000002,
+        "projected_stationarity": 0.6449329624783589
+      },
+      {
+        "iteration": 4,
+        "compliance": 5.4472443421356855,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0889777374524287,
+        "design_change": 0.15000000000000024,
+        "projected_stationarity": 0.7148005065746336
+      },
+      {
+        "iteration": 5,
+        "compliance": 4.83025998159571,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.11326540940479933,
+        "design_change": 0.15000000000000013,
+        "projected_stationarity": 0.3279988316017076
+      },
+      {
+        "iteration": 6,
+        "compliance": 4.518749535532776,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.06449144502570328,
+        "design_change": 0.15000000000000024,
+        "projected_stationarity": 0.41457511296270444
+      },
+      {
+        "iteration": 7,
+        "compliance": 4.2725195426148,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.054490737090376155,
+        "design_change": 0.1500000000000002,
+        "projected_stationarity": 0.215648938160392
+      },
+      {
+        "iteration": 8,
+        "compliance": 4.075001986065824,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.046229760818857386,
+        "design_change": 0.14833237134254218,
+        "projected_stationarity": 0.277123997861766
+      },
+      {
+        "iteration": 9,
+        "compliance": 3.95020815320528,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.030624238537126498,
+        "design_change": 0.149036704144399,
+        "projected_stationarity": 0.17214713261714748
+      },
+      {
+        "iteration": 10,
+        "compliance": 3.8540003957462683,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.02435511085180327,
+        "design_change": 0.08584119630441345,
+        "projected_stationarity": 0.13706710781346104
+      },
+      {
+        "iteration": 11,
+        "compliance": 3.788468734175883,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.01700354303095393,
+        "design_change": 0.07267274854095451,
+        "projected_stationarity": 0.13853547462666027
+      },
+      {
+        "iteration": 12,
+        "compliance": 3.7397580172060167,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.012857626758390705,
+        "design_change": 0.0620541255012866,
+        "projected_stationarity": 0.1368185362851109
+      },
+      {
+        "iteration": 13,
+        "compliance": 3.7026480988012107,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.009923080112154144,
+        "design_change": 0.04525675878218434,
+        "projected_stationarity": 0.13496401007292846
+      },
+      {
+        "iteration": 14,
+        "compliance": 3.672485126124887,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.00814632443360995,
+        "design_change": 0.05992596554576968,
+        "projected_stationarity": 0.1838410273351454
+      },
+      {
+        "iteration": 15,
+        "compliance": 3.6450852644522014,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.00746085027758771,
+        "design_change": 0.07628163127412002,
+        "projected_stationarity": 0.23791115409910346
+      },
+      {
+        "iteration": 16,
+        "compliance": 3.618957624228681,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.007167909205944674,
+        "design_change": 0.10318265703760762,
+        "projected_stationarity": 0.2744166057137438
+      },
+      {
+        "iteration": 17,
+        "compliance": 3.5927059803797206,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.007253924078361018,
+        "design_change": 0.11475065735298062,
+        "projected_stationarity": 0.29290185324195517
+      },
+      {
+        "iteration": 18,
+        "compliance": 3.5679248739789124,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0068976160409845,
+        "design_change": 0.11028951038698803,
+        "projected_stationarity": 0.34322123726705944
+      },
+      {
+        "iteration": 19,
+        "compliance": 3.5465987462214303,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.005977179596189039,
+        "design_change": 0.09394639446219144,
+        "projected_stationarity": 0.36334457830582667
+      },
+      {
+        "iteration": 20,
+        "compliance": 3.527635286141423,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.005346942644755362,
+        "design_change": 0.08277337419899111,
+        "projected_stationarity": 0.2566208422394163
+      },
+      {
+        "iteration": 21,
+        "compliance": 3.51058536619139,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.004833243395941471,
+        "design_change": 0.07394090158763211,
+        "projected_stationarity": 0.1185484963812955
+      },
+      {
+        "iteration": 22,
+        "compliance": 3.4963608915059683,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.004051881154183037,
+        "design_change": 0.05949756023196062,
+        "projected_stationarity": 0.12640818255012531
+      },
+      {
+        "iteration": 23,
+        "compliance": 3.486367041594854,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.002858357652779223,
+        "design_change": 0.05022960799405285,
+        "projected_stationarity": 0.1333741360279601
+      },
+      {
+        "iteration": 24,
+        "compliance": 3.4765065668237485,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.002828295085819485,
+        "design_change": 0.05472445306314411,
+        "projected_stationarity": 0.12147115030855238
+      },
+      {
+        "iteration": 25,
+        "compliance": 3.4673860830864167,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0026234622492499818,
+        "design_change": 0.05175145282342486,
+        "projected_stationarity": 0.12796910263945493
+      },
+      {
+        "iteration": 26,
+        "compliance": 3.4591974444534275,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0023616172058060253,
+        "design_change": 0.045037679007474685,
+        "projected_stationarity": 0.13133267985179042
+      },
+      {
+        "iteration": 27,
+        "compliance": 3.451440100299974,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0022425271404764324,
+        "design_change": 0.04610269106775966,
+        "projected_stationarity": 0.10490456805713233
+      },
+      {
+        "iteration": 28,
+        "compliance": 3.44431845607251,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0020633834053342005,
+        "design_change": 0.03959834429455655,
+        "projected_stationarity": 0.08455664896735893
+      },
+      {
+        "iteration": 29,
+        "compliance": 3.4391669334331976,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0014956580539845269,
+        "design_change": 0.021808095619829437,
+        "projected_stationarity": 0.08410261777967754
+      },
+      {
+        "iteration": 30,
+        "compliance": 3.434394228144917,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0013877504002157417,
+        "design_change": 0.021745215255049022,
+        "projected_stationarity": 0.07476286176113356
+      },
+      {
+        "iteration": 31,
+        "compliance": 3.4299209978769025,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.001302480137939957,
+        "design_change": 0.019563655363029397,
+        "projected_stationarity": 0.07652966360675073
+      },
+      {
+        "iteration": 32,
+        "compliance": 3.4256805613841954,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0012363073363298783,
+        "design_change": 0.019245574299296964,
+        "projected_stationarity": 0.06679254949122232
+      },
+      {
+        "iteration": 33,
+        "compliance": 3.422013320964546,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.001070514414270958,
+        "design_change": 0.018881492486304385,
+        "projected_stationarity": 0.06783398184272757
+      },
+      {
+        "iteration": 34,
+        "compliance": 3.419022463022012,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0008740053477322336,
+        "design_change": 0.018791099257679578,
+        "projected_stationarity": 0.06341826270569925
+      },
+      {
+        "iteration": 35,
+        "compliance": 3.416661376580382,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0006905735388304499,
+        "design_change": 0.01695028161807366,
+        "projected_stationarity": 0.06743899954966717
+      },
+      {
+        "iteration": 36,
+        "compliance": 3.414477618737204,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.0006391496266345491,
+        "design_change": 0.01692811491866053,
+        "projected_stationarity": 0.040293632502530485
+      },
+      {
+        "iteration": 37,
+        "compliance": 3.41273012945938,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0005117881775632377,
+        "design_change": 0.014985751837929495,
+        "projected_stationarity": 0.040615678847160996
+      },
+      {
+        "iteration": 38,
+        "compliance": 3.4112668331423115,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0004287758661128692,
+        "design_change": 0.015005831001148495,
+        "projected_stationarity": 0.040676976975793366
+      },
+      {
+        "iteration": 39,
+        "compliance": 3.4097774236234346,
+        "volume": 0.5000000000000001,
+        "objective_change": 0.00043661478029407137,
+        "design_change": 0.014621545600042696,
+        "projected_stationarity": 0.042266034252783635
+      },
+      {
+        "iteration": 40,
+        "compliance": 3.4082913480754753,
+        "volume": 0.5000000000000002,
+        "objective_change": 0.0004358277281278163,
+        "design_change": 0.014358609457189253,
+        "projected_stationarity": 0.04182375344861153
+      }
+    ],
+    "verification": {
+      "version": "0.2.0-dev",
+      "mode": "verify",
+      "input_signature": "dc45b65ed2ae7861a1829a4a08e97bb96329f00546a0bb213dd0da57ef4b355a",
+      "termination_reason": "voxel_reanalysis_completed",
+      "converged": false,
+      "display_case": "Surface load + self-weight",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "pressure",
+              "faces": 288,
+              "area": 7200.0,
+              "total_force": [
+                0.0,
+                0.0,
+                -720.0
+              ],
+              "interface": "fixed grid boundary; preserved in optimization"
+            },
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -728.3525689712494
+          ],
+          "reaction_force": [
+            -5.235575883943966e-08,
+            -6.586731160496129e-12,
+            728.3525689641998
+          ],
+          "name": "Surface load + self-weight",
+          "weight": 1.0,
+          "compliance": 2.68185274656102,
+          "max_displacement": 0.010210909162669946,
+          "residual": 1.2848090620789745e-09,
+          "equilibrium": 2.0902076338940993e-08,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 409,
+            "linear_residual": 9.380339210019666e-10,
+            "setup_seconds": 0.04139289999147877,
+            "solve_seconds": 0.18728130002273247,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 5.668888748271414,
+          "stress_utilization_screening": null
+        },
+        {
+          "loads": [
+            {
+              "kind": "gravity",
+              "acceleration_m_s2": [
+                0.0,
+                0.0,
+                -9.80665
+              ]
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -8.352568971250177
+          ],
+          "reaction_force": [
+            -1.6216306075733655e-11,
+            -8.545941732052142e-14,
+            8.352568971249724
+          ],
+          "name": "Self-weight only",
+          "weight": 1.0,
+          "compliance": 0.00024070708545984425,
+          "max_displacement": 0.00010137238643294737,
+          "residual": 2.1632953919238762e-09,
+          "equilibrium": 1.6852005319784043e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 406,
+            "linear_residual": 8.890544166613956e-10,
+            "setup_seconds": 0.04139289999147877,
+            "solve_seconds": 0.37032020004699007,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 0.056092214940242704,
+          "stress_utilization_screening": null
+        }
+      ],
+      "load_coordinate_system": "world XYZ",
+      "automatically_preserved_interface_cells": 264,
+      "optimization_update": "projected gradient with Armijo line search",
+      "volume_policy": "fixed budget with self-weight; minimum design density 0.001",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison.",
+          "poisson overridden by user"
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 0.8517250000000001,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.5,
+        "connected_components": 1,
+        "retained_cells": 868,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.6250901999883354,
+      "verification": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification"
+    },
+    "verified_compliance": 2.6820934536464796
+  }
+]

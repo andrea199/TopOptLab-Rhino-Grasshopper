@@ -1,0 +1,2630 @@
+[
+  {
+    "dimension": 2,
+    "cells": 1152,
+    "baseline": {
+      "version": "0.3.0-dev",
+      "mode": "fem",
+      "input_signature": "b6c32e1f93bd1059a32967949d7dca082239b5e763b32630c76c21e3ea3c8b74",
+      "termination_reason": "fem_completed",
+      "converged": false,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            5.473933528676866e-10,
+            1.0000000003198815
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 2.2035212763506308e-05,
+          "max_displacement": 3.2320384716377044e-05,
+          "residual": 6.059952539771984e-11,
+          "equilibrium": 5.473933528676866e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 333,
+            "linear_residual": 8.132510088400312e-10,
+            "setup_seconds": 0.006502600037492812,
+            "solve_seconds": 0.04549559997394681,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 2.0469905180829837,
+          "stress_utilization_screening": null
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            2.155875478138114e-11,
+            1.0000000002484395
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.00010619825826107397,
+          "max_displacement": 0.00011263448534291921,
+          "residual": 7.263700751991564e-11,
+          "equilibrium": 2.4843949120167963e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 334,
+            "linear_residual": 8.524716860316966e-10,
+            "setup_seconds": 0.006502600037492812,
+            "solve_seconds": 0.10187809995841235,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 4.115277826229904,
+          "stress_utilization_screening": null
+        }
+      ],
+      "load_coordinate_system": "domain axes",
+      "automatically_preserved_interface_cells": 27,
+      "optimization_update": "not applicable: FEM",
+      "volume_policy": "solid retained grid",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 0.0011304000000000002,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 1152,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.18808069999795407,
+      "verification": "not a final-shape verification",
+      "weighted_compliance": 0.0001282334710245803,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.0002,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 3.2320384716377044e-05,
+                "limit": 0.0002,
+                "utilization": 0.16160192358188522,
+                "status": "within_limit",
+                "aggregated_utilization": 0.2621716331561323,
+                "grid_node_id": 1200
+              },
+              {
+                "kind": "stress",
+                "value": 2.0469905180829837,
+                "limit": 10.0,
+                "utilization": 0.20469905180829837,
+                "status": "within_limit",
+                "aggregated_utilization": 0.22331663702805063,
+                "cell_id": 552,
+                "gauss_point": 2,
+                "field": "full-material von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.00011263448534291921,
+                "limit": 0.0002,
+                "utilization": 0.563172426714596,
+                "status": "within_limit",
+                "aggregated_utilization": 0.5721412633594238,
+                "grid_node_id": 1200
+              },
+              {
+                "kind": "stress",
+                "value": 4.115277826229904,
+                "limit": 10.0,
+                "utilization": 0.4115277826229904,
+                "status": "within_limit",
+                "aggregated_utilization": 0.41279882651683775,
+                "cell_id": 1128,
+                "gauss_point": 2,
+                "field": "full-material von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.563172426714596,
+        "scope": "full_solid_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "constraint_optimizer": null
+    },
+    "optimization": {
+      "version": "0.3.0-dev",
+      "mode": "optimize",
+      "input_signature": "b6c32e1f93bd1059a32967949d7dca082239b5e763b32630c76c21e3ea3c8b74",
+      "termination_reason": "iteration_limit",
+      "converged": false,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            5.505795819260584e-11,
+            1.0000000001088838
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 3.676967445279372e-05,
+          "max_displacement": 4.6701137371688805e-05,
+          "residual": 7.811307156657676e-11,
+          "equilibrium": 1.0888379087248268e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 477,
+            "linear_residual": 8.952529435460668e-10,
+            "setup_seconds": 0.42568339948775247,
+            "solve_seconds": 30.353202599973883,
+            "matrix_preparations": 81,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.065971271622542
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            2.633530060691669e-10,
+            0.9999999996971685
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.0001639724167739818,
+          "max_displacement": 0.00017184310476666393,
+          "residual": 9.414402590834925e-11,
+          "equilibrium": 3.028315376241153e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 480,
+            "linear_residual": 8.80948374037874e-10,
+            "setup_seconds": 0.42568339948775247,
+            "solve_seconds": 30.41509339993354,
+            "matrix_preparations": 81,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 4.119020258466277
+        }
+      ],
+      "load_coordinate_system": "domain axes",
+      "automatically_preserved_interface_cells": 27,
+      "optimization_update": "MMA with displacement/stress adjoints",
+      "volume_policy": "upper bound",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 0.0006782391485732857,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 716,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 38.188766700041015,
+      "verification": "not a final-shape verification",
+      "weighted_compliance": 0.00020074209122677552,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.0002,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 4.6701137371688805e-05,
+                "limit": 0.0002,
+                "utilization": 0.233505686858444,
+                "status": "within_limit",
+                "aggregated_utilization": 0.33317074520836754,
+                "grid_node_id": 1224
+              },
+              {
+                "kind": "stress",
+                "value": 2.065971271622542,
+                "limit": 10.0,
+                "utilization": 0.2065971271622542,
+                "status": "within_limit",
+                "aggregated_utilization": 0.22615618512057645,
+                "cell_id": 552,
+                "gauss_point": 2,
+                "field": "sqrt-density relaxed von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.00017184310476666393,
+                "limit": 0.0002,
+                "utilization": 0.8592155238333197,
+                "status": "within_limit",
+                "aggregated_utilization": 0.86603362946245,
+                "grid_node_id": 1200
+              },
+              {
+                "kind": "stress",
+                "value": 4.119020258466277,
+                "limit": 10.0,
+                "utilization": 0.41190202584662766,
+                "status": "within_limit",
+                "aggregated_utilization": 0.4131633813278239,
+                "cell_id": 1128,
+                "gauss_point": 2,
+                "field": "sqrt-density relaxed von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.8592155238333197,
+        "scope": "relaxed_density_model_only",
+        "enforced_during_optimization": true,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.",
+        "sampled_checks_status": "within_limits",
+        "optimizer_feasible": true
+      },
+      "constraint_optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 2.0748012385267845e-05,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      }
+    },
+    "verification": {
+      "version": "0.3.0-dev",
+      "mode": "verify",
+      "input_signature": "b6c32e1f93bd1059a32967949d7dca082239b5e763b32630c76c21e3ea3c8b74",
+      "termination_reason": "voxel_reanalysis_completed",
+      "converged": false,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            2.053036074478598e-10,
+            0.9999999998805548
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 3.242063318469852e-05,
+          "max_displacement": 4.145441756573093e-05,
+          "residual": 7.082490149912246e-11,
+          "equilibrium": 2.053036074478598e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 465,
+            "linear_residual": 8.039546586614814e-10,
+            "setup_seconds": 0.00544650002848357,
+            "solve_seconds": 0.063710100017488,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 2.060142157566569,
+          "stress_utilization_screening": null
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                -1.0
+              ],
+              "nodes": 1
+            }
+          ],
+          "applied_force": [
+            0.0,
+            -1.0
+          ],
+          "reaction_force": [
+            -1.9556578578772132e-13,
+            0.9999999998967068
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.0001418992218470464,
+          "max_displacement": 0.00014905069551312367,
+          "residual": 8.36504199241972e-11,
+          "equilibrium": 1.1106323268469016e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 466,
+            "linear_residual": 7.758834676033942e-10,
+            "setup_seconds": 0.00544650002848357,
+            "solve_seconds": 0.11712559999432415,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 4.1171239141570615,
+          "stress_utilization_screening": null
+        }
+      ],
+      "load_coordinate_system": "domain axes",
+      "automatically_preserved_interface_cells": 27,
+      "optimization_update": "not applicable: FEM",
+      "volume_policy": "solid retained grid",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 0.000702575,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 716,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.16097480000462383,
+      "verification": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification",
+      "weighted_compliance": 0.0001743198550317449,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.0002,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 4.145441756573093e-05,
+                "limit": 0.0002,
+                "utilization": 0.20727208782865464,
+                "status": "within_limit",
+                "aggregated_utilization": 0.2975463553964146,
+                "grid_node_id": 1200
+              },
+              {
+                "kind": "stress",
+                "value": 2.060142157566569,
+                "limit": 10.0,
+                "utilization": 0.2060142157566569,
+                "status": "within_limit",
+                "aggregated_utilization": 0.22422612391787433,
+                "cell_id": 552,
+                "gauss_point": 2,
+                "field": "full-material von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.00014905069551312367,
+                "limit": 0.0002,
+                "utilization": 0.7452534775656183,
+                "status": "within_limit",
+                "aggregated_utilization": 0.7518679798360774,
+                "grid_node_id": 1200
+              },
+              {
+                "kind": "stress",
+                "value": 4.1171239141570615,
+                "limit": 10.0,
+                "utilization": 0.41171239141570615,
+                "status": "within_limit",
+                "aggregated_utilization": 0.41296506507050595,
+                "cell_id": 1128,
+                "gauss_point": 2,
+                "field": "full-material von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.7452534775656183,
+        "scope": "binary_voxel_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": true,
+        "final_shape_verified": true,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "constraint_optimizer": null
+    },
+    "completed_iterations": 80,
+    "returned_iteration": 80,
+    "history": [
+      {
+        "iteration": 0,
+        "compliance": 0.0005649710108277723,
+        "volume": 0.6,
+        "objective_change": null,
+        "design_change": null,
+        "max_constraint_violation": 1.5174721293675661,
+        "feasible": false,
+        "kkt_residual": null
+      },
+      {
+        "iteration": 1,
+        "compliance": 0.00031652664183427526,
+        "volume": 0.6858774236271495,
+        "objective_change": 0.4397471095543231,
+        "design_change": 0.14984999789138065,
+        "max_constraint_violation": 0.3973154179872811,
+        "feasible": false,
+        "kkt_residual": 20.65089315067417
+      },
+      {
+        "iteration": 2,
+        "compliance": 0.0002337974827919721,
+        "volume": 0.7100335767214124,
+        "objective_change": 0.2613655475030058,
+        "design_change": 0.14984999291104772,
+        "max_constraint_violation": 0.18338929453568742,
+        "feasible": false,
+        "kkt_residual": 3.844270702723719
+      },
+      {
+        "iteration": 3,
+        "compliance": 0.0002311427342191547,
+        "volume": 0.6749510098156817,
+        "objective_change": 0.01135490656749082,
+        "design_change": 0.14984989127248188,
+        "max_constraint_violation": 0.1249183496928028,
+        "feasible": false,
+        "kkt_residual": 1.6860088199459637
+      },
+      {
+        "iteration": 4,
+        "compliance": 0.00023867336153632443,
+        "volume": 0.6516138784888086,
+        "objective_change": 0.032579987178094356,
+        "design_change": 0.14984984769306098,
+        "max_constraint_violation": 0.08602313081468105,
+        "feasible": false,
+        "kkt_residual": 1.258947857968096
+      },
+      {
+        "iteration": 5,
+        "compliance": 0.00024217218802545157,
+        "volume": 0.6388915537605657,
+        "objective_change": 0.014659476309402208,
+        "design_change": 0.14712262998162504,
+        "max_constraint_violation": 0.06481925626760954,
+        "feasible": false,
+        "kkt_residual": 1.2267157825096147
+      },
+      {
+        "iteration": 6,
+        "compliance": 0.00024438157695700583,
+        "volume": 0.6294998843228288,
+        "objective_change": 0.009123214971828468,
+        "design_change": 0.14984857461454457,
+        "max_constraint_violation": 0.04916647387138129,
+        "feasible": false,
+        "kkt_residual": 1.1902421532344416
+      },
+      {
+        "iteration": 7,
+        "compliance": 0.00024587975421995256,
+        "volume": 0.620662727650428,
+        "objective_change": 0.006130483654298973,
+        "design_change": 0.14984951210755104,
+        "max_constraint_violation": 0.03443787941738008,
+        "feasible": false,
+        "kkt_residual": 1.11465297160837
+      },
+      {
+        "iteration": 8,
+        "compliance": 0.00024728828413682195,
+        "volume": 0.612599035104146,
+        "objective_change": 0.005728531498406263,
+        "design_change": 0.12961404000416515,
+        "max_constraint_violation": 0.020998391840243436,
+        "feasible": false,
+        "kkt_residual": 1.0213349055280574
+      },
+      {
+        "iteration": 9,
+        "compliance": 0.00024852854508344537,
+        "volume": 0.6052651552904158,
+        "objective_change": 0.005015445640510808,
+        "design_change": 0.12606145484695536,
+        "max_constraint_violation": 0.008775258817359743,
+        "feasible": false,
+        "kkt_residual": 1.1443562027287388
+      },
+      {
+        "iteration": 10,
+        "compliance": 0.00024965545171226644,
+        "volume": 0.5988311168927987,
+        "objective_change": 0.004534314673763925,
+        "design_change": 0.11722911000348413,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.216452569337493
+      },
+      {
+        "iteration": 11,
+        "compliance": 0.00024092732327854076,
+        "volume": 0.5961059361953679,
+        "objective_change": 0.03496069632713266,
+        "design_change": 0.14976111624273014,
+        "max_constraint_violation": 0.008431793114852093,
+        "feasible": false,
+        "kkt_residual": 0.013857729461851043
+      },
+      {
+        "iteration": 12,
+        "compliance": 0.00023374446821690297,
+        "volume": 0.5976540981824782,
+        "objective_change": 0.02981336846271084,
+        "design_change": 0.14001294941535136,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.004293935807383305
+      },
+      {
+        "iteration": 13,
+        "compliance": 0.00022875931881296754,
+        "volume": 0.5979717993500745,
+        "objective_change": 0.021327347089598117,
+        "design_change": 0.1344902892712021,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.003380206093281147
+      },
+      {
+        "iteration": 14,
+        "compliance": 0.00022482267571758509,
+        "volume": 0.5986748825779236,
+        "objective_change": 0.01720866767662059,
+        "design_change": 0.09013284340017014,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0022083933853869506
+      },
+      {
+        "iteration": 15,
+        "compliance": 0.00022211776812344956,
+        "volume": 0.5992110927041066,
+        "objective_change": 0.012031293487198525,
+        "design_change": 0.077946407052921,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0013147018505742726
+      },
+      {
+        "iteration": 16,
+        "compliance": 0.00022013616852105153,
+        "volume": 0.5993408319187284,
+        "objective_change": 0.008921391652452967,
+        "design_change": 0.0706614857297917,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0011212487861820553
+      },
+      {
+        "iteration": 17,
+        "compliance": 0.00021844344350322234,
+        "volume": 0.5994024905824306,
+        "objective_change": 0.007689445261092182,
+        "design_change": 0.07799922240731566,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0009956935115843322
+      },
+      {
+        "iteration": 18,
+        "compliance": 0.00021693475532862783,
+        "volume": 0.5994145772238265,
+        "objective_change": 0.006906539058345585,
+        "design_change": 0.08957208201402131,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.000975543642706706
+      },
+      {
+        "iteration": 19,
+        "compliance": 0.00021565437053578775,
+        "volume": 0.5995265451586222,
+        "objective_change": 0.005902165334920446,
+        "design_change": 0.07773487471044782,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0007889258537522021
+      },
+      {
+        "iteration": 20,
+        "compliance": 0.0002144928979811323,
+        "volume": 0.599528787207928,
+        "objective_change": 0.005385805776946772,
+        "design_change": 0.09110905477298725,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0007851846975764045
+      },
+      {
+        "iteration": 21,
+        "compliance": 0.0002134039097273987,
+        "volume": 0.599576506693032,
+        "objective_change": 0.005077036414648035,
+        "design_change": 0.10248351765583036,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0007208033669770936
+      },
+      {
+        "iteration": 22,
+        "compliance": 0.00021231484258203514,
+        "volume": 0.5995577641807583,
+        "objective_change": 0.005103313930633832,
+        "design_change": 0.08396662577938346,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0008367684360732486
+      },
+      {
+        "iteration": 23,
+        "compliance": 0.00021110347547937305,
+        "volume": 0.5994983630372271,
+        "objective_change": 0.005705522458676106,
+        "design_change": 0.1073921035490654,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0009177129692420558
+      },
+      {
+        "iteration": 24,
+        "compliance": 0.00020996108577258702,
+        "volume": 0.5995170974074752,
+        "objective_change": 0.005411515391643344,
+        "design_change": 0.11217660187043871,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.000804649023242712
+      },
+      {
+        "iteration": 25,
+        "compliance": 0.00020882669576282955,
+        "volume": 0.5995462491292635,
+        "objective_change": 0.005402858370556122,
+        "design_change": 0.11550636641124334,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0007560583450768514
+      },
+      {
+        "iteration": 26,
+        "compliance": 0.0002075103844411636,
+        "volume": 0.5994623819922842,
+        "objective_change": 0.006303367090388263,
+        "design_change": 0.12032142795829237,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0009840767706988524
+      },
+      {
+        "iteration": 27,
+        "compliance": 0.000206167656944052,
+        "volume": 0.5994963697977003,
+        "objective_change": 0.00647065206267941,
+        "design_change": 0.10995262106142883,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0008391809336055693
+      },
+      {
+        "iteration": 28,
+        "compliance": 0.00020511539241302998,
+        "volume": 0.599617963161632,
+        "objective_change": 0.005103926322000949,
+        "design_change": 0.10194124964905726,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0006365202756604929
+      },
+      {
+        "iteration": 29,
+        "compliance": 0.00020426445526766938,
+        "volume": 0.599658864125778,
+        "objective_change": 0.004148577712037888,
+        "design_change": 0.10398592590293385,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0005683479936788986
+      },
+      {
+        "iteration": 30,
+        "compliance": 0.00020344155861004267,
+        "volume": 0.5996751246314153,
+        "objective_change": 0.004028584692076681,
+        "design_change": 0.09429870963961723,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0005412441744679868
+      },
+      {
+        "iteration": 31,
+        "compliance": 0.00020272051420823736,
+        "volume": 0.5997739529105512,
+        "objective_change": 0.00354423357121151,
+        "design_change": 0.07796695264173209,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00037652979445172415
+      },
+      {
+        "iteration": 32,
+        "compliance": 0.00020226114794081598,
+        "volume": 0.5998393895224486,
+        "objective_change": 0.002266007804960069,
+        "design_change": 0.07808823345767518,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00043207578379202377
+      },
+      {
+        "iteration": 33,
+        "compliance": 0.0002018943596876641,
+        "volume": 0.599868205030789,
+        "objective_change": 0.0018134389964957315,
+        "design_change": 0.07813012106625883,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00038840032253079125
+      },
+      {
+        "iteration": 34,
+        "compliance": 0.00020165736416225677,
+        "volume": 0.5999120377159604,
+        "objective_change": 0.0011738590705256781,
+        "design_change": 0.061611331415490134,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0002586448161573923
+      },
+      {
+        "iteration": 35,
+        "compliance": 0.0002014826493550719,
+        "volume": 0.5999356387461449,
+        "objective_change": 0.0008663943809376685,
+        "design_change": 0.054095909308381596,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0002378770135842148
+      },
+      {
+        "iteration": 36,
+        "compliance": 0.00020139123867892188,
+        "volume": 0.599966354047715,
+        "objective_change": 0.000453690064343548,
+        "design_change": 0.040981647940639965,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00012074714994526369
+      },
+      {
+        "iteration": 37,
+        "compliance": 0.00020131948495502282,
+        "volume": 0.5999673869477093,
+        "objective_change": 0.0003562901959873877,
+        "design_change": 0.044143631263946104,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00013226999210793657
+      },
+      {
+        "iteration": 38,
+        "compliance": 0.00020126401272270802,
+        "volume": 0.599976515186043,
+        "objective_change": 0.0002755432854757921,
+        "design_change": 0.04543524665074916,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0001167399118796175
+      },
+      {
+        "iteration": 39,
+        "compliance": 0.00020122413529699576,
+        "volume": 0.5999807216855516,
+        "objective_change": 0.0001981349033679721,
+        "design_change": 0.0405869649558806,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0001102258881071963
+      },
+      {
+        "iteration": 40,
+        "compliance": 0.00020119417645175048,
+        "volume": 0.5999856291887541,
+        "objective_change": 0.000148882961783186,
+        "design_change": 0.036591275131966416,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 8.035349823776753e-05
+      },
+      {
+        "iteration": 41,
+        "compliance": 0.0002011707715378944,
+        "volume": 0.5999876968781089,
+        "objective_change": 0.00011632997668648865,
+        "design_change": 0.03243453736014068,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.991974012729393e-05
+      },
+      {
+        "iteration": 42,
+        "compliance": 0.0002011466494284553,
+        "volume": 0.5999865923740529,
+        "objective_change": 0.0001199086192029203,
+        "design_change": 0.02959457738544985,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.979306353875014e-05
+      },
+      {
+        "iteration": 43,
+        "compliance": 0.00020111984251353378,
+        "volume": 0.5999876575369797,
+        "objective_change": 0.0001332705018835305,
+        "design_change": 0.02885590404058136,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.0358030237434735e-05
+      },
+      {
+        "iteration": 44,
+        "compliance": 0.00020109412262436316,
+        "volume": 0.5999873600305249,
+        "objective_change": 0.0001278833995153103,
+        "design_change": 0.03816199410942733,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.226506822953838e-05
+      },
+      {
+        "iteration": 45,
+        "compliance": 0.00020107184983223555,
+        "volume": 0.599988335942024,
+        "objective_change": 0.00011075804621708048,
+        "design_change": 0.03982683495517381,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 7.273507820027751e-05
+      },
+      {
+        "iteration": 46,
+        "compliance": 0.00020105145298335425,
+        "volume": 0.5999885639060835,
+        "objective_change": 0.00010144059896161371,
+        "design_change": 0.03639532032490833,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.012202545155066e-05
+      },
+      {
+        "iteration": 47,
+        "compliance": 0.0002010319445453558,
+        "volume": 0.5999892234336932,
+        "objective_change": 9.703206671205845e-05,
+        "design_change": 0.028894774762767972,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.404482538353045e-05
+      },
+      {
+        "iteration": 48,
+        "compliance": 0.00020101162943024403,
+        "volume": 0.5999891066298859,
+        "objective_change": 0.000101054164091812,
+        "design_change": 0.03309169503297599,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.179181723161956e-05
+      },
+      {
+        "iteration": 49,
+        "compliance": 0.00020099010095411227,
+        "volume": 0.5999897522542026,
+        "objective_change": 0.00010710064981204817,
+        "design_change": 0.031205642878714468,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 4.877292177951499e-05
+      },
+      {
+        "iteration": 50,
+        "compliance": 0.00020096566735871034,
+        "volume": 0.59998753568108,
+        "objective_change": 0.0001215661631390994,
+        "design_change": 0.03390883285069646,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.261693181338074e-05
+      },
+      {
+        "iteration": 51,
+        "compliance": 0.00020093461612350912,
+        "volume": 0.5999838240817221,
+        "objective_change": 0.00015451014896886557,
+        "design_change": 0.03740709808179843,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 8.00112373880473e-05
+      },
+      {
+        "iteration": 52,
+        "compliance": 0.00020090175810811848,
+        "volume": 0.5999823021264596,
+        "objective_change": 0.00016352590720573087,
+        "design_change": 0.03915730999812428,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.2760681545469e-05
+      },
+      {
+        "iteration": 53,
+        "compliance": 0.00020087415666944118,
+        "volume": 0.5999870450483211,
+        "objective_change": 0.0001373877408402491,
+        "design_change": 0.03907283274314699,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.044605950992151e-05
+      },
+      {
+        "iteration": 54,
+        "compliance": 0.00020085797080147039,
+        "volume": 0.5999920499883271,
+        "objective_change": 8.057715456859211e-05,
+        "design_change": 0.03886887766834851,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.8327749804313094e-05
+      },
+      {
+        "iteration": 55,
+        "compliance": 0.00020084802819820736,
+        "volume": 0.5999947889081598,
+        "objective_change": 4.950066568607809e-05,
+        "design_change": 0.03577265106034028,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.413866201356481e-05
+      },
+      {
+        "iteration": 56,
+        "compliance": 0.00020084102590250507,
+        "volume": 0.5999966197027867,
+        "objective_change": 3.486365171270407e-05,
+        "design_change": 0.021561648107522202,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.706763162109828e-05
+      },
+      {
+        "iteration": 57,
+        "compliance": 0.00020083737236228997,
+        "volume": 0.5999979423213175,
+        "objective_change": 1.8191204703743972e-05,
+        "design_change": 0.01424792598672564,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.3376095674652122e-05
+      },
+      {
+        "iteration": 58,
+        "compliance": 0.00020083505659508795,
+        "volume": 0.5999986552727585,
+        "objective_change": 1.1530559152333069e-05,
+        "design_change": 0.010779973173374868,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.1098448229979576e-05
+      },
+      {
+        "iteration": 59,
+        "compliance": 0.00020083324216351725,
+        "volume": 0.5999988642896577,
+        "objective_change": 9.034436524496948e-06,
+        "design_change": 0.008225811697909313,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.002775925574175e-05
+      },
+      {
+        "iteration": 60,
+        "compliance": 0.0002008314966458051,
+        "volume": 0.5999989176524421,
+        "objective_change": 8.6913784458065e-06,
+        "design_change": 0.009880144492684817,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.0875133826377585e-05
+      },
+      {
+        "iteration": 61,
+        "compliance": 0.00020082971844747965,
+        "volume": 0.5999988809096113,
+        "objective_change": 8.854180520264109e-06,
+        "design_change": 0.00978347020679099,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.1423865799329387e-05
+      },
+      {
+        "iteration": 62,
+        "compliance": 0.0002008277428201434,
+        "volume": 0.5999987999974861,
+        "objective_change": 9.837325628557155e-06,
+        "design_change": 0.012018520738204919,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.2735997319067655e-05
+      },
+      {
+        "iteration": 63,
+        "compliance": 0.00020082555540602327,
+        "volume": 0.5999986736881061,
+        "objective_change": 1.0891991760695545e-05,
+        "design_change": 0.012395965173701562,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.455421210432208e-05
+      },
+      {
+        "iteration": 64,
+        "compliance": 0.00020082302702643728,
+        "volume": 0.5999985115015019,
+        "objective_change": 1.2589929508129318e-05,
+        "design_change": 0.014993860985082097,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.613604585028888e-05
+      },
+      {
+        "iteration": 65,
+        "compliance": 0.00020082003610140994,
+        "volume": 0.5999982851690647,
+        "objective_change": 1.4893337042203835e-05,
+        "design_change": 0.015732851890155775,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.9620377469639762e-05
+      },
+      {
+        "iteration": 66,
+        "compliance": 0.00020081602970568673,
+        "volume": 0.5999979969403518,
+        "objective_change": 1.995017927983857e-05,
+        "design_change": 0.0157777858433219,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.4849192843207127e-05
+      },
+      {
+        "iteration": 67,
+        "compliance": 0.00020080983458288916,
+        "volume": 0.5999969967907764,
+        "objective_change": 3.084974245656941e-05,
+        "design_change": 0.018852948903438582,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.493273329364401e-05
+      },
+      {
+        "iteration": 68,
+        "compliance": 0.0002007987462246893,
+        "volume": 0.5999952379868402,
+        "objective_change": 5.521820294755768e-05,
+        "design_change": 0.029407548814817275,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 4.836270705383248e-05
+      },
+      {
+        "iteration": 69,
+        "compliance": 0.00020078893221914615,
+        "volume": 0.5999946325303495,
+        "objective_change": 4.8874834766999936e-05,
+        "design_change": 0.0347049558508129,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.7007152125523636e-05
+      },
+      {
+        "iteration": 70,
+        "compliance": 0.0002007804237323725,
+        "volume": 0.5999953741812637,
+        "objective_change": 4.2375277758637305e-05,
+        "design_change": 0.027202924103475135,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.7167190240981285e-05
+      },
+      {
+        "iteration": 71,
+        "compliance": 0.00020077305910878808,
+        "volume": 0.5999959853653285,
+        "objective_change": 3.667998825541133e-05,
+        "design_change": 0.024816649155392,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.3938471095549275e-05
+      },
+      {
+        "iteration": 72,
+        "compliance": 0.00020076693980647253,
+        "volume": 0.5999966112866664,
+        "objective_change": 3.0478702385205806e-05,
+        "design_change": 0.023553427392529025,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.9922507194880647e-05
+      },
+      {
+        "iteration": 73,
+        "compliance": 0.00020076207499456178,
+        "volume": 0.5999972182137518,
+        "objective_change": 2.423114042306023e-05,
+        "design_change": 0.02217374639802161,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.5152939980208e-05
+      },
+      {
+        "iteration": 74,
+        "compliance": 0.00020075815633711084,
+        "volume": 0.599997783119095,
+        "objective_change": 1.951891287756804e-05,
+        "design_change": 0.020924067085132725,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.0274659112936785e-05
+      },
+      {
+        "iteration": 75,
+        "compliance": 0.00020075497896909859,
+        "volume": 0.5999982685625758,
+        "objective_change": 1.582684395106911e-05,
+        "design_change": 0.01986614001478526,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.9453615685904825e-05
+      },
+      {
+        "iteration": 76,
+        "compliance": 0.00020075201698697043,
+        "volume": 0.5999983866654234,
+        "objective_change": 1.4754215030513296e-05,
+        "design_change": 0.017917692719203238,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.9886201066932414e-05
+      },
+      {
+        "iteration": 77,
+        "compliance": 0.00020074891383646412,
+        "volume": 0.5999983723226463,
+        "objective_change": 1.5457630527845875e-05,
+        "design_change": 0.01932652256225975,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.0748027011067792e-05
+      },
+      {
+        "iteration": 78,
+        "compliance": 0.00020074589024671058,
+        "volume": 0.5999983446211226,
+        "objective_change": 1.5061549752673621e-05,
+        "design_change": 0.019902405483069652,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.372768298190272e-05
+      },
+      {
+        "iteration": 79,
+        "compliance": 0.00020074352961309332,
+        "volume": 0.5999988638848918,
+        "objective_change": 1.1759312304549758e-05,
+        "design_change": 0.01702586506324477,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.28055118836252e-05
+      },
+      {
+        "iteration": 80,
+        "compliance": 0.00020074209122677552,
+        "volume": 0.599999246791654,
+        "objective_change": 7.165293549275794e-06,
+        "design_change": 0.013918691447581844,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.0748012385267845e-05
+      }
+    ]
+  },
+  {
+    "dimension": 3,
+    "cells": 1728,
+    "baseline": {
+      "version": "0.3.0-dev",
+      "mode": "fem",
+      "input_signature": "7ee17704594df6b70f43e15707b74298ca35c48ab4571fcc10eadb2c629a430c",
+      "termination_reason": "fem_completed",
+      "converged": false,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                0.0,
+                -100.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -5.2510884529510804e-11,
+            2.76667577736589e-13,
+            100.00000002649965
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 0.20634615341660964,
+          "max_displacement": 0.002084609626800316,
+          "residual": 1.7757595394130021e-10,
+          "equilibrium": 2.3849677033283e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 162,
+            "linear_residual": 9.350671730833455e-10,
+            "setup_seconds": 0.09351800003787503,
+            "solve_seconds": 0.10398600000189617,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 1.1660912460293378,
+          "stress_utilization_screening": null
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                100.0,
+                0.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            2.3232971102515876e-11,
+            -100.00000000086705,
+            -5.67146329899515e-12
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.06069788496979636,
+          "max_displacement": 0.0006120525312590889,
+          "residual": 1.7185583721726629e-10,
+          "equilibrium": 7.803373947012916e-11,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 133,
+            "linear_residual": 7.908150648663213e-10,
+            "setup_seconds": 0.09351800003787503,
+            "solve_seconds": 0.19964559999061748,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 0.6914716028346789,
+          "stress_utilization_screening": null
+        }
+      ],
+      "load_coordinate_system": "world XYZ",
+      "automatically_preserved_interface_cells": 0,
+      "optimization_update": "not applicable: FEM",
+      "volume_policy": "solid retained grid",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 1.6956000000000002,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 1728,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.36091200000373647,
+      "verification": "not a final-shape verification",
+      "weighted_compliance": 0.267044038386406,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.03,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.002084609626800316,
+                "limit": 0.03,
+                "utilization": 0.06948698756001054,
+                "status": "within_limit",
+                "aggregated_utilization": 0.1930222020853114,
+                "grid_node_id": 318
+              },
+              {
+                "kind": "stress",
+                "value": 1.1660912460293378,
+                "limit": 10.0,
+                "utilization": 0.11660912460293378,
+                "status": "within_limit",
+                "aggregated_utilization": 0.24624002832270286,
+                "cell_id": 11,
+                "gauss_point": 4,
+                "field": "full-material von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.0006120525312590889,
+                "limit": 0.03,
+                "utilization": 0.020401751041969632,
+                "status": "within_limit",
+                "aggregated_utilization": 0.16385025093742955,
+                "grid_node_id": 324
+              },
+              {
+                "kind": "stress",
+                "value": 0.6914716028346789,
+                "limit": 10.0,
+                "utilization": 0.06914716028346789,
+                "status": "within_limit",
+                "aggregated_utilization": 0.21607295902917117,
+                "cell_id": 1451,
+                "gauss_point": 5,
+                "field": "full-material von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.11660912460293378,
+        "scope": "full_solid_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "constraint_optimizer": null
+    },
+    "optimization": {
+      "version": "0.3.0-dev",
+      "mode": "optimize",
+      "input_signature": "7ee17704594df6b70f43e15707b74298ca35c48ab4571fcc10eadb2c629a430c",
+      "termination_reason": "converged",
+      "converged": true,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                0.0,
+                -100.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -1.1244338793403585e-11,
+            -1.1464607041489216e-11,
+            100.00000001198421
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 0.3686940962747748,
+          "max_displacement": 0.0037380514896989355,
+          "residual": 2.422972222859698e-10,
+          "equilibrium": 1.07857834663605e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 221,
+            "linear_residual": 9.287302247297979e-10,
+            "setup_seconds": 3.571977000159677,
+            "solve_seconds": 46.41873610008042,
+            "matrix_preparations": 47,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 1.7262814407422007
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                100.0,
+                0.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            2.5799806735449238e-11,
+            -100.00000001682939,
+            -4.2525982735242e-12
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.11742559052765018,
+          "max_displacement": 0.001216711511134733,
+          "residual": 2.1357010410172352e-10,
+          "equilibrium": 1.51464556896741e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 189,
+            "linear_residual": 8.873825997748166e-10,
+            "setup_seconds": 3.571977000159677,
+            "solve_seconds": 46.57790100004058,
+            "matrix_preparations": 47,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 0.9497233647756708
+        }
+      ],
+      "load_coordinate_system": "world XYZ",
+      "automatically_preserved_interface_cells": 0,
+      "optimization_update": "MMA with displacement/stress adjoints",
+      "volume_policy": "upper bound",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 1.0173590248736135,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 1148,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 57.814489600015804,
+      "verification": "not a final-shape verification",
+      "weighted_compliance": 0.48611968680242496,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.03,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.0037380514896989355,
+                "limit": 0.03,
+                "utilization": 0.12460171632329786,
+                "status": "within_limit",
+                "aggregated_utilization": 0.2351425179514346,
+                "grid_node_id": 318
+              },
+              {
+                "kind": "stress",
+                "value": 1.7262814407422007,
+                "limit": 10.0,
+                "utilization": 0.17262814407422006,
+                "status": "within_limit",
+                "aggregated_utilization": 0.28462057862434154,
+                "cell_id": 11,
+                "gauss_point": 4,
+                "field": "sqrt-density relaxed von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.001216711511134733,
+                "limit": 0.03,
+                "utilization": 0.04055705037115777,
+                "status": "within_limit",
+                "aggregated_utilization": 0.17391778762543875,
+                "grid_node_id": 324
+              },
+              {
+                "kind": "stress",
+                "value": 0.9497233647756708,
+                "limit": 10.0,
+                "utilization": 0.09497233647756707,
+                "status": "within_limit",
+                "aggregated_utilization": 0.23926830624274426,
+                "cell_id": 1451,
+                "gauss_point": 5,
+                "field": "sqrt-density relaxed von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.17262814407422006,
+        "scope": "relaxed_density_model_only",
+        "enforced_during_optimization": true,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.",
+        "sampled_checks_status": "within_limits",
+        "optimizer_feasible": true
+      },
+      "constraint_optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 6.306374732141419e-06,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      }
+    },
+    "verification": {
+      "version": "0.3.0-dev",
+      "mode": "verify",
+      "input_signature": "7ee17704594df6b70f43e15707b74298ca35c48ab4571fcc10eadb2c629a430c",
+      "termination_reason": "voxel_reanalysis_completed",
+      "converged": false,
+      "display_case": "Case 1",
+      "objective": "sum(weight * compliance) over independent cases",
+      "cases": [
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                0.0,
+                -100.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -5.2365223268679983e-11,
+            1.5303314171433158e-12,
+            100.00000000565653
+          ],
+          "name": "Case 1",
+          "weight": 1.0,
+          "compliance": 0.25052582366711795,
+          "max_displacement": 0.0025322903362007395,
+          "residual": 2.0834278302572784e-10,
+          "equilibrium": 5.090868526735903e-10,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 228,
+            "linear_residual": 9.152514308205292e-10,
+            "setup_seconds": 0.04427620000205934,
+            "solve_seconds": 0.13156049995450303,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 1.3638959258261287,
+          "stress_utilization_screening": null
+        },
+        {
+          "loads": [
+            {
+              "kind": "nodal",
+              "total_force": [
+                0.0,
+                100.0,
+                0.0
+              ],
+              "nodes": 9
+            }
+          ],
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            2.4140689447449404e-11,
+            -99.99999998161931,
+            -6.719069745031447e-13
+          ],
+          "name": "Case 2",
+          "weight": 1.0,
+          "compliance": 0.07795731989662835,
+          "max_displacement": 0.0008032003087972752,
+          "residual": 1.5698509867045906e-10,
+          "equilibrium": 1.6542631264826468e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 195,
+            "linear_residual": 9.494505034062812e-10,
+            "setup_seconds": 0.04427620000205934,
+            "solve_seconds": 0.2384934999863617,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "max_von_mises": 0.7766481184687564,
+          "stress_utilization_screening": null
+        }
+      ],
+      "load_coordinate_system": "world XYZ",
+      "automatically_preserved_interface_cells": 0,
+      "optimization_update": "not applicable: FEM",
+      "volume_policy": "solid retained grid",
+      "loading_notes": [
+        "Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.",
+        "Surface loads act on preserved grid facets, not an evolving CAD boundary.",
+        "Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification."
+      ],
+      "material": {
+        "name": "Structural steel / S235 reference",
+        "young_pa": 210000000000,
+        "poisson": 0.3,
+        "density_kg_m3": 7850,
+        "reference_yield_pa": 235000000,
+        "yield_scope": "S235 hot-rolled stock at thickness <= 16 mm only; confirm product certificate.",
+        "notes": [
+          "Isotropic elastic reference, ambient conditions.",
+          "Yield is not automatically an allowable design stress.",
+          "Stock thickness must be declared to enable the reference yield comparison."
+        ],
+        "sources": [
+          "https://steelconstruction.info/topics/design/steel-material-properties/",
+          "https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf",
+          "https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel"
+        ],
+        "preset": "steel",
+        "length_unit": "mm",
+        "force_unit": "N",
+        "length_m": 0.001,
+        "force_n": 1.0,
+        "safety_factor": 1.5,
+        "young": 210000.0,
+        "allowable": null,
+        "allowable_status": "not_available"
+      },
+      "mass_kg": 1.1264750000000001,
+      "manufacturing": {
+        "process": "unspecified",
+        "symmetry": "none",
+        "extrusion": "none",
+        "threshold": 0.4,
+        "connected_components": 1,
+        "retained_cells": 1148,
+        "minimum_feature_requested": 0.0,
+        "cells_surviving_radius_erosion": null,
+        "notes": [
+          "Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.",
+          "Thresholded geometry requires FEM reanalysis; no smoothing is applied."
+        ]
+      },
+      "elapsed_seconds": 0.353244400001131,
+      "verification": "same-grid binary voxel FEM; no smoothing, remeshing or code-compliance certification",
+      "weighted_compliance": 0.3284831435637463,
+      "case_files": [
+        "case-01.json",
+        "case-02.json"
+      ],
+      "design_limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 0.03,
+          "max_stress": 10.0,
+          "max_stress_mpa": 10.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "Case 1",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.0025322903362007395,
+                "limit": 0.03,
+                "utilization": 0.08440967787335799,
+                "status": "within_limit",
+                "aggregated_utilization": 0.200667635657103,
+                "grid_node_id": 2268
+              },
+              {
+                "kind": "stress",
+                "value": 1.3638959258261287,
+                "limit": 10.0,
+                "utilization": 0.13638959258261288,
+                "status": "within_limit",
+                "aggregated_utilization": 0.25473234540123735,
+                "cell_id": 1451,
+                "gauss_point": 5,
+                "field": "full-material von Mises"
+              }
+            ]
+          },
+          {
+            "name": "Case 2",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.0008032003087972752,
+                "limit": 0.03,
+                "utilization": 0.02677334362657584,
+                "status": "within_limit",
+                "aggregated_utilization": 0.16336373594845657,
+                "grid_node_id": 324
+              },
+              {
+                "kind": "stress",
+                "value": 0.7766481184687564,
+                "limit": 10.0,
+                "utilization": 0.07766481184687564,
+                "status": "within_limit",
+                "aggregated_utilization": 0.21820866781434461,
+                "cell_id": 1440,
+                "gauss_point": 7,
+                "field": "full-material von Mises"
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.13638959258261288,
+        "scope": "binary_voxel_fem",
+        "enforced_during_optimization": false,
+        "final_shape_reanalysed": true,
+        "final_shape_verified": true,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress."
+      },
+      "constraint_optimizer": null
+    },
+    "completed_iterations": 46,
+    "returned_iteration": 46,
+    "history": [
+      {
+        "iteration": 0,
+        "compliance": 1.332634426392398,
+        "volume": 0.5999999999999999,
+        "objective_change": null,
+        "design_change": null,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": null
+      },
+      {
+        "iteration": 1,
+        "compliance": 1.0504908569652862,
+        "volume": 0.5789088520102882,
+        "objective_change": 0.2117186557988813,
+        "design_change": 0.14975303895191228,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.03515187755382879
+      },
+      {
+        "iteration": 2,
+        "compliance": 0.8569180697652479,
+        "volume": 0.5907655739759947,
+        "objective_change": 0.18426889288617104,
+        "design_change": 0.13454101001275232,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.01539065981041271
+      },
+      {
+        "iteration": 3,
+        "compliance": 0.7495031705639376,
+        "volume": 0.5931212564111235,
+        "objective_change": 0.12535025574934666,
+        "design_change": 0.11916498561219818,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.011464516373592467
+      },
+      {
+        "iteration": 4,
+        "compliance": 0.6768283934023959,
+        "volume": 0.5946688285391987,
+        "objective_change": 0.09696393559864475,
+        "design_change": 0.1241263977159956,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.008885218519021779
+      },
+      {
+        "iteration": 5,
+        "compliance": 0.627722579493927,
+        "volume": 0.5963012057847467,
+        "objective_change": 0.07255282784697531,
+        "design_change": 0.12597498574276164,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.006164578208671121
+      },
+      {
+        "iteration": 6,
+        "compliance": 0.6000086836954848,
+        "volume": 0.597946263833243,
+        "objective_change": 0.044149910651270934,
+        "design_change": 0.07988174033671276,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00342280715991316
+      },
+      {
+        "iteration": 7,
+        "compliance": 0.5808901852017418,
+        "volume": 0.5981079586286832,
+        "objective_change": 0.03186370299841511,
+        "design_change": 0.0831003801480145,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0031533085285983978
+      },
+      {
+        "iteration": 8,
+        "compliance": 0.5651007969349595,
+        "volume": 0.5982823687698008,
+        "objective_change": 0.027181365202957792,
+        "design_change": 0.08339364953151773,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.002862616864993056
+      },
+      {
+        "iteration": 9,
+        "compliance": 0.551977363924833,
+        "volume": 0.5983389010535307,
+        "objective_change": 0.023223172009854687,
+        "design_change": 0.06407411120272521,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0027683875591883816
+      },
+      {
+        "iteration": 10,
+        "compliance": 0.5400164865254797,
+        "volume": 0.59838248645501,
+        "objective_change": 0.02166914475315705,
+        "design_change": 0.05796491174510221,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0026957358868821965
+      },
+      {
+        "iteration": 11,
+        "compliance": 0.5284182751132439,
+        "volume": 0.5982998780905352,
+        "objective_change": 0.021477513560483833,
+        "design_change": 0.0794282404413107,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.002833406214402425
+      },
+      {
+        "iteration": 12,
+        "compliance": 0.5177924262928619,
+        "volume": 0.5984955566573389,
+        "objective_change": 0.020108783743531165,
+        "design_change": 0.09817373234964713,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0025072632182936844
+      },
+      {
+        "iteration": 13,
+        "compliance": 0.508502493323244,
+        "volume": 0.5986042828294749,
+        "objective_change": 0.017941423045001292,
+        "design_change": 0.1138620530849876,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.002326042764205516
+      },
+      {
+        "iteration": 14,
+        "compliance": 0.5010338550270802,
+        "volume": 0.5989512141747937,
+        "objective_change": 0.014687515585919048,
+        "design_change": 0.07256089637225122,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0017478178491027107
+      },
+      {
+        "iteration": 15,
+        "compliance": 0.4955461939263327,
+        "volume": 0.5992060916008092,
+        "objective_change": 0.010952675244771429,
+        "design_change": 0.06645528502806813,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0013230181660135142
+      },
+      {
+        "iteration": 16,
+        "compliance": 0.4922812317330981,
+        "volume": 0.5995822704597283,
+        "objective_change": 0.006588613197420588,
+        "design_change": 0.046133624819090224,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0006960485809936147
+      },
+      {
+        "iteration": 17,
+        "compliance": 0.49063784382479736,
+        "volume": 0.5997757504419785,
+        "objective_change": 0.0033383111164225036,
+        "design_change": 0.041028854734188824,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.0003735813047717706
+      },
+      {
+        "iteration": 18,
+        "compliance": 0.4897078638249065,
+        "volume": 0.5998647820157244,
+        "objective_change": 0.001895451016662608,
+        "design_change": 0.042551162239108486,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00022519803470064995
+      },
+      {
+        "iteration": 19,
+        "compliance": 0.4890540862981628,
+        "volume": 0.5999008975114019,
+        "objective_change": 0.0013350357938655174,
+        "design_change": 0.04313839775670947,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 0.00016500532338264387
+      },
+      {
+        "iteration": 20,
+        "compliance": 0.48867094341635664,
+        "volume": 0.5999549301265668,
+        "objective_change": 0.0007834366229435714,
+        "design_change": 0.025999063937205857,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 9.359841892704507e-05
+      },
+      {
+        "iteration": 21,
+        "compliance": 0.48843378154901784,
+        "volume": 0.5999640230653212,
+        "objective_change": 0.0004853201741048298,
+        "design_change": 0.031241650733995152,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 9.333282056702812e-05
+      },
+      {
+        "iteration": 22,
+        "compliance": 0.4882482443709949,
+        "volume": 0.5999733745911079,
+        "objective_change": 0.00037986147771051156,
+        "design_change": 0.041275262111814426,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.829992992705681e-05
+      },
+      {
+        "iteration": 23,
+        "compliance": 0.48810209859951703,
+        "volume": 0.5999794097080927,
+        "objective_change": 0.00029932677313800906,
+        "design_change": 0.026152323079924766,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.5852885529307075e-05
+      },
+      {
+        "iteration": 24,
+        "compliance": 0.4879859168496975,
+        "volume": 0.5999803790846003,
+        "objective_change": 0.00023802755643314444,
+        "design_change": 0.023305389751311023,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 7.106732994250847e-05
+      },
+      {
+        "iteration": 25,
+        "compliance": 0.48785828467043385,
+        "volume": 0.599977763206698,
+        "objective_change": 0.0002615488989674257,
+        "design_change": 0.02477785112025155,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 8.227026070770129e-05
+      },
+      {
+        "iteration": 26,
+        "compliance": 0.48769387375499773,
+        "volume": 0.5999737629077033,
+        "objective_change": 0.0003370054800794971,
+        "design_change": 0.029221479089336477,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 8.532146062669304e-05
+      },
+      {
+        "iteration": 27,
+        "compliance": 0.4874826040848029,
+        "volume": 0.5999688238279538,
+        "objective_change": 0.0004332014026917904,
+        "design_change": 0.03292312519077678,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 7.322805555089061e-05
+      },
+      {
+        "iteration": 28,
+        "compliance": 0.48719977142168414,
+        "volume": 0.599962602278095,
+        "objective_change": 0.0005801902688399019,
+        "design_change": 0.04008923166260825,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.528757064237972e-05
+      },
+      {
+        "iteration": 29,
+        "compliance": 0.48693223375176553,
+        "volume": 0.5999704812301869,
+        "objective_change": 0.000549133406072648,
+        "design_change": 0.04609812695383547,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.237019052379799e-05
+      },
+      {
+        "iteration": 30,
+        "compliance": 0.4867277361864921,
+        "volume": 0.5999772739124305,
+        "objective_change": 0.00041997130421573344,
+        "design_change": 0.040240996475744306,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 5.244706751863221e-05
+      },
+      {
+        "iteration": 31,
+        "compliance": 0.486625917088256,
+        "volume": 0.5999868534973857,
+        "objective_change": 0.00020919107473491494,
+        "design_change": 0.021942709476312827,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.8238413884404288e-05
+      },
+      {
+        "iteration": 32,
+        "compliance": 0.48656788266891376,
+        "volume": 0.599990402226652,
+        "objective_change": 0.00011925879264602938,
+        "design_change": 0.01717960690016518,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.9621106144387036e-05
+      },
+      {
+        "iteration": 33,
+        "compliance": 0.48652166093085036,
+        "volume": 0.5999922556633032,
+        "objective_change": 9.499545635825046e-05,
+        "design_change": 0.0156969436102512,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.1384368939500604e-05
+      },
+      {
+        "iteration": 34,
+        "compliance": 0.48647542620575246,
+        "volume": 0.5999923411015001,
+        "objective_change": 9.503117499320522e-05,
+        "design_change": 0.014719746845972104,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.5531854545347594e-05
+      },
+      {
+        "iteration": 35,
+        "compliance": 0.48642181728415224,
+        "volume": 0.5999915148251078,
+        "objective_change": 0.00011019862199072252,
+        "design_change": 0.015981975828803785,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.5396680796406397e-05
+      },
+      {
+        "iteration": 36,
+        "compliance": 0.48636791993512607,
+        "volume": 0.5999911015303424,
+        "objective_change": 0.00011080372448565799,
+        "design_change": 0.02008483959183227,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.901587599020079e-05
+      },
+      {
+        "iteration": 37,
+        "compliance": 0.4863148164665956,
+        "volume": 0.5999917944834509,
+        "objective_change": 0.00010918374003280099,
+        "design_change": 0.01744942112483877,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.146582237249026e-05
+      },
+      {
+        "iteration": 38,
+        "compliance": 0.486261488582539,
+        "volume": 0.5999913718988504,
+        "objective_change": 0.00010965712384430434,
+        "design_change": 0.02048113822344022,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.3386806469009156e-05
+      },
+      {
+        "iteration": 39,
+        "compliance": 0.48620475353447673,
+        "volume": 0.5999916155958944,
+        "objective_change": 0.00011667600538885881,
+        "design_change": 0.019014399773484292,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 3.335082867082464e-05
+      },
+      {
+        "iteration": 40,
+        "compliance": 0.48616800298929747,
+        "volume": 0.5999949611372375,
+        "objective_change": 7.558656083081452e-05,
+        "design_change": 0.018092323874097205,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 2.407590457418961e-05
+      },
+      {
+        "iteration": 41,
+        "compliance": 0.48615028171069574,
+        "volume": 0.5999972133225071,
+        "objective_change": 3.6450935669893234e-05,
+        "design_change": 0.013726615448390156,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.7255622119716992e-05
+      },
+      {
+        "iteration": 42,
+        "compliance": 0.48614015952057704,
+        "volume": 0.5999982757255727,
+        "objective_change": 2.0821113346023925e-05,
+        "design_change": 0.009905812944692172,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.3419788543919053e-05
+      },
+      {
+        "iteration": 43,
+        "compliance": 0.48613310060209086,
+        "volume": 0.599998709580428,
+        "objective_change": 1.4520336055226573e-05,
+        "design_change": 0.007714721698187765,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 1.1154039187975041e-05
+      },
+      {
+        "iteration": 44,
+        "compliance": 0.48612755179699774,
+        "volume": 0.5999990006771886,
+        "objective_change": 1.1414168437106623e-05,
+        "design_change": 0.006146606886803463,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 9.118618400371326e-06
+      },
+      {
+        "iteration": 45,
+        "compliance": 0.486123080500447,
+        "volume": 0.5999992480348008,
+        "objective_change": 9.197784684710641e-06,
+        "design_change": 0.005600725686542463,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.730693643962987e-06
+      },
+      {
+        "iteration": 46,
+        "compliance": 0.48611968680242496,
+        "volume": 0.5999994249077693,
+        "objective_change": 6.981149750292781e-06,
+        "design_change": 0.0049466704257044025,
+        "max_constraint_violation": 0.0,
+        "feasible": true,
+        "kkt_residual": 6.306374732141419e-06
+      }
+    ]
+  }
+]

@@ -1,0 +1,576 @@
+{
+  "status": "completed",
+  "reference_run": "tool/build/cad-shelf-runs/8a95f82891d34c968a4dffe05b5fc14e",
+  "source_cell_mm": 5,
+  "geometry_hash": "b76283b027b7c96c7fa15fe623ecbbdd59b578a347b6bd4dc3397f217252fd92",
+  "cad_interface_signature": "e0d2d2aed863e143dd02ec8ccaf5d9e1eae3ccdb2153f60a7e6c7a5996ea8adf",
+  "surface_vertices": 2474,
+  "surface_triangles": 4964,
+  "surface_volume_mm3": 245616.06723235024,
+  "surface_checks": {
+    "mode": "nominal_cad_interfaces",
+    "planar_dimensions": "nominal",
+    "circular_geometry": "circumscribed polygon; nominal clearance never narrowed",
+    "chord_tolerance_mm": 0.05,
+    "radial_overcut_bound_mm": 0.049860503152011404,
+    "circle_segments": [
+      20,
+      32,
+      20,
+      32,
+      20,
+      32,
+      20,
+      32
+    ],
+    "protected_volume_mm3": 95472.67916384591,
+    "protected_volume_loss_mm3": 0.0,
+    "forbidden_intrusion_mm3": 0.0,
+    "outside_envelope_mm3": 0.0,
+    "exact_brep": false,
+    "boolean_cleanup_tolerance_mm": 1e-07,
+    "web_cleanup_tolerance_mm": 0.01,
+    "envelope_snap_tolerance_mm": 0.0,
+    "envelope_snapped_vertices": 0,
+    "maximum_snapped_vertex_displacement_mm": 0.0
+  },
+  "tetra_nodes": 36396,
+  "tetra_elements": 136749,
+  "minimum_quality": 0.03416349413544895,
+  "elements_below_quality_005": 18,
+  "boundary_meshing": {
+    "method": "CAD_planar_patch_reparameterization",
+    "classification_angle_degrees": 0.5,
+    "target_size": 5.0,
+    "surface_vertices": 2474,
+    "surface_triangles": 4964,
+    "tetrahedra": 136749,
+    "optimizer": "Netgen",
+    "cad_postchecks_required": true
+  },
+  "tetra_cad_checks": {
+    "mode": "nominal_cad_interfaces",
+    "planar_dimensions": "nominal",
+    "circular_geometry": "circumscribed polygon; nominal clearance never narrowed",
+    "chord_tolerance_mm": 0.05,
+    "radial_overcut_bound_mm": 0.049860503152011404,
+    "circle_segments": [
+      20,
+      32,
+      20,
+      32,
+      20,
+      32,
+      20,
+      32
+    ],
+    "protected_volume_mm3": 95472.67916384591,
+    "protected_volume_loss_mm3": 3.7447406286972296e-12,
+    "forbidden_intrusion_mm3": 6.769320347321806e-13,
+    "outside_envelope_mm3": 6.2070071304987096e-12,
+    "exact_brep": false
+  },
+  "mass_kg": 0.2554425447369426,
+  "accuracy": "not_studied",
+  "structurally_verified": false,
+  "cases": [
+    {
+      "name": "01 Distributed payload",
+      "max_displacement": 0.2642088236189828,
+      "max_von_mises": 5.003842922230871,
+      "residual": 8.660246180474753e-10,
+      "equilibrium": 6.053563205130092e-12,
+      "applied_force": [
+        0.0,
+        0.0,
+        -46.63496063134458
+      ],
+      "reaction_force": [
+        2.1328572241685606e-10,
+        -1.3564507850283292e-10,
+        46.63496063147021
+      ],
+      "transfer": {
+        "mapping": "nominal_cad_patches",
+        "force_relative_error": 1.6759894267194452e-15,
+        "moment_relative_error": 2.028252352884318e-15,
+        "moment_reference": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "loads": [
+          {
+            "kind": "payload",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 4.0,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "mapped_area_mm2": 6148.633958192297,
+            "nominal_polygon_area_mm2": 6148.633958192296,
+            "centroid_mm": [
+              125.00000000000007,
+              1.6987477684790176e-16,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              125.00000000000001,
+              2.958363460752575e-16,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              -6.663609921501902e-15,
+              4903.325000000003,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -39.22659999999999
+            ],
+            "original_raster_moment_nmm": [
+              -2.220446049250313e-16,
+              4903.325000000003,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -6.441565316576871e-15,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "shelf",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 0.5,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -4.903325
+            ],
+            "mapped_area_mm2": 6148.633958192297,
+            "nominal_polygon_area_mm2": 6148.633958192296,
+            "centroid_mm": [
+              125.00000000000007,
+              1.6987477684790176e-16,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              125.00000000000001,
+              2.958363460752575e-16,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              -8.329512401877378e-16,
+              612.9156250000003,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -4.903324999999999
+            ],
+            "original_raster_moment_nmm": [
+              -2.7755575615628914e-17,
+              612.9156250000003,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -8.051956645721089e-16,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "gravity",
+            "acceleration_m_s2": [
+              0.0,
+              0.0,
+              -9.80665
+            ],
+            "mass_kg": 0.2554425447369426
+          }
+        ]
+      }
+    },
+    {
+      "name": "02 Front payload",
+      "max_displacement": 0.24035668706639562,
+      "max_von_mises": 3.0634581151561027,
+      "residual": 9.741772217269069e-10,
+      "equilibrium": 1.586046012686298e-11,
+      "applied_force": [
+        0.0,
+        0.0,
+        -46.63496063134463
+      ],
+      "reaction_force": [
+        -1.728983622939495e-10,
+        1.719688419443699e-10,
+        46.634960632042734
+      ],
+      "transfer": {
+        "mapping": "nominal_cad_patches",
+        "force_relative_error": 2.7425281528136384e-15,
+        "moment_relative_error": 3.1203877835516764e-15,
+        "moment_reference": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "loads": [
+          {
+            "kind": "payload",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 4.0,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "mapped_area_mm2": 500.0,
+            "nominal_polygon_area_mm2": 500.0,
+            "centroid_mm": [
+              239.99999999999997,
+              0.0,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              239.99999999999997,
+              -1.8189894035458565e-15,
+              150.0
+            ],
+            "moment_about_wall_origin_nmm": [
+              -0.0,
+              9414.383999999998,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -39.22659999999999
+            ],
+            "original_raster_moment_nmm": [
+              -3.552713678800501e-15,
+              9414.383999999998,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              3.552713678800501e-15,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "shelf",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 0.5,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -4.903325
+            ],
+            "mapped_area_mm2": 6148.633958192297,
+            "nominal_polygon_area_mm2": 6148.633958192296,
+            "centroid_mm": [
+              125.00000000000007,
+              1.6987477684790176e-16,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              125.00000000000001,
+              2.958363460752575e-16,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              -8.329512401877378e-16,
+              612.9156250000003,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -4.903324999999999
+            ],
+            "original_raster_moment_nmm": [
+              -2.7755575615628914e-17,
+              612.9156250000003,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -8.051956645721089e-16,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "gravity",
+            "acceleration_m_s2": [
+              0.0,
+              0.0,
+              -9.80665
+            ],
+            "mass_kg": 0.2554425447369426
+          }
+        ]
+      }
+    },
+    {
+      "name": "03 Front right payload",
+      "max_displacement": 0.2616246045797678,
+      "max_von_mises": 3.197253651801459,
+      "residual": 7.698544059149419e-10,
+      "equilibrium": 2.0561324367247683e-11,
+      "applied_force": [
+        0.0,
+        0.0,
+        -46.63496063134467
+      ],
+      "reaction_force": [
+        7.515072175667825e-10,
+        -1.440589592061059e-10,
+        46.634960631922276
+      ],
+      "transfer": {
+        "mapping": "nominal_cad_patches",
+        "force_relative_error": 3.504341528595203e-15,
+        "moment_relative_error": 3.433011507226289e-15,
+        "moment_reference": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "loads": [
+          {
+            "kind": "payload",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 4.0,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "mapped_area_mm2": 199.99999999999997,
+            "nominal_polygon_area_mm2": 199.99999999999994,
+            "centroid_mm": [
+              240.00000000000003,
+              7.5,
+              150.0
+            ],
+            "nominal_polygon_centroid_mm": [
+              240.0,
+              7.499999999999999,
+              150.0
+            ],
+            "moment_about_wall_origin_nmm": [
+              -294.1995,
+              9414.384,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "original_raster_moment_nmm": [
+              -294.19949999999994,
+              9414.383999999998,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -5.684341886080802e-14,
+              1.8189894035458565e-12,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "shelf",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 0.5,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -4.903325
+            ],
+            "mapped_area_mm2": 6148.633958192297,
+            "nominal_polygon_area_mm2": 6148.633958192296,
+            "centroid_mm": [
+              125.00000000000007,
+              1.6987477684790176e-16,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              125.00000000000001,
+              2.958363460752575e-16,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              -8.329512401877378e-16,
+              612.9156250000003,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -4.903324999999999
+            ],
+            "original_raster_moment_nmm": [
+              -2.7755575615628914e-17,
+              612.9156250000003,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -8.051956645721089e-16,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "gravity",
+            "acceleration_m_s2": [
+              0.0,
+              0.0,
+              -9.80665
+            ],
+            "mass_kg": 0.2554425447369426
+          }
+        ]
+      }
+    },
+    {
+      "name": "04 Front left payload",
+      "max_displacement": 0.25896321160153074,
+      "max_von_mises": 3.2840939560169424,
+      "residual": 9.89681021093395e-10,
+      "equilibrium": 4.194314995647982e-11,
+      "applied_force": [
+        0.0,
+        0.0,
+        -46.63496063134463
+      ],
+      "reaction_force": [
+        -7.464963924785906e-10,
+        -9.898898922777732e-10,
+        46.63496062983157
+      ],
+      "transfer": {
+        "mapping": "nominal_cad_patches",
+        "force_relative_error": 2.7425281528136376e-15,
+        "moment_relative_error": 3.5895187280492095e-15,
+        "moment_reference": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "loads": [
+          {
+            "kind": "payload",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 4.0,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "mapped_area_mm2": 200.0,
+            "nominal_polygon_area_mm2": 200.0,
+            "centroid_mm": [
+              240.0,
+              -7.5,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              239.99999999999997,
+              -7.5,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              294.1995,
+              9414.384,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -39.2266
+            ],
+            "original_raster_moment_nmm": [
+              294.19949999999994,
+              9414.383999999998,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              5.684341886080802e-14,
+              1.8189894035458565e-12,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "shelf",
+            "mapping": "uniform_traction_on_nominal_cad_patch",
+            "mass_kg": 0.5,
+            "total_force_n": [
+              0.0,
+              0.0,
+              -4.903325
+            ],
+            "mapped_area_mm2": 6148.633958192297,
+            "nominal_polygon_area_mm2": 6148.633958192296,
+            "centroid_mm": [
+              125.00000000000007,
+              1.6987477684790176e-16,
+              150.00000000000003
+            ],
+            "nominal_polygon_centroid_mm": [
+              125.00000000000001,
+              2.958363460752575e-16,
+              150.00000000000003
+            ],
+            "moment_about_wall_origin_nmm": [
+              -8.329512401877378e-16,
+              612.9156250000003,
+              0.0
+            ],
+            "original_raster_force_n": [
+              0.0,
+              0.0,
+              -4.903324999999999
+            ],
+            "original_raster_moment_nmm": [
+              -2.7755575615628914e-17,
+              612.9156250000003,
+              0.0
+            ],
+            "moment_change_from_raster_nmm": [
+              -8.051956645721089e-16,
+              0.0,
+              0.0
+            ],
+            "note": "Force is preserved. CAD contact geometry replaces the voxel contact area; any resulting moment change is explicitly reported."
+          },
+          {
+            "kind": "gravity",
+            "acceleration_m_s2": [
+              0.0,
+              0.0,
+              -9.80665
+            ],
+            "mass_kg": 0.2554425447369426
+          }
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 124.91532189999998,
+  "timing_note": "Validation ran concurrently with other development jobs; not a controlled performance benchmark."
+}

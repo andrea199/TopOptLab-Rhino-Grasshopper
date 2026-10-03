@@ -1,0 +1,190 @@
+[
+  {
+    "id": "cantilever",
+    "title": "Cantilever",
+    "height": 6,
+    "holes": [],
+    "keep": [],
+    "supports": [
+      {
+        "kind": "edge",
+        "x": 0,
+        "y": 0,
+        "y2": 6,
+        "fix_x": true,
+        "fix_y": true
+      }
+    ],
+    "loads": [
+      [
+        12,
+        3
+      ]
+    ],
+    "note": "Default: left edge fixed; force at the middle of the right edge.",
+    "width": 12,
+    "cell": 0.25,
+    "young": 210000,
+    "poisson": 0.3,
+    "thickness": 2,
+    "force": [
+      0,
+      -1,
+      0
+    ],
+    "volume": 0.45,
+    "iterations": 80,
+    "radius": 2.4
+  },
+  {
+    "id": "simply_supported_beam",
+    "title": "Simply supported beam",
+    "height": 4,
+    "holes": [],
+    "keep": [],
+    "supports": [
+      {
+        "kind": "point",
+        "x": 0,
+        "y": 0,
+        "fix_x": true,
+        "fix_y": true
+      },
+      {
+        "kind": "point",
+        "x": 12,
+        "y": 0,
+        "fix_x": false,
+        "fix_y": true
+      }
+    ],
+    "loads": [
+      [
+        6,
+        4
+      ]
+    ],
+    "note": "Default: left pin, right roller, central load. Observe symmetry.",
+    "width": 12,
+    "cell": 0.25,
+    "young": 210000,
+    "poisson": 0.3,
+    "thickness": 2,
+    "force": [
+      0,
+      -1,
+      0
+    ],
+    "volume": 0.45,
+    "iterations": 80,
+    "radius": 2.4
+  },
+  {
+    "id": "plate_two_holes",
+    "title": "Plate with two holes",
+    "height": 6,
+    "holes": [
+      [
+        4,
+        3,
+        1
+      ],
+      [
+        8,
+        3,
+        1
+      ]
+    ],
+    "keep": [
+      [
+        0,
+        0,
+        1,
+        6
+      ],
+      [
+        11,
+        0,
+        12,
+        6
+      ]
+    ],
+    "supports": [
+      {
+        "kind": "point",
+        "x": 0,
+        "y": 0,
+        "fix_x": true,
+        "fix_y": true
+      },
+      {
+        "kind": "point",
+        "x": 12,
+        "y": 0,
+        "fix_x": false,
+        "fix_y": true
+      }
+    ],
+    "loads": [
+      [
+        6,
+        6
+      ]
+    ],
+    "note": "Default: two radius-1 holes centered at (4,3) and (8,3), with preserved end strips.",
+    "width": 12,
+    "cell": 0.25,
+    "young": 210000,
+    "poisson": 0.3,
+    "thickness": 2,
+    "force": [
+      0,
+      -1,
+      0
+    ],
+    "volume": 0.45,
+    "iterations": 80,
+    "radius": 2.4
+  },
+  {
+    "id": "cantilever_two_loads",
+    "title": "Cantilever with two loads",
+    "height": 6,
+    "holes": [],
+    "keep": [],
+    "supports": [
+      {
+        "kind": "edge",
+        "x": 0,
+        "y": 0,
+        "y2": 6,
+        "fix_x": true,
+        "fix_y": true
+      }
+    ],
+    "loads": [
+      [
+        6,
+        6
+      ],
+      [
+        12,
+        6
+      ]
+    ],
+    "note": "Default: two simultaneous forces, not separate load cases; points (6,6) and (12,6).",
+    "width": 12,
+    "cell": 0.25,
+    "young": 210000,
+    "poisson": 0.3,
+    "thickness": 2,
+    "force": [
+      0,
+      -1,
+      0
+    ],
+    "volume": 0.45,
+    "iterations": 80,
+    "radius": 2.4
+  }
+]

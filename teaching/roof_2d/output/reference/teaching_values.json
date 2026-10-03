@@ -1,0 +1,497 @@
+{
+  "fem": {
+    "mass": 593.46,
+    "cells": 630,
+    "cases": [
+      {
+        "name": "SLS snow uniform",
+        "u": 0.44678500435308965,
+        "vm": 29.05982043899448,
+        "ay_kN": 16.859927254511263,
+        "by_kN": 16.859927254512375,
+        "C": 11534.375923237827
+      },
+      {
+        "name": "ULS snow uniform",
+        "u": 0.6465495877847913,
+        "vm": 42.12189087535963,
+        "ay_kN": 24.43790543086628,
+        "by_kN": 24.437905430868,
+        "C": 24169.359903808298
+      },
+      {
+        "name": "ULS snow left",
+        "u": 0.5801450637653978,
+        "vm": 39.79473308368627,
+        "ay_kN": 23.087905430864716,
+        "by_kN": 20.387905430865846,
+        "C": 19230.65833767603
+      },
+      {
+        "name": "ULS snow right",
+        "u": 0.5807383052867608,
+        "vm": 39.794733083677535,
+        "ay_kN": 20.387905430864347,
+        "by_kN": 23.087905430865845,
+        "C": 19230.658337675504
+      },
+      {
+        "name": "ULS wind uplift",
+        "u": 0.13124638522867943,
+        "vm": 8.485811147836232,
+        "ay_kN": -4.920072745503344,
+        "by_kN": -4.920072745503602,
+        "C": 1070.634945520943
+      }
+    ],
+    "iterations": null,
+    "termination": "fem_completed"
+  },
+  "optimize": {
+    "mass": 178.038,
+    "cells": 630,
+    "cases": [
+      {
+        "name": "SLS snow uniform",
+        "u": 2.4550726383091575,
+        "vm": 45.805487586359824,
+        "ay_kN": null,
+        "by_kN": null,
+        "C": 31053.03484907929
+      },
+      {
+        "name": "ULS snow uniform",
+        "u": 3.443170616624207,
+        "vm": 67.01037807083205,
+        "ay_kN": null,
+        "by_kN": null,
+        "C": 66989.81585046135
+      },
+      {
+        "name": "ULS snow left",
+        "u": 3.974321976034504,
+        "vm": 74.4995722832077,
+        "ay_kN": null,
+        "by_kN": null,
+        "C": 57038.086690679906
+      },
+      {
+        "name": "ULS snow right",
+        "u": 3.790758873297162,
+        "vm": 74.49957228323541,
+        "ay_kN": null,
+        "by_kN": null,
+        "C": 57038.08669068988
+      },
+      {
+        "name": "ULS wind uplift",
+        "u": 0.9472144911597437,
+        "vm": 30.46345593003309,
+        "ay_kN": null,
+        "by_kN": null,
+        "C": 9547.79106024656
+      }
+    ],
+    "iterations": 36,
+    "termination": "converged"
+  },
+  "verify": {
+    "mass": 199.704,
+    "cells": 212,
+    "cases": [
+      {
+        "name": "SLS snow uniform",
+        "u": 1.2290390480485325,
+        "vm": 28.493444560776314,
+        "ay_kN": 14.929213615806464,
+        "by_kN": 14.929213615807697,
+        "C": 15322.20528582415
+      },
+      {
+        "name": "ULS snow uniform",
+        "u": 1.7208105937136204,
+        "vm": 42.0264939680664,
+        "ay_kN": 21.927977700549373,
+        "by_kN": 21.927977700551413,
+        "C": 33024.99138549547
+      },
+      {
+        "name": "ULS snow left",
+        "u": 2.1859821995695374,
+        "vm": 57.02730691987123,
+        "ay_kN": 20.5779777005514,
+        "by_kN": 17.877977700548385,
+        "C": 28623.523978342197
+      },
+      {
+        "name": "ULS snow right",
+        "u": 2.0545642205054624,
+        "vm": 57.02730691980706,
+        "ay_kN": 17.877977700545248,
+        "by_kN": 20.57797770055153,
+        "C": 28623.523978320438
+      },
+      {
+        "name": "ULS wind uplift",
+        "u": 0.4863680610582945,
+        "vm": 16.431970789902834,
+        "ay_kN": -6.850786384203288,
+        "by_kN": -6.850786384203871,
+        "C": 4578.763192024577
+      }
+    ],
+    "iterations": null,
+    "termination": "voxel_reanalysis_completed"
+  },
+  "refinement": [
+    {
+      "h": 100.0,
+      "elements": 212,
+      "mass_kg": 199.704,
+      "sls_max_u": 1.2290390480485325,
+      "uls_left_max_vm": 57.02730691987123,
+      "sls_compliance": 15322.20528582415
+    },
+    {
+      "h": 50.0,
+      "elements": 848,
+      "mass_kg": 199.704,
+      "sls_max_u": 1.4520664035930335,
+      "uls_left_max_vm": 86.64228977122478,
+      "sls_compliance": 16777.348599433182
+    },
+    {
+      "h": 25.0,
+      "elements": 3392,
+      "mass_kg": 199.704,
+      "sls_max_u": 1.5787271781601822,
+      "uls_left_max_vm": 141.16156811323998,
+      "sls_compliance": 17737.49036030144
+    }
+  ],
+  "history": [
+    {
+      "iteration": 0,
+      "compliance": 2703297.9713206184,
+      "volume": 0.29999999999999993,
+      "objective_change": null,
+      "design_change": null,
+      "projected_stationarity": 0.7525597269624573
+    },
+    {
+      "iteration": 1,
+      "compliance": 1127510.69099468,
+      "volume": 0.3000000000000001,
+      "objective_change": 0.5829129075090945,
+      "design_change": 0.15000000000000013,
+      "projected_stationarity": 0.76629599650389
+    },
+    {
+      "iteration": 2,
+      "compliance": 635139.18429272,
+      "volume": 0.3,
+      "objective_change": 0.4366889916295109,
+      "design_change": 0.15000000000000002,
+      "projected_stationarity": 0.7813244868288614
+    },
+    {
+      "iteration": 3,
+      "compliance": 450446.54627009097,
+      "volume": 0.29999999999999993,
+      "objective_change": 0.29079081025098397,
+      "design_change": 0.15000000000000005,
+      "projected_stationarity": 0.48798325829644684
+    },
+    {
+      "iteration": 4,
+      "compliance": 344794.0244717961,
+      "volume": 0.29999999999999993,
+      "objective_change": 0.23455063130830367,
+      "design_change": 0.15000000000000005,
+      "projected_stationarity": 0.7143938137060528
+    },
+    {
+      "iteration": 5,
+      "compliance": 277273.817322867,
+      "volume": 0.30000000000000004,
+      "objective_change": 0.19582766044848388,
+      "design_change": 0.15000000000000008,
+      "projected_stationarity": 0.4394303593041402
+    },
+    {
+      "iteration": 6,
+      "compliance": 247716.25826809666,
+      "volume": 0.2999999999999999,
+      "objective_change": 0.10660061357453204,
+      "design_change": 0.15000000000000002,
+      "projected_stationarity": 0.5263296899667134
+    },
+    {
+      "iteration": 7,
+      "compliance": 236365.75121060133,
+      "volume": 0.3,
+      "objective_change": 0.04582059787618372,
+      "design_change": 0.14972758639597433,
+      "projected_stationarity": 0.22235146122874594
+    },
+    {
+      "iteration": 8,
+      "compliance": 231085.12376455258,
+      "volume": 0.3,
+      "objective_change": 0.0223409162241264,
+      "design_change": 0.12901597857725694,
+      "projected_stationarity": 0.3298252213093694
+    },
+    {
+      "iteration": 9,
+      "compliance": 227839.0774943805,
+      "volume": 0.3,
+      "objective_change": 0.014046972030442799,
+      "design_change": 0.13121986049712075,
+      "projected_stationarity": 0.21996333215620478
+    },
+    {
+      "iteration": 10,
+      "compliance": 226515.69062047146,
+      "volume": 0.3,
+      "objective_change": 0.005808427985500774,
+      "design_change": 0.12918649359073386,
+      "projected_stationarity": 0.29946314229410964
+    },
+    {
+      "iteration": 11,
+      "compliance": 225976.41928153633,
+      "volume": 0.29999999999999993,
+      "objective_change": 0.0023807239907220347,
+      "design_change": 0.1269135044629015,
+      "projected_stationarity": 0.23823272373788595
+    },
+    {
+      "iteration": 12,
+      "compliance": 225110.2368981293,
+      "volume": 0.3,
+      "objective_change": 0.0038330653532830635,
+      "design_change": 0.1360572646133112,
+      "projected_stationarity": 0.29635803242285896
+    },
+    {
+      "iteration": 13,
+      "compliance": 224885.240531643,
+      "volume": 0.3000000000000001,
+      "objective_change": 0.0009994941571143286,
+      "design_change": 0.14076251568631415,
+      "projected_stationarity": 0.1959105444978666
+    },
+    {
+      "iteration": 14,
+      "compliance": 223998.50124148186,
+      "volume": 0.30000000000000004,
+      "objective_change": 0.003943074645827523,
+      "design_change": 0.13759289215036485,
+      "projected_stationarity": 0.23852294628444792
+    },
+    {
+      "iteration": 15,
+      "compliance": 223988.38401262672,
+      "volume": 0.29999999999999993,
+      "objective_change": 4.5166502450117754e-05,
+      "design_change": 0.1368633379043782,
+      "projected_stationarity": 0.18676796857820033
+    },
+    {
+      "iteration": 16,
+      "compliance": 223275.35309756067,
+      "volume": 0.3,
+      "objective_change": 0.00318333880664924,
+      "design_change": 0.1349610150538081,
+      "projected_stationarity": 0.20237028919392408
+    },
+    {
+      "iteration": 17,
+      "compliance": 222602.5528963771,
+      "volume": 0.3,
+      "objective_change": 0.00301332051142063,
+      "design_change": 0.07580979252424835,
+      "projected_stationarity": 0.07824285073476417
+    },
+    {
+      "iteration": 18,
+      "compliance": 222428.81854335466,
+      "volume": 0.3,
+      "objective_change": 0.0007804688255454132,
+      "design_change": 0.05059747096629036,
+      "projected_stationarity": 0.08630095318961883
+    },
+    {
+      "iteration": 19,
+      "compliance": 222330.9408612842,
+      "volume": 0.3,
+      "objective_change": 0.0004400404709759934,
+      "design_change": 0.05442064226726784,
+      "projected_stationarity": 0.08513454008077581
+    },
+    {
+      "iteration": 20,
+      "compliance": 222254.63383959368,
+      "volume": 0.3,
+      "objective_change": 0.0003432136858456499,
+      "design_change": 0.05823195037507972,
+      "projected_stationarity": 0.11449714089317542
+    },
+    {
+      "iteration": 21,
+      "compliance": 222127.04879614498,
+      "volume": 0.3,
+      "objective_change": 0.0005740489691691826,
+      "design_change": 0.03684255372434864,
+      "projected_stationarity": 0.03332807926167167
+    },
+    {
+      "iteration": 22,
+      "compliance": 222076.72803545033,
+      "volume": 0.29999999999999993,
+      "objective_change": 0.00022654044596267953,
+      "design_change": 0.01706472481353244,
+      "projected_stationarity": 0.049124487805942696
+    },
+    {
+      "iteration": 23,
+      "compliance": 222025.95323128573,
+      "volume": 0.29999999999999993,
+      "objective_change": 0.0002286363123852044,
+      "design_change": 0.01829481254378218,
+      "projected_stationarity": 0.03670626646602382
+    },
+    {
+      "iteration": 24,
+      "compliance": 221972.68852445853,
+      "volume": 0.3,
+      "objective_change": 0.0002399030656191766,
+      "design_change": 0.018541196631497114,
+      "projected_stationarity": 0.053247895856695315
+    },
+    {
+      "iteration": 25,
+      "compliance": 221916.396114383,
+      "volume": 0.3,
+      "objective_change": 0.00025360061388505595,
+      "design_change": 0.020991031698375573,
+      "projected_stationarity": 0.04344589719779035
+    },
+    {
+      "iteration": 26,
+      "compliance": 221855.69388757928,
+      "volume": 0.3,
+      "objective_change": 0.0002735364662845256,
+      "design_change": 0.021649072514481116,
+      "projected_stationarity": 0.05390035799885562
+    },
+    {
+      "iteration": 27,
+      "compliance": 221794.24087155567,
+      "volume": 0.3,
+      "objective_change": 0.0002769954421578076,
+      "design_change": 0.022699257053028665,
+      "projected_stationarity": 0.04871880263080569
+    },
+    {
+      "iteration": 28,
+      "compliance": 221745.02585886067,
+      "volume": 0.3,
+      "objective_change": 0.00022189490809863358,
+      "design_change": 0.023208478427589663,
+      "projected_stationarity": 0.038531684791656584
+    },
+    {
+      "iteration": 29,
+      "compliance": 221714.6076242653,
+      "volume": 0.3,
+      "objective_change": 0.00013717662652203326,
+      "design_change": 0.015418200265788662,
+      "projected_stationarity": 0.03779363759334453
+    },
+    {
+      "iteration": 30,
+      "compliance": 221695.26726999594,
+      "volume": 0.3,
+      "objective_change": 8.723085265606899e-05,
+      "design_change": 0.014708833213146921,
+      "projected_stationarity": 0.023077370521394247
+    },
+    {
+      "iteration": 31,
+      "compliance": 221679.54690120072,
+      "volume": 0.3,
+      "objective_change": 7.090980781320844e-05,
+      "design_change": 0.006936917854059255,
+      "projected_stationarity": 0.012180178507562589
+    },
+    {
+      "iteration": 32,
+      "compliance": 221673.82075063002,
+      "volume": 0.3,
+      "objective_change": 2.5830757283401103e-05,
+      "design_change": 0.0036802729203772033,
+      "projected_stationarity": 0.008106294636687883
+    },
+    {
+      "iteration": 33,
+      "compliance": 221670.65497920173,
+      "volume": 0.3,
+      "objective_change": 1.4281214703531568e-05,
+      "design_change": 0.002929161845648398,
+      "projected_stationarity": 0.005341524177338686
+    },
+    {
+      "iteration": 34,
+      "compliance": 221668.90984923273,
+      "volume": 0.3,
+      "objective_change": 7.872625130123132e-06,
+      "design_change": 0.001711521687803863,
+      "projected_stationarity": 0.004172342303143228
+    },
+    {
+      "iteration": 35,
+      "compliance": 221667.73358220744,
+      "volume": 0.29999999999999993,
+      "objective_change": 5.306414084382947e-06,
+      "design_change": 0.0010560245708819416,
+      "projected_stationarity": 0.003983229538919164
+    },
+    {
+      "iteration": 36,
+      "compliance": 221666.81514115696,
+      "volume": 0.3,
+      "objective_change": 4.143323142434726e-06,
+      "design_change": 0.0007171981683754547,
+      "projected_stationarity": 0.003820548862104256
+    }
+  ],
+  "kept_cells": 44,
+  "load_points": [
+    [
+      500,
+      600
+    ],
+    [
+      1500,
+      1100
+    ],
+    [
+      2500,
+      1600
+    ],
+    [
+      3500,
+      1600
+    ],
+    [
+      4500,
+      1100
+    ],
+    [
+      5500,
+      600
+    ]
+  ]
+}

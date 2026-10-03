@@ -1,0 +1,1601 @@
+{
+  "created": "2026-09-19T15:58:24+0200",
+  "scope": "Short constrained optimization workloads, not converged designs. Fresh process per job; timings include exports and reports.",
+  "rows": [
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 24,
+        "backend": "cpu-cg",
+        "threads": 1,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 4.518309100007173,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -1.780975367182691e-11,
+            -5.1167958758924215e-12,
+            99.99999998873227
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.49605897357573125,
+          "max_displacement": 0.00504725242109856,
+          "residual": 1.4563198647010723e-10,
+          "equilibrium": 1.0140962070082082e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 227,
+            "linear_residual": 7.592277567465387e-10,
+            "setup_seconds": 0.3138722000294365,
+            "solve_seconds": 2.676363700069487,
+            "matrix_preparations": 5,
+            "cpu_threads": 1
+          },
+          "max_von_mises_relaxed": 2.0225633091953537
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            1.2303047469686135e-11,
+            -100.0000000186333,
+            -4.4080294969717215e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.1807694198266646,
+          "max_displacement": 0.0018813922461483603,
+          "residual": 1.4627204947270657e-10,
+          "equilibrium": 1.676995942112569e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 185,
+            "linear_residual": 7.490615467518386e-10,
+            "setup_seconds": 0.3138722000294365,
+            "solve_seconds": 2.781697200029157,
+            "matrix_preparations": 5,
+            "cpu_threads": 1
+          },
+          "max_von_mises_relaxed": 1.408390228959838
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0083204656710654,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 1728,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.008885218519021779,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.332634426392398,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 1.0504908569652862,
+          "volume": 0.5789088520102882,
+          "objective_change": 0.2117186557988813,
+          "design_change": 0.14975303895191228,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.03515187755382879
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.8569180697652479,
+          "volume": 0.5907655739759947,
+          "objective_change": 0.18426889288617104,
+          "design_change": 0.13454101001275232,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.01539065981041271
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.7495031705639376,
+          "volume": 0.5931212564111235,
+          "objective_change": 0.12535025574934666,
+          "design_change": 0.11916498561219818,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.011464516373592467
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.6768283934023959,
+          "volume": 0.5946688285391987,
+          "objective_change": 0.09696393559864475,
+          "design_change": 0.1241263977159956,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.008885218519021779
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 136.4140625,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 6.064860799990129
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 24,
+        "backend": "cpu-cg",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 4.431193099997472,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -1.780975367182691e-11,
+            -5.1167958758924215e-12,
+            99.99999998873227
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.49605897357573125,
+          "max_displacement": 0.00504725242109856,
+          "residual": 1.4563198647010723e-10,
+          "equilibrium": 1.0140962070082082e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 227,
+            "linear_residual": 7.592277567465387e-10,
+            "setup_seconds": 0.37252530007390305,
+            "solve_seconds": 2.6160542999277823,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.0225633091953537
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            1.2303047469686135e-11,
+            -100.0000000186333,
+            -4.4080294969717215e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.1807694198266646,
+          "max_displacement": 0.0018813922461483603,
+          "residual": 1.4627204947270657e-10,
+          "equilibrium": 1.676995942112569e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 185,
+            "linear_residual": 7.490615467518386e-10,
+            "setup_seconds": 0.37252530007390305,
+            "solve_seconds": 2.737734099966474,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 1.408390228959838
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0083204656710654,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 1728,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.008885218519021779,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.332634426392398,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 1.0504908569652862,
+          "volume": 0.5789088520102882,
+          "objective_change": 0.2117186557988813,
+          "design_change": 0.14975303895191228,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.03515187755382879
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.8569180697652479,
+          "volume": 0.5907655739759947,
+          "objective_change": 0.18426889288617104,
+          "design_change": 0.13454101001275232,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.01539065981041271
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.7495031705639376,
+          "volume": 0.5931212564111235,
+          "objective_change": 0.12535025574934666,
+          "design_change": 0.11916498561219818,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.011464516373592467
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.6768283934023959,
+          "volume": 0.5946688285391987,
+          "objective_change": 0.09696393559864475,
+          "design_change": 0.1241263977159956,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.008885218519021779
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 135.23046875,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 5.664652900013607
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 24,
+        "backend": "cpu-matrixfree",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 7.086622400034685,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -1.6129320101754274e-11,
+            -8.351541680440278e-12,
+            99.99999998873763
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.49605897357587103,
+          "max_displacement": 0.0050472524211001265,
+          "residual": 1.5303644008285435e-10,
+          "equilibrium": 1.0136121542103638e-09,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 227,
+            "linear_residual": 7.933724467561353e-10,
+            "setup_seconds": 0.0030909000197425485,
+            "solve_seconds": 5.013803700101562,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.0225633091870936
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            -5.17452747317293e-12,
+            -100.00000002216959,
+            4.653610830018806e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.18076941982680067,
+          "max_displacement": 0.0018813922461505864,
+          "residual": 2.244607399948251e-10,
+          "equilibrium": 1.99526615229928e-09,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 185,
+            "linear_residual": 9.329115585197458e-10,
+            "setup_seconds": 0.0030909000197425485,
+            "solve_seconds": 5.249245700077154,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 1.4083902289812533
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0083204656710678,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 1728,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.008885218519019338,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.332634426391492,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 1.0504908569655655,
+          "volume": 0.5789088520102974,
+          "objective_change": 0.2117186557981358,
+          "design_change": 0.1497530389519129,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.03515187755381347
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.8569180697657299,
+          "volume": 0.5907655739759861,
+          "objective_change": 0.18426889288592904,
+          "design_change": 0.13454101001254326,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015390659810427143
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.7495031705641041,
+          "volume": 0.5931212564111484,
+          "objective_change": 0.12535025574964437,
+          "design_change": 0.11916498561245964,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.011464516373550834
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.6768283934026718,
+          "volume": 0.5946688285392001,
+          "objective_change": 0.0969639355984773,
+          "design_change": 0.12412639771596623,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.008885218519019338
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 90.91796875,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 8.436366699985228
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 48,
+        "backend": "cpu-cg",
+        "threads": 1,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 92.32272859994555,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            7.148681646640398e-11,
+            8.042899679594484e-12,
+            99.99999992292074
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.4165898516192451,
+          "max_displacement": 0.0041781655506983924,
+          "residual": 1.5184237867060802e-10,
+          "equilibrium": 6.9371366651083125e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 474,
+            "linear_residual": 9.490287145236103e-10,
+            "setup_seconds": 2.2276775000500493,
+            "solve_seconds": 69.89817540009972,
+            "matrix_preparations": 5,
+            "cpu_threads": 1
+          },
+          "max_von_mises_relaxed": 2.8337078012937913
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            5.469003028224506e-11,
+            -100.00000002051749,
+            -8.897327319346005e-13
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.16162520166524513,
+          "max_displacement": 0.0016281509916488842,
+          "residual": 1.0738999439707797e-10,
+          "equilibrium": 1.8465802087419548e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 393,
+            "linear_residual": 9.286937454093403e-10,
+            "setup_seconds": 2.2276775000500493,
+            "solve_seconds": 73.00716930005001,
+            "matrix_preparations": 5,
+            "cpu_threads": 1
+          },
+          "max_von_mises_relaxed": 2.774715529124019
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0076245065766962,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 13824,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.009569271547080692,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.2976940168908693,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 0.9825184265770707,
+          "volume": 0.57534472818994,
+          "objective_change": 0.2428735789881534,
+          "design_change": 0.1496913073040831,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.04109207989832821
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.7614362711218017,
+          "volume": 0.5860567019332293,
+          "objective_change": 0.2250157854295742,
+          "design_change": 0.1494166787910025,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.023238767594711735
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.6385310170289684,
+          "volume": 0.5906212246749182,
+          "objective_change": 0.16141239753625153,
+          "design_change": 0.147574174746314,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015631217400019787
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.5782150532844903,
+          "volume": 0.5942583784953386,
+          "objective_change": 0.09446050722034345,
+          "design_change": 0.14745818481975767,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.009569271547080692
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 551.125,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 93.56614449998597
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 48,
+        "backend": "cpu-cg",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 113.97511459997622,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            8.275691243397887e-11,
+            2.0019541580040823e-11,
+            99.99999992488368
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.4165898516191844,
+          "max_displacement": 0.004178165550697959,
+          "residual": 1.5661072438888368e-10,
+          "equilibrium": 6.760469284383674e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 474,
+            "linear_residual": 9.206512974275156e-10,
+            "setup_seconds": 2.2110968999913894,
+            "solve_seconds": 87.63393059995724,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.833707801283132
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            7.811928881551466e-11,
+            -100.00000002059524,
+            1.5233592165486698e-11
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.1616252016653269,
+          "max_displacement": 0.0016281509916495716,
+          "residual": 1.1184693796129075e-10,
+          "equilibrium": 1.8535704371380745e-09,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 393,
+            "linear_residual": 9.280266102092257e-10,
+            "setup_seconds": 2.2110968999913894,
+            "solve_seconds": 91.54888069996377,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.774715529126769
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.007624506576699,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 13824,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.009569271547077806,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.2976940168909241,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 0.9825184265766572,
+          "volume": 0.5753447281899206,
+          "objective_change": 0.242873578988504,
+          "design_change": 0.14969130730407976,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.041092079898360626
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.7614362711218372,
+          "volume": 0.5860567019332703,
+          "objective_change": 0.22501578542921194,
+          "design_change": 0.14941667879100184,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.023238767594643456
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.6385310170289316,
+          "volume": 0.5906212246749208,
+          "objective_change": 0.16141239753633907,
+          "design_change": 0.1475741747463323,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015631217400015347
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.5782150532845113,
+          "volume": 0.5942583784953404,
+          "objective_change": 0.09446050722025831,
+          "design_change": 0.14745818481977338,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.009569271547077806
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 536.55859375,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 115.162544300023
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 48,
+        "backend": "cpu-matrixfree",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 101.64566709997598,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            7.743317098629632e-11,
+            1.9544366125501256e-12,
+            99.99999992249276
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.4165898516191484,
+          "max_displacement": 0.004178165550697288,
+          "residual": 1.1441888608451635e-10,
+          "equilibrium": 6.975653534802007e-09,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 474,
+            "linear_residual": 9.223374467138134e-10,
+            "setup_seconds": 0.04003590001957491,
+            "solve_seconds": 81.95450160006294,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.833707801287017
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            4.7061465835440686e-11,
+            -100.00000002055026,
+            -3.878675158830447e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.1616252016650168,
+          "max_displacement": 0.001628150991646366,
+          "residual": 1.0537550831912768e-10,
+          "equilibrium": 1.849522235364276e-09,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 393,
+            "linear_residual": 9.28899713160323e-10,
+            "setup_seconds": 0.04003590001957491,
+            "solve_seconds": 84.1926515000523,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.774715529109666
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0076245065766605,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "voxels": 13824,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.009569271547115666,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.2976940168839222,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 0.9825184265766489,
+          "volume": 0.5753447281900038,
+          "objective_change": 0.2428735789844252,
+          "design_change": 0.1496913073040823,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.04109207989822185
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.7614362711216878,
+          "volume": 0.5860567019332342,
+          "objective_change": 0.22501578542935746,
+          "design_change": 0.14941667879098974,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.02323876759470363
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.6385310170286613,
+          "volume": 0.5906212246748682,
+          "objective_change": 0.1614123975365294,
+          "design_change": 0.14757417474629686,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015631217400103054
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.5782150532841652,
+          "volume": 0.5942583784953176,
+          "objective_change": 0.09446050722041704,
+          "design_change": 0.1474581848197667,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.009569271547115666
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 160.6640625,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 102.86317040002905
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 24,
+        "backend": "cuda-cg",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 8.839559000043664,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            -2.1518786752494634e-11,
+            -4.227729277772596e-13,
+            99.99999999231855
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.49605897357571566,
+          "max_displacement": 0.005047252421098498,
+          "residual": 2.3466157017537626e-10,
+          "equilibrium": 6.91327715074408e-10,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 226,
+            "linear_residual": 9.960110086283432e-10,
+            "setup_seconds": 0.7012479000259191,
+            "solve_seconds": 5.28450329991756,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.02256330922604
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            1.608846389444807e-11,
+            -100.00000001938083,
+            5.1247894816697226e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.18076941982678665,
+          "max_displacement": 0.0018813922461499652,
+          "residual": 2.0471347693035258e-10,
+          "equilibrium": 1.7442806798939615e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 185,
+            "linear_residual": 8.432743639374597e-10,
+            "setup_seconds": 0.7012479000259191,
+            "solve_seconds": 5.499958099913783,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 1.4083902289763088
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0083204656710647,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU"
+      },
+      "python": "3.13.5",
+      "voxels": 1728,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.008885218519022334,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.332634426392392,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 1.050490856965008,
+          "volume": 0.5789088520102852,
+          "objective_change": 0.21171865579908652,
+          "design_change": 0.14975303895191255,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.03515187755383379
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.8569180697654191,
+          "volume": 0.5907655739759933,
+          "objective_change": 0.184268892885792,
+          "design_change": 0.13454101001249608,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015390659810415042
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.7495031705641502,
+          "volume": 0.5931212564111439,
+          "objective_change": 0.1253502557492733,
+          "design_change": 0.11916498561238642,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.011464516373558494
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.6768283934025023,
+          "volume": 0.5946688285391983,
+          "objective_change": 0.09696393559875885,
+          "design_change": 0.12412639771595468,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.008885218519022334
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 538.390625,
+        "peak_cupy_pool_used_mb": 5.60107421875,
+        "peak_cupy_pool_reserved_mb": 10.62109375,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 10.09717790002469
+    },
+    {
+      "spec": {
+        "workload": "constrained",
+        "nx": 48,
+        "backend": "cuda-cg",
+        "threads": 4,
+        "iterations": 4
+      },
+      "status": "completed",
+      "seconds": 21.74023820000002,
+      "cases": [
+        {
+          "applied_force": [
+            0.0,
+            0.0,
+            -100.00000000000001
+          ],
+          "reaction_force": [
+            6.447464784287149e-11,
+            -5.715206086165381e-12,
+            99.99999992324528
+          ],
+          "name": "Down",
+          "weight": 1.0,
+          "compliance": 0.4165898516193309,
+          "max_displacement": 0.004178165550699206,
+          "residual": 1.6433638450052968e-10,
+          "equilibrium": 6.907927529997693e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 474,
+            "linear_residual": 9.35315350361857e-10,
+            "setup_seconds": 2.340970000019297,
+            "solve_seconds": 11.188967599940952,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.8337078012850365
+        },
+        {
+          "applied_force": [
+            0.0,
+            100.00000000000001,
+            0.0
+          ],
+          "reaction_force": [
+            5.5999205272883046e-11,
+            -100.00000002058445,
+            -4.525491092977063e-12
+          ],
+          "name": "Side",
+          "weight": 1.0,
+          "compliance": 0.16162520166514313,
+          "max_displacement": 0.001628150991647657,
+          "residual": 1.1542802713648825e-10,
+          "equilibrium": 1.8525922595991063e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 393,
+            "linear_residual": 9.289477662120507e-10,
+            "setup_seconds": 2.340970000019297,
+            "solve_seconds": 11.693827899929602,
+            "matrix_preparations": 5,
+            "cpu_threads": 4
+          },
+          "max_von_mises_relaxed": 2.774715529116849
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "iteration_limit",
+      "mass_kg": 1.0076245065766944,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU"
+      },
+      "python": "3.13.5",
+      "voxels": 13824,
+      "optimizer": {
+        "method": "MMA",
+        "feasible": true,
+        "max_constraint_violation": 0.0,
+        "kkt_residual": 0.009569271547082358,
+        "numerical_failure": null,
+        "constraint_scaling": "fixed initial row scaling; feasibility checked in original normalized constraints",
+        "aggregation": "conservative KS upper bound",
+        "stress_model": "sqrt(rho) times solid-material von Mises; relaxed design surrogate",
+        "density_lower_bound": 0.001,
+        "volume_policy": "upper bound",
+        "note": "A feasible relaxed density design is not a verified final shape."
+      },
+      "iterations": 5,
+      "history": [
+        {
+          "iteration": 0,
+          "compliance": 1.2976940168909088,
+          "volume": 0.5999999999999999,
+          "objective_change": null,
+          "design_change": null,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": null
+        },
+        {
+          "iteration": 1,
+          "compliance": 0.9825184265768736,
+          "volume": 0.5753447281899459,
+          "objective_change": 0.24287357898832831,
+          "design_change": 0.14969130730408298,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.04109207989831844
+        },
+        {
+          "iteration": 2,
+          "compliance": 0.7614362711218222,
+          "volume": 0.5860567019332462,
+          "objective_change": 0.22501578542939787,
+          "design_change": 0.14941667879100184,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.023238767594683647
+        },
+        {
+          "iteration": 3,
+          "compliance": 0.6385310170288747,
+          "volume": 0.5906212246748791,
+          "objective_change": 0.16141239753639722,
+          "design_change": 0.1475741747462783,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.015631217400084847
+        },
+        {
+          "iteration": 4,
+          "compliance": 0.578215053284474,
+          "volume": 0.5942583784953376,
+          "objective_change": 0.09446050722023612,
+          "design_change": 0.14745818481977657,
+          "max_constraint_violation": 0.0,
+          "feasible": true,
+          "kkt_residual": 0.009569271547082358
+        }
+      ],
+      "memory": {
+        "peak_process_tree_rss_mb": 993.62890625,
+        "peak_cupy_pool_used_mb": 43.2626953125,
+        "peak_cupy_pool_reserved_mb": 82.41015625,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 22.840678800013848
+    },
+    {
+      "spec": {
+        "workload": "final_fem",
+        "mesh_size": 4.5,
+        "backend": "cpu-cg",
+        "threads": 4
+      },
+      "status": "completed",
+      "seconds": 10.514846899954136,
+      "cases": [
+        {
+          "name": "Case 1",
+          "weight": 1,
+          "compliance": 0.2381208843257152,
+          "max_displacement": 0.002413666583035104,
+          "max_von_mises": 1.8867589980878978,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 1185,
+            "linear_residual": 9.301079084787843e-10,
+            "setup_seconds": 0.10623410000698641,
+            "solve_seconds": 1.6384639999596402,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 9.301079084787843e-10,
+          "equilibrium": 1.7420180824232692e-10,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            0.0,
+            -99.99999999999999
+          ],
+          "reaction_force": [
+            -3.6907241707240246e-09,
+            1.3626596087612519e-08,
+            99.99999998979426
+          ]
+        },
+        {
+          "name": "Case 2",
+          "weight": 1,
+          "compliance": 0.0736199287321076,
+          "max_displacement": 0.0007608651788648486,
+          "max_von_mises": 0.9897924657743432,
+          "performance": {
+            "backend": "cpu-cg",
+            "linear_iterations": 1185,
+            "linear_residual": 8.776334911894008e-10,
+            "setup_seconds": 0.10623410000698641,
+            "solve_seconds": 3.477468199969735,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 8.776334911894005e-10,
+          "equilibrium": 1.449025857149713e-10,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            99.99999999999999,
+            0.0
+          ],
+          "reaction_force": [
+            1.3485882299768548e-08,
+            -99.99999999801504,
+            4.915130399907319e-09
+          ]
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "conforming_fem_completed",
+      "mass_kg": 1.1721809767265223,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "nodes": 4168,
+      "tetrahedra": 14553,
+      "mesh_study": "not_studied",
+      "memory": {
+        "peak_process_tree_rss_mb": 209.6640625,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 11.75503410003148
+    },
+    {
+      "spec": {
+        "workload": "final_fem",
+        "mesh_size": 4.5,
+        "backend": "cpu-matrixfree",
+        "threads": 4
+      },
+      "status": "completed",
+      "seconds": 24.407447499979753,
+      "cases": [
+        {
+          "name": "Case 1",
+          "weight": 1,
+          "compliance": 0.23812088432554024,
+          "max_displacement": 0.0024136665830331275,
+          "max_von_mises": 1.8867589981034276,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 1184,
+            "linear_residual": 9.723807038279157e-10,
+            "setup_seconds": 0.003106400021351874,
+            "solve_seconds": 8.786712799977977,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 9.723807038279155e-10,
+          "equilibrium": 1.679197298139949e-10,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            0.0,
+            -99.99999999999999
+          ],
+          "reaction_force": [
+            -2.5941897519032864e-09,
+            1.3387959407751282e-08,
+            99.99999999020187
+          ]
+        },
+        {
+          "name": "Case 2",
+          "weight": 1,
+          "compliance": 0.07361992873186003,
+          "max_displacement": 0.000760865178860538,
+          "max_von_mises": 0.9897924657675655,
+          "performance": {
+            "backend": "cpu-matrixfree",
+            "linear_iterations": 1185,
+            "linear_residual": 8.472349877759078e-10,
+            "setup_seconds": 0.003106400021351874,
+            "solve_seconds": 17.516303499927744,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 8.472349877759078e-10,
+          "equilibrium": 2.2146553092780388e-10,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            99.99999999999999,
+            0.0
+          ],
+          "reaction_force": [
+            2.1130573624184024e-08,
+            -100.00000000331434,
+            5.743146770653684e-09
+          ]
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "conforming_fem_completed",
+      "mass_kg": 1.1721809767265223,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": null
+      },
+      "python": "3.13.5",
+      "nodes": 4168,
+      "tetrahedra": 14553,
+      "mesh_study": "not_studied",
+      "memory": {
+        "peak_process_tree_rss_mb": 190.7734375,
+        "peak_cupy_pool_used_mb": null,
+        "peak_cupy_pool_reserved_mb": null,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 25.67392510001082
+    },
+    {
+      "spec": {
+        "workload": "final_fem",
+        "mesh_size": 4.5,
+        "backend": "cuda-cg",
+        "threads": 4
+      },
+      "status": "completed",
+      "seconds": 10.01334449998103,
+      "cases": [
+        {
+          "name": "Case 1",
+          "weight": 1,
+          "compliance": 0.23812088432569214,
+          "max_displacement": 0.002413666583035037,
+          "max_von_mises": 1.8867589980937283,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1184,
+            "linear_residual": 9.589669380542469e-10,
+            "setup_seconds": 0.31450259999837726,
+            "solve_seconds": 1.5731266000075266,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 9.589669380542469e-10,
+          "equilibrium": 1.8574191822264536e-10,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            0.0,
+            -99.99999999999999
+          ],
+          "reaction_force": [
+            -5.915623546570714e-09,
+            1.3473465551583352e-08,
+            99.99999998866545
+          ]
+        },
+        {
+          "name": "Case 2",
+          "weight": 1,
+          "compliance": 0.0736199287320865,
+          "max_displacement": 0.0007608651788596701,
+          "max_von_mises": 0.98979246581573,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1186,
+            "linear_residual": 8.592445378279223e-10,
+            "setup_seconds": 0.31450259999837726,
+            "solve_seconds": 2.826929700036999,
+            "matrix_preparations": 1,
+            "cpu_threads": 4
+          },
+          "residual": 8.592445378279223e-10,
+          "equilibrium": 5.355391153908198e-11,
+          "transfer": {
+            "force_relative_error": 2.842170943040401e-16,
+            "moment_relative_error": 7.582822355128901e-17,
+            "moment_reference": [
+              60.87314339403177,
+              31.45754704464025,
+              14.560542024567916
+            ],
+            "loads": [
+              {
+                "kind": "nodal",
+                "points": 9,
+                "max_projection_distance": 1.507288760336424e-14
+              }
+            ]
+          },
+          "applied_force": [
+            0.0,
+            99.99999999999999,
+            0.0
+          ],
+          "reaction_force": [
+            2.124562747951586e-09,
+            -99.99999999721577,
+            4.051479068900576e-09
+          ]
+        }
+      ],
+      "limits": "within_limits",
+      "termination": "conforming_fem_completed",
+      "mass_kg": 1.1721809767265223,
+      "hardware": {
+        "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+        "logical_cpus": 16,
+        "physical_cpus": 16,
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU"
+      },
+      "python": "3.13.5",
+      "nodes": 4168,
+      "tetrahedra": 14553,
+      "mesh_study": "not_studied",
+      "memory": {
+        "peak_process_tree_rss_mb": 548.5390625,
+        "peak_cupy_pool_used_mb": 5.6396484375,
+        "peak_cupy_pool_reserved_mb": 5.640625,
+        "sampling_seconds": 0.025,
+        "note": "Sampled host RSS includes mesher children. CuPy pool figures exclude driver/context/library allocations and are not total VRAM. GPU cold start is included in seconds; host imports are excluded."
+      },
+      "fresh_process_seconds": 11.321134699974209
+    }
+  ]
+}

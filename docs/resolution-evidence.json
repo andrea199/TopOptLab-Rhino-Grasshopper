@@ -1,0 +1,660 @@
+{
+  "date": "2026-09-21",
+  "status": "completed_with_known_fine_surface_meshing_limitation",
+  "runs": {
+    "baseline-25mm-amg": {
+      "mode": "fem",
+      "backend": "cpu-amg",
+      "cell": 2.5,
+      "bounding_cells": 60000,
+      "active_cells": 58552,
+      "status": "completed",
+      "termination": "fem_completed",
+      "completed_iterations": null,
+      "seconds": 63.17295449999801,
+      "peak_host_rss_mib": 1010.58203125,
+      "mass_kg": 0.9514700000000001,
+      "error": null,
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "compliance": 0.34086234967621254,
+          "max_displacement": 0.01325235550367253,
+          "max_von_mises": 0.25748042809141325,
+          "residual": 4.109880820303034e-10,
+          "equilibrium": 3.259748108606912e-08,
+          "performance": {
+            "backend": "cpu-amg",
+            "linear_iterations": 30,
+            "linear_residual": 4.3476762923128956e-10,
+            "setup_seconds": 7.997970999997051,
+            "solve_seconds": 10.083099999996193,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "02 Front payload",
+          "compliance": 1.0750528368720864,
+          "max_displacement": 0.026525367579955602,
+          "max_von_mises": 0.4309399942088675,
+          "residual": 2.2332681349533936e-10,
+          "equilibrium": 4.310520985653186e-09,
+          "performance": {
+            "backend": "cpu-amg",
+            "linear_iterations": 29,
+            "linear_residual": 8.353547873835913e-10,
+            "setup_seconds": 7.997970999997051,
+            "solve_seconds": 18.813391099996807,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "03 Front right payload",
+          "compliance": 1.147312673182336,
+          "max_displacement": 0.031088731472527345,
+          "max_von_mises": 0.4883120729450624,
+          "residual": 1.1031646663559517e-10,
+          "equilibrium": 2.197310318252753e-09,
+          "performance": {
+            "backend": "cpu-amg",
+            "linear_iterations": 30,
+            "linear_residual": 6.746981785353169e-10,
+            "setup_seconds": 7.997970999997051,
+            "solve_seconds": 28.13020119999419,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "04 Front left payload",
+          "compliance": 1.1473126731820902,
+          "max_displacement": 0.031088731473846238,
+          "max_von_mises": 0.48831207292803835,
+          "residual": 1.1094520258209945e-10,
+          "equilibrium": 2.1530624013929452e-09,
+          "performance": {
+            "backend": "cpu-amg",
+            "linear_iterations": 30,
+            "linear_residual": 7.439316250459511e-10,
+            "setup_seconds": 7.997970999997051,
+            "solve_seconds": 37.30000229999132,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        }
+      ]
+    },
+    "baseline-25mm-cuda": {
+      "mode": "fem",
+      "backend": "cuda-cg",
+      "cell": 2.5,
+      "bounding_cells": 60000,
+      "active_cells": 58552,
+      "status": "completed",
+      "termination": "fem_completed",
+      "completed_iterations": null,
+      "seconds": 40.397438600004534,
+      "peak_host_rss_mib": 1360.15234375,
+      "mass_kg": 0.9514700000000001,
+      "error": null,
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "compliance": 0.34086234967627826,
+          "max_displacement": 0.013252355503652474,
+          "max_von_mises": 0.25748042808341154,
+          "residual": 1.3928829456321503e-09,
+          "equilibrium": 1.0293004513903237e-07,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1013,
+            "linear_residual": 9.937820203504201e-10,
+            "setup_seconds": 1.0026243999964208,
+            "solve_seconds": 3.077726099996653,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "02 Front payload",
+          "compliance": 1.075052836872258,
+          "max_displacement": 0.026525367579805243,
+          "max_von_mises": 0.43093999420642926,
+          "residual": 3.0245682471458586e-10,
+          "equilibrium": 2.1379084708586824e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1014,
+            "linear_residual": 9.882625143098239e-10,
+            "setup_seconds": 1.0026243999964208,
+            "solve_seconds": 5.7566725999931805,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "03 Front right payload",
+          "compliance": 1.1473126731826004,
+          "max_displacement": 0.031088731473145784,
+          "max_von_mises": 0.4883120729022081,
+          "residual": 2.2423694652677521e-10,
+          "equilibrium": 5.943477254617659e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 2354,
+            "linear_residual": 9.7414981951555e-10,
+            "setup_seconds": 1.0026243999964208,
+            "solve_seconds": 12.005445999995572,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "04 Front left payload",
+          "compliance": 1.1473126731825287,
+          "max_displacement": 0.031088731474030684,
+          "max_von_mises": 0.488312072890379,
+          "residual": 1.6497975894113744e-10,
+          "equilibrium": 6.0668824316077206e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 2354,
+            "linear_residual": 9.872059932291597e-10,
+            "setup_seconds": 1.0026243999964208,
+            "solve_seconds": 19.37981179999042,
+            "matrix_preparations": 1,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        }
+      ]
+    },
+    "design-25mm-amg": {
+      "mode": "optimize",
+      "backend": "cpu-amg",
+      "cell": 2.5,
+      "bounding_cells": 60000,
+      "active_cells": 58552,
+      "status": "cancelled",
+      "termination": "running",
+      "completed_iterations": 0,
+      "seconds": 210.01063719999365,
+      "peak_host_rss_mib": 1226.58984375,
+      "mass_kg": null,
+      "error": null,
+      "cases": []
+    },
+    "baseline-2mm-amg": {
+      "mode": "fem",
+      "backend": "cpu-amg",
+      "cell": 2.0,
+      "bounding_cells": 121875,
+      "active_cells": 119155,
+      "status": "completed",
+      "termination": "fem_completed",
+      "seconds": 144.06120259999443,
+      "peak_host_rss_mib": 1956.8984375,
+      "mass_kg": 0.9913696000000001,
+      "concurrent_workload": true,
+      "timing_scope": "capacity/numerical trial only; not a controlled performance comparison",
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "compliance": 0.3239856919084385,
+          "max_displacement": 0.012533262875233358,
+          "max_von_mises": 0.2789488547395081,
+          "residual": 5.5170626698463e-10,
+          "equilibrium": 1.3788260129118289e-08
+        },
+        {
+          "name": "02 Front payload",
+          "compliance": 1.0194902240933394,
+          "max_displacement": 0.025079662031071304,
+          "max_von_mises": 0.46326827154110534,
+          "residual": 2.637843804749772e-10,
+          "equilibrium": 4.8756814263932376e-09
+        },
+        {
+          "name": "03 Front right payload",
+          "compliance": 1.0937006627201467,
+          "max_displacement": 0.02975463551042601,
+          "max_von_mises": 0.5217278073317321,
+          "residual": 1.2618227489098465e-10,
+          "equilibrium": 2.3112738344784104e-09
+        },
+        {
+          "name": "04 Front left payload",
+          "compliance": 1.0931651292642768,
+          "max_displacement": 0.029405718403456356,
+          "max_von_mises": 0.5257065610312062,
+          "residual": 1.4326669299325937e-10,
+          "equilibrium": 2.803665694123184e-09
+        }
+      ]
+    },
+    "design-25mm-cuda": {
+      "mode": "optimize",
+      "backend": "cuda-cg",
+      "cell": 2.5,
+      "bounding_cells": 60000,
+      "active_cells": 58552,
+      "status": "completed",
+      "termination": "iteration_limit",
+      "completed_iterations": 60,
+      "seconds": 2595.669864800002,
+      "peak_host_rss_mib": 1759.0234375,
+      "mass_kg": 0.333014458489312,
+      "limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.12393743765775171,
+                "limit": 1.0,
+                "utilization": 0.12393743765775171,
+                "status": "within_limit",
+                "aggregated_utilization": 0.31373463454003214,
+                "grid_node_id": 1105
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.2623234036141542,
+                "limit": 1.0,
+                "utilization": 0.2623234036141542,
+                "status": "within_limit",
+                "aggregated_utilization": 0.41731875308586985,
+                "grid_node_id": 67765
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.325345999080706,
+                "limit": 1.0,
+                "utilization": 0.325345999080706,
+                "status": "within_limit",
+                "aggregated_utilization": 0.4525807542783855,
+                "grid_node_id": 1100
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.3253459990875537,
+                "limit": 1.0,
+                "utilization": 0.3253459990875537,
+                "status": "within_limit",
+                "aggregated_utilization": 0.4525807542770641,
+                "grid_node_id": 1110
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.3253459990875537,
+        "scope": "relaxed_density_model_only",
+        "enforced_during_optimization": true,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.",
+        "sampled_checks_status": "within_limits",
+        "optimizer_feasible": true
+      },
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "compliance": 3.3916887332258785,
+          "max_displacement": 0.12393743765775171,
+          "max_von_mises": null,
+          "residual": 1.0287465416683878e-09,
+          "equilibrium": 6.048030165450603e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1299,
+            "linear_residual": 9.373894469659148e-10,
+            "setup_seconds": 64.35547450002196,
+            "solve_seconds": 2314.220190500011,
+            "matrix_preparations": 61,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "02 Front payload",
+          "compliance": 10.52126602980353,
+          "max_displacement": 0.2623234036141542,
+          "max_von_mises": null,
+          "residual": 3.902394014948151e-10,
+          "equilibrium": 4.268237179327741e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 1307,
+            "linear_residual": 8.397212546221366e-10,
+            "setup_seconds": 64.35547450002196,
+            "solve_seconds": 2315.7326960000137,
+            "matrix_preparations": 61,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "03 Front right payload",
+          "compliance": 11.37831425986546,
+          "max_displacement": 0.325345999080706,
+          "max_von_mises": null,
+          "residual": 1.8617423873406863e-10,
+          "equilibrium": 1.26932733555687e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 2764,
+            "linear_residual": 9.829614517462442e-10,
+            "setup_seconds": 64.35547450002196,
+            "solve_seconds": 2318.8457913000166,
+            "matrix_preparations": 61,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "04 Front left payload",
+          "compliance": 11.378314259893635,
+          "max_displacement": 0.3253459990875537,
+          "max_von_mises": null,
+          "residual": 4.3771980810617076e-10,
+          "equilibrium": 7.841397498248925e-09,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 2768,
+            "linear_residual": 9.479083273888316e-10,
+            "setup_seconds": 64.35547450002196,
+            "solve_seconds": 2322.0977795000144,
+            "matrix_preparations": 61,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 21878756,
+            "cpu_threads": 4
+          }
+        }
+      ],
+      "concurrent_workload": true,
+      "timing_valid": true,
+      "timing_scope": "actual workflow observation with other CPU work; not a controlled comparison",
+      "solver_revision_note": "Run started before the stable RHS warm-start keys increment; the 2 mm short trial and final regressions exercise delivered keys."
+    },
+    "design-2mm-cuda-short": {
+      "mode": "optimize",
+      "backend": "cuda-cg",
+      "cell": 2.0,
+      "bounding_cells": 121875,
+      "active_cells": 119155,
+      "status": "completed",
+      "termination": "iteration_limit",
+      "completed_iterations": 2,
+      "seconds": 2278.354790899997,
+      "peak_host_rss_mib": 2930.28515625,
+      "mass_kg": 0.34697919875357186,
+      "limits": {
+        "status": "within_limits",
+        "requested": {
+          "max_displacement": 1.0,
+          "max_stress": 0.0,
+          "max_stress_mpa": 0.0,
+          "stress_source": "user_limit",
+          "enforce": true,
+          "active": true,
+          "tolerance": 0.001,
+          "aggregation": 50.0
+        },
+        "cases": [
+          {
+            "name": "01 Distributed payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.1967846778727832,
+                "limit": 1.0,
+                "utilization": 0.1967846778727832,
+                "status": "within_limit",
+                "aggregated_utilization": 0.38662209104271394,
+                "grid_node_id": 1750
+              }
+            ]
+          },
+          {
+            "name": "02 Front payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.4230855003463389,
+                "limit": 1.0,
+                "utilization": 0.4230855003463389,
+                "status": "within_limit",
+                "aggregated_utilization": 0.5678642914985844,
+                "grid_node_id": 134060
+              }
+            ]
+          },
+          {
+            "name": "03 Front right payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.49912340194744326,
+                "limit": 1.0,
+                "utilization": 0.49912340194744326,
+                "status": "within_limit",
+                "aggregated_utilization": 0.6229705224787095,
+                "grid_node_id": 1750
+              }
+            ]
+          },
+          {
+            "name": "04 Front left payload",
+            "checks": [
+              {
+                "kind": "displacement",
+                "value": 0.5003899427398759,
+                "limit": 1.0,
+                "utilization": 0.5003899427398759,
+                "status": "within_limit",
+                "aggregated_utilization": 0.6241700750940193,
+                "grid_node_id": 1763
+              }
+            ]
+          }
+        ],
+        "worst_utilization": 0.5003899427398759,
+        "scope": "relaxed_density_model_only",
+        "enforced_during_optimization": true,
+        "final_shape_reanalysed": false,
+        "final_shape_verified": false,
+        "note": "Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.",
+        "sampled_checks_status": "within_limits",
+        "optimizer_feasible": true
+      },
+      "cases": [
+        {
+          "name": "01 Distributed payload",
+          "compliance": 4.850377340243733,
+          "max_displacement": 0.1967846778727832,
+          "max_von_mises": null,
+          "residual": 3.9807508614411406e-09,
+          "equilibrium": 4.910935083541692e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 3562,
+            "warm_start": true,
+            "initial_relative_residual": 0.03428293490140014,
+            "linear_residual": 9.97998362032741e-10,
+            "setup_seconds": 7.765674500005844,
+            "solve_seconds": 2172.362361100015,
+            "matrix_preparations": 3,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 44371444,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "02 Front payload",
+          "compliance": 16.913307234291857,
+          "max_displacement": 0.4230855003463389,
+          "max_von_mises": null,
+          "residual": 3.245888700857829e-10,
+          "equilibrium": 1.953726041229953e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 3525,
+            "warm_start": true,
+            "initial_relative_residual": 0.02133704427298795,
+            "linear_residual": 9.940829376827116e-10,
+            "setup_seconds": 7.765674500005844,
+            "solve_seconds": 2179.746105400016,
+            "matrix_preparations": 3,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 44371444,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "03 Front right payload",
+          "compliance": 18.18259639834071,
+          "max_displacement": 0.49912340194744326,
+          "max_von_mises": null,
+          "residual": 1.8403095570996441e-10,
+          "equilibrium": 1.2725594639230577e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 3584,
+            "warm_start": true,
+            "initial_relative_residual": 0.014001919771057468,
+            "linear_residual": 9.394243765692871e-10,
+            "setup_seconds": 7.765674500005844,
+            "solve_seconds": 2187.2718019000167,
+            "matrix_preparations": 3,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 44371444,
+            "cpu_threads": 4
+          }
+        },
+        {
+          "name": "04 Front left payload",
+          "compliance": 18.20711175333746,
+          "max_displacement": 0.5003899427398759,
+          "max_von_mises": null,
+          "residual": 2.3499129241612073e-10,
+          "equilibrium": 1.353252265584888e-08,
+          "performance": {
+            "backend": "cuda-cg",
+            "linear_iterations": 3582,
+            "warm_start": true,
+            "initial_relative_residual": 0.014031100673101855,
+            "linear_residual": 1.006884608651095e-09,
+            "setup_seconds": 7.765674500005844,
+            "solve_seconds": 2194.8470618000138,
+            "matrix_preparations": 3,
+            "assembly_pattern_builds": 1,
+            "assembly_pattern_bytes": 44371444,
+            "cpu_threads": 4
+          }
+        }
+      ],
+      "concurrent_workload": true,
+      "timing_valid": false,
+      "timing_exclusion_reason": "Windows Modern Standby during job; confirmed by Kernel-Power 506/507 events. Raw wall time and cumulative solver times must not be used as performance measurements."
+    }
+  },
+  "fine_cad": {
+    "status": "automatic_final_meshing_failed",
+    "source_density_cell_mm": 2.5,
+    "threshold": 0.32,
+    "source_surface_hash": "824fcac2ce8692d412b950adbf8a81b6c2591cd54dbcb78d718d903de98d4821",
+    "cad_contract_hash": "1cb6b285816b7a1f8474e790dc326b5e90054864336bbde0eba422b6c3777d14",
+    "source_surface_vertices": 7506,
+    "source_surface_triangles": 15028,
+    "surface_volume_mm3": 297786.9653106106,
+    "surface_mass_kg": 0.309698443923035,
+    "cad_interfaces": {
+      "mode": "nominal_cad_interfaces",
+      "planar_dimensions": "nominal",
+      "circular_geometry": "circumscribed polygon; nominal clearance never narrowed",
+      "chord_tolerance_mm": 0.05,
+      "radial_overcut_bound_mm": 0.049860503152011404,
+      "circle_segments": [
+        20,
+        32,
+        20,
+        32,
+        20,
+        32,
+        20,
+        32
+      ],
+      "protected_volume_mm3": 95472.67916384594,
+      "protected_volume_loss_mm3": 8.559819519859957e-14,
+      "forbidden_intrusion_mm3": 0.0,
+      "outside_envelope_mm3": 0.0,
+      "exact_brep": false,
+      "boolean_cleanup_tolerance_mm": 1e-07,
+      "web_cleanup_tolerance_mm": 0.01,
+      "envelope_snap_tolerance_mm": 0.0,
+      "envelope_snapped_vertices": 0,
+      "maximum_snapped_vertex_displacement_mm": 0.0
+    },
+    "mesh_size_mm": 4,
+    "production_classification_angle_degrees": 0.5,
+    "production_error": "Wrong topology of boundary mesh for parametrization",
+    "isolated_diagnostic": {
+      "surface_classification_angle_degrees": 0.1,
+      "curve_angle_degrees": 45,
+      "parameterization": "passed",
+      "tetrahedralization": "timeout_after_210_seconds",
+      "production_code_changed": false
+    },
+    "structurally_verified": false,
+    "note": "The four-case voxel result and passed CAD extraction do not verify this final shape. The diagnostic did not produce an accepted tetrahedral mesh. No mesh accuracy or safe load rating is claimed."
+  },
+  "regression_tests": 261,
+  "interactive_Rhino_acceptance": false
+}

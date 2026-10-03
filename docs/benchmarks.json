@@ -1,0 +1,182 @@
+[
+  {
+    "voxels": 1728,
+    "dofs": 6825,
+    "backend": "cpu-direct",
+    "threads": 4,
+    "seconds": 0.28406419995008036,
+    "peak_rss_mb": 148.03515625,
+    "compliance": 0.206346153416597,
+    "residual": 3.9520386962976776e-13,
+    "equilibrium": 7.469065366194627e-12,
+    "performance": {
+      "backend": "cpu-direct",
+      "linear_iterations": 0,
+      "linear_residual": 1.0884204738906472e-12,
+      "setup_seconds": 0.24420910002663732,
+      "solve_seconds": 0.004956900025717914,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 1728,
+    "dofs": 6825,
+    "backend": "cpu-cg",
+    "threads": 4,
+    "seconds": 0.09263170004123822,
+    "peak_rss_mb": 92.47265625,
+    "compliance": 0.20634615341660964,
+    "residual": 1.7757595394130021e-10,
+    "equilibrium": 2.3849677033283e-09,
+    "performance": {
+      "backend": "cpu-cg",
+      "linear_iterations": 162,
+      "linear_residual": 9.350671730833455e-10,
+      "setup_seconds": 0.030988599988631904,
+      "solve_seconds": 0.037473300006240606,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 1728,
+    "dofs": 6825,
+    "backend": "cpu-amg",
+    "threads": 4,
+    "seconds": 0.26597080001374707,
+    "peak_rss_mb": 118.9296875,
+    "compliance": 0.20634615341658033,
+    "residual": 8.983406019069662e-11,
+    "equilibrium": 1.069534540931727e-09,
+    "performance": {
+      "backend": "cpu-amg",
+      "linear_iterations": 66,
+      "linear_residual": 4.975013483170664e-10,
+      "setup_seconds": 0.09405379998497665,
+      "solve_seconds": 0.1481962000252679,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 1728,
+    "dofs": 6825,
+    "backend": "cpu-matrixfree",
+    "threads": 4,
+    "seconds": 0.09884619998047128,
+    "peak_rss_mb": 79.78515625,
+    "compliance": 0.20634615341663493,
+    "residual": 1.783907321861733e-10,
+    "equilibrium": 2.3624027534197012e-09,
+    "performance": {
+      "backend": "cpu-matrixfree",
+      "linear_iterations": 162,
+      "linear_residual": 9.289525528202215e-10,
+      "setup_seconds": 0.0005552999791689217,
+      "solve_seconds": 0.07434289995580912,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 1728,
+    "dofs": 6825,
+    "backend": "cuda-cg",
+    "threads": 4,
+    "seconds": 0.8397430999903008,
+    "peak_rss_mb": 484.87109375,
+    "compliance": 0.20634615341660467,
+    "residual": 1.7922827222349724e-10,
+    "equilibrium": 2.326863701718196e-09,
+    "performance": {
+      "backend": "cuda-cg",
+      "linear_iterations": 162,
+      "linear_residual": 9.149205883816375e-10,
+      "setup_seconds": 0.5722804999677464,
+      "solve_seconds": 0.24192449997644871,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 13824,
+    "dofs": 47775,
+    "backend": "cpu-cg",
+    "threads": 4,
+    "seconds": 2.370500600023661,
+    "peak_rss_mb": 415.21484375,
+    "compliance": 0.21291220648197912,
+    "residual": 8.513030280710154e-11,
+    "equilibrium": 8.934465067778063e-10,
+    "performance": {
+      "backend": "cpu-cg",
+      "linear_iterations": 324,
+      "linear_residual": 9.560097517634879e-10,
+      "setup_seconds": 0.30215589998988435,
+      "solve_seconds": 1.9413366000517271,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  },
+  {
+    "voxels": 13824,
+    "dofs": 47775,
+    "backend": "cpu-matrixfree",
+    "threads": 1,
+    "seconds": 1.3377077999757603,
+    "peak_rss_mb": 87.07421875,
+    "compliance": 0.21291220648180587,
+    "residual": 7.779116351080973e-11,
+    "equilibrium": 8.738890810988664e-10,
+    "performance": {
+      "backend": "cpu-matrixfree",
+      "linear_iterations": 324,
+      "linear_residual": 9.539979457344089e-10,
+      "setup_seconds": 0.0037598999915644526,
+      "solve_seconds": 1.2422042000107467,
+      "matrix_preparations": 1,
+      "cpu_threads": 1
+    }
+  },
+  {
+    "voxels": 13824,
+    "dofs": 47775,
+    "backend": "cpu-matrixfree",
+    "threads": 8,
+    "seconds": 1.3126419000327587,
+    "peak_rss_mb": 89.7109375,
+    "compliance": 0.21291220648180548,
+    "residual": 7.96249416401551e-11,
+    "equilibrium": 8.772325865713526e-10,
+    "performance": {
+      "backend": "cpu-matrixfree",
+      "linear_iterations": 324,
+      "linear_residual": 9.55713116870043e-10,
+      "setup_seconds": 0.00218400004087016,
+      "solve_seconds": 1.2472779999952763,
+      "matrix_preparations": 1,
+      "cpu_threads": 8
+    }
+  },
+  {
+    "voxels": 13824,
+    "dofs": 47775,
+    "backend": "cuda-cg",
+    "threads": 4,
+    "seconds": 1.8074289999785833,
+    "peak_rss_mb": 623.4140625,
+    "compliance": 0.21291220648198772,
+    "residual": 8.011287633280517e-11,
+    "equilibrium": 8.930652217742363e-10,
+    "performance": {
+      "backend": "cuda-cg",
+      "linear_iterations": 324,
+      "linear_residual": 9.55987406958228e-10,
+      "setup_seconds": 1.0778308000299148,
+      "solve_seconds": 0.6007326999679208,
+      "matrix_preparations": 1,
+      "cpu_threads": 4
+    }
+  }
+]

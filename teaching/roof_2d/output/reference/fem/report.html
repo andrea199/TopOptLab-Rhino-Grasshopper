@@ -1,0 +1,815 @@
+<!doctype html><meta charset="utf-8"><title>TopOptLab engineering report</title><style>body{font:16px system-ui;max-width:1000px;margin:40px auto;padding:20px}td,th{padding:10px;border-bottom:1px solid #ccc}pre{white-space:pre-wrap;word-break:break-word}svg{max-width:100%}</style><h1>TopOptLab engineering report</h1><p>Version 0.4.0-dev · fem_completed · Structural steel / S235 reference</p><p>Preview displays case SLS snow uniform. Mass: 593.46 kg. Optimization stress is a relaxed design surrogate; verify the final shape.</p><table><tr><th>Load case</th><th>Compliance (N mm)</th><th>Max displacement (mm)</th><th>Max von Mises (N/mm^2)</th></tr><tr><td>SLS snow uniform</td><td>11534.4</td><td>0.446785</td><td>29.05982043899448</td></tr><tr><td>ULS snow uniform</td><td>24169.4</td><td>0.64655</td><td>42.12189087535963</td></tr><tr><td>ULS snow left</td><td>19230.7</td><td>0.580145</td><td>39.79473308368627</td></tr><tr><td>ULS snow right</td><td>19230.7</td><td>0.580738</td><td>39.794733083677535</td></tr><tr><td>ULS wind uplift</td><td>1070.63</td><td>0.131246</td><td>8.485811147836232</td></tr></table><h2>Design limits</h2><p style="color:#183f60"><strong>not_requested</strong> | full_solid_fem</p><p>Numerical tolerance: 0.1%. Each load case is checked independently. These checks are not structural-code certification.</p><h2>Applied loads and reactions</h2><p>Vector components: domain axes. Force unit: N.</p><h3>SLS snow uniform</h3><p>Applied resultant: [0.0, -33719.85450900014]; reaction resultant: [-1.5343630366260186e-08, 33719.85450902364].</p><pre>[
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -4650.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;gravity&quot;,
+    &quot;acceleration_m_s2&quot;: [
+      0.0,
+      -9.80665
+    ]
+  }
+]</pre><h3>ULS snow uniform</h3><p>Applied resultant: [0.0, -48875.81086170021]; reaction resultant: [-2.219394446001388e-08, 48875.81086173428].</p><pre>[
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;gravity&quot;,
+    &quot;acceleration_m_s2&quot;: [
+      0.0,
+      -12.748645
+    ]
+  }
+]</pre><h3>ULS snow left</h3><p>Applied resultant: [0.0, -43475.81086170024]; reaction resultant: [-2.0174411474727094e-08, 43475.81086173056].</p><pre>[
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;gravity&quot;,
+    &quot;acceleration_m_s2&quot;: [
+      0.0,
+      -12.748645
+    ]
+  }
+]</pre><h3>ULS snow right</h3><p>Applied resultant: [0.0, -43475.810861700236]; reaction resultant: [-1.934267856995575e-08, 43475.81086173019].</p><pre>[
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -5085.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      0.0,
+      -6885.0
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;gravity&quot;,
+    &quot;acceleration_m_s2&quot;: [
+      0.0,
+      -12.748645
+    ]
+  }
+]</pre><h3>ULS wind uplift</h3><p>Applied resultant: [0.0, 9840.14549099994]; reaction resultant: [4.2101646613446064e-09, -9840.145491006946].</p><pre>[
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      -2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      -2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      -2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;nodal&quot;,
+    &quot;total_force&quot;: [
+      2250.0,
+      2610.0000000000005
+    ],
+    &quot;nodes&quot;: 1
+  },
+  {
+    &quot;kind&quot;: &quot;gravity&quot;,
+    &quot;acceleration_m_s2&quot;: [
+      0.0,
+      -9.80665
+    ]
+  }
+]</pre><p>Automatically preserved interface cells: 0. Volume policy: solid retained grid.</p><details><summary>Units, provenance and full calculation record</summary><pre>{
+  &quot;version&quot;: &quot;0.4.0-dev&quot;,
+  &quot;mode&quot;: &quot;fem&quot;,
+  &quot;input_signature&quot;: &quot;41a3bedea73a25c3ea02967aa98da40fdf518bcce1f63f32e767daa0aed5ae8e&quot;,
+  &quot;termination_reason&quot;: &quot;fem_completed&quot;,
+  &quot;converged&quot;: false,
+  &quot;display_case&quot;: &quot;SLS snow uniform&quot;,
+  &quot;objective&quot;: &quot;sum(weight * compliance) over independent cases&quot;,
+  &quot;cases&quot;: [
+    {
+      &quot;loads&quot;: [
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -4650.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;gravity&quot;,
+          &quot;acceleration_m_s2&quot;: [
+            0.0,
+            -9.80665
+          ]
+        }
+      ],
+      &quot;applied_force&quot;: [
+        0.0,
+        -33719.85450900014
+      ],
+      &quot;reaction_force&quot;: [
+        -1.5343630366260186e-08,
+        33719.85450902364
+      ],
+      &quot;name&quot;: &quot;SLS snow uniform&quot;,
+      &quot;weight&quot;: 1.0,
+      &quot;compliance&quot;: 11534.375923237827,
+      &quot;max_displacement&quot;: 0.44678500435308965,
+      &quot;residual&quot;: 3.508709033290333e-13,
+      &quot;equilibrium&quot;: 5.089078069548004e-12,
+      &quot;performance&quot;: {
+        &quot;backend&quot;: &quot;cpu-direct&quot;,
+        &quot;linear_iterations&quot;: 0,
+        &quot;linear_residual&quot;: 1.1145142070435876e-12,
+        &quot;setup_seconds&quot;: 0.004237799963448197,
+        &quot;solve_seconds&quot;: 0.0002500999835319817,
+        &quot;matrix_preparations&quot;: 1,
+        &quot;cpu_threads&quot;: 4
+      },
+      &quot;max_von_mises&quot;: 29.05982043899448,
+      &quot;stress_utilization_screening&quot;: 0.18548821556804987
+    },
+    {
+      &quot;loads&quot;: [
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;gravity&quot;,
+          &quot;acceleration_m_s2&quot;: [
+            0.0,
+            -12.748645
+          ]
+        }
+      ],
+      &quot;applied_force&quot;: [
+        0.0,
+        -48875.81086170021
+      ],
+      &quot;reaction_force&quot;: [
+        -2.219394446001388e-08,
+        48875.81086173428
+      ],
+      &quot;name&quot;: &quot;ULS snow uniform&quot;,
+      &quot;weight&quot;: 1.0,
+      &quot;compliance&quot;: 24169.359903808298,
+      &quot;max_displacement&quot;: 0.6465495877847913,
+      &quot;residual&quot;: 4.10756592449499e-13,
+      &quot;equilibrium&quot;: 4.973170293257059e-12,
+      &quot;performance&quot;: {
+        &quot;backend&quot;: &quot;cpu-direct&quot;,
+        &quot;linear_iterations&quot;: 0,
+        &quot;linear_residual&quot;: 1.132280062111174e-12,
+        &quot;setup_seconds&quot;: 0.004237799963448197,
+        &quot;solve_seconds&quot;: 0.00043189997086301446,
+        &quot;matrix_preparations&quot;: 1,
+        &quot;cpu_threads&quot;: 4
+      },
+      &quot;max_von_mises&quot;: 42.12189087535963,
+      &quot;stress_utilization_screening&quot;: 0.2688631332469764
+    },
+    {
+      &quot;loads&quot;: [
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;gravity&quot;,
+          &quot;acceleration_m_s2&quot;: [
+            0.0,
+            -12.748645
+          ]
+        }
+      ],
+      &quot;applied_force&quot;: [
+        0.0,
+        -43475.81086170024
+      ],
+      &quot;reaction_force&quot;: [
+        -2.0174411474727094e-08,
+        43475.81086173056
+      ],
+      &quot;name&quot;: &quot;ULS snow left&quot;,
+      &quot;weight&quot;: 1.0,
+      &quot;compliance&quot;: 19230.65833767603,
+      &quot;max_displacement&quot;: 0.5801450637653978,
+      &quot;residual&quot;: 3.0934955163542133e-13,
+      &quot;equilibrium&quot;: 4.447649430704938e-12,
+      &quot;performance&quot;: {
+        &quot;backend&quot;: &quot;cpu-direct&quot;,
+        &quot;linear_iterations&quot;: 0,
+        &quot;linear_residual&quot;: 1.132856661383155e-12,
+        &quot;setup_seconds&quot;: 0.004237799963448197,
+        &quot;solve_seconds&quot;: 0.0006044000037945807,
+        &quot;matrix_preparations&quot;: 1,
+        &quot;cpu_threads&quot;: 4
+      },
+      &quot;max_von_mises&quot;: 39.79473308368627,
+      &quot;stress_utilization_screening&quot;: 0.25400893457672086
+    },
+    {
+      &quot;loads&quot;: [
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -5085.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            0.0,
+            -6885.0
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;gravity&quot;,
+          &quot;acceleration_m_s2&quot;: [
+            0.0,
+            -12.748645
+          ]
+        }
+      ],
+      &quot;applied_force&quot;: [
+        0.0,
+        -43475.810861700236
+      ],
+      &quot;reaction_force&quot;: [
+        -1.934267856995575e-08,
+        43475.81086173019
+      ],
+      &quot;name&quot;: &quot;ULS snow right&quot;,
+      &quot;weight&quot;: 1.0,
+      &quot;compliance&quot;: 19230.658337675504,
+      &quot;max_displacement&quot;: 0.5807383052867608,
+      &quot;residual&quot;: 3.1780013836992783e-13,
+      &quot;equilibrium&quot;: 4.394305101943366e-12,
+      &quot;performance&quot;: {
+        &quot;backend&quot;: &quot;cpu-direct&quot;,
+        &quot;linear_iterations&quot;: 0,
+        &quot;linear_residual&quot;: 1.1412386055238569e-12,
+        &quot;setup_seconds&quot;: 0.004237799963448197,
+        &quot;solve_seconds&quot;: 0.0007792999967932701,
+        &quot;matrix_preparations&quot;: 1,
+        &quot;cpu_threads&quot;: 4
+      },
+      &quot;max_von_mises&quot;: 39.794733083677535,
+      &quot;stress_utilization_screening&quot;: 0.2540089345766651
+    },
+    {
+      &quot;loads&quot;: [
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            -2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            -2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            -2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;nodal&quot;,
+          &quot;total_force&quot;: [
+            2250.0,
+            2610.0000000000005
+          ],
+          &quot;nodes&quot;: 1
+        },
+        {
+          &quot;kind&quot;: &quot;gravity&quot;,
+          &quot;acceleration_m_s2&quot;: [
+            0.0,
+            -9.80665
+          ]
+        }
+      ],
+      &quot;applied_force&quot;: [
+        0.0,
+        9840.14549099994
+      ],
+      &quot;reaction_force&quot;: [
+        4.2101646613446064e-09,
+        -9840.145491006946
+      ],
+      &quot;name&quot;: &quot;ULS wind uplift&quot;,
+      &quot;weight&quot;: 1.0,
+      &quot;compliance&quot;: 1070.634945520943,
+      &quot;max_displacement&quot;: 0.13124638522867943,
+      &quot;residual&quot;: 1.7396807079995347e-13,
+      &quot;equilibrium&quot;: 2.6684700016113214e-12,
+      &quot;performance&quot;: {
+        &quot;backend&quot;: &quot;cpu-direct&quot;,
+        &quot;linear_iterations&quot;: 0,
+        &quot;linear_residual&quot;: 4.4030556998145174e-13,
+        &quot;setup_seconds&quot;: 0.004237799963448197,
+        &quot;solve_seconds&quot;: 0.001018200011458248,
+        &quot;matrix_preparations&quot;: 1,
+        &quot;cpu_threads&quot;: 4
+      },
+      &quot;max_von_mises&quot;: 8.485811147836232,
+      &quot;stress_utilization_screening&quot;: 0.05416475200746532
+    }
+  ],
+  &quot;load_coordinate_system&quot;: &quot;domain axes&quot;,
+  &quot;automatically_preserved_interface_cells&quot;: 0,
+  &quot;optimization_update&quot;: &quot;not applicable: FEM&quot;,
+  &quot;volume_policy&quot;: &quot;solid retained grid&quot;,
+  &quot;loading_notes&quot;: [
+    &quot;Distributed loads on fixed DOFs contribute to reactions; nodal point loads in constrained directions remain rejected.&quot;,
+    &quot;Surface loads act on preserved grid facets, not an evolving CAD boundary.&quot;,
+    &quot;Self-weight optimization is experimental: low-density SIMP parasitic effects and mesh dependence require final-shape verification.&quot;
+  ],
+  &quot;material&quot;: {
+    &quot;name&quot;: &quot;Structural steel / S235 reference&quot;,
+    &quot;young_pa&quot;: 210000000000,
+    &quot;poisson&quot;: 0.3,
+    &quot;density_kg_m3&quot;: 7850,
+    &quot;reference_yield_pa&quot;: 235000000,
+    &quot;yield_scope&quot;: &quot;S235 hot-rolled stock at thickness &lt;= 16 mm only; confirm product certificate.&quot;,
+    &quot;notes&quot;: [
+      &quot;Isotropic elastic reference, ambient conditions.&quot;,
+      &quot;Yield is not automatically an allowable design stress.&quot;,
+      &quot;Stock thickness must be declared to enable the reference yield comparison.&quot;
+    ],
+    &quot;sources&quot;: [
+      &quot;https://steelconstruction.info/topics/design/steel-material-properties/&quot;,
+      &quot;https://www.steelconstruction.info/images/8/85/CFT_Design_Guide_March_2014.pdf&quot;,
+      &quot;https://products.tatasteelnederland.com/products/engineering/hot-rolled/structural-steel&quot;
+    ],
+    &quot;preset&quot;: &quot;steel&quot;,
+    &quot;length_unit&quot;: &quot;mm&quot;,
+    &quot;force_unit&quot;: &quot;N&quot;,
+    &quot;length_m&quot;: 0.001,
+    &quot;force_n&quot;: 1.0,
+    &quot;safety_factor&quot;: 1.5,
+    &quot;young&quot;: 210000.0,
+    &quot;allowable&quot;: 156.66666666666666,
+    &quot;allowable_status&quot;: &quot;screening_only_not_code_verification&quot;
+  },
+  &quot;mass_kg&quot;: 593.46,
+  &quot;manufacturing&quot;: {
+    &quot;process&quot;: &quot;unspecified&quot;,
+    &quot;symmetry&quot;: &quot;x&quot;,
+    &quot;extrusion&quot;: &quot;none&quot;,
+    &quot;threshold&quot;: 0.4,
+    &quot;connected_components&quot;: 1,
+    &quot;retained_cells&quot;: 630,
+    &quot;minimum_feature_requested&quot;: 0.0,
+    &quot;cells_surviving_radius_erosion&quot;: null,
+    &quot;notes&quot;: [
+      &quot;Feature-size erosion is diagnostic only; no certified minimum wall or tool-access check.&quot;,
+      &quot;Thresholded geometry requires FEM reanalysis; no smoothing is applied.&quot;
+    ]
+  },
+  &quot;elapsed_seconds&quot;: 0.04357859998708591,
+  &quot;verification&quot;: &quot;not a final-shape verification&quot;,
+  &quot;report_file&quot;: &quot;report.html&quot;,
+  &quot;weighted_compliance&quot;: 75235.68744791861,
+  &quot;case_files&quot;: [
+    &quot;case-01.json&quot;,
+    &quot;case-02.json&quot;,
+    &quot;case-03.json&quot;,
+    &quot;case-04.json&quot;,
+    &quot;case-05.json&quot;
+  ],
+  &quot;design_limits&quot;: {
+    &quot;status&quot;: &quot;not_requested&quot;,
+    &quot;requested&quot;: {
+      &quot;max_displacement&quot;: 0.0,
+      &quot;max_stress&quot;: 0.0,
+      &quot;max_stress_mpa&quot;: 0.0,
+      &quot;stress_source&quot;: &quot;user_limit&quot;,
+      &quot;enforce&quot;: false,
+      &quot;active&quot;: false,
+      &quot;tolerance&quot;: 0.001,
+      &quot;aggregation&quot;: 50.0
+    },
+    &quot;cases&quot;: [
+      {
+        &quot;name&quot;: &quot;SLS snow uniform&quot;,
+        &quot;checks&quot;: []
+      },
+      {
+        &quot;name&quot;: &quot;ULS snow uniform&quot;,
+        &quot;checks&quot;: []
+      },
+      {
+        &quot;name&quot;: &quot;ULS snow left&quot;,
+        &quot;checks&quot;: []
+      },
+      {
+        &quot;name&quot;: &quot;ULS snow right&quot;,
+        &quot;checks&quot;: []
+      },
+      {
+        &quot;name&quot;: &quot;ULS wind uplift&quot;,
+        &quot;checks&quot;: []
+      }
+    ],
+    &quot;worst_utilization&quot;: null,
+    &quot;scope&quot;: &quot;full_solid_fem&quot;,
+    &quot;enforced_during_optimization&quot;: false,
+    &quot;final_shape_reanalysed&quot;: false,
+    &quot;final_shape_verified&quot;: false,
+    &quot;note&quot;: &quot;Numerical limits on this model, not code compliance. Relaxed design stress is not final-shape stress.&quot;
+  },
+  &quot;constraint_optimizer&quot;: null
+}</pre></details>
