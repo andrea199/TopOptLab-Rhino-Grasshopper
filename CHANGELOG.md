@@ -1,3 +1,12 @@
+# Repository review — 2026-10-23 (development)
+
+- Clarify experimental alpha status, installation, integration scope and upstream attribution.
+- Expose the existing numerical CI and preserve its JUnit report as an Actions artifact.
+- Name the native installer install_windows.py; retain setup.py as a compatibility entry point.
+- Add root pytest configuration and isolated installer contract tests.
+- Document controlled upstream updates and publication gates; no numerical or vendor changes.
+- Read the Docs hosting and licensed Rhino/CUDA acceptance remain separate follow-ups.
+
 # Resolution increment — 2026-09-21 (development)
 
 - Replaced fixed 3D backend cell caps with conservative host/GPU memory admission and

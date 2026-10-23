@@ -1,7 +1,7 @@
 # Contributing
 
 This repository contains the Rhino/Grasshopper integration and a bundled upstream
-snapshot. It is currently private and at **0.4.0-dev**. Work in a feature branch
+snapshot. It is currently private and at **experimental alpha 0.4.0-dev**. Work in a feature branch
 and describe the problem, resulting behavior, validation and remaining limitations.
 
 ## Development environment
@@ -40,6 +40,9 @@ The teaching example has its own source in
 
 ## Validation expectations
 
+See [repository review validation](docs/REVIEW_VALIDATION.md) for the latest
+installer/documentation change checks; numerical history remains in docs/VALIDATION.md.
+
 - Reproduce defects with relevant numerical or integration checks.
 - State units, geometry, material, boundary conditions and load cases.
 - Check solver residuals, reactions and force/moment/energy balance where applicable.
@@ -72,3 +75,26 @@ source/provenance notes.
 GitHub Actions runs CPU numerical regressions and repository integrity checks.
 A release also needs licensed Rhino/native and relevant CUDA acceptance; green
 hosted CI alone is not that acceptance.
+
+## Controlled upstream updates
+
+- Identify the current snapshot with `vendor/upstream-sha256.json`; do not invent
+  a Git revision for the transferred source.
+- Update upstream only on a dedicated branch, recording the source revision when
+  available, provenance, API changes and regenerated manifest.
+- Run worker request/result, numerical and rejection regressions in `tool/tests`.
+  Add a contract regression for each changed upstream API before adapting callers.
+- Repeat native Rhino/Grasshopper acceptance and relevant CUDA tests separately.
+- Do not track upstream latest automatically or modify vendored files for a local feature.
+
+## Publication gates
+
+- Require a passing [Numerical validation workflow](https://github.com/andrea199/TopOptLab-Rhino/actions/workflows/numerics.yml).
+- Record installation on a second Windows PC and licensed Rhino UI acceptance.
+- Keep the alpha label until those acceptance gaps are resolved; version changes
+  and public releases are separate decisions.
+- Read the Docs is a follow-up after publication approval: build the integration
+  Markdown guides with Sphinx/MyST without importing Rhino or numerical modules,
+  check links/assets locally, then connect the approved repository.
+- Do not enable public documentation hosting while this repository is private
+  without an explicit publication decision.
