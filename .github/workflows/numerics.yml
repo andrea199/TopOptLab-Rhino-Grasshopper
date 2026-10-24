@@ -27,6 +27,13 @@ jobs:
       - name: Create test output directory
         run: New-Item -ItemType Directory -Force tool/build | Out-Null
       - name: Run CPU and archive regressions
-        run: python -m pytest tool/tests -q --basetemp=tool/build/ci-tests
+        run: python -m pytest -q --basetemp=tool/build/ci-tests --junitxml=tool/build/test-results.xml
+      - name: Preserve test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cpu-test-results
+          path: tool/build/test-results.xml
+          if-no-files-found: warn
 # Licensed Rhino SDK/UI and NVIDIA CUDA acceptance are separate checks.
 # This hosted job does not compile the GHA or qualify a physical design.

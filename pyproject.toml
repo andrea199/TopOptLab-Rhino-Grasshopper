@@ -1,0 +1,4 @@
+# Native Rhino plugin installation uses INSTALL.cmd, not pip install .
+# Upstream packaging remains in vendor/topoptlab/pyproject.toml.
+[tool.pytest.ini_options]
+testpaths = ["tool/tests"]

@@ -35,7 +35,7 @@ The numerical worker and its environment must remain available.
 From PowerShell in the project root, the equivalent command is:
 
 ```powershell
-py -3.13 setup.py
+py -3.13 install_windows.py
 ```
 
 For the optional CUDA backend:
@@ -47,17 +47,21 @@ For the optional CUDA backend:
 For a nonstandard Rhino location:
 
 ```powershell
-py -3.13 setup.py --rhino "D:\Applications\Rhino 8"
+py -3.13 install_windows.py --rhino "D:\Applications\Rhino 8"
 ```
 
 To download dependencies and compile while Rhino is still open:
 
 ```powershell
-py -3.13 setup.py --prepare-only
+py -3.13 install_windows.py --prepare-only
 ```
 
 This last command does not update the loaded plugin. Close Rhino and rerun the
 installer to finish. Add `--cuda` if you also need the optional GPU dependencies.
+
+`setup.py` remains a compatibility entry point for older instructions, not a
+setuptools installer. Do not use `pip install .` at the project root.
+The root `pyproject.toml` configures tests, not native plugin installation.
 
 ## What is installed
 
