@@ -1,5 +1,7 @@
 # Documentation
 
+Start with the [English teaching manual](manual/index.html) for the Component Guide and sequential Learnings.
+
 Start with [Installation](INSTALLATION.md), then [Quick start](QUICKSTART.md).
 
 | I want to... | Read |

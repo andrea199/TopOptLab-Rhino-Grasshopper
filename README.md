@@ -12,7 +12,7 @@ The newest UI still requires interactive Rhino acceptance.
 | Install on a new Windows PC | [Installation](docs/INSTALLATION.md) |
 | Run your first FEM and optimization | [Quick start](docs/QUICKSTART.md) |
 | Choose a ready-made model | [20-example gallery](docs/EXAMPLES.md) |
-| Teach an engineering class | [Course, PowerPoint and worksheets](teaching/README.md) |
+| Learn or teach TopOptLab in English | [Unified manual: components and lessons](docs/manual/index.html) |
 | Find technical documentation | [Documentation index](docs/README.md) |
 | Build, test or contribute | [Contributing](CONTRIBUTING.md) |
 
@@ -25,6 +25,16 @@ course deck is in Italian, with English instructor and student companion guides.
 
 *Computed fine-grid shelf study; final conforming FEM of this candidate remains
 incomplete. See the validation scope below.*
+
+## Teaching manual
+
+The canonical English teaching manual is in [`docs/manual/`](docs/manual/index.html).
+Open its `index.html` locally to browse the Component Guide and the sequential
+Learnings section from one navigation. Lesson01 includes its slides, teacher
+notes, student sheet and starter files; later blocks are clearly marked Planned.
+See [authoring instructions](docs/manual/AUTHORING.md) before adding new material.
+The original Italian roof-rib course remains in `teaching/roof_2d/` as reference
+material. New English lessons are developed inside the unified manual.
 
 ## Workflow
 
