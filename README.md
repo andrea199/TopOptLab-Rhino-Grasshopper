@@ -35,9 +35,11 @@ incomplete. See the validation scope below.*
 
 The canonical English teaching manual is in [`docs/manual/`](docs/manual/index.html).
 Open its `index.html` locally to browse the Component Guide and the sequential
-Learnings section from one navigation. Lesson01 includes its slides, teacher
-notes, student sheet and starter files; later blocks are clearly marked Planned.
+Learnings section from one navigation. All eight lessons are available, with 56
+slides, teacher guides, student worksheets and linked exercise files.
 See [authoring instructions](docs/manual/AUTHORING.md) before adding new material.
+The [documentation hosting guide](docs/DOCUMENTATION_HOSTING.md) explains the
+Read the Docs build; it serves this same manual without maintaining another site.
 The original Italian roof-rib course remains in `teaching/roof_2d/` as reference
 material. New English lessons are developed inside the unified manual.
 

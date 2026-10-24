@@ -1,0 +1,28 @@
+name: Manual validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Rebuild the canonical manual
+        run: python tools/manual/build.py
+      - name: Check links, course and native exercise wiring
+        run: |
+          python tools/manual/check.py
+          python tools/manual/check_course.py
+      - name: Verify committed pages match their sources
+        run: git diff --exit-code -- docs/manual
+      - name: Build the Read the Docs HTML payload
+        run: python tools/manual/export_site.py --output tool/build/manual-site
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-manual
+          path: tool/build/manual-site
+          if-no-files-found: error

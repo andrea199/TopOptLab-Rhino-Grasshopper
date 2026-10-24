@@ -93,8 +93,8 @@ hosted CI alone is not that acceptance.
 - Record installation on a second Windows PC and licensed Rhino UI acceptance.
 - Keep the alpha label until those acceptance gaps are resolved; version changes
   and public releases are separate decisions.
-- Read the Docs is a follow-up after publication approval: build the integration
-  Markdown guides with Sphinx/MyST without importing Rhino or numerical modules,
-  check links/assets locally, then connect the approved repository.
+- Read the Docs builds the existing static manual using `.readthedocs.yaml`.
+  See [hosting instructions](docs/DOCUMENTATION_HOSTING.md); no Sphinx copy or
+  Rhino/numerical imports are needed. Account connection and visibility are separate.
 - Do not enable public documentation hosting while this repository is private
   without an explicit publication decision.

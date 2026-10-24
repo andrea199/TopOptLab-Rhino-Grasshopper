@@ -47,3 +47,7 @@ node tools/manual/check_course_browser.cjs
 ```
 
 `TOPOPT_MANUAL_QA_DIR` can select a development output directory. The test covers 24 lesson pages, 56 slides × 5 viewports, worksheet persistence, interactive exercises and bidirectional component links. No browser test outputs, runtime jobs, SDK DLLs or ZIPs belong in the manual tree. Before teaching, complete the interactive Rhino acceptance described in the teacher guides.
+
+## Static hosting
+
+`export_site.py --output <empty-directory>` exports the same manual for Read the Docs. See `docs/DOCUMENTATION_HOSTING.md`. The Manual validation workflow rebuilds and checks the site on Linux; no numerical dependencies or Rhino are needed.
