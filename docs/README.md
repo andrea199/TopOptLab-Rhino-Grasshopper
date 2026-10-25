@@ -1,5 +1,7 @@
 # Documentation
 
+Start with the [English teaching manual](manual/index.html) for the Component Guide and sequential Learnings.
+
 Start with [Installation](INSTALLATION.md), then [Quick start](QUICKSTART.md).
 
 | I want to... | Read |
@@ -23,3 +25,5 @@ The current integration is **0.4.0-dev**. Historical validation documents descri
 specific revisions and test conditions; the latest resolution record takes
 precedence for the fine shelf example. No result constitutes certification of a
 building component or printed part.
+
+- [Documentation hosting](DOCUMENTATION_HOSTING.md): the single manual on Read the Docs.

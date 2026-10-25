@@ -1,0 +1,64 @@
+{
+  "language": "en",
+  "lessons": "01–08",
+  "course_minutes": 180,
+  "new_lessons": "03–08",
+  "native_archives": {
+    "new_gh_files": 8,
+    "new_ghx_files": 8,
+    "sdk_archive_and_object_readback": "PASS",
+    "resolved_archived_wires": 295,
+    "starter_gaps_match_exercises": "PASS"
+  },
+  "introductory_reference": {
+    "fem": "completed",
+    "optimization": "converged",
+    "verification_at_threshold_0_40": "completed, 96 retained cells",
+    "verification_at_threshold_0_50": "rejected: disconnected pieces",
+    "source": "data/intro-reference.json"
+  },
+  "browser": {
+    "lessons": 8,
+    "normalLessonPages": 24,
+    "slideDecks": 8,
+    "slides": 56,
+    "slideViewportChecks": 280,
+    "normalPageWidths": [
+      1400,
+      900,
+      390
+    ],
+    "slideViewports": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        375,
+        667
+      ],
+      [
+        667,
+        375
+      ]
+    ],
+    "worksheetPersistence": "PASS",
+    "interactiveExercises": "PASS",
+    "bidirectionalNavigation": "PASS",
+    "errors": [],
+    "remote": []
+  },
+  "limits": [
+    "Classroom Rhino opening, geometry selection, Run/Stop/Reset and preview acceptance remain teacher preparation checks.",
+    "Mac native execution is not established by these Windows SDK and Python checks.",
+    "Roof tables are from the existing course reference; the complete roof reference was not recomputed during this manual update."
+  ]
+}

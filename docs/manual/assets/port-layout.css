@@ -1,0 +1,16 @@
+/* Port nicknames can be whole phrases: give them their own line. */
+.anatomy{grid-template-columns:minmax(0,1fr) 240px minmax(0,1fr);align-items:start}
+.anatomy>*{min-width:0}
+.ports{gap:22px;min-width:0}
+.port{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}
+.letter{display:inline-flex;justify-content:center;align-items:center;width:auto;min-width:30px;max-width:100%;height:auto;min-height:29px;padding:4px 9px;border-radius:8px;font-size:13px;line-height:1.35;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.port>div{min-width:0;width:100%;overflow-wrap:anywhere}
+.port>div>strong{line-height:1.4;margin-bottom:3px}
+.port p{margin:3px 0;overflow-wrap:anywhere}
+.component{position:sticky;top:110px}
+.component img{max-height:calc(100vh - 230px)}
+.wire,td,th,.intro,.location{overflow-wrap:anywhere}
+.component-card{scroll-margin-top:105px}
+@media(max-width:1000px){.anatomy{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}.component{position:static;grid-column:1/-1;grid-row:1;max-width:300px;margin:auto}.component img{max-height:480px}.ports{grid-row:2}.out{grid-column:2}}
+@media(max-width:600px){.anatomy{grid-template-columns:minmax(0,1fr);padding:20px}.ports,.out{grid-column:1;grid-row:auto}.component{grid-column:1;max-width:250px}.filters{gap:8px}.filters input{min-width:0;width:100%}h1{overflow-wrap:anywhere}}
+@media print{.component{position:static}.component img{max-height:600px}.filters{position:static}}

@@ -1,0 +1,53 @@
+{
+  "lesson": "02",
+  "language": "en",
+  "native_files": {
+    "starter_objects": 8,
+    "solution_objects": 9,
+    "formats": [
+      "gh",
+      "ghx"
+    ],
+    "sdk_archive_and_object_readback": "PASS",
+    "classroom_Rhino_open_and_preview": "Teacher preparation required; not exercised by this browser check",
+    "boundary": "Select the closed outline from the shared lesson 01 Rhino model"
+  },
+  "browser": {
+    "pages": 4,
+    "slide_count": 7,
+    "viewport_sizes": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        375,
+        667
+      ],
+      [
+        667,
+        375
+      ]
+    ],
+    "clipping": false,
+    "grid_experiment": "PASS",
+    "worksheet_persistence": "PASS",
+    "navigation": "PASS",
+    "script_errors": 0,
+    "external_dependencies": 0
+  },
+  "expected_grid_counts": {
+    "12_mm": 50,
+    "6_mm": 200,
+    "3_mm": 800
+  },
+  "behaviour_source": "tool/src/Geometry.cs: DomainComponent and CadGeometry.Rasterize"
+}

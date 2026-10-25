@@ -1,0 +1,60 @@
+{
+  "block": 1,
+  "language": "en",
+  "duration_minutes": 15,
+  "slides": 7,
+  "dimensions_mm": [
+    120,
+    60
+  ],
+  "thickness_mm": 2,
+  "force_N": [
+    0,
+    -100,
+    0
+  ],
+  "load_point_mm": [
+    120,
+    30,
+    0
+  ],
+  "starter_object_count": 7,
+  "starter_geometry_parameters": 3,
+  "starter_instruction_panels": 4,
+  "solver_components": 0,
+  "rhino_objects": 6,
+  "model_units": "mm",
+  "archive_sdk_readback": "PASS",
+  "native_classroom_ui_tested": false,
+  "numerical_solve_in_this_block": false,
+  "browser_qa": {
+    "viewport_sizes": [
+      [
+        1920,
+        1080
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        375,
+        667
+      ],
+      [
+        667,
+        375
+      ]
+    ],
+    "slide_clipping": false,
+    "script_errors": 0,
+    "remote_dependencies": 0,
+    "keyboard_navigation": "PASS",
+    "student_sheet_persistence": "PASS",
+    "local_links": "PASS"
+  }
+}

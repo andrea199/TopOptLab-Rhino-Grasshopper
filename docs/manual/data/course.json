@@ -1,0 +1,118 @@
+{
+  "title": "From geometry to a checked design",
+  "language": "en",
+  "total_minutes": 180,
+  "break_after_lesson": "04",
+  "break_minutes": 10,
+  "lessons": [
+    {
+      "id": "01",
+      "title": "Understand the problem",
+      "minutes": 15,
+      "status": "available",
+      "path": "01-understand-the-problem/index.html",
+      "description": "Identify the design area, fixed edge and force. Predict the deformation before computing it.",
+      "components": [
+        "DomainComponent"
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Build the domain",
+      "minutes": 20,
+      "status": "available",
+      "description": "Connect the boundary, choose a cell size and inspect the active grid.",
+      "components": [
+        "DomainComponent"
+      ],
+      "path": "02-build-the-domain/index.html"
+    },
+    {
+      "id": "03",
+      "title": "Add supports and loads",
+      "minutes": 20,
+      "status": "available",
+      "description": "Select the constrained edge and loaded point. Check the actual selected nodes.",
+      "components": [
+        "SupportComponent",
+        "LoadComponent",
+        "DomainComponent"
+      ],
+      "path": "03-supports-and-loads/index.html"
+    },
+    {
+      "id": "04",
+      "title": "Run the first FEM analysis",
+      "minutes": 25,
+      "status": "available",
+      "description": "Choose consistent material and units. Read the baseline response.",
+      "components": [
+        "MaterialComponent",
+        "LoadCaseComponent",
+        "EngineeringSettingsComponent",
+        "EngineeringSolveComponent",
+        "FemResultsComponent"
+      ],
+      "path": "04-first-fem-analysis/index.html"
+    },
+    {
+      "id": "05",
+      "title": "Optimise the structure",
+      "minutes": 30,
+      "status": "available",
+      "description": "Set a material budget and interpret density, compliance and termination.",
+      "components": [
+        "EngineeringSolveComponent",
+        "EngineeringSettingsComponent",
+        "ResultsComponent",
+        "MaterialComponent",
+        "LoadCaseComponent"
+      ],
+      "path": "05-optimise-the-structure/index.html"
+    },
+    {
+      "id": "06",
+      "title": "Extract and check the shape",
+      "minutes": 25,
+      "status": "available",
+      "description": "Apply a threshold and reanalyse the extracted geometry.",
+      "components": [
+        "ResultsComponent",
+        "EngineeringSolveComponent",
+        "EngineeringSettingsComponent",
+        "FemResultsComponent",
+        "CompareResultsComponent"
+      ],
+      "path": "06-extract-and-check/index.html"
+    },
+    {
+      "id": "07",
+      "title": "Apply the workflow to the roof rib",
+      "minutes": 25,
+      "status": "available",
+      "description": "Recognise the same modelling stages in a prepared multi-case example.",
+      "components": [
+        "LoadCaseComponent",
+        "GravityComponent",
+        "ReviewControlsComponent",
+        "CaseResultComponent",
+        "EngineeringSolveComponent",
+        "CompareResultsComponent"
+      ],
+      "path": "07-roof-rib/index.html"
+    },
+    {
+      "id": "08",
+      "title": "Discuss the results",
+      "minutes": 10,
+      "status": "available",
+      "description": "Compare predictions and results. Explain what the model can and cannot establish.",
+      "components": [
+        "CompareResultsComponent",
+        "FemResultsComponent",
+        "ResultsComponent"
+      ],
+      "path": "08-discuss-results/index.html"
+    }
+  ]
+}

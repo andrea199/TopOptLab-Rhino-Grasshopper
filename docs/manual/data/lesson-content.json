@@ -1,0 +1,1122 @@
+{
+  "language": "en",
+  "lessons": [
+    {
+      "id": "03",
+      "slug": "03-supports-and-loads",
+      "title": "Add supports and loads",
+      "minutes": 20,
+      "question": "Where does the force enter, and what is allowed to move?",
+      "goal": "Select actual grid nodes, constrain the left edge and apply one total downward force of 100 N.",
+      "components": [
+        "SupportComponent",
+        "LoadComponent",
+        "DomainComponent"
+      ],
+      "steps": [
+        "Continue your saved lesson 02 definition, or open the partly wired starter. Open the shared Rhino model in millimetres and keep h = 6 mm.",
+        "Right-click Fixed edge → Set one Curve; select the vertical curve on layer 02_Fixed_edge. Right-click Load point → Set one Point; select the point on 03_Load_point.",
+        "Add TopOpt Support and TopOpt Load if continuing your own file. In the supplied starter they are already placed. Feed Domain / D to the D input of both.",
+        "Connect Fixed edge to Support / Selection (G). Connect Load point to Load / Selection (G). These two selection wires are deliberately absent in the starter.",
+        "Keep Support Fix X and Fix Y true. These are translations along the domain plane axes; World XY is used here.",
+        "Use the supplied vector parameter (0, -100, 0). Connect it to Load / Total force (F). In a file built by hand, right-click a Vector parameter → Set one Vector, or construct XYZ with X = 0, Y = -100, Z = 0.",
+        "Inspect Support / Nodes and Load / Nodes in Rhino. Add native Point parameters as viewers if needed. Confirm the left edge and the midpoint of the right edge.",
+        "Read the messages: Support selects 11 nodes; Load selects 1 node. The force is TOTAL, not 100 N per selected node.",
+        "Hide the illustrative arrow layer if it causes confusion. The reference arrow is not a numerical load. Save the file for lesson 04."
+      ],
+      "wires": [
+        [
+          "Domain D",
+          "Support D + Load D"
+        ],
+        [
+          "Fixed edge curve",
+          "Support Selection G"
+        ],
+        [
+          "Load point",
+          "Load Selection G"
+        ],
+        [
+          "World vector (0, -100, 0) N",
+          "Load Total force F"
+        ],
+        [
+          "Support S / Load L",
+          "Structural conditions used next lesson"
+        ]
+      ],
+      "checkpoint": [
+        "h = 6 mm; 200 active cells.",
+        "Left-edge support: 11 nodes, both X and Y fixed.",
+        "Right midpoint load: 1 node, total force (0, -100, 0) N.",
+        "You can distinguish the geometry selection, snapped nodes and applied force."
+      ],
+      "problems": [
+        [
+          "No selected nodes",
+          "Check the selected Rhino layer and the Domain D wire. Do not select the reference arrow."
+        ],
+        [
+          "Unexpected nodes",
+          "Read the Nodes outputs. Point selection snaps to the nearest active node within 0.76h; curve selection includes active nodes within that distance."
+        ],
+        [
+          "Wrong force magnitude",
+          "Inspect the vector value; the default Load force is not the 100 N classroom value."
+        ],
+        [
+          "Support freezes the plate?",
+          "Only selected node translations are constrained. The rest of the plate can deform."
+        ]
+      ],
+      "activities": [
+        [
+          "0–3",
+          "Ask students to point to support and load geometry before adding components.",
+          "Recall the lesson 01 prediction."
+        ],
+        [
+          "3–8",
+          "Demonstrate the shared Domain wire and the two Selection inputs.",
+          "Complete the missing selection wires."
+        ],
+        [
+          "8–12",
+          "Show Fix X/Fix Y and the force vector.",
+          "Check signs, units and total force."
+        ],
+        [
+          "12–17",
+          "Show Nodes outputs; explain snapping.",
+          "Count 11 supported nodes and 1 loaded node."
+        ],
+        [
+          "17–20",
+          "Use the checkpoint and ask pairs to explain one another’s file.",
+          "Save a model ready for analysis."
+        ]
+      ],
+      "prompts": [
+        [
+          "selection",
+          "Which nodes are constrained, and which directions are fixed?"
+        ],
+        [
+          "force",
+          "What is the total applied force? If several nodes were selected, would this component apply that value to each?"
+        ],
+        [
+          "inspection",
+          "Record the observed support/load node counts. Explain why the drawn arrow is insufficient evidence."
+        ]
+      ],
+      "slides": [
+        [
+          "0–3",
+          "Geometry selects. Conditions act.",
+          "A curve or point identifies a location; Support and Load turn that selection into model data.",
+          "conditions",
+          "Point to the edge and the point before connecting anything."
+        ],
+        [
+          "3–6",
+          "Use the same grid.",
+          "Support and Load both need the Domain output D.",
+          "SupportComponent",
+          "Connect Domain D to both D inputs."
+        ],
+        [
+          "6–9",
+          "Fix the left edge.",
+          "Fix X = true and Fix Y = true constrain the selected translations.",
+          "support-diagram",
+          "At h = 6 mm, the left edge contains 11 grid nodes."
+        ],
+        [
+          "9–12",
+          "Apply one total force.",
+          "Use the World vector (0, -100, 0) N at the right midpoint.",
+          "LoadComponent",
+          "The supplied Load vector is a total shared force."
+        ],
+        [
+          "12–15",
+          "Inspect the selected nodes.",
+          "Points snap to the active grid. Curves collect nearby active nodes.",
+          "conditions",
+          "Expected: 11 supported nodes and 1 loaded node."
+        ],
+        [
+          "15–18",
+          "A drawing is not a load.",
+          "The Rhino reference arrow is an illustration. The Load component carries the numerical force.",
+          "force-card",
+          "Check direction, magnitude and selection separately."
+        ],
+        [
+          "18–20",
+          "Explain before solving.",
+          "Show your partner where the model is restrained and where it is loaded.",
+          "checkpoint",
+          "Save the definition; next we calculate the response."
+        ]
+      ],
+      "notes": "<p>The cell grid and selected nodes are the numerical model. At h = 6 mm, node spacing is 6 mm. The edge at x = 0 selects 11 corner nodes; the point (120, 30, 0) lies exactly on one node. These counts are specific to this geometry and grid.</p><p>No physical response is calculated in this block. An empty force preview is a selection or display question to investigate before moving on.</p>",
+      "files": [
+        [
+          "Shared Rhino model (mm)",
+          "../01-understand-the-problem/files/lesson01_cantilever_mm.3dm"
+        ],
+        [
+          "Partly wired starter .gh",
+          "files/lesson03_starter.gh"
+        ],
+        [
+          "Wired solution .gh",
+          "files/lesson03_solution.gh"
+        ]
+      ]
+    },
+    {
+      "id": "04",
+      "slug": "04-first-fem-analysis",
+      "title": "Run the first FEM analysis",
+      "minutes": 25,
+      "question": "Does the calculated response agree with your prediction?",
+      "goal": "Run a full-material baseline, check equilibrium and distinguish numerical displacement from its display scale.",
+      "components": [
+        "MaterialComponent",
+        "LoadCaseComponent",
+        "EngineeringSettingsComponent",
+        "EngineeringSolveComponent",
+        "FemResultsComponent"
+      ],
+      "steps": [
+        "Continue the supported/loaded plate from lesson 03, or use the starter. Set Boundary, Fixed edge and Load point from the same Rhino model if the parameters are empty.",
+        "Keep h = 6 mm, a 100 N downward load and the left edge fixed. Do not change the geometry between stages of the comparison.",
+        "Inspect TopOpt Material: steel Preset = 0, Length unit = 0 (mm), Force unit = 0 (N), Stock thickness = 2 mm. Its E output should be 210,000 N/mm² and nu = 0.30.",
+        "Read Engineering Settings: Backend = 0 (CPU direct), Thickness = 2 mm, Volume = 0.40, Iterations = 80, Radius = 1.8 cells, Threshold = 0.40, Keep attachments = true. The baseline uses the full active domain; Volume controls the later optimisation.",
+        "Connect Load L → Load Case Loads (L), name “Downward 100 N”, Weight = 1. This is the missing wire in the starter. One case contains the loads acting together.",
+        "Trace Domain D, Support S, Load Case Case, Material M and Settings O into the corresponding inputs of the Engineering component labelled BASELINE. Confirm Mode = 0.",
+        "Use a momentary RUN BASELINE button pulse, then wait for completed status. Opening the file does not start a solve. Do not repeatedly press Run while a job is active.",
+        "Feed the baseline Result R to FEM Results. First use Field = 1 (displacement) and Scale = 0, then Scale = 1. Increase Scale for visibility, noting that this changes the drawing only.",
+        "Read FEM Results Info and its U/Reac outputs. The maximum displacement should be about 0.009277 mm. Sum reaction vectors: total Y is approximately +100 N, balancing -100 N applied.",
+        "Switch Field = 0 or 2 for von Mises stress. Record units and the legend maximum, not only the colour. Save the definition and note the job folder. Take the scheduled 10-minute break after this block."
+      ],
+      "wires": [
+        [
+          "Load L",
+          "Load Case Loads L"
+        ],
+        [
+          "Domain D / Support S",
+          "BASELINE D / S"
+        ],
+        [
+          "Load Case Case",
+          "BASELINE Cases"
+        ],
+        [
+          "Material M / Settings O",
+          "BASELINE M / O"
+        ],
+        [
+          "Mode 0 + RUN button",
+          "BASELINE calculation"
+        ],
+        [
+          "BASELINE Result R",
+          "FEM Results R"
+        ]
+      ],
+      "checkpoint": [
+        "Completed full-material FEM, not an optimisation preview.",
+        "Declared units mm and N; E = 210,000 N/mm², nu = 0.30, t = 2 mm.",
+        "Displacement ≈ 0.009277 mm; total reaction Y ≈ +100 N.",
+        "Scale changes display only; you can state one modelling assumption."
+      ],
+      "problems": [
+        [
+          "No response after opening",
+          "Connect the inputs, allow the initial Grasshopper solution, then pulse Run. Buttons start jobs; opening a file does not."
+        ],
+        [
+          "Old result disappears",
+          "Changing a solver input makes the old result stale. Stop/Reset if needed, then rerun the changed problem."
+        ],
+        [
+          "Unstable/singular model",
+          "Return to the selected nodes and constrained directions. A colour map cannot repair missing restraints."
+        ],
+        [
+          "Deformation looks huge",
+          "Read the numerical U value and display Scale. Scale = 1 means actual displacement."
+        ],
+        [
+          "Red stress means failure?",
+          "Auto-scaled red is the current maximum, not a pass/fail criterion. Read numbers, units and assumptions."
+        ]
+      ],
+      "activities": [
+        [
+          "0–4",
+          "Introduce elastic response, units and the full-material baseline.",
+          "Predict the sign and relative motion."
+        ],
+        [
+          "4–9",
+          "Trace Material, Load Case and Settings into Mode 0.",
+          "Connect the missing Load → Case wire."
+        ],
+        [
+          "9–13",
+          "Pulse Run once; explain status and job folders.",
+          "Wait for completed FEM and read Info."
+        ],
+        [
+          "13–18",
+          "Change Field and Scale without recalculating.",
+          "Record actual maximum displacement."
+        ],
+        [
+          "18–22",
+          "Check applied force plus total reaction.",
+          "Confirm approximately 100 N upward reaction."
+        ],
+        [
+          "22–25",
+          "Discuss stress peaks and assumptions, then checkpoint.",
+          "Save work; take a 10-minute break."
+        ]
+      ],
+      "prompts": [
+        [
+          "baseline",
+          "Record maximum displacement with units, total Y reaction and displayed deformation scale."
+        ],
+        [
+          "equilibrium",
+          "Compare applied and reaction forces. What should their sum be?"
+        ],
+        [
+          "interpretation",
+          "What does a red colour mean when the legend is automatic?"
+        ],
+        [
+          "assumption",
+          "Name one assumption of this 2D small-strain, linear-elastic plane-stress model."
+        ]
+      ],
+      "slides": [
+        [
+          "0–4",
+          "Predict, then calculate.",
+          "The full-material plate is our baseline for later comparisons.",
+          "fem-shape",
+          "Which way should the free end move?"
+        ],
+        [
+          "4–7",
+          "Use one consistent unit system.",
+          "Millimetres + newtons → E in N/mm² and stress in MPa.",
+          "units-card",
+          "Steel reference: E = 210,000; nu = 0.30; thickness = 2 mm."
+        ],
+        [
+          "7–10",
+          "Run baseline Mode 0.",
+          "Material, Settings and a named Load Case make the problem explicit.",
+          "EngineeringSolveComponent",
+          "Use a momentary Run button, then wait for completion."
+        ],
+        [
+          "10–14",
+          "Display is not displacement.",
+          "Scale = 0 shows the original shape. Scale = 1 shows actual movement.",
+          "FemResultsComponent",
+          "Read maximum U ≈ 0.009277 mm; enlargement changes only the preview."
+        ],
+        [
+          "14–18",
+          "Check equilibrium.",
+          "Applied Y = -100 N. Total support reaction Y ≈ +100 N.",
+          "balance-card",
+          "The vector sums should balance within numerical tolerance."
+        ],
+        [
+          "18–22",
+          "Read the legend.",
+          "Red is the current field maximum when the legend is automatic.",
+          "fem-shape",
+          "Point loads and sharp restraints can create mesh-dependent stress peaks."
+        ],
+        [
+          "22–25",
+          "Keep the baseline.",
+          "Record units, reaction and displacement before removing material.",
+          "checkpoint",
+          "Save the model, then take the 10-minute break."
+        ]
+      ],
+      "notes": "<p>For the teaching sequence we use <strong>Engineering, Mode 0</strong> rather than the minimal FEM Analyze component. This keeps the baseline compatible with optimisation, final verification and Compare Results. FEM Results is still the 2D field viewer. The standalone <a href=\"../../components/index.html#FemAnalyzeComponent\">FEM Analyze</a> workflow is available in the reference but is not a substitute baseline for Compare Results.</p><p>The <strong>2 mm stock declaration</strong> informs material reference screening; Settings Thickness defines the physical FEM thickness. Neither value changes the Rhino outline. Density is used for mass; gravity is absent in this introductory problem.</p><p>Reference: full-plate mass 0.113040 kg, maximum von Mises stress about 10.558 MPa at this grid. Peak stress has not been established as mesh-converged. This lesson does not set a project-specific acceptance limit.</p>",
+      "files": [
+        [
+          "Shared Rhino model (mm)",
+          "../01-understand-the-problem/files/lesson01_cantilever_mm.3dm"
+        ],
+        [
+          "Partly wired starter .gh",
+          "files/lesson04_starter.gh"
+        ],
+        [
+          "Wired solution .gh",
+          "files/lesson04_solution.gh"
+        ]
+      ]
+    },
+    {
+      "id": "05",
+      "slug": "05-optimise-the-structure",
+      "title": "Optimise the structure",
+      "minutes": 30,
+      "question": "Where should a limited amount of material remain?",
+      "goal": "Run a density optimisation with a fixed material budget and explain the objective, filter and termination reason.",
+      "components": [
+        "EngineeringSolveComponent",
+        "EngineeringSettingsComponent",
+        "ResultsComponent",
+        "MaterialComponent",
+        "LoadCaseComponent"
+      ],
+      "steps": [
+        "Continue the completed lesson 04 model or open the starter and select the shared Rhino geometry. Rerun BASELINE if this file has no current result; runtime results are not embedded in the teaching archive.",
+        "Keep geometry, h = 6 mm, supports, load, units and thickness unchanged. Use CPU direct for this small classroom model.",
+        "Inspect Settings: Volume = 0.40, Iterations = 80 (maximum), Radius = 1.8 cells (10.8 mm at h = 6), Threshold = 0.40, Keep attachments = true. No manufacturing symmetry or extrusion is imposed.",
+        "Trace the new Engineering component labelled OPTIMISATION. It receives the same D, S, Cases and M as BASELINE, but Mode = 1. Connect Settings O → OPTIMISATION O; this wire is missing in the starter.",
+        "Feed OPTIMISATION Result R to TopOpt Results. Use Field = 0 for density, Threshold T = 0.40 and Deformation scale S = 0. Hide baseline preview while viewing the design.",
+        "Pulse RUN OPTIMISATION once. Observe progress and wait for a completed result. Read the termination reason in Status/Info: completed alone does not establish convergence or feasibility.",
+        "Read the continuous-density material fraction and compliance. With this exact reference setup, optimisation converges; reference mass is 0.045216 kg and maximum displacement about 0.046659 mm.",
+        "Compare mass and deformation with the full-material baseline. Optimisation improves the starting 40%-density distribution; its “improvement” percentage is not a stiffness gain over the full-solid plate.",
+        "For one controlled optional variation, try Volume = 0.50 and rerun the design. Record the changed input and response, then restore 0.40 and rerun before lesson 06.",
+        "Save the definition and retain the completed optimisation job folder. The threshold mesh is a candidate shape; do not treat its density response as a verified binary part."
+      ],
+      "wires": [
+        [
+          "Same D, S, Cases, M, O",
+          "Engineering Mode 1"
+        ],
+        [
+          "RUN OPTIMISATION button",
+          "Mode 1 Run"
+        ],
+        [
+          "Mode 1 Result R",
+          "Results R"
+        ],
+        [
+          "Threshold slider 0.40",
+          "Settings Threshold + Results T"
+        ],
+        [
+          "Results Info",
+          "Record material, compliance and iteration status"
+        ]
+      ],
+      "checkpoint": [
+        "Volume budget is 0.40 of the active domain, including preserved material.",
+        "You can distinguish density, thresholded shape and deformation preview.",
+        "You recorded termination reason and actual material fraction.",
+        "Baseline and optimisation use the same physical model."
+      ],
+      "problems": [
+        [
+          "Nothing happens after changing Volume",
+          "A changed input does not update a completed job automatically. Start a new run after checking state."
+        ],
+        [
+          "Design is less stiff than full plate",
+          "The material budget is lower; improvement is relative to the initial density design, not the full-solid baseline."
+        ],
+        [
+          "Filter interpreted as millimetres",
+          "Radius is in cells. At h = 6 mm, Radius 1.8 corresponds to 10.8 mm."
+        ],
+        [
+          "0 kept in Domain but preserved attachments?",
+          "Domain K is only explicit keep geometry. Engineering can additionally preserve cells touching support and point-load nodes."
+        ],
+        [
+          "A nice image seems finished",
+          "Read termination, volume and constraints. Next lesson must verify the extracted binary shape."
+        ]
+      ],
+      "activities": [
+        [
+          "0–4",
+          "Recall the full-material baseline and introduce a material budget.",
+          "Predict a likely load path."
+        ],
+        [
+          "4–9",
+          "Explain density, compliance and the 40% budget.",
+          "Locate Volume, Radius and Keep attachments."
+        ],
+        [
+          "9–14",
+          "Trace Mode 1, finish its Settings connection and start.",
+          "Observe a live density preview."
+        ],
+        [
+          "14–20",
+          "Read termination and numerical metrics.",
+          "Record mass, U and actual volume."
+        ],
+        [
+          "20–25",
+          "Compare with baseline; offer one Volume variation if time permits.",
+          "Change one input only and label the run."
+        ],
+        [
+          "25–30",
+          "Distinguish density design from physical shape.",
+          "Restore the reference setup and save."
+        ]
+      ],
+      "prompts": [
+        [
+          "prediction",
+          "Sketch or describe the load path before running optimisation."
+        ],
+        [
+          "run",
+          "Record Volume, Radius in cells and mm, iteration limit, actual volume and termination reason."
+        ],
+        [
+          "comparison",
+          "Compare baseline and design mass and maximum displacement. Why is optimisation not expected to outperform the full-solid plate at the same loads?"
+        ],
+        [
+          "variation",
+          "If you tried Volume = 0.50, what changed? If not, state your prediction and label it as a prediction."
+        ]
+      ],
+      "slides": [
+        [
+          "0–4",
+          "Choose where material remains.",
+          "Keep the same loads and supports. Reduce the available material.",
+          "optimize-shape",
+          "Predict the load path before starting the job."
+        ],
+        [
+          "4–8",
+          "Forty percent is a budget.",
+          "Continuous densities distribute material through the active cells.",
+          "budget-card",
+          "Keep material and preserved attachment cells count in that budget."
+        ],
+        [
+          "8–12",
+          "Run Engineering Mode 1.",
+          "Reuse the baseline model, Material and Settings.",
+          "EngineeringSettingsComponent",
+          "Volume = 0.40 · Radius = 1.8 cells · maximum 80 iterations."
+        ],
+        [
+          "12–16",
+          "Watch density evolve.",
+          "Darker cells indicate higher material density, not a binary manufactured part.",
+          "ResultsComponent",
+          "Field 0 shows density. Use Scale = 0 for an undeformed design."
+        ],
+        [
+          "16–21",
+          "Read why the run stopped.",
+          "Completion, convergence and satisfied design checks are different claims.",
+          "status-card",
+          "This reference converged. Record your own termination reason."
+        ],
+        [
+          "21–26",
+          "Compare like with like.",
+          "The lighter density design moves more than the full-material plate.",
+          "mass-card",
+          "Compare mass and displacement, not just the picture."
+        ],
+        [
+          "26–30",
+          "A design still needs checking.",
+          "Thresholding changes stiffness and can disconnect the shape.",
+          "optimize-shape",
+          "Keep the completed result for final verification in lesson 06."
+        ]
+      ],
+      "notes": "<p>Compliance is load times displacement summed over the loaded degrees of freedom; lower compliance means a stiffer response for the same loading. The objective here is stiffness under a material budget, not an automatic proof of strength or constructability.</p><p>The reference density design retains 40% of full mass. Material near load/support interfaces is preserved by Engineering even though the Domain message reports 0 explicitly kept cells. This distinction matters when comparing interfaces and volume budgets.</p><p>The minimal <a href=\"../../components/index.html#SolverComponent\">TopOpt Solver</a> can also optimise a single simultaneous load set. This course uses Engineering so the same result can be used in Mode 2 and compared against its baseline. Do not mix an unrelated simple-Solver result into the Engineering Source input.</p>",
+      "files": [
+        [
+          "Shared Rhino model (mm)",
+          "../01-understand-the-problem/files/lesson01_cantilever_mm.3dm"
+        ],
+        [
+          "Partly wired starter .gh",
+          "files/lesson05_starter.gh"
+        ],
+        [
+          "Wired solution .gh",
+          "files/lesson05_solution.gh"
+        ]
+      ]
+    },
+    {
+      "id": "06",
+      "slug": "06-extract-and-check",
+      "title": "Extract and check the shape",
+      "minutes": 25,
+      "question": "Does the extracted shape still carry the load?",
+      "goal": "Convert densities into a binary cell shape, run a new FEM solve and compare it against the matching baseline.",
+      "components": [
+        "ResultsComponent",
+        "EngineeringSolveComponent",
+        "EngineeringSettingsComponent",
+        "FemResultsComponent",
+        "CompareResultsComponent"
+      ],
+      "steps": [
+        "Continue lesson 05 or open the starter. Select the shared Rhino geometry, then run BASELINE and OPTIMISATION in that order if the file has no current results.",
+        "Keep the same physical model. In Settings, Threshold = 0.40; connect that same value to the optimisation Results T input. Use Scale = 0 to inspect the candidate without display distortion.",
+        "Read Results Shape M. It retains cells whose density is at least 0.40. This mesh is not a new structural analysis.",
+        "Trace the third Engineering component labelled VERIFICATION. D, S, Cases, M and O match the earlier stages; Mode = 2.",
+        "Connect the completed OPTIMISATION Result R → VERIFICATION Source. This is the missing wire in the starter. Source expects engineering result data, not the mesh from Shape M.",
+        "Pulse RUN VERIFICATION after optimisation completes. Wait for a completed binary-grid reanalysis. Read errors rather than forcing a disconnected candidate through.",
+        "Connect the verified result to FEM Results and inspect displacement and stress. The binary candidate uses full material in retained cells; it is not smoothed or remeshed.",
+        "Compare Results receives BASELINE Result R as Baseline and VERIFICATION Result R as Candidate. Read its mass saving and displacement comparison. Matching inputs and completed results are required.",
+        "Reference at T = 0.40: mass 0.0542592 kg, maximum displacement about 0.0186599 mm, maximum von Mises about 20.3149 MPa. It is 52% lighter than the full plate; its mass differs from the 40%-density design.",
+        "Optional challenge after recording the reference: set the shared threshold to 0.50 and run VERIFICATION again. The supplied reference design produces disconnected pieces and is rejected. Record this as a modelling observation, then restore 0.40 and rerun verification.",
+        "Save the model and report locations. If baking Shape M, use an explicit Bake pulse, label the Rhino geometry as a thresholded candidate and test Undo. Bake does not validate the structure."
+      ],
+      "wires": [
+        [
+          "Shared threshold 0.40",
+          "Settings Threshold + design Results T"
+        ],
+        [
+          "Completed Mode 1 Result R",
+          "Mode 2 Source"
+        ],
+        [
+          "Same D, S, Cases, M, O",
+          "Engineering Mode 2"
+        ],
+        [
+          "Mode 2 Result R",
+          "FEM Results R"
+        ],
+        [
+          "Mode 0 R + Mode 2 R",
+          "Compare Baseline + Candidate"
+        ]
+      ],
+      "checkpoint": [
+        "Threshold = 0.40 for the guided run; no smoothing/remeshing.",
+        "Mode 2 Source is the completed Engineering optimisation result.",
+        "Verified binary mass and displacement are recorded separately from density metrics.",
+        "A rejected disconnected candidate is recognised as a useful result, not hidden."
+      ],
+      "problems": [
+        [
+          "Waiting for completed optimisation",
+          "Run Mode 1 to completed status before pulsing Mode 2. A running/cancelled result is not sufficient."
+        ],
+        [
+          "Source does not match",
+          "Keep domain, supports, cases, material, units and thickness unchanged. Recompute the source after physical model edits."
+        ],
+        [
+          "Disconnected grid / removed node",
+          "Use the reference 0.40 threshold and preserved attachments. Investigate topology rather than bypassing validation."
+        ],
+        [
+          "Comparison rejects results",
+          "Baseline must be completed Engineering Mode 0 with the same physical inputs, not standalone FEM Analyze."
+        ],
+        [
+          "Shape mass differs from design mass",
+          "Continuous density and binary thresholding are different material distributions; new stiffness and mass are expected."
+        ]
+      ],
+      "activities": [
+        [
+          "0–4",
+          "Separate density, thresholded geometry and verified response.",
+          "Predict whether binary mass equals density mass."
+        ],
+        [
+          "4–9",
+          "Inspect shared threshold and connect completed Source.",
+          "Run Mode 2 at 0.40."
+        ],
+        [
+          "9–15",
+          "Review the binary FEM result and Compare output.",
+          "Record mass, U and saving with units."
+        ],
+        [
+          "15–20",
+          "Demonstrate the reference failure at 0.50.",
+          "Describe the rejection and restore 0.40."
+        ],
+        [
+          "20–25",
+          "Discuss mesh sensitivity and the meaning of “verified”.",
+          "Save a justified comparison and one limitation."
+        ]
+      ],
+      "prompts": [
+        [
+          "threshold",
+          "Record threshold, retained binary mass and density-design mass. Explain why they differ."
+        ],
+        [
+          "verified",
+          "Record baseline and verified maximum displacement and mass saving. State which stages were compared."
+        ],
+        [
+          "failure",
+          "What happened at threshold 0.50? Distinguish your own observation from the supplied reference."
+        ],
+        [
+          "scope",
+          "What exactly was reanalysed? Name a physical check that this calculation does not include."
+        ]
+      ],
+      "slides": [
+        [
+          "0–4",
+          "Extract, then solve again.",
+          "A thresholded shape is a new stiffness distribution.",
+          "verify-shape",
+          "The density preview alone does not establish its response."
+        ],
+        [
+          "4–7",
+          "Use threshold 0.40.",
+          "Keep each cell whose density is at least the chosen threshold.",
+          "threshold-card",
+          "This creates a stepped binary grid; no smoothing is applied."
+        ],
+        [
+          "7–10",
+          "Pass the completed result.",
+          "Engineering Mode 2 needs Mode 1 Result R at Source, not Shape M.",
+          "EngineeringSolveComponent",
+          "Keep the same physical inputs; then pulse Run verification."
+        ],
+        [
+          "10–14",
+          "Read the new response.",
+          "Full material remains in each retained cell. Mass and deformation change.",
+          "FemResultsComponent",
+          "Reference binary mass 0.0542592 kg; maximum U ≈ 0.018660 mm."
+        ],
+        [
+          "14–18",
+          "Compare with the baseline.",
+          "Use matching completed Engineering results.",
+          "CompareResultsComponent",
+          "Reference mass saving = 52%; check displacement as well."
+        ],
+        [
+          "18–22",
+          "A rejected shape teaches us.",
+          "At threshold 0.50 this reference produces disconnected pieces.",
+          "failure-card",
+          "Read the error; restore 0.40 rather than bypassing the check."
+        ],
+        [
+          "22–25",
+          "State the scope.",
+          "This verifies the thresholded grid under the declared 2D assumptions.",
+          "verify-shape",
+          "It does not establish out-of-plane stability or connection design."
+        ]
+      ],
+      "notes": "<p>The phrase <strong>final verification</strong> here means full-material FEM on the retained binary grid. It does not mean verification of a smooth CAD redesign, a manufactured specimen or a structural system. A later geometry edit would require its own model and analysis.</p><p>For a refinement study, hold the physical shape and loads fixed. Rerunning optimisation on a finer grid changes the design as well as the discretisation. Point-load and sharp-corner peak stresses need particular care.</p>",
+      "files": [
+        [
+          "Shared Rhino model (mm)",
+          "../01-understand-the-problem/files/lesson01_cantilever_mm.3dm"
+        ],
+        [
+          "Partly wired starter .gh",
+          "files/lesson06_starter.gh"
+        ],
+        [
+          "Wired solution .gh",
+          "files/lesson06_solution.gh"
+        ]
+      ]
+    },
+    {
+      "id": "07",
+      "slug": "07-roof-rib",
+      "title": "Apply the workflow to the roof rib",
+      "minutes": 25,
+      "question": "Can the same sequence explain an architectural case?",
+      "goal": "Recognise the existing three-stage workflow, inspect five independent cases and explain a change in support reactions.",
+      "components": [
+        "LoadCaseComponent",
+        "GravityComponent",
+        "ReviewControlsComponent",
+        "CaseResultComponent",
+        "EngineeringSolveComponent",
+        "CompareResultsComponent"
+      ],
+      "steps": [
+        "Open the prepared roof Grasshopper model from the shared examples. Geometry is internalised; use the optional roof Rhino file for orientation, not as a required external selection.",
+        "Locate Domain, Keep regions, supports, Material, Settings, the five Load Cases and the three calculation stages. Do not rebuild the entire roof definition in this 25-minute transfer exercise.",
+        "Confirm the reference setup: span 6,000 mm; heel 300 mm plus rise 1,500 mm; thickness 12 mm; h = 100 mm; 630 active cells and 44 explicit Keep cells.",
+        "Read the supports: left pin fixes X/Y; right anchored roller fixes Y and allows X. These are bilateral restraints and can develop hold-down tension under uplift.",
+        "Inspect each named Load Case. Loads inside one case act together, including self-weight. Different cases are solved independently. Objective weight 1 is not a load factor.",
+        "Check Gravity: for this World XY model acceleration is (0, -9.80665, 0) m/s². Its units are always m/s², while point loads here are in N.",
+        "If time permits, run 01 BASELINE FEM → 02 OPTIMISATION → 03 FINAL VERIFICATION, waiting for completion between stages. Otherwise use the supplied reference table for the discussion and label it as reference evidence.",
+        "Use Review Stage 0/1/2 to display baseline/design/verification. Stage changes the visible result, not which solver is run. Use Case 1–5 only after completion to inspect saved case responses.",
+        "Use Field = 1 for displacement or Field = 2 for stress. Field 0 means FEM stress in stages 0/2, but design density in stage 1. Set a shared positive legend maximum for comparisons of the same physical field.",
+        "Read the final SLS displacement and the wind-uplift reactions. Explain why a lighter plate may require greater downward hold-down force.",
+        "Choose one controlled group variation only if time remains. Record the changed parameter; do not mix its result into the supplied reference table as though it were the same model."
+      ],
+      "wires": [
+        [
+          "Loads acting together + Gravity L",
+          "One named Load Case L"
+        ],
+        [
+          "Five independent Case outputs",
+          "Engineering Cases list"
+        ],
+        [
+          "Review Stage outputs",
+          "Result viewer Preview inputs"
+        ],
+        [
+          "Review Case",
+          "Case Result Case input"
+        ],
+        [
+          "Review Field",
+          "Matching result viewers Field input"
+        ]
+      ],
+      "checkpoint": [
+        "You identified five independent cases and the three calculation stages.",
+        "You distinguished thickness, cell size and tributary spacing.",
+        "You can explain the sign of uplift reactions.",
+        "You label supplied values as reference unless you reproduced them."
+      ],
+      "problems": [
+        [
+          "Case selector fails",
+          "Wait for completed stage and keep its job folder in place; selection reads saved case files."
+        ],
+        [
+          "Changing Stage does not run a solve",
+          "Review is a display control. Use the stage’s Run button to calculate."
+        ],
+        [
+          "Unexpected uplift reactions",
+          "The roller is anchored/bilateral in this model. Downward reaction means a hold-down demand, not loss of contact automatically."
+        ],
+        [
+          "Default Gravity points out of plane",
+          "Use the supplied in-plane (0, -9.80665, 0) vector for XY; the generic default points along -Z."
+        ],
+        [
+          "A 25-minute roof analysis takes too long",
+          "Use the embedded reference table and focus on interpretation. Do not claim that a reference run is a student-produced result."
+        ]
+      ],
+      "activities": [
+        [
+          "0–4",
+          "Show how the same three-stage structure appears in the larger file.",
+          "Find Domain, supports and the three stages."
+        ],
+        [
+          "4–9",
+          "Explain the five cases, self-weight and anchored roller.",
+          "Trace one complete case."
+        ],
+        [
+          "9–15",
+          "Run prepared stages if practical; otherwise use supplied reference.",
+          "Label observed versus reference values."
+        ],
+        [
+          "15–21",
+          "Use Stage/Case/Field and discuss SLS versus uplift.",
+          "Explain reaction sign and lighter-plate hold-down."
+        ],
+        [
+          "21–25",
+          "Discuss fixed-shape refinement and design gaps.",
+          "State one transferable method and one missing physical check."
+        ]
+      ],
+      "prompts": [
+        [
+          "map",
+          "Map the roof components to the small plate workflow. What is new and what is unchanged?"
+        ],
+        [
+          "cases",
+          "Explain the difference between loads within one case and five independent cases. What does Weight = 1 mean?"
+        ],
+        [
+          "uplift",
+          "Record the final reference mass, SLS displacement and uplift reaction sign. Did you reproduce them or use the supplied reference?"
+        ],
+        [
+          "limits",
+          "Why does this plane-stress roof-rib exercise not establish a complete roof design?"
+        ]
+      ],
+      "slides": [
+        [
+          "0–4",
+          "Same method. Larger question.",
+          "Identify geometry, conditions, calculation stages and evidence.",
+          "roof-diagram",
+          "Use the prepared roof model; focus on interpretation."
+        ],
+        [
+          "4–7",
+          "Read the physical model.",
+          "Span 6,000 mm; thickness 12 mm; tributary spacing 3,000 mm.",
+          "roof-card",
+          "Cell size 100 mm is neither thickness nor rib spacing."
+        ],
+        [
+          "7–10",
+          "Separate the load cases.",
+          "Five alternatives are solved independently; loads within one case act together.",
+          "LoadCaseComponent",
+          "Weight = 1 is an objective weight, not a load factor."
+        ],
+        [
+          "10–13",
+          "Self-weight belongs to a case.",
+          "Gravity uses Material density and acceleration in m/s².",
+          "GravityComponent",
+          "For this XY model, acceleration points along negative Y."
+        ],
+        [
+          "13–17",
+          "Review is a display control.",
+          "Stage selects baseline, design or verification; Case selects a saved response.",
+          "ReviewControlsComponent",
+          "Wait for completion before selecting every case."
+        ],
+        [
+          "17–21",
+          "A lighter roof can need hold-down.",
+          "Under uplift, reduced self-weight can increase the downward support reaction.",
+          "roof-results",
+          "The anchored roller can transmit tension in this idealised model."
+        ],
+        [
+          "21–25",
+          "Transfer the reasoning.",
+          "Read the result, check assumptions and state what the model leaves out.",
+          "roof-results",
+          "Out-of-plane stability, joints and anchorage need additional models."
+        ]
+      ],
+      "notes": "<p>This is a short transfer exercise adapted from the repository’s existing roof course. The supplied actions and combination coefficients are fixed teaching assumptions, not site-specific design inputs. No new regulation review is implied.</p><p>The six roof stations each represent 3 m² of horizontal tributary area. The SLS teaching force is -(0.15 + 0.60 + 0.80) × 3 = -4.65 kN per station; convert to -4,650 N for the model. Full-plate self-weight is about 5.81985 kN, giving about +16.85993 kN vertical reaction at each support under the symmetric SLS case.</p><p>At the reference h = 100 mm, Volume = 0.30 and Threshold = 0.40. Filter radius is 180 mm, entered as 180/h = 1.8 cells. Reference optimisation converged after 36 iterations. Refining the <em>same binary shape</em> to 50 and 25 mm raises peak stress substantially; this sequence does not demonstrate converged peak stress.</p>",
+      "files": [
+        [
+          "Prepared roof definition .gh",
+          "../../components/examples/roof_2d_classroom.gh"
+        ],
+        [
+          "Roof orientation model .3dm",
+          "../../assets/course/roof_geometry_mm.3dm"
+        ],
+        [
+          "Source numerical reference .json",
+          "../../data/roof-reference.json"
+        ]
+      ]
+    },
+    {
+      "id": "08",
+      "slug": "08-discuss-results",
+      "title": "Discuss the results",
+      "minutes": 10,
+      "question": "What can you defend using the evidence you collected?",
+      "goal": "Present a concise comparison, distinguish observed results from reference values and propose a justified next check.",
+      "components": [
+        "CompareResultsComponent",
+        "FemResultsComponent",
+        "ResultsComponent"
+      ],
+      "steps": [
+        "Open your saved model and worksheet notes. Use the small plate comparison as the common minimum; add the roof observations if you completed them.",
+        "Choose the full-material baseline and the verified binary candidate from the same physical model. Do not compare an unrelated job or relaxed design stress as though it were binary FEM stress.",
+        "Record geometry, units, material, h, thickness, applied force, threshold and which stages you actually ran. If you used reference values, label them explicitly.",
+        "Present mass and maximum displacement for both stages, plus termination and verification status. Use matching field units, legend maximum and deformation scale for visual comparisons.",
+        "Explain one difference between your lesson 01 prediction and the calculated response. A changed understanding is a useful outcome.",
+        "State one unresolved modelling issue and one concrete next check. Examples: loading/support patches, fixed-shape refinement, out-of-plane stability or a connection model.",
+        "Save your Grasshopper definition, the completed worksheet or PDF, and your observation table. Keep the runtime job folder if you need case selection and report access later.",
+        "Give a 30-second evidence-based conclusion to your partner. End with what you would investigate next, rather than declaring the part universally safe."
+      ],
+      "wires": [
+        [
+          "Matching completed baseline + verification",
+          "Compare Results"
+        ],
+        [
+          "Field + units + shared legend + Scale",
+          "Comparable result views"
+        ],
+        [
+          "Model assumptions + numerical evidence",
+          "A conclusion with an explicit scope"
+        ]
+      ],
+      "checkpoint": [
+        "Comparison uses matching baseline and verified candidate.",
+        "Numbers include units and provenance (own run or supplied reference).",
+        "The conclusion contains evidence, one limitation and one next action.",
+        "Saved files and notes make the work understandable to another person."
+      ],
+      "problems": [
+        [
+          "Only a screenshot is submitted",
+          "Add model settings, units, stage names and numerical metrics."
+        ],
+        [
+          "Largest red area is called worst",
+          "Compare actual values with a shared legend; auto colours differ between views."
+        ],
+        [
+          "Converged means safe",
+          "Convergence describes the algorithm’s stopping criteria. Physical adequacy and design checks remain separate."
+        ],
+        [
+          "Reference presented as own experiment",
+          "Label provenance. A clear interpretation of supplied data is acceptable when classroom computation is unavailable."
+        ]
+      ],
+      "activities": [
+        [
+          "0–2",
+          "Ask pairs to choose their strongest comparison.",
+          "Select matching baseline and verified data."
+        ],
+        [
+          "2–5",
+          "Offer the claim–evidence–limitation–next-check structure.",
+          "Complete the short conclusion."
+        ],
+        [
+          "5–8",
+          "Invite 30-second pair presentations and challenges.",
+          "Ask one question about the evidence."
+        ],
+        [
+          "8–10",
+          "Return to the original prediction and collect deliverables.",
+          "Save the model and printable worksheet."
+        ]
+      ],
+      "prompts": [
+        [
+          "claim",
+          "Write one claim supported by your comparison. Include the model and stage names."
+        ],
+        [
+          "evidence",
+          "Give two numerical values with units and state whether you computed them or used reference data."
+        ],
+        [
+          "limitation",
+          "State one physical or numerical limitation that matters to your conclusion."
+        ],
+        [
+          "next",
+          "Propose one specific next check and explain what uncertainty it would reduce."
+        ],
+        [
+          "reflection",
+          "How did your understanding change from the prediction in lesson 01?"
+        ]
+      ],
+      "slides": [
+        [
+          "0–1",
+          "Return to your prediction.",
+          "What did the calculation confirm, and what surprised you?",
+          "fem-shape",
+          "Use your lesson 01 notes as the starting point."
+        ],
+        [
+          "1–3",
+          "Make a fair comparison.",
+          "Full-material baseline versus verified binary candidate, with matching inputs.",
+          "CompareResultsComponent",
+          "Avoid comparing relaxed design stress with final-material stress."
+        ],
+        [
+          "3–4",
+          "Name the evidence.",
+          "State mass, displacement, units and stage.",
+          "comparison-card",
+          "Label your own results separately from supplied reference values."
+        ],
+        [
+          "4–6",
+          "State what remains uncertain.",
+          "Convergence is an algorithmic statement; it is not complete physical validation.",
+          "scope-card",
+          "Name one assumption that could change the conclusion."
+        ],
+        [
+          "6–8",
+          "Choose the next check.",
+          "Change one thing to answer a specific unresolved question.",
+          "next-card",
+          "Explain what evidence would change your mind."
+        ],
+        [
+          "8–9",
+          "Explain it in 30 seconds.",
+          "One claim. Two numbers. One limitation. One next step.",
+          "conclusion-card",
+          "Ask your partner whether the evidence supports the claim."
+        ],
+        [
+          "9–10",
+          "Keep a reproducible record.",
+          "Save the model, settings, worksheet and relevant job folders.",
+          "checkpoint",
+          "Your conclusion should be understandable without your presentation."
+        ]
+      ],
+      "notes": "<p>Suggested minimum submission: saved Grasshopper definition; completed worksheet/PDF; a baseline-versus-verified comparison with units; and a four-sentence conclusion. Keep reference files unchanged and save personal work under a new name.</p><p>Assessment: model and units (5 points), correct stages and numerical evidence (5), controlled comparison and interpretation (5), limitations and reproducible communication (5). Do not grade visual smoothness as proof of accuracy.</p>",
+      "files": [
+        [
+          "Recovery: complete plate workflow .gh",
+          "../06-extract-and-check/files/lesson06_solution.gh"
+        ],
+        [
+          "Small plate numerical reference .json",
+          "../../data/intro-reference.json"
+        ],
+        [
+          "Roof numerical reference .json",
+          "../../data/roof-reference.json"
+        ]
+      ]
+    }
+  ]
+}
