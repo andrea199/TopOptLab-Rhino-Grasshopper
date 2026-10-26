@@ -44,7 +44,7 @@ def sequence(l):
  return '<div class="manual-related"><strong>Your learning path</strong><p>'+' · '.join(parts)+'</p></div>'
 def connection_help(l):
  step={'03':2,'04':6,'05':9,'06':11,'07':14,'08':13}[l['id']]
- return '<div class="manual-related"><strong>Follow the connections</strong><p><a href="../connections/index.html#step-'+str(step)+'">Illustrated connections for this lesson</a> · <a href="../../examples/index.html">All prepared examples</a> · <a href="../../downloads/TopOptLab_Polimi_2026-10-26_EN.pptx">Classroom PowerPoint</a></p></div>'
+ return '<div class="manual-related"><strong>Follow the connections</strong><p><a href="../connections/index.html#step-'+str(step)+'">Illustrated connections for this lesson</a> · <a href="../../examples/index.html">All prepared examples</a></p></div>'
 
 def page(l,name,title,body,script=''):
  folder=SITE/'learnings'/l['slug'];folder.mkdir(parents=True,exist_ok=True)

@@ -12,9 +12,9 @@ import re
 import subprocess
 from urllib.parse import unquote
 import xml.etree.ElementTree as ET
-import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+POWERPOINT_SUFFIXES = {".ppt", ".pptx", ".pptm", ".pps", ".ppsx", ".ppsm", ".pot", ".potx", ".potm"}
 
 
 def check_manifest(base, manifest_file):
@@ -72,7 +72,7 @@ def check_tracked(required):
         rb"(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|"
         rb"AKIA[0-9A-Z]{16}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----)"
     )
-    forbidden_ext = {".gha", ".dll", ".exe", ".pem", ".key", ".pfx", ".pyc"}
+    forbidden_ext = {".gha", ".dll", ".exe", ".pem", ".key", ".pfx", ".pyc"} | POWERPOINT_SUFFIXES
     total = 0
     for name in sorted(tracked):
         path = Path(name)
@@ -102,16 +102,17 @@ def main():
     examples.append(course_root / "case/roof_2d_classroom.ghx")
     for path in examples:
         check_archive(path)
-    with zipfile.ZipFile(course_root / "Centina_tetto_2D_lezione_v3.pptx") as deck:
-        assert deck.testzip() is None, "Corrupt PowerPoint package"
-        names = deck.namelist()
-        assert len([n for n in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", n)]) == 40
-        assert len([n for n in names if re.fullmatch(r"ppt/notesSlides/notesSlide\d+\.xml", n)]) == 40
+    for base in (ROOT / "docs/manual", course_root):
+        presentations = [p.relative_to(ROOT).as_posix() for p in base.rglob("*")
+                         if p.is_file() and p.suffix.lower() in POWERPOINT_SUFFIXES]
+        if presentations:
+            raise ValueError("Instructor PowerPoint files must stay outside the distribution: "
+                             + ", ".join(presentations))
     guide_count = check_links()
     if args.tracked:
         check_tracked(upstream | course)
     print(f"OK: {len(upstream)} upstream files; {len(course)} course files; "
-          f"{len(examples)} GH/GHX pairs; 40 slides/notes; {guide_count} linked guides")
+          f"{len(examples)} GH/GHX pairs; no PowerPoint files; {guide_count} linked guides")
 
 
 if __name__ == "__main__":

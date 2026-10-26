@@ -4,7 +4,7 @@ Start with the [2D roof rib engineering lab](roof_2d/README.md):
 a three-hour class covering assumptions, actions, supports, baseline FEM,
 topology optimization, threshold reanalysis and mesh sensitivity.
 
-- [PowerPoint: 40 slides with speaker notes](roof_2d/output/Centina_tetto_2D_lezione_v3.pptx)
+- [English HTML roof-rib lesson](../docs/manual/learnings/07-roof-rib/index.html)
 - [English instructor guide](roof_2d/INSTRUCTOR_GUIDE.md)
 - [English student worksheet](roof_2d/STUDENT_WORKSHEET.md)
 - [Original Italian course instructions](roof_2d/output/LEGGIMI.md)

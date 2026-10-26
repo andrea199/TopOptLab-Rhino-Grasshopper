@@ -15,13 +15,13 @@ Actions results require authorized GitHub access.
 
 For the 26 October 2026 course, download **one complete ZIP for your computer**
 from the [classroom release](https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026). Each package contains the English HTML
-manual, slides, all exercise files and its matching offline CPU installer.
+manual, HTML lesson slides, all exercise files and its matching offline CPU installer.
 
 | Computer | Complete course package | Size |
 | --- | --- | ---: |
-| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 232.25 MB |
-| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 238.73 MB |
-| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 248.62 MB |
+| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 220.63 MB |
+| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 229.40 MB |
+| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 239.29 MB |
 
 All packages are below 250,000,000 bytes. Extract the entire ZIP, open
 `START_HERE.html`, then choose **Open the complete English manual**. Keep its
@@ -47,10 +47,10 @@ installer for Linux, Windows ARM or macOS versions below 15.
 The repository includes the integration source, the complete upstream snapshot,
 editable examples, icons, tests and a roof-rib teaching kit. The Windows source
 installer creates the local Python environment and compiles the plugin. The
-current English Polimi presentation has 175 slides: 79 main-route slides and
-96 component-reference slides. A separate seven-slide setup guide covers
-installation and opening the HTML manual. The original Italian roof-rib deck
-remains as reference material.
+published English teaching material includes the HTML manual, 56 HTML lesson
+slides, illustrated installation, component explanations and exercise files.
+PowerPoint files are maintained separately by the instructor and are not included
+in the repository or its release packages.
 
 ![Computed shelf bracket study](docs/shelf-bracket-fine-preview.png)
 
@@ -66,8 +66,8 @@ HTML lesson slides, teacher guides, student worksheets and linked exercise files
 The manual includes an [illustrated installation guide](docs/manual/getting-started/installation/index.html),
 a [component and port introduction](docs/manual/learnings/component-primer/index.html),
 and [wiring walkthroughs](docs/manual/learnings/connections/index.html).
-Download the [full English presentation](docs/manual/downloads/TopOptLab_Polimi_2026-10-26_EN.pptx)
-or the [short installation and HTML-manual slides](docs/manual/downloads/TopOptLab_Installation_Manual_EN.pptx).
+PowerPoint presentations are distributed separately by the instructor; use the
+HTML lesson slides and illustrated setup guide included here.
 See [authoring instructions](docs/manual/AUTHORING.md) before adding new material.
 The [documentation hosting guide](docs/DOCUMENTATION_HOSTING.md) explains the
 Read the Docs build; it serves this same manual without maintaining another site.

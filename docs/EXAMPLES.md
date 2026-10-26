@@ -43,7 +43,7 @@ the still-incomplete final-surface FEM. Read the [shelf guide](SHELF_BRACKET.md)
 ## Engineering class
 
 The separate [roof rib course](../teaching/roof_2d/README.md) adds a 21st GH/GHX
-document, Rhino geometry, a 40-slide deck, worksheets and five-case reference
+document, Rhino geometry, HTML/Markdown teaching guides, worksheets and five-case reference
 calculations. Use this for a complete lesson rather than a component demonstration.
 
 Before changing a model, inspect its starting values. Keep a physical filter

@@ -5,7 +5,7 @@ Lezione di 3 ore in italiano per una classe di ingegneria, con componenti softwa
 ## Inizia da qui
 
 1. Estrai tutto lo ZIP in una cartella scrivibile. Lavora su una copia.
-2. Apri `Centina_tetto_2D_lezione_v3.pptx`. Le note del relatore spiegano ogni slide e contengono le risposte attese. In PowerPoint attiva Note o Visualizzazione relatore.
+2. Apri `GUIDA_DOCENTE.html` oppure `GUIDA_DOCENTE.md` per spiegazioni e risposte attese. Le presentazioni PowerPoint sono materiale separato del docente e non sono incluse nella distribuzione GitHub.
 3. Apri `case/roof_geometry_mm.3dm` in Rhino 8: millimetri, vista Top, Zoom Extents.
 4. Apri `case/roof_2d_classroom.gh` in Grasshopper. Le geometrie sono già incluse; non occorre selezionarle da Rhino. Il file `.ghx` contiene la stessa definizione in formato testuale.
 5. Mantieni i valori iniziali. Premi RUN in ordine: **01 BASELINE FEM → 02 OPTIMIZATION → 03 FINAL VERIFICATION**. Aspetta il completamento di ogni fase.
@@ -14,7 +14,7 @@ Lezione di 3 ore in italiano per una classe di ingegneria, con componenti softwa
 
 ## File inclusi
 
-- PowerPoint: 40 slide, 40 note del relatore, 15 tabelle e 4 grafici nativi modificabili.
+- Guide HTML/Markdown, esercizi e risultati di riferimento. I PowerPoint del docente sono distribuiti separatamente.
 - `GUIDA_DOCENTE.md`: programma, spiegazioni slide per slide, risposte e criteri di valutazione.
 - `ESERCITAZIONE_STUDENTI.md`: consegna, tabella da compilare e domande.
 - `case/`: geometria Rhino, modello Grasshopper e richiesta numerica di riferimento.

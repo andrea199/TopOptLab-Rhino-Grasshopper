@@ -11,8 +11,8 @@ topology. Climatic actions are assumed teaching inputs, not site-specific design
 ## Files and first run
 
 1. [Install the complete software](../../docs/INSTALLATION.md) before class.
-2. Download/open the [40-slide PowerPoint](output/Centina_tetto_2D_lezione_v3.pptx).
-   Use Presenter View for the original Italian speaker notes.
+2. Open the [HTML lesson and instructions](../../docs/manual/learnings/07-roof-rib/index.html).
+   Instructor PowerPoint files are distributed separately and are not included here.
 3. Open [roof_geometry_mm.3dm](output/case/roof_geometry_mm.3dm) in Rhino.
    Use millimetres, Top view and Zoom Extents.
 4. Open [roof_2d_classroom.gh](output/case/roof_2d_classroom.gh) in Grasshopper.
@@ -89,7 +89,9 @@ GitHub shows their source, so open them locally in a browser.
 
 Course checksums are recorded in [MANIFEST_SHA256.json](output/MANIFEST_SHA256.json).
 During repository preparation only machine-specific path metadata in reference
-JSON/HTML was made relative; numeric values and original deck/figures were preserved.
+JSON/HTML was made relative; numeric values and figures were preserved.
+PowerPoint files were subsequently removed from the GitHub distribution on
+26 October 2026; the current manifest records the remaining course assets.
 The original local export was backed up outside tracked files and the course
 manifest was regenerated. Historical job/NPZ paths describe the originating run;
 use the reproduction command for a fresh complete job folder.

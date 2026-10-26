@@ -1,9 +1,10 @@
 # Instructor guide — 2D roof rib
 
 Use this English teaching plan alongside the
-[original 40-slide deck](output/Centina_tetto_2D_lezione_v3.pptx).
-The detailed slide-by-slide Italian notes are in the deck and
-[original guide](output/GUIDA_DOCENTE.md).
+[HTML roof-rib lesson](../../docs/manual/learnings/07-roof-rib/index.html).
+The detailed Italian teaching notes remain in the
+[original guide](output/GUIDA_DOCENTE.md). PowerPoint files are maintained
+separately by the instructor and are not part of this distribution.
 
 ## Prepare the classroom
 
