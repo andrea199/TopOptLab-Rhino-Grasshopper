@@ -24,3 +24,14 @@ local-settings.json
 .DS_Store
 Thumbs.db
 /teaching/**/*.zip
+
+# Instructor presentations stay outside GitHub and source/release exports.
+*.pot
+*.potm
+*.potx
+*.pps
+*.ppsm
+*.ppsx
+*.ppt
+*.pptm
+*.pptx

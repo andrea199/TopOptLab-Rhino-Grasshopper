@@ -67,7 +67,7 @@ The same manual also contains `learnings/connections/index.html`, with 18 illust
 
 The normal build adds links from Home, Learnings, Getting Started and each lesson. Lessons 03–08 receive their links from `build_lessons.py`; lessons 01–02 retain editable pages and get idempotent navigation blocks from `build.py`.
 
-Wiring images are shared in `assets/wiring/`. The current English classroom PowerPoint is in `downloads/TopOptLab_Polimi_2026-10-26_EN.pptx`. This is the current classroom deck; the 56 HTML slides remain distributed across the eight lesson folders. Replace the shared download and wiring images together when updating the classroom deck, then inspect the relevant HTML diagrams.
+Wiring images are shared in `assets/wiring/`. Keep their provenance and connection-step mapping current when changing the illustrated walkthrough. The 56 HTML slides remain distributed across the eight lesson folders. PowerPoint files are maintained outside the repository and must not be included in source exports or release ZIPs.
 
 The normal build synchronises the 21 readable GHX example archives from `tool/examples` and the roof teaching folder into `components/examples`, beside the existing GH copies. Both formats remain one definition rather than two use cases. Exercise starters and solutions stay with their lesson.
 
@@ -88,5 +88,5 @@ both new pages and their navigation links.
 Installation belongs before class. The first two lesson blocks keep their
 combined 35 minutes: use 20 minutes for component/port introduction and
 15 minutes for first practice. The remaining blocks and break retain the
-180-minute total. The separate eight HTML slide decks still contain 56 slides;
-the classroom PowerPoint can have a different total.
+180-minute total. The eight HTML slide decks contain 56 slides. Instructor
+PowerPoint presentations are distributed separately and do not belong in this tree.

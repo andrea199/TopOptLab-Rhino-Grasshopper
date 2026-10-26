@@ -3,15 +3,15 @@
 ## Complete classroom packages
 
 Choose one [classroom release package](https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026) for your computer. The complete
-English manual, 175-slide course presentation, examples and corresponding CPU
-installer are included. Python dependencies are bundled; the Windows source
+English HTML manual, HTML lesson slides, examples and corresponding CPU
+installer are included. PowerPoint files are not distributed through GitHub. Python dependencies are bundled; the Windows source
 installation later in this document has different prerequisites.
 
 | Computer | Download | Exact size |
 | --- | --- | ---: |
-| Windows x64 with Rhino 8 | [Windows ZIP](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 232,247,712 bytes |
-| Apple Silicon Mac, macOS 15+, Rhino 8 | [Apple Silicon ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 238,731,778 bytes |
-| Intel Mac, macOS 15+, Rhino 8 | [Intel ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 248,620,609 bytes |
+| Windows x64 with Rhino 8 | [Windows ZIP](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 220,632,103 bytes |
+| Apple Silicon Mac, macOS 15+, Rhino 8 | [Apple Silicon ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 229,400,558 bytes |
+| Intel Mac, macOS 15+, Rhino 8 | [Intel ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 239,289,376 bytes |
 
 GitHub access is required while this repository is private. Download one ZIP and
 extract the whole archive to a permanent writable folder. Do not merge different
@@ -54,8 +54,7 @@ structure so the images, lessons and GH/GHX downloads work offline. Reading the
 manual does not require Rhino or Python.
 
 The manual's [illustrated setup guide](manual/getting-started/installation/index.html)
-and the [seven-slide installation guide](manual/downloads/TopOptLab_Installation_Manual_EN.pptx)
-show the opening steps. See [release scope and checksums](RELEASE_2026-10-26.md).
+shows the opening steps. PowerPoint presentations remain separate instructor material. See [release scope and checksums](RELEASE_2026-10-26.md).
 
 ## Windows source installation
 

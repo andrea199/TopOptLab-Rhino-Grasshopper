@@ -28,14 +28,14 @@ def integrate(page,section):
   related='<div class="manual-related"><strong>Continue learning</strong><p><a href="'+relative(page,'components/index.html')+'#DomainComponent">Component reference: TopOpt Domain</a> · <a href="'+relative(page,'learnings/02-build-the-domain/index.html')+'">Next: Build the domain</a> · <a href="'+relative(page,'learnings/index.html')+'">Full learning path</a></p></div>'
   text=text.replace('</main>','<!-- RELATED START -->'+related+'<!-- RELATED END --></main>')
  if section=='learnings' and page.parent.name.startswith(('01-','02-')):
-  help='<div class="manual-related"><strong>Follow the connections</strong><p><a href="'+relative(page,'learnings/connections/index.html')+'#step-1">Domain connections, one step at a time</a> · <a href="'+relative(page,'examples/index.html')+'">All prepared examples</a> · <a href="'+relative(page,'downloads/TopOptLab_Polimi_2026-10-26_EN.pptx')+'">Classroom PowerPoint</a></p></div>'
+  help='<div class="manual-related"><strong>Follow the connections</strong><p><a href="'+relative(page,'learnings/connections/index.html')+'#step-1">Domain connections, one step at a time</a> · <a href="'+relative(page,'examples/index.html')+'">All prepared examples</a></p></div>'
   text=text.replace('</main>','<!-- CONNECTIONS START -->'+help+'<!-- CONNECTIONS END --></main>')
  page.write_text(text,encoding='utf8')
 
 def connection_resources(page):
- links=[('Illustrated installation','getting-started/installation/index.html'),('Installation and manual slides (7)','downloads/TopOptLab_Installation_Manual_EN.pptx'),('Components before the example','learnings/component-primer/index.html'),('Connection walkthrough','learnings/connections/index.html'),('All 21 examples','examples/index.html'),('Classroom PowerPoint','downloads/TopOptLab_Polimi_2026-10-26_EN.pptx')]
+ links=[('Illustrated installation','getting-started/installation/index.html'),('Components before the example','learnings/component-primer/index.html'),('Connection walkthrough','learnings/connections/index.html'),('All 21 examples','examples/index.html')]
  buttons=''.join('<a class="manual-button secondary" href="'+relative(page,target)+'">'+label+'</a>' for label,target in links)
- return release_downloads()+'<section class="manual-related"><h2>Installation, components and course files</h2><p>Install before class, learn the component inputs and outputs, then follow the worked examples and their 18 illustrated connection steps. The English classroom PowerPoint and all 21 prepared examples are linked here. Each lesson also keeps its own HTML slides and practice files.</p><div class="manual-actions">'+buttons+'</div></section>'
+ return release_downloads()+'<section class="manual-related"><h2>Installation, components and course files</h2><p>Install before class, learn the component inputs and outputs, then follow the worked examples and their 18 illustrated connection steps. All 21 prepared examples are linked here. PowerPoint presentations are maintained separately by the instructor. Each lesson also keeps its own HTML slides and practice files.</p><div class="manual-actions">'+buttons+'</div></section>'
 
 def sync_example_archives():
  sources=sorted((REPO/'tool/examples').glob('*.ghx'))+[REPO/'teaching/roof_2d/output/case/roof_2d_classroom.ghx']

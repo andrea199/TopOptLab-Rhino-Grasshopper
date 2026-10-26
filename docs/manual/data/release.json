@@ -7,26 +7,27 @@
     {
       "platform": "Windows x64",
       "file": "Lecture_26102026_Windows.zip",
-      "bytes": 232247712,
-      "sha256": "b735ff87b4955fda650af937d83e199d255ae290db8f27d50fe5a2c66d97b8ff",
+      "bytes": 220632103,
+      "sha256": "c07f9d3421733a4af3e52a7a36648086caff631603ba1d7d87874f1ce2fffdeb",
       "scope": "Rhino 8; included CPU runtime",
       "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip"
     },
     {
       "platform": "Mac Apple Silicon",
       "file": "Lecture_26102026_Mac_AppleSilicon.zip",
-      "bytes": 238731778,
-      "sha256": "8fcd08805ae36d9c75945f71182b79b19b68f95417200c769192c13eeea98abb",
+      "bytes": 229400558,
+      "sha256": "e91cf7398550e5b0a15274e921fe7c9e121e8b0f15db7251a2d9005190c42720",
       "scope": "Pilot; macOS 15+; native arm64",
       "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip"
     },
     {
       "platform": "Mac Intel",
       "file": "Lecture_26102026_Mac_Intel.zip",
-      "bytes": 248620609,
-      "sha256": "1c1d14efd916591e161bceb7279eacaedff75ff03990ff34de5f3d197690e427",
+      "bytes": 239289376,
+      "sha256": "955ac3853e278e26e99a42b053d566fdd2cdfe5d531dc0444578883ddf350be3",
       "scope": "Pilot; macOS 15+; native x86_64",
       "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip"
     }
-  ]
+  ],
+  "powerpoint_files_in_current_distribution": 0
 }

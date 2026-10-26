@@ -9,7 +9,9 @@ ROOT = Path(__file__).resolve().parent
 EXCLUDE = {'.git', '.venv', 'runtime_deps', '__pycache__', '.pytest_cache',
            'build', 'dist', 'node_modules'}
 LOCAL_SUFFIXES = {'.pyc', '.zip', '.user', '.gha', '.dll', '.exe', '.pem',
-                  '.key', '.pfx', '.3dmbak', '.ghbak'}
+                  '.key', '.pfx', '.3dmbak', '.ghbak',
+                  '.ppt', '.pptx', '.pptm', '.pps', '.ppsx', '.ppsm',
+                  '.pot', '.potx', '.potm'}
 
 
 def is_local(path):

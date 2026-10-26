@@ -1,9 +1,7 @@
 {
   "title": "TopOptLab Polimi classroom presentation",
-  "file": "downloads/TopOptLab_Polimi_2026-10-26_EN.pptx",
   "course_date": "2026-10-26",
   "slides": 175,
-  "sha256": "5e6528f4b05c304bd883b446db333435974c833297cbe6fd1645d823e6f1604f",
   "structure": [
     "Illustrated pre-class installation",
     "Classroom component and port introduction",
@@ -34,5 +32,7 @@
   "installation_slides": 6,
   "primer_slides": 17,
   "classroom_slides": 73,
-  "appendix_slides": 96
+  "appendix_slides": 96,
+  "distribution": "Instructor-managed presentation, not distributed in GitHub or release ZIPs.",
+  "purpose": "Provenance and source-page mapping for the published wiring images only."
 }

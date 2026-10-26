@@ -61,3 +61,10 @@ Local results are not a claim that a GitHub Actions run has completed.
 No GitHub visibility change, public release or external-account authorization is
 performed by this configuration. Actual Rhino UI, second-PC installation and Mac
 acceptance remain practical qualification steps; numerical checks do not claim them.
+
+## Distribution update — 26 October 2026
+
+PowerPoint files are maintained outside GitHub. The historical validation above
+records the earlier course snapshot; the current source distribution retains the
+HTML/Markdown guides, examples, figures and reference calculations. Repository
+integrity now checks those remaining assets and rejects tracked PowerPoint files.

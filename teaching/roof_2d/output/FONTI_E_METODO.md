@@ -30,12 +30,12 @@ Il massimo di tensione continua a crescere con il raffinamento. I carichi/vincol
 - Collegamenti risolti in Grasshopper senza finestra: cinque Load Case, ciascuno con sei forze e Gravity; nessun errore su geometria, condizioni, materiale e Settings.
 - Entrambi gli archivi GH/GHX riletti con SDK: proprietà e 164 oggetti verificati.
 - Lo script `source/reproduce.py` è stato eseguito in una cartella nuova: masse, arresto e raffinamento riprodotti.
-- PowerPoint: 40 slide con note, 15 tabelle e 4 grafici nativi con dati incorporati. Controlli del pacchetto, reimportazione e rendering completati; slide ispezionate visivamente. Dati dei grafici arrotondati a sei decimali; JSON conserva la precisione originale.
+- La presentazione PowerPoint originale del docente è stata verificata separatamente ed è mantenuta fuori dalla distribuzione GitHub. I dati JSON inclusi conservano la precisione originale.
 - Non eseguiti: collaudo interattivo del nuovo file in Rhino (preview, pulsanti, Bake/Undo) e apertura nella applicazione Microsoft PowerPoint. Il docente deve fare una prova prima della lezione.
 
 ## Figure
 
-Tutte le mappe FEM, le densità, la forma binaria e i disegni geometrici derivano dai dati del caso. I grafici di massa, convergenza e picchi sono modificabili in PowerPoint. `figure/roof_concept.png` è invece un'illustrazione concettuale generata, non una fotografia o una geometria verificata. La reticolare della copertina è illustrativa e differisce dalla topologia calcolata.
+Tutte le mappe FEM, le densità, la forma binaria e i disegni geometrici derivano dai dati del caso. I dati di massa, convergenza e picchi sono conservati nei JSON inclusi. `figure/roof_concept.png` è invece un'illustrazione concettuale generata, non una fotografia o una geometria verificata. La reticolare della copertina è illustrativa e differisce dalla topologia calcolata.
 
 Immagine di copertina generata con ImageGen, modalità built-in. Prompt originale:
 
