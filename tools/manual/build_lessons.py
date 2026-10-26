@@ -42,9 +42,13 @@ def sequence(l):
  if i<len(COURSE)-1:parts.append('<a href="../'+COURSE[i+1]['path']+'">Lesson '+COURSE[i+1]['id']+' →</a>')
  else:parts.append('<a href="../index.html">Return to the learning path</a>')
  return '<div class="manual-related"><strong>Your learning path</strong><p>'+' · '.join(parts)+'</p></div>'
+def connection_help(l):
+ step={'03':2,'04':6,'05':9,'06':11,'07':14,'08':13}[l['id']]
+ return '<div class="manual-related"><strong>Follow the connections</strong><p><a href="../connections/index.html#step-'+str(step)+'">Illustrated connections for this lesson</a> · <a href="../../examples/index.html">All prepared examples</a> · <a href="../../downloads/TopOptLab_Polimi_2026-10-26_EN.pptx">Classroom PowerPoint</a></p></div>'
+
 def page(l,name,title,body,script=''):
  folder=SITE/'learnings'/l['slug'];folder.mkdir(parents=True,exist_ok=True)
- text='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lesson '+l['id']+' — '+E(title)+' · TopOptLab</title><link rel="stylesheet" href="../../assets/lesson.css"></head><body><main class="manual-content"><header>TOP OPT LAB / LESSON '+l['id']+' / '+str(l['minutes'])+' MINUTES</header>'+body+sequence(l)+'<footer><a href="index.html">Lesson home</a> · <a href="teacher-guide.html">Teacher guide</a> · <a href="student-sheet.html">Student worksheet</a> · <a href="slides.html">Slides</a></footer></main>'+script+'</body></html>'
+ text='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lesson '+l['id']+' — '+E(title)+' · TopOptLab</title><link rel="stylesheet" href="../../assets/lesson.css"></head><body><main class="manual-content"><header>TOP OPT LAB / LESSON '+l['id']+' / '+str(l['minutes'])+' MINUTES</header>'+body+connection_help(l)+sequence(l)+'<footer><a href="index.html">Lesson home</a> · <a href="teacher-guide.html">Teacher guide</a> · <a href="student-sheet.html">Student worksheet</a> · <a href="slides.html">Slides</a></footer></main>'+script+'</body></html>'
  (folder/name).write_text(text,encoding='utf8')
 def list_(items):return '<ul>'+''.join('<li>'+E(s)+'</li>' for s in items)+'</ul>'
 def steps(l):return '<ol>'+''.join('<li>'+E(s)+'</li>' for s in l['steps'])+'</ol>'

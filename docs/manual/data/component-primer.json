@@ -1,0 +1,620 @@
+{
+  "audience": "Students with Rhino basics, new to Grasshopper and FEM",
+  "scope": "The classroom components before the worked examples; all 33 remain in the full component reference.",
+  "core_order": [
+    "DomainComponent",
+    "SupportComponent",
+    "LoadComponent",
+    "MaterialComponent",
+    "LoadCaseComponent",
+    "EngineeringSettingsComponent",
+    "EngineeringSolveComponent",
+    "FemResultsComponent",
+    "ResultsComponent",
+    "CompareResultsComponent",
+    "GravityComponent",
+    "ReviewControlsComponent",
+    "CaseResultComponent"
+  ],
+  "teaching": {
+    "DomainComponent": {
+      "purpose": "Converts a closed planar design area into square FEM cells.",
+      "common_mistake": "A numeric slider belongs at lowercase h. Uppercase H accepts closed hole curves.",
+      "ports": {
+        "0": {
+          "readable_type": "Curve geometry",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Closed 120 × 60 mm rectangle in World XY"
+        },
+        "1": {
+          "readable_type": "Curve geometry",
+          "connection_requirement": "Optional connection",
+          "classroom_value": "Leave empty for the reference plate"
+        },
+        "2": {
+          "readable_type": "Curve geometry",
+          "connection_requirement": "Optional connection",
+          "classroom_value": "Leave empty for the reference plate"
+        },
+        "3": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "6 mm"
+        },
+        "4": {
+          "readable_type": "Plane (origin and axes)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "World XY"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Mesh geometry"
+        },
+        "2": {
+          "readable_type": "Mesh geometry"
+        }
+      }
+    },
+    "SupportComponent": {
+      "purpose": "Selects grid nodes and constrains their local X and Y translations.",
+      "common_mistake": "Connecting the complete rectangle to G constrains the reachable perimeter. Select the intended edge and inspect N.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Domain D"
+        },
+        "1": {
+          "readable_type": "Geometry selection",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Left boundary edge only"
+        },
+        "2": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "True"
+        },
+        "3": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "True"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Point geometry"
+        }
+      }
+    },
+    "LoadComponent": {
+      "purpose": "Selects grid nodes and assigns a total in-plane force vector.",
+      "common_mistake": "G is the location. F is a force vector. The vector is the total force, divided across unique selected nodes.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Domain D"
+        },
+        "1": {
+          "readable_type": "Geometry selection",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Point at (120, 30, 0) mm"
+        },
+        "2": {
+          "readable_type": "Vector (direction and magnitude)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Vector (0, −100, 0) N"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Point geometry"
+        },
+        "2": {
+          "readable_type": "Line geometry"
+        }
+      }
+    },
+    "MaterialComponent": {
+      "purpose": "Declares material properties and consistent geometry/force units.",
+      "common_mistake": "Geometry coordinates, material length units and force-vector units must agree.",
+      "ports": {
+        "0": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: structural steel"
+        },
+        "1": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: mm"
+        },
+        "2": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: N"
+        },
+        "3": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1.5, screening only"
+        },
+        "4": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: no stock yield comparison"
+        },
+        "5": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: use preset"
+        },
+        "6": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "−1: use preset"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Number (continuous value)"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)"
+        },
+        "3": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    },
+    "LoadCaseComponent": {
+      "purpose": "Collects simultaneous loads into one named analysis case.",
+      "common_mistake": "Loads within one case act together. Different cases are solved independently. W is an objective weight, not a structural load factor.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Load L, one or more simultaneous loads"
+        },
+        "1": {
+          "readable_type": "Text label",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Case 1"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        }
+      }
+    },
+    "EngineeringSettingsComponent": {
+      "purpose": "Controls the solver, material budget, thickness, convergence and verification threshold.",
+      "common_mistake": "Radius is measured in cells unless Radius length is positive. Threshold and material budget describe different operations.",
+      "ports": {
+        "0": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: CPU direct"
+        },
+        "1": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "4"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0.40"
+        },
+        "3": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "80"
+        },
+        "4": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1.8 cells = 10.8 mm at h = 6 mm"
+        },
+        "5": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "2 mm"
+        },
+        "6": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0.001"
+        },
+        "7": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0.01"
+        },
+        "8": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "5"
+        },
+        "9": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "10"
+        },
+        "10": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0.40 for guided verification"
+        },
+        "11": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: unspecified"
+        },
+        "12": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: none"
+        },
+        "13": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: none"
+        },
+        "14": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: no requested feature diagnostic"
+        },
+        "15": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "True"
+        },
+        "16": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0 for this 2D plate"
+        },
+        "17": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: use Radius in cells"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        }
+      }
+    },
+    "EngineeringSolveComponent": {
+      "purpose": "Runs baseline FEM, density optimisation or thresholded full-material verification.",
+      "common_mistake": "Use three separate Engineering components to preserve results. Mode 2 Source takes completed Mode 1 R, not Results M.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required before Run starts",
+          "classroom_value": "Domain D"
+        },
+        "1": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required before Run starts",
+          "classroom_value": "Support S, all supports"
+        },
+        "2": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required before Run starts",
+          "classroom_value": "Load Case Case, all independent cases"
+        },
+        "3": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required before Run starts",
+          "classroom_value": "Material M"
+        },
+        "4": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required before Run starts",
+          "classroom_value": "Engineering Settings O"
+        },
+        "5": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0 baseline, 1 optimisation, 2 verification"
+        },
+        "6": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required only for Mode 2, after Mode 1 completes",
+          "classroom_value": "Mode 2 only: completed Mode 1 Result R"
+        },
+        "7": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Button pulse after inputs are connected"
+        },
+        "8": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Button pulse to cancel"
+        },
+        "9": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Button pulse to clear this component"
+        },
+        "10": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Optional connection",
+          "classroom_value": "Leave empty in the guided plate"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Readable text or file path"
+        },
+        "2": {
+          "readable_type": "Readable text or file path"
+        },
+        "3": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    },
+    "FemResultsComponent": {
+      "purpose": "Displays a full-material 2D FEM response with stress, displacement and reaction data.",
+      "common_mistake": "Scale changes only the display. Read Info, the legend and actual displacement values.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Engineering R from Mode 0 or Mode 2"
+        },
+        "1": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1: displacement; 0 or 2: von Mises stress"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1: actual deformation; 0: original shape"
+        },
+        "3": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: automatic legend"
+        },
+        "4": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "True for the visible stage"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Mesh geometry"
+        },
+        "1": {
+          "readable_type": "Number (continuous value)"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)"
+        },
+        "3": {
+          "readable_type": "Number (continuous value)"
+        },
+        "4": {
+          "readable_type": "Number (continuous value)"
+        },
+        "5": {
+          "readable_type": "Point geometry"
+        },
+        "6": {
+          "readable_type": "Vector (direction and magnitude)"
+        },
+        "7": {
+          "readable_type": "Vector (direction and magnitude)"
+        },
+        "8": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    },
+    "ResultsComponent": {
+      "purpose": "Displays the continuous density design and its thresholded geometry.",
+      "common_mistake": "M is thresholded display geometry before full-material reanalysis. Design stress is relaxed during optimisation.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Engineering R from Mode 1"
+        },
+        "1": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0.40"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Display scale; does not change the solve"
+        },
+        "3": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "Leave False; a Button explicitly adds geometry"
+        },
+        "4": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: density"
+        },
+        "5": {
+          "readable_type": "Number (continuous value)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0: automatic legend"
+        },
+        "6": {
+          "readable_type": "Boolean (True/False)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "True for the visible stage"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Mesh geometry"
+        },
+        "1": {
+          "readable_type": "Mesh geometry"
+        },
+        "2": {
+          "readable_type": "Mesh geometry"
+        },
+        "3": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    },
+    "CompareResultsComponent": {
+      "purpose": "Compares a matching full-solid baseline and candidate across all load cases.",
+      "common_mistake": "Both jobs must be completed and use matching geometry, supports, cases, material and units.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Completed baseline Engineering R, Mode 0"
+        },
+        "1": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Completed verification Engineering R, Mode 2"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Readable text or file path"
+        },
+        "1": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "2": {
+          "readable_type": "Number (continuous value)"
+        }
+      }
+    },
+    "GravityComponent": {
+      "purpose": "Creates a self-weight load from the grid, acceleration and material density at solve time.",
+      "common_mistake": "Gravity takes D and g. It has no M input. Density comes from the Material connected to Engineering.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Roof Domain D"
+        },
+        "1": {
+          "readable_type": "Vector (direction and magnitude)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "XY roof: (0, −9.80665, 0) m/s² for cases 1 and 5; cases 2–4 use (0, −12.748645, 0) m/s²"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    },
+    "ReviewControlsComponent": {
+      "purpose": "Chooses the visible stage, saved case index and displayed field.",
+      "common_mistake": "Stage switches visibility. It does not run a calculation.",
+      "ports": {
+        "0": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "0 baseline, 1 optimisation, 2 verification"
+        },
+        "1": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1 to 5 for the completed roof calculations"
+        },
+        "2": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1: displacement; 2: stress"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Boolean (True/False)"
+        },
+        "1": {
+          "readable_type": "Boolean (True/False)"
+        },
+        "2": {
+          "readable_type": "Boolean (True/False)"
+        },
+        "3": {
+          "readable_type": "Integer (whole number)"
+        },
+        "4": {
+          "readable_type": "Integer (whole number)"
+        },
+        "5": {
+          "readable_type": "Boolean (True/False)"
+        },
+        "6": {
+          "readable_type": "Boolean (True/False)"
+        }
+      }
+    },
+    "CaseResultComponent": {
+      "purpose": "Reads one saved case response from a completed Engineering result.",
+      "common_mistake": "Cases after the first require a completed job and intact saved case files.",
+      "ports": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)",
+          "connection_requirement": "Required connection",
+          "classroom_value": "Completed Engineering R for the selected stage"
+        },
+        "1": {
+          "readable_type": "Integer (whole number)",
+          "connection_requirement": "Default available; connect a control to override it",
+          "classroom_value": "1 to 5 for the roof; index starts at 1"
+        }
+      },
+      "outputs": {
+        "0": {
+          "readable_type": "Structured TopOptLab data (connect the upstream output)"
+        },
+        "1": {
+          "readable_type": "Readable text or file path"
+        }
+      }
+    }
+  }
+}
