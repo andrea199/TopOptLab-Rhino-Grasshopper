@@ -11,6 +11,29 @@ CPU tests and repository integrity run on pushes and pull requests. A green badg
 does not validate the Rhino UI, CUDA, or a physical design. Private-repository
 Actions results require authorized GitHub access.
 
+## Classroom downloads
+
+For the 26 October 2026 course, download **one complete ZIP for your computer**
+from the [classroom release](https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026). Each package contains the English HTML
+manual, slides, all exercise files and its matching offline CPU installer.
+
+| Computer | Complete course package | Size |
+| --- | --- | ---: |
+| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 232.25 MB |
+| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 238.73 MB |
+| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 248.62 MB |
+
+All packages are below 250,000,000 bytes. Extract the entire ZIP, open
+`START_HERE.html`, then choose **Open the complete English manual**. Keep its
+`software` folder with that page. See [installation](docs/INSTALLATION.md) and
+the [release scope and checksums](docs/RELEASE_2026-10-26.md).
+
+The repository is private: GitHub downloads require an account with repository
+access. The Mac packages are pilots; native Rhino/Mac acceptance is pending.
+Windows runtime and bridge checks passed in isolation; a student Rhino session
+and a second Windows PC still require practical acceptance. There is no verified
+installer for Linux, Windows ARM or macOS versions below 15.
+
 ## Start here
 
 | Goal | Guide |
@@ -22,9 +45,12 @@ Actions results require authorized GitHub access.
 | Build, test or contribute | [Contributing](CONTRIBUTING.md) |
 
 The repository includes the integration source, the complete upstream snapshot,
-editable examples, icons, tests and a roof-rib teaching kit. Installation creates
-the local Python environment and compiles the plugin. The original 40-slide
-course deck is in Italian, with English instructor and student companion guides.
+editable examples, icons, tests and a roof-rib teaching kit. The Windows source
+installer creates the local Python environment and compiles the plugin. The
+current English Polimi presentation has 175 slides: 79 main-route slides and
+96 component-reference slides. A separate seven-slide setup guide covers
+installation and opening the HTML manual. The original Italian roof-rib deck
+remains as reference material.
 
 ![Computed shelf bracket study](docs/shelf-bracket-fine-preview.png)
 
@@ -36,7 +62,12 @@ incomplete. See the validation scope below.*
 The canonical English teaching manual is in [`docs/manual/`](docs/manual/index.html).
 Open its `index.html` locally to browse the Component Guide and the sequential
 Learnings section from one navigation. All eight lessons are available, with 56
-slides, teacher guides, student worksheets and linked exercise files.
+HTML lesson slides, teacher guides, student worksheets and linked exercise files.
+The manual includes an [illustrated installation guide](docs/manual/getting-started/installation/index.html),
+a [component and port introduction](docs/manual/learnings/component-primer/index.html),
+and [wiring walkthroughs](docs/manual/learnings/connections/index.html).
+Download the [full English presentation](docs/manual/downloads/TopOptLab_Polimi_2026-10-26_EN.pptx)
+or the [short installation and HTML-manual slides](docs/manual/downloads/TopOptLab_Installation_Manual_EN.pptx).
 See [authoring instructions](docs/manual/AUTHORING.md) before adding new material.
 The [documentation hosting guide](docs/DOCUMENTATION_HOSTING.md) explains the
 Read the Docs build; it serves this same manual without maintaining another site.
@@ -106,7 +137,9 @@ for snapshot provenance. New upstream features are not automatically available h
 - Saved project JSON, per-case FEM/optimization JSON, history, mass and HTML report.
 - Parametric dimensions and XYZ position in the examples.
 
-## Install on Windows
+## Install from source on Windows
+
+For the offline classroom installer, use the platform ZIPs above.
 
 - Prerequisites: **Rhino 8 and Python 3.13 (64 bit)**, plus internet access.
 - Download/clone the complete repository into a permanent folder.

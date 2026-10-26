@@ -778,7 +778,7 @@
         "Confirm the reference setup: span 6,000 mm; heel 300 mm plus rise 1,500 mm; thickness 12 mm; h = 100 mm; 630 active cells and 44 explicit Keep cells.",
         "Read the supports: left pin fixes X/Y; right anchored roller fixes Y and allows X. These are bilateral restraints and can develop hold-down tension under uplift.",
         "Inspect each named Load Case. Loads inside one case act together, including self-weight. Different cases are solved independently. Objective weight 1 is not a load factor.",
-        "Check Gravity: for this World XY model acceleration is (0, -9.80665, 0) m/s². Its units are always m/s², while point loads here are in N.",
+        "Check Gravity in World XY: cases 1 and 5 use (0, -9.80665, 0) m/s²; ULS snow cases 2–4 use 1.3g = (0, -12.748645, 0) m/s². X and Z are zero. Acceleration units are always m/s², while point loads here are in N.",
         "If time permits, run 01 BASELINE FEM → 02 OPTIMISATION → 03 FINAL VERIFICATION, waiting for completion between stages. Otherwise use the supplied reference table for the discussion and label it as reference evidence.",
         "Use Review Stage 0/1/2 to display baseline/design/verification. Stage changes the visible result, not which solver is run. Use Case 1–5 only after completion to inspect saved case responses.",
         "Use Field = 1 for displacement or Field = 2 for stress. Field 0 means FEM stress in stages 0/2, but design density in stage 1. Set a shared positive legend maximum for comparisons of the same physical field.",
@@ -828,7 +828,7 @@
         ],
         [
           "Default Gravity points out of plane",
-          "Use the supplied in-plane (0, -9.80665, 0) vector for XY; the generic default points along -Z."
+          "Use the supplied negative-Y vector for XY. Cases 1 and 5 use -9.80665 m/s²; ULS snow cases 2–4 use -12.748645 m/s². X and Z are zero; the generic default points along -Z."
         ],
         [
           "A 25-minute roof analysis takes too long",

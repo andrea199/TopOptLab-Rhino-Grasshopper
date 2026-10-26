@@ -1,0 +1,112 @@
+{
+  "captured": "2026-10-25",
+  "assets": [
+    {
+      "file": "01-extracted-kit.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Extract the entire kit, then open START_HERE.html",
+      "steps": [
+        "Extract the complete ZIP into a short, writable local folder.",
+        "Keep START_HERE.html and software/ together.",
+        "Open START_HERE.html."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "ffc76c5927e56929abb470abf9bacbf8f0e633c19cf88853b9ea462d4a6220aa",
+      "display_caption": "Extract the entire kit, then open START_HERE.html. Actual browser view of the supplied kit or guide."
+    },
+    {
+      "file": "02-manual-home.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Actual English manual home; Windows edition shown",
+      "steps": [
+        "Open Getting Started before class.",
+        "Use Learnings for the course sequence.",
+        "Use Components to inspect exact inputs and outputs."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "a1a75e0ae88120393156eee45f4bb309ca04fbef7681cbe8aca142785530d487",
+      "display_caption": "Actual English manual home; Windows edition shown. Actual browser capture from the verified platform course ZIP.",
+      "captured": "2026-10-26"
+    },
+    {
+      "file": "03-windows-getting-started.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Windows: close Rhino, then run the supplied CPU installer",
+      "steps": [
+        "Save your work and close every Rhino window.",
+        "Run TopOptLab-Students-Windows-0.4.0-Setup.exe.",
+        "Python and numerical dependencies are included."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "6a6a2d2c47c4443d5e37ee07f92086b9603ba7bb0cb2f5a9a89c8d3e67005551",
+      "display_caption": "Windows: close Rhino, then run the supplied CPU installer. Actual browser view of the supplied kit or guide."
+    },
+    {
+      "file": "04-windows-installer-guide.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Windows installation instructions included with the installer",
+      "steps": [
+        "Install for your user account.",
+        "Reopen Rhino and Grasshopper when setup finishes.",
+        "Check that the TopOptLab tab and components are available."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "977f75c9914ce207a4ff6113b5dc584dd4734c1864138419dfd3a5fde5b31c80",
+      "display_caption": "Windows installation instructions included with the installer. Actual browser view of the supplied kit or guide."
+    },
+    {
+      "file": "05-mac-pilot-guide.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Current Mac pilot requirements; Apple Silicon edition shown",
+      "steps": [
+        "Use macOS 15 or later, Rhino 8 and native Python 3.13.",
+        "Use the matching Apple Silicon or Intel dependencies.",
+        "Native Mac/Rhino acceptance remains pending."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "0bc4a489bb17e66dad96be206bafa880d068d2ddcef461df746bc427bdb2dbcb",
+      "display_caption": "Current Mac pilot requirements; Apple Silicon edition shown. Actual browser capture from the verified platform course ZIP.",
+      "captured": "2026-10-26"
+    },
+    {
+      "file": "06-installer-native-render.png",
+      "type": "Native installer interface render",
+      "caption": "Native installer interface render",
+      "steps": [
+        "Save your work and close every Rhino window.",
+        "Run the supplied Windows installer.",
+        "Select Install, then wait for setup to finish."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "a823d6b0cfa91f2f9a829cbce44c8aad4a3c3601766d85990d46b54db93de904",
+      "display_caption": "Native installer interface render. Native interface rendering of the initial installer form.",
+      "provenance": "Exact initial Form construction from the supplied English Setup.cs, rendered with WinForms DrawToBitmap. The form was not shown and the Install handler was never attached or executed. No progress, completion or installed state is simulated."
+    },
+    {
+      "file": "07-mac-installation-steps.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "Current Mac installation instructions; Apple Silicon edition shown",
+      "steps": [
+        "Open INSTALL_MAC_PILOT.command.",
+        "Install the included Python 3.13 package if requested, then run the launcher again.",
+        "Select the Grasshopper 8 Components Folder.",
+        "Native Mac/Rhino acceptance remains pending."
+      ],
+      "nativeInstallerScreenshot": false,
+      "sha256": "0f2fff2e05a4fdea551b648629faccfd0d110bc1c0c9bb8b96ab7cf66261526f",
+      "display_caption": "Current Mac installation instructions; Apple Silicon edition shown. Actual browser capture from the verified platform course ZIP.",
+      "captured": "2026-10-26"
+    },
+    {
+      "file": "08-start-here.png",
+      "type": "Actual browser screenshot of supplied local kit",
+      "caption": "START_HERE landing page; Windows edition shown",
+      "display_caption": "Actual START_HERE page from the Windows course ZIP. Click Open the complete English manual.",
+      "nativeInstallerScreenshot": false,
+      "captured": "2026-10-26",
+      "sha256": "e93f0c68b60e53268805d85cf06bc455538642bd2cfdc0d00744addb055ad9f7"
+    }
+  ],
+  "native_mac_session_shown": false,
+  "updated": "2026-10-26"
+}
