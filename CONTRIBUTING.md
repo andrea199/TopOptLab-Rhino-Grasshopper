@@ -69,8 +69,9 @@ integration feature. Resolve the original revision before proposing upstream wor
 
 The integration is GPL-3.0-or-later; retain [LICENSE](LICENSE) and
 [third-party notices](THIRD_PARTY_NOTICES.md). Do not redistribute Rhino SDK binaries.
-The editable teaching deck and reference figures are included with their existing
-source/provenance notes.
+The HTML teaching material and reference figures are included with their existing
+source/provenance notes. Instructor PowerPoint files are maintained separately
+and must not be committed or included in source exports or release packages.
 
 GitHub Actions runs CPU numerical regressions and repository integrity checks.
 A release also needs licensed Rhino/native and relevant CUDA acceptance; green
