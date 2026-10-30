@@ -5,31 +5,31 @@
 Numerical regression tests do not replace application-specific engineering qualification.
 The newest UI still requires interactive Rhino acceptance.
 
-[![Numerical validation](https://github.com/andrea199/TopOptLab-Rhino/actions/workflows/numerics.yml/badge.svg)](https://github.com/andrea199/TopOptLab-Rhino/actions/workflows/numerics.yml)
+[![Numerical validation](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/workflows/numerics.yml/badge.svg)](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/workflows/numerics.yml)
 
 CPU tests and repository integrity run on pushes and pull requests. A green badge
-does not validate the Rhino UI, CUDA, or a physical design. Private-repository
-Actions results require authorized GitHub access.
+does not validate the Rhino UI, CUDA, or a physical design. Actions results are linked above.
 
 ## Classroom downloads
 
 For the 26 October 2026 course, download **one complete ZIP for your computer**
-from the [classroom release](https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026). Each package contains the English HTML
+from the [classroom release](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/tag/v0.4.0-alpha.20261030). Each package contains the English HTML
 manual, HTML lesson slides, all exercise files and its matching offline CPU installer.
 
 | Computer | Complete course package | Size |
 | --- | --- | ---: |
-| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 220.63 MB |
-| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 229.40 MB |
-| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 239.29 MB |
+| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Windows.zip) | 220.63 MB |
+| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_AppleSilicon.zip) | 229.40 MB |
+| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_Intel.zip) | 239.29 MB |
 
 All packages are below 250,000,000 bytes. Extract the entire ZIP, open
 `START_HERE.html`, then choose **Open the complete English manual**. Keep its
 `software` folder with that page. See [installation](docs/INSTALLATION.md) and
 the [release scope and checksums](docs/RELEASE_2026-10-26.md).
 
-The repository is private: GitHub downloads require an account with repository
-access. The Mac packages are pilots; native Rhino/Mac acceptance is pending.
+This clean repository is private during publication review. Release downloads
+currently require a GitHub account with repository access.
+The Mac packages are pilots; native Rhino/Mac acceptance is pending.
 Windows runtime and bridge checks passed in isolation; a student Rhino session
 and a second Windows PC still require practical acceptance. There is no verified
 installer for Linux, Windows ARM or macOS versions below 15.

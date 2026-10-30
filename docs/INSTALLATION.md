@@ -2,16 +2,16 @@
 
 ## Complete classroom packages
 
-Choose one [classroom release package](https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026) for your computer. The complete
+Choose one [classroom release package](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/tag/v0.4.0-alpha.20261030) for your computer. The complete
 English HTML manual, HTML lesson slides, examples and corresponding CPU
 installer are included. PowerPoint files are not distributed through GitHub. Python dependencies are bundled; the Windows source
 installation later in this document has different prerequisites.
 
 | Computer | Download | Exact size |
 | --- | --- | ---: |
-| Windows x64 with Rhino 8 | [Windows ZIP](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip) | 220,632,103 bytes |
-| Apple Silicon Mac, macOS 15+, Rhino 8 | [Apple Silicon ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip) | 229,400,558 bytes |
-| Intel Mac, macOS 15+, Rhino 8 | [Intel ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip) | 239,289,376 bytes |
+| Windows x64 with Rhino 8 | [Windows ZIP](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Windows.zip) | 220,632,103 bytes |
+| Apple Silicon Mac, macOS 15+, Rhino 8 | [Apple Silicon ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_AppleSilicon.zip) | 229,400,558 bytes |
+| Intel Mac, macOS 15+, Rhino 8 | [Intel ZIP — pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_Intel.zip) | 239,289,376 bytes |
 
 GitHub access is required while this repository is private. Download one ZIP and
 extract the whole archive to a permanent writable folder. Do not merge different
@@ -78,7 +78,7 @@ While the repository is private, sign in to GitHub with an account that has acce
 Use **Code → Download ZIP** and extract the entire archive, or clone:
 
 ```powershell
-git clone https://github.com/andrea199/TopOptLab-Rhino.git
+git clone https://github.com/andrea199/TopOptLab-Rhino-Grasshopper.git
 cd TopOptLab-Rhino
 ```
 

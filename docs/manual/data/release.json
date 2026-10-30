@@ -1,6 +1,6 @@
 {
-  "tag": "v0.4.0-classroom.20261026",
-  "release_url": "https://github.com/andrea199/TopOptLab-Rhino/releases/tag/v0.4.0-classroom.20261026",
+  "tag": "v0.4.0-alpha.20261030",
+  "release_url": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/tag/v0.4.0-alpha.20261030",
   "repository_access": "private",
   "integration_base_commit": "a067908916b9659d94284e0698b2319650f2cffa",
   "packages": [
@@ -10,7 +10,7 @@
       "bytes": 220632103,
       "sha256": "c07f9d3421733a4af3e52a7a36648086caff631603ba1d7d87874f1ce2fffdeb",
       "scope": "Rhino 8; included CPU runtime",
-      "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Windows.zip"
+      "url": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Windows.zip"
     },
     {
       "platform": "Mac Apple Silicon",
@@ -18,7 +18,7 @@
       "bytes": 229400558,
       "sha256": "e91cf7398550e5b0a15274e921fe7c9e121e8b0f15db7251a2d9005190c42720",
       "scope": "Pilot; macOS 15+; native arm64",
-      "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_AppleSilicon.zip"
+      "url": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_AppleSilicon.zip"
     },
     {
       "platform": "Mac Intel",
@@ -26,8 +26,9 @@
       "bytes": 239289376,
       "sha256": "955ac3853e278e26e99a42b053d566fdd2cdfe5d531dc0444578883ddf350be3",
       "scope": "Pilot; macOS 15+; native x86_64",
-      "url": "https://github.com/andrea199/TopOptLab-Rhino/releases/download/v0.4.0-classroom.20261026/Lecture_26102026_Mac_Intel.zip"
+      "url": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_Intel.zip"
     }
   ],
-  "powerpoint_files_in_current_distribution": 0
+  "powerpoint_files_in_current_distribution": 0,
+  "publication_status": "private review; not yet public"
 }

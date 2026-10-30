@@ -1,7 +1,7 @@
 # Contributing
 
 This repository contains the Rhino/Grasshopper integration and a bundled upstream
-snapshot. It is currently private and at **experimental alpha 0.4.0-dev**. Work in a feature branch
+snapshot. It is private during publication review and at **experimental alpha 0.4.0-dev**. Work in a feature branch
 and describe the problem, resulting behavior, validation and remaining limitations.
 
 ## Development environment
@@ -90,7 +90,7 @@ hosted CI alone is not that acceptance.
 
 ## Publication gates
 
-- Require a passing [Numerical validation workflow](https://github.com/andrea199/TopOptLab-Rhino/actions/workflows/numerics.yml).
+- Require a passing [Numerical validation workflow](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/workflows/numerics.yml).
 - Record installation on a second Windows PC and licensed Rhino UI acceptance.
 - Keep the alpha label until those acceptance gaps are resolved; version changes
   and public releases are separate decisions.
