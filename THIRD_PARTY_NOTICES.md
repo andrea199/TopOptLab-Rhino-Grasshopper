@@ -28,3 +28,13 @@ The numerical comparison tests use scikit-fem 12.0.2 (BSD-3-Clause). These packa
 are installed as external distributions; their code is not copied into this tool.
 See the dependency license files, requirements-tested.txt and runtime lock for
 exact versions. Implementation/API references are in docs/FINAL_GEOMETRY.md.
+
+## EU emblem and European Innovation Council identity
+
+The English funding lockup in `docs/manual/assets/funding/eic-funded-by-eu.png`
+is supplied unchanged by the [European Innovation Council](https://eic.ec.europa.eu/communication-toolkit_en).
+The EU emblem and EIC identity retain their official use conditions; the GPL
+licence for the software does not relicense these marks. Their display acknowledges
+ARCHIBIOFOAM funding and does not imply EU or EIC endorsement of the software.
+See the [asset provenance](docs/manual/assets/funding/README.md) and the
+[EU legal notice](https://european-union.europa.eu/legal-notice_en).

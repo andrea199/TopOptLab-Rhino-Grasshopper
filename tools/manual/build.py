@@ -2,6 +2,7 @@
 from pathlib import Path
 import html,json,re,runpy,os
 from release_links import release_downloads
+from funding import funding_html, update_readme
 REPO=Path(__file__).resolve().parents[2]
 SITE=REPO/'docs/manual'
 E=lambda s:html.escape(str(s))
@@ -17,6 +18,7 @@ def chrome(page,section):
 def integrate(page,section):
  text=page.read_text(encoding='utf8')
  text=re.sub(r'<!-- MANUAL NAV START -->.*?<!-- MANUAL NAV END -->','',text,flags=re.S)
+ text=re.sub(r'<!-- FUNDING ACKNOWLEDGEMENT START -->.*?<!-- FUNDING ACKNOWLEDGEMENT END -->','',text,flags=re.S)
  text=re.sub(r'<link[^>]*data-manual-style[^>]*>','',text)
  style='<link data-manual-style rel="stylesheet" href="'+relative(page,'assets/manual.css')+'">'
  if '</head>' in text:text=text.replace('</head>',style+'</head>',1)
@@ -30,6 +32,7 @@ def integrate(page,section):
  if section=='learnings' and page.parent.name.startswith(('01-','02-')):
   help='<div class="manual-related"><strong>Follow the connections</strong><p><a href="'+relative(page,'learnings/connections/index.html')+'#step-1">Domain connections, one step at a time</a> · <a href="'+relative(page,'examples/index.html')+'">All prepared examples</a></p></div>'
   text=text.replace('</main>','<!-- CONNECTIONS START -->'+help+'<!-- CONNECTIONS END --></main>')
+ text=text.replace('</main>',funding_html(page,SITE)+'</main>',1)
  page.write_text(text,encoding='utf8')
 
 def connection_resources(page):
@@ -54,6 +57,7 @@ def page(path,title,body,section):
  integrate(p,section)
 
 def build():
+ update_readme(REPO)
  sync_example_archives()
  runpy.run_path(str(Path(__file__).with_name('build_intro.py')),run_name='__main__')
  runpy.run_path(str(Path(__file__).with_name('build_components.py')),run_name='__main__')

@@ -90,3 +90,15 @@ combined 35 minutes: use 20 minutes for component/port introduction and
 15 minutes for first practice. The remaining blocks and break retain the
 180-minute total. The eight HTML slide decks contain 56 slides. Instructor
 PowerPoint presentations are distributed separately and do not belong in this tree.
+
+## Funding acknowledgements
+
+`tools/manual/funding.py` is the shared source for the English ARCHIBIOFOAM
+acknowledgement and EU/EISMEA disclaimer. The normal manual build updates the
+marked funding block in the repository README, places the full acknowledgement
+on the manual home page, and adds the funding emblem and a link to that statement
+to each normal manual page. Lesson presentation controls are unchanged.
+
+Use the official, unchanged local asset in `assets/funding/`; its README records
+the source, SHA-256 and use conditions. Keep the grant identifier 101161052 and
+the upstream software attribution distinct.

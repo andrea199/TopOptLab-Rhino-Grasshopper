@@ -191,3 +191,15 @@ they do not mean every solver stage is parallel.
 - The transferred upstream source is included unchanged with a SHA-256 manifest.
   No upstream Git revision is claimed.
 - See [Contributing](CONTRIBUTING.md) for upstream updates and release gates.
+
+<!-- FUNDING ACKNOWLEDGEMENT START -->
+## Funding acknowledgements
+
+[![European Innovation Council. Funded by the European Union.](docs/manual/assets/funding/eic-funded-by-eu.png)](https://cordis.europa.eu/project/id/101161052)
+
+The authors acknowledge support from the ARCHIBIOFOAM project, which received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement No 101161052.
+
+Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or European Innovation Council and SMEs Executive Agency (EISMEA). Neither the European Union nor the granting authority can be held responsible for them.
+
+[ARCHIBIOFOAM — project and grant information](https://cordis.europa.eu/project/id/101161052).
+<!-- FUNDING ACKNOWLEDGEMENT END -->
