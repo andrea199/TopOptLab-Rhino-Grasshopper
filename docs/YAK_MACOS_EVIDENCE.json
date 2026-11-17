@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_NOT_RHINO_QUALIFIED",
+  "status": "EXPERIMENTAL_PUBLIC_ALPHA_NATIVE_RHINO_PENDING",
   "date": "2026-11-17",
   "candidate": "0.4.0-alpha.5-rh8_37-mac",
   "architectures": [
@@ -40,12 +40,13 @@
   "bridge_2d_3d_on_windows": "PASS",
   "gha_metadata": "IL-only AnyCPU, no x64/32-bit requirement; .NET compatibility check passes on Windows.",
   "native_rhino_macos_tested": false,
-  "published_to_public_yak": false,
+  "published_to_public_yak": true,
   "remaining": [
     "Load all 33 GHA component types in Rhino 8 for Mac on Apple Silicon and Intel.",
     "Check icons, context menu, folder action and 3D geometry memory preflight inside Rhino.",
     "Launch the configured Python worker from GHA, then verify FEM/optimization/verification results and viewport legends.",
     "Check Run/Stop/Reset, save/reopen without automatic jobs, and Bake/Undo.",
     "Run the complete native calculation matrix on both Mac architectures before claiming the same scope as Windows."
-  ]
+  ],
+  "experimental_warning": "Not yet tested inside Rhino or Grasshopper for Mac. CPU worker/host tests do not qualify the GHA application integration."
 }

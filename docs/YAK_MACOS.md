@@ -1,7 +1,9 @@
-# Mac Yak preparation — Apple Silicon and Intel
+# Experimental Mac Yak alpha — Apple Silicon and Intel
 
-**Status: candidate prepared, CPU worker and host APIs tested; Rhino/Grasshopper Mac acceptance pending.**
-Candidate: `topoptlab-rhino-0.4.0-alpha.5-rh8_37-mac.yak`. It has not been published to the public Yak server. The existing Windows `0.4.0-alpha.4` release is unchanged.
+**EXPERIMENTAL PUBLIC ALPHA — NOT YET TESTED INSIDE RHINO OR GRASSHOPPER FOR MAC.**
+
+CPU worker and host APIs have passed tests on both native architectures. Those tests do not qualify the Mac application integration.
+Public Mac prerelease: `topoptlab-rhino-0.4.0-alpha.5-rh8_37-mac.yak`. Install via Rhino Package Manager → Online → Include pre-releases → `topoptlab-rhino` → `0.4.0-alpha.5`. The existing Windows `0.4.0-alpha.4` release is unchanged.
 
 ## One Mac package, native runtime per architecture
 
@@ -32,7 +34,7 @@ Evidence: [workflow run](https://github.com/andrea199/TopOptLab-Rhino-Grasshoppe
 - Use Eto's UI timer for the native calculation harness on Mac. Rhino supplies its own drawing/forms compatibility implementations; they are not bundled.
 - Keep CUDA outside this Mac CPU setup.
 
-## What still prevents public Mac qualification
+## What remains untested inside Rhino/Grasshopper
 
 No licensed Rhino for Mac session is available here, and no Mac is available to the project owner for the final application test. Hosted CPU tests cannot replace the following checks on **both** architectures:
 
@@ -45,7 +47,7 @@ No licensed Rhino for Mac session is available here, and no Mac is available to 
 
 The Windows native matrix remains separate evidence. Neither the Mac GHA load path nor every slider combination is qualified by these tests. The shelf classroom example uses the already documented CPU 5 mm defaults; the historical 2.5 mm refinement remains unqualified. A one-level final FEM mesh does not establish convergence or a load rating.
 
-## Build and local trial
+## Build and experimental installation
 
 On the prepared Windows development checkout with Rhino SDK, run:
 
@@ -53,6 +55,6 @@ On the prepared Windows development checkout with Rhino SDK, run:
 python tools/yak/build_macos.py --output NEW_OUTPUT_DIRECTORY
 ```
 
-The builder checks AnyCPU IL flags, package CRC, runtime identity, absence of SDK/native binaries and executable `.command` mode. It never publishes or installs. Follow [local Mac installation](../tools/yak/README_MAC.md) using the single file in its `distribution` folder. Keep public publication pending the native Rhino checks above.
+The builder checks AnyCPU IL flags, package CRC, runtime identity, absence of SDK/native binaries and executable `.command` mode. It never publishes or installs. Follow [Mac installation](../tools/yak/README_MAC.md). The public Mac alpha is explicitly experimental; the native Rhino checks above remain outstanding and must not be represented as passed.
 
 References: [Yak distribution tags](https://developer.rhino3d.com/en/guides/yak/the-anatomy-of-a-package/), [Rhino .NET compatibility](https://developer.rhino3d.com/guides/rhinocommon/moving-to-dotnet-core/), [McNeel on Mac drawing/forms compatibility](https://discourse.mcneel.com/t/cross-platform-support-and-menu-items-for-gh/201146), [GitHub native Mac runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).

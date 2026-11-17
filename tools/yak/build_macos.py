@@ -39,7 +39,7 @@ def main():
     (stage/'runtime-id.txt').write_text(setup.runtime_id(stage/'source'),encoding='ascii')
     (stage/'SETUP-PYTHON.command').write_bytes((ROOT/'tools/yak/SETUP-PYTHON.command').read_bytes().replace(b'\r\n',b'\n'))
     shutil.copy2(ROOT/'tools/yak/README_MAC.md',stage/'README.md')
-    (stage/'manifest.yml').write_text('name: topoptlab-rhino\nversion: '+VERSION+'\nauthors:\n- Andrea Detry\ndescription: >\n  Mac preparation candidate for Rhino 8 Grasshopper FEM and topology optimization.\n  Apple Silicon and Intel CPU workers require native Python 3.13 and macOS 15+.\n  Run SETUP-PYTHON.command once. Native Rhino Mac acceptance is still pending.\nurl: https://github.com/andrea199/TopOptLab-Rhino-Grasshopper\nkeywords:\n- FEM\n- topology-optimization\n',encoding='utf-8')
+    (stage/'manifest.yml').write_text('name: topoptlab-rhino\nversion: '+VERSION+'\nauthors:\n- Andrea Detry\ndescription: >\n  EXPERIMENTAL Mac alpha: NOT TESTED inside Rhino or Grasshopper for Mac.\n  CPU worker/host tests pass on Apple Silicon and Intel. Requires native Python 3.13 and macOS 15+.\n  Run SETUP-PYTHON.command once. Native Rhino Mac acceptance is still pending.\nurl: https://github.com/andrea199/TopOptLab-Rhino-Grasshopper\nkeywords:\n- FEM\n- topology-optimization\n',encoding='utf-8')
     yak=Path(r'C:\Program Files\Rhino 8\System\Yak.exe')
     result=subprocess.run([str(yak),'build','--platform','mac'],cwd=stage,text=True,capture_output=True,check=True)
     (out/'build.log').write_text(result.stdout+result.stderr,encoding='utf-8')

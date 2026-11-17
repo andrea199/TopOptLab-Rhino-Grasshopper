@@ -1,6 +1,8 @@
-# TopOptLab Mac Yak candidate — Apple Silicon and Intel
+# TopOptLab experimental Mac Yak alpha — Apple Silicon and Intel
 
-This is a **local preparation candidate**, not a public Package Manager release.
+**EXPERIMENTAL: this alpha has NOT been tested inside Rhino or Grasshopper for Mac.**
+Native CPU-worker and host-API tests pass on Apple Silicon and Intel, but component loading, menus/icons, viewport preview, controls, save/reopen and Bake/Undo remain unverified.
+Public prerelease: **topoptlab-rhino 0.4.0-alpha.5**.
 It contains one AnyCPU managed plugin for both Mac architectures. Python dependencies
 are installed natively for the current Mac, in a separate persistent environment.
 
@@ -11,14 +13,10 @@ are installed natively for the current Mac, in a separate persistent environment
 - Internet access for the first setup. Run the official Python certificate installer if required by that Python distribution.
 - Apple Silicon: native arm64 Python and Terminal. Intel: x86_64 Python. Rosetta Python is rejected.
 
-## Local pilot installation
+## Package Manager installation
 
 1. Save work and close Rhino. Move any previous manual TopOptLab GHA folder outside Grasshopper library/search paths. Keep a backup; do not load duplicate component GUIDs.
-2. Put the Mac `.yak` in a folder, then use the bundled Rhino CLI from Terminal:
-
-   ```sh
-   "/Applications/Rhino 8.app/Contents/Resources/bin/yak" install --source "/path/to/candidate/folder" topoptlab-rhino 0.4.0-alpha.5
-   ```
+2. Run `_PackageManager` in Rhino. Select **Online**, enable **Include pre-releases**, search **topoptlab-rhino**, select **0.4.0-alpha.5**, then **Install**.
 
 3. Restart Rhino, open Grasshopper and place any TopOptLab component. Right-click it → **TopOptLab Python setup folder**.
 4. Run **SETUP-PYTHON.command**. If it is not executable, run `bash "/full/path/to/SETUP-PYTHON.command"` from Terminal. Do not disable Gatekeeper or remove quarantine from unrelated files.
@@ -27,7 +25,7 @@ are installed natively for the current Mac, in a separate persistent environment
 The runtime and active settings live under `~/Library/Application Support/TopOptLab/Rhino8/`.
 Runtime folders include the native CPU architecture. Settings are activated only after validation; a failed setup preserves the old configuration. Old runtimes remain available for rollback.
 
-## Acceptance still required before public Mac publication
+## Native Rhino/Grasshopper acceptance is still pending
 
 Native CPU worker tests are separate from **loading the GHA in Rhino for Mac**.
 Test all 33 component types, icons/context menu, the 3D memory preflight, geometry

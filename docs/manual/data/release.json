@@ -1,7 +1,7 @@
 {
   "tag": "v0.4.0-alpha.20261030",
   "release_url": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/tag/v0.4.0-alpha.20261030",
-  "repository_access": "private",
+  "repository_access": "public",
   "integration_base_commit": "a067908916b9659d94284e0698b2319650f2cffa",
   "packages": [
     {
@@ -30,5 +30,20 @@
     }
   ],
   "powerpoint_files_in_current_distribution": 0,
-  "publication_status": "private review; not yet public"
+  "publication_status": "historical classroom ZIP draft; current public installation uses Yak",
+  "draft": true,
+  "yak_packages": [
+    {
+      "platform": "Windows x64",
+      "version": "0.4.0-alpha.4",
+      "requirements": "Rhino 8 SR37+, Python 3.13 x64",
+      "scope": "Default native calculation acceptance passed; experimental integration."
+    },
+    {
+      "platform": "Mac Apple Silicon / Intel",
+      "version": "0.4.0-alpha.5",
+      "requirements": "macOS 15+, Rhino 8 SR37+, native Python 3.13",
+      "scope": "EXPERIMENTAL: not tested inside Rhino/Grasshopper for Mac. Native CPU-worker and host tests passed."
+    }
+  ]
 }
