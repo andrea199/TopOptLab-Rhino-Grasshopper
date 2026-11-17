@@ -29,6 +29,16 @@ def check():
             for direction, key in [('input', 'inputs'), ('output', 'outputs')]:
                 ports = container.findall(f"chunks/chunk[@name='param_{direction}']")
                 assert sorted(int(p.attrib['index']) for p in ports) == list(range(len(c[key]))), f'{relative}: {c["name"]}: incomplete {direction} archive'
+            if c['class'] == 'EngineeringSettingsComponent':
+                backend = container.find("chunks/chunk[@name='param_input'][@index='0']")
+                source = backend.find("items/item[@name='Source']")
+                if source is not None:
+                    controls = [o.find("chunks/chunk[@name='Container']") for o in tree.findall(".//chunk[@name='DefinitionObjects']/chunks/chunk")]
+                    slider = next(p for p in controls if p.find("items/item[@name='InstanceGuid']").text == source.text)
+                    value = slider.find("chunks/chunk[@name='Slider']/items/item[@name='Value']")
+                else:
+                    value = backend.find(".//chunk[@name='PersistentData']//item[@name='number']")
+                assert value is not None and float(value.text) in (0, 1, 2, 3), f'{relative}: CPU Yak example must start with a CPU backend'
             count += 1
         for chunk in tree.iter('chunk'):
             n = chunk.find("items/item[@name='SourceCount']")

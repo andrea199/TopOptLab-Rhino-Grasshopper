@@ -17,13 +17,13 @@ namespace TopoptLab.GH {
    obsolete.AddRange(a.OfType<GH_Panel>().Where(p=>p.UserText.StartsWith("PARAMETRIC GEOMETRY")).Cast<IGH_DocumentObject>());
    foreach(var o in obsolete.Distinct())a.Remove(o);
    var title=a.OfType<GH_Panel>().First(p=>p.UserText.StartsWith("ENGINEERING WORKFLOW"));
-   title.UserText="SHELF BRACKET / 250 mm / FOUR ALTERNATIVE LOAD CASES\nUnits mm, N. X projects from wall; Y is width; Z is UP. Payload is kg per bracket.\n1 BASELINE > 2 OPTIMIZATION > 3 VOXEL VERIFICATION > 4 EXTRACT > 5 FINAL FEM.\nCase 1 distributed; 2 front; 3 front-right; 4 front-left. Every case adds shelf share and bracket self-weight.\nTwo wall holes and two shelf holes, with reserved tool access. EXTRACT restores nominal CAD plates and holes independently of the voxel grid.\nDefault: 2.5 mm cells, CUDA (4); CPU AMG (2) is an explicit alternative. Never change solver while a job is running.\nABS is an injection-molding reference, not printed-material qualification. Wall pads are rigid idealizations.";
+   title.UserText="SHELF BRACKET / 250 mm / FOUR ALTERNATIVE LOAD CASES\nUnits mm, N. X projects from wall; Y is width; Z is UP. Payload is kg per bracket.\n1 BASELINE > 2 OPTIMIZATION > 3 VOXEL VERIFICATION > 4 EXTRACT > 5 FINAL FEM.\nCase 1 distributed; 2 front; 3 front-right; 4 front-left. Every case adds shelf share and bracket self-weight.\nTwo wall holes and two shelf holes, with reserved tool access. EXTRACT restores nominal CAD plates and holes independently of the voxel grid.\nDefault: 5 mm cells, CPU AMG (2). CUDA (4) requires a separately configured GPU runtime. Never change solver while a job is running.\nABS is an injection-molding reference, not printed-material qualification. Wall pads are rigid idealizations.";
    var geometry=Add(a,new ShelfBracket3DComponent{Hidden=true},-120,460);
    string[] names={"Length / mm","Height / mm","Width / mm","Keep plate thickness / mm","Nominal hole diameter / mm","Wall hole pitch / mm","Top hole inset / mm","Tool access diameter / mm","Tool access depth / mm","Position X / mm","Position Y / mm","Position Z / mm"};
    decimal[] values={250,150,25,10,8,100,40,16,25,0,0,0},mins={200,120,20,5,4,40,25,8,0,-500,-500,-500},maxs={300,220,50,20,12,160,90,24,60,500,500,500};
    for(int k=0;k<12;k++)geometry.Params.Input[k].AddSource(Slider(a,names[k],values[k],mins[k],maxs[k],1,-690,270+k*60));
    for(int k=0;k<3;k++){domain.Params.Input[k].RemoveAllSources();domain.Params.Input[k].AddSource(geometry.Params.Output[k]);}
-   SetSlider(domain.Params.Input[3],2.5m,.5m,10);SetSlider(domain.Params.Input[4],250000,8000,2000000);
+   SetSlider(domain.Params.Input[3],5m,.5m,10);SetSlider(domain.Params.Input[4],250000,8000,2000000);
    Note(a,"",-700,-280,1700,190).AddSource(domain.Params.Output[2]);
     var conditions=Add(a,new BracketConditions3DComponent{Hidden=true},760,510);
    conditions.Params.Input[0].AddSource(domain.Params.Output[0]);conditions.Params.Input[1].AddSource(geometry.Params.Output[3]);conditions.Params.Input[2].AddSource(material.Params.Output[0]);
@@ -32,13 +32,13 @@ namespace TopoptLab.GH {
    conditions.Params.Input[5].AddSource(Slider(a,"Front loaded strip depth / mm",20,5,60,1,-350,1220));
    conditions.Params.Input[6].AddSource(Slider(a,"Lateral offset / fraction of half width",.6m,.1m,.8m,2,-350,1280));
    Note(a,"", -700,1420,1200,380).AddSource(conditions.Params.Output[5]);
-   Note(a,"GEOMETRY CONTROLS\nHoles remain circular when resized. Invalid overlapping clearances are rejected.\nB = design envelope; Void = holes/tool space; Keep = attachment plates.\nDefault 2.5 mm grid; final CAD interfaces restore nominal holes to a separate chord tolerance.\nRAM and GPU budgets are checked before solving. Refinement changes the model; verify convergence.\nFinal surfaces must preserve nominal CAD plates and keep screw/tool space empty.",-700,1010,320,360);
+   Note(a,"GEOMETRY CONTROLS\nHoles remain circular when resized. Invalid overlapping clearances are rejected.\nB = design envelope; Void = holes/tool space; Keep = attachment plates.\nDefault 5 mm grid; final CAD interfaces restore nominal holes to a separate chord tolerance.\nRAM and GPU budgets are checked before solving. Refinement changes the model; verify convergence.\nFinal surfaces must preserve nominal CAD plates and keep screw/tool space empty.",-700,1010,320,360);
    Note(a,"", -700,1830,1200,150).AddSource(geometry.Params.Output[4]);
    foreach(var p in a.OfType<GH_Panel>().Where(p=>p.Sources.Contains(material.Params.Output[3]))){p.Attributes.Pivot=new PointF(-700,2060);p.Attributes.Bounds=new RectangleF(-700,2060,630,440);}
    SetSlider(material.Params.Input[0],1,0,1);
-   SetSlider(settings.Params.Input[0],4,0,4);
+   SetSlider(settings.Params.Input[0],2,0,4);
     settings.Params.Input[16].AddSource(Slider(a,"RAM budget GiB / 0 automatic",0,0,48,1,580,2110));
-    settings.Params.Input[17].AddSource(Slider(a,"Physical filter radius / mm",9,1,30,2,580,2170));SetSlider(settings.Params.Input[10],.32m,.1m,.9m);
+    settings.Params.Input[17].AddSource(Slider(a,"Physical filter radius / mm",9,1,30,2,580,2170));SetSlider(settings.Params.Input[10],.35m,.1m,.9m);
    SetSlider(settings.Params.Input[2],.35m,.15m,.8m);SetSlider(settings.Params.Input[3],60,10,200);Int(settings,11,3);
    SetSlider(review.Params.Input[1],1,1,4);
    SetSlider(limits.Params.Input[0],1,0,5);SetSlider(limits.Params.Input[1],0,0,50);

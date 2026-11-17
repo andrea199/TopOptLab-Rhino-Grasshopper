@@ -35,3 +35,9 @@ result is not engineering certification. Mac is outside this Windows package.
 Original TopOptLab: Stefan Hiemer. Integration: Andrea Detry. GPL licence and
 upstream provenance: source/LICENSE and source/THIRD_PARTY_NOTICES.md.
 ARCHIBIOFOAM funding acknowledgement and EU disclaimer: source/README.md.
+
+## Numerical examples
+
+The shelf-bracket classroom example starts with CPU AMG, 5 mm voxels, threshold 0.35 and 60 iterations over all four load cases. Its former 2.5 mm CUDA default was unsuitable for the CPU-only Yak setup. Finer grids remain optional advanced studies and are not qualified by the default-example acceptance; the historical fine surface has a documented automatic-meshing limitation. No GPU fallback or numerical tolerance relaxation is introduced.
+
+Run tools/yak/native_calculations.py inside a separate Rhino 8 session to exercise every canonical example and lesson. Progress and stage results are written under tool/build/yak-calculations. Student geometry references and deliberate starter wiring gaps are completed only in memory.

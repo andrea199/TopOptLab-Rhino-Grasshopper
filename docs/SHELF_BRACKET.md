@@ -18,14 +18,14 @@ This is a **250 mm shelf bracket carrying 4 kg per bracket**, fixed to a wall. I
 | Shelf share | 0.5 kg | **Assumed** shelf mass carried by this bracket; replace with actual allocation |
 | Front patch depth | 20 mm | Actual default centroid x=240 mm |
 | Side offset fraction | 0.6 | Nominal eccentricity fraction of half width; actual centroid is reported |
-| Cell size | 2.5 mm | 60,000 bounding cells; 58,552 active cells |
+| Cell size | 5 mm | 7,500 bounding cells; 7,328 active cells. CPU classroom starting grid, not a mesh-converged design |
 | Voxel limit | 250,000 | User admission limit, also subject to free-memory checks |
 | Physical filter radius | 9 mm | Fixed physical neighborhood when refining the grid |
 | CAD chord tolerance | 0.05 mm | Radial clearance overcut, independent of voxel size |
 | Final tetrahedral size | 4 mm | Independent conforming-FEM mesh parameter |
 | Volume fraction | 0.35 | Includes Keep; not the final exported mass fraction |
-| Verification threshold | 0.32 | Verified on the fine voxel model; reanalyse after every design/grid change |
-| Solver | 4: CUDA CG | Prepared for this NVIDIA development PC; choose 2: CPU AMG explicitly on a CPU-only PC |
+| Verification threshold | 0.35 | CPU classroom starting value; reanalyse after every design/grid change |
+| Solver | 2: CPU AMG | Matches the Yak CPU runtime. CUDA 4 requires an explicitly configured CUDA/CuPy runtime |
 | Iteration limit | 60 | An iteration limit is different from convergence |
 | Displacement target | 1 mm | Chosen functional target, not a standard |
 | Stress design limit | Off | Printed-material allowable has not been established |
@@ -77,7 +77,7 @@ Traction = total force / selected facet area. Grid and size changes do not multi
 5. Read termination and feasibility separately. Iteration_limit does not mean convergence. Stop cancels; Reset detaches. After input changes, reset and rerun from baseline.
 6. Press **RUN under FINAL VERIFICATION**, then VIEW=2. This is full-material thresholded voxel FEM, not a smooth geometry or independent mesh.
 7. Press **EXTRACT**, then VIEW=3. Inspect surface, retained interfaces and print flags. Build direction +Y proposes printing on the side; it does not rotate the STL.
-8. **FINAL FEM**, then VIEW=4, is the separate tetrahedral analysis. The new 2.5 mm / threshold 0.32 surface currently fails automatic Gmsh parameterization; this stage remains incomplete for that candidate. The previous 5 mm shape passed all four cases. After meshing is accepted, start with one level and investigate convergence with three levels.
+8. **FINAL FEM**, then VIEW=4, is the separate tetrahedral analysis. Use the CPU classroom defaults first. The historical 2.5 mm / threshold 0.32 candidate failed Gmsh parameterization and remains an unqualified refinement, separate from the default example. Start with one mesh level and investigate convergence with three levels.
 9. Use **BAKE** to create Rhino geometry. Check Undo interactively; SDK tests do not exercise viewport actions.
 10. Before manufacture, establish exact interfaces, material/process, anchorage and a prototype test plan.
 
@@ -129,3 +129,7 @@ Cell size controls the HEX8 design/FEM grid. 2.5 mm gives 60,000 bounding cells;
 Keep Physical filter radius at 9 mm when comparing grid refinements. Changing only a radius measured in cells changes the optimization problem. The final CAD clearance tolerance and final tetrahedral size are separate from Cell size. Smooth display does not prove converged stress.
 
 Large jobs store full Gauss stress tensors in per-case NPZ files instead of duplicating them in every JSON snapshot. Preview stress, displacement and reactions remain available. Keep the whole job folder, including NPZ, JSON and reports.
+
+## Windows Yak CPU setup
+
+The distributed example starts with Backend 2 (CPU AMG), matching the Yak CPU runtime. Backend 4 (CUDA CG) remains an explicit option requiring a separately configured CUDA/CuPy runtime. No automatic GPU-to-CPU fallback occurs. The CPU classroom default uses 5 mm voxels, threshold 0.35 and the complete 60-iteration budget. The former 2.5 mm default is an advanced refinement trial: it is substantially slower on CPU and its previously exported fine surface failed automatic meshing. It is not part of the validated default workflow.

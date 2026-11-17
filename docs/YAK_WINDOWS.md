@@ -1,6 +1,6 @@
 # Windows Yak alpha acceptance
 
-Candidate: `topoptlab-rhino-0.4.0-alpha.3-rh8_37-win.yak`.
+Candidate: `topoptlab-rhino-0.4.0-alpha.4-rh8_37-win.yak`.
 Minimum target: Rhino 8 SR37, Windows x64. Python 3.13 x64 must already be
 installed; the first CPU setup downloads dependencies. This candidate has not
 been published to the public Yak server.
@@ -63,3 +63,9 @@ step. Check the package on the official test server before the first public push
 A native GH_IO audit reproduced missing parameter chunks in 40 of 106 repository GH/GHX archives. These archives predated appended ports in Engineering Settings, Domain 3D and Final Geometry 3D. They were re-saved by Rhino 8 Grasshopper with the current component schema. Component IDs, types, input/output parameter IDs, persistent values and wire source IDs were compared before and after migration. All 106 archives must now read without errors or warnings. This is archive compatibility acceptance, not a claim that every numerical example was rerun.
 
 Run python tools/yak/check_example_archives.py for the portable GHX/port/wire check (also in CI). Run tools/yak/native_archive_audit.py with Rhino RunPythonScript for binary and XML archive acceptance.
+
+## Full default-example calculations (alpha.4)
+
+All 21 canonical examples and 11 lesson files were exercised inside a separate Rhino 8/Grasshopper GUI instance using the installed alpha.4 Yak: 55 computation stages across 27 numerical graphs, plus five geometry/condition exercises. All stages completed and all 106 binary/XML archives read without errors or warnings. See [the numerical acceptance matrix](YAK_NUMERICAL_ACCEPTANCE.md) and [machine-readable evidence](YAK_NUMERICAL_ACCEPTANCE.json).
+
+The shelf classroom default now uses CPU AMG, 5 mm voxels, threshold .35 and all 60 optimization steps over four load cases. This replaces a saved CUDA default that did not run with the Yak CPU runtime. Its former 2.5 mm refinement remains unqualified: the CPU trial was stopped because of cost, and the historical fine extracted surface has a documented automatic-meshing limitation. No numerical tolerance, load-transfer or tetrahedron-quality rejection rule was weakened.

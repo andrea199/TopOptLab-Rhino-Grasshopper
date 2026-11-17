@@ -1,6 +1,6 @@
 # Shelf bracket validation — 2026-09-21
 
-## Delivered default workflow
+## Historical development workflow (5 mm, CPU direct)
 
 Actual 250 × 150 × 25 mm model, 7,328 active 5 mm cells, four independent cases; 4 kg payload per bracket, assumed 0.5 kg shelf share, ABS reference, self-weight. CPU direct, 35% density-design volume, threshold 0.35, 60 MMA updates and 1 mm displacement target.
 
@@ -38,3 +38,7 @@ The optimiser reached its iteration limit; it is not labelled converged. The den
 - Rigid wall pads do not validate bolts, wall anchors, contact, printed layer strength or creep. This is not a certified 4 kg load rating.
 
 Machine-readable evidence: **shelf-bracket-reference.json**. Full job files remain in the local run folder. Reproduce with tool/tools/validate_shelf_bracket.py --final-fem.
+
+## Windows Yak classroom acceptance, 17 November 2026
+
+The current distributed classroom file starts with CPU AMG, 5 mm voxels, .35 threshold and 60 MMA updates. All four original cases and the full baseline/design/voxel/extraction/conforming-FEM sequence were run through actual Grasshopper components. See [current native acceptance](YAK_NUMERICAL_ACCEPTANCE.md) for exact termination, numerical checks and mesh-accuracy/quality flags. The historical figures above are retained as a separate development reference; they are not claimed as results of the current run. The 2.5 mm refinement remains unqualified.
