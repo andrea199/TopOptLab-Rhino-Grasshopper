@@ -13,3 +13,6 @@
 # Preserve exact upstream and course-manifest bytes on every platform.
 vendor/topoptlab/** -text
 teaching/roof_2d/output/** -text
+
+# Native GH_IO XML uses Windows line endings; preserve archived bytes.
+*.ghx whitespace=cr-at-eol
