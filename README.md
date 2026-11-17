@@ -34,6 +34,8 @@ If the package does not appear, check **Include pre-releases**, your Windows x64
 
 The Yak package contains the complete English HTML manual, HTML lesson slides and all example/exercise files under `source/`. Keep that folder intact so its relative links and images work offline. PowerPoint files are not included.
 
+**Mac preparation:** a universal Apple Silicon/Intel Yak candidate is available for local testing. Native CPU-worker and host-API tests pass on both architectures; Rhino/Grasshopper Mac loading and UI acceptance are still pending. See [Mac candidate and remaining checks](docs/YAK_MACOS.md). It is not a public Mac Package Manager release.
+
 This Yak release is **Windows only**. Mac Apple Silicon and Intel source/classroom packages remain separate pilots, with native Mac acceptance pending. There is no verified installer for Linux, Windows ARM or macOS below 15. The historical 26 October classroom ZIP release remains a draft; it is not the current public installation route. A second Windows PC has not yet been qualified.
 
 ## Start here

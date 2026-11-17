@@ -1,0 +1,51 @@
+{
+  "status": "PREPARED_NOT_RHINO_QUALIFIED",
+  "date": "2026-11-17",
+  "candidate": "0.4.0-alpha.5-rh8_37-mac",
+  "architectures": [
+    {
+      "architecture": "arm64",
+      "macos": "15.8.2",
+      "python": "3.13.17",
+      "tests": 274,
+      "passed": 263,
+      "skipped": 11,
+      "failed": 0,
+      "bootstrap": "PASS",
+      "runtime_reuse": "PASS",
+      "native_dotnet_paths_and_memory": "PASS",
+      "native_rhino_tested": false
+    },
+    {
+      "architecture": "x86_64",
+      "macos": "15.7.9",
+      "python": "3.13.15",
+      "tests": 274,
+      "passed": 263,
+      "skipped": 11,
+      "failed": 0,
+      "bootstrap": "PASS",
+      "runtime_reuse": "PASS",
+      "native_dotnet_paths_and_memory": "PASS",
+      "native_rhino_tested": false
+    }
+  ],
+  "ci_run": "https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/runs/44107816967",
+  "skips": "Seven optional CUDA tests and four Windows installer tests. CUDA is not offered on Mac.",
+  "windows_cpu_regression": {
+    "passed": 267,
+    "skipped_cuda": 7,
+    "failed": 0
+  },
+  "bridge_2d_3d_on_windows": "PASS",
+  "gha_metadata": "IL-only AnyCPU, no x64/32-bit requirement; .NET compatibility check passes on Windows.",
+  "native_rhino_macos_tested": false,
+  "published_to_public_yak": false,
+  "remaining": [
+    "Load all 33 GHA component types in Rhino 8 for Mac on Apple Silicon and Intel.",
+    "Check icons, context menu, folder action and 3D geometry memory preflight inside Rhino.",
+    "Launch the configured Python worker from GHA, then verify FEM/optimization/verification results and viewport legends.",
+    "Check Run/Stop/Reset, save/reopen without automatic jobs, and Bake/Undo.",
+    "Run the complete native calculation matrix on both Mac architectures before claiming the same scope as Windows."
+  ]
+}
