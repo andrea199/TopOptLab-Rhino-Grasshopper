@@ -21,8 +21,9 @@ fixture.write_text(json.dumps(example(iterations=15)), encoding='utf8')
 config = target / 'local-settings.json'
 spaced = target / 'worker path with spaces'
 spaced.mkdir(exist_ok=True)
-shutil.copy2(ROOT / 'worker.py', spaced / 'worker.py')
-shutil.copy2(ROOT / 'worker3d.py', spaced / 'worker3d.py')
+# Keep the worker's sibling modules (resource budget, engineering helpers, etc.).
+for module in ROOT.glob('*.py'):
+    shutil.copy2(module, spaced / module.name)
 config.write_text(json.dumps(dict(python=sys.executable, worker=str(spaced / 'worker.py'))), encoding='utf8')
 subprocess.run([str(exe), str(rhino / 'System'), str(rhino / 'Plug-ins/Grasshopper'), str(target), str(fixture), str(config)], check=True, timeout=55)
 

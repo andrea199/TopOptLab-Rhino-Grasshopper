@@ -77,7 +77,7 @@ def test_archive_bracket_connections_and_four_case_selection():
         if count is not None:assert int(count.text)==sum(i.get("name")=="Source" for i in items)
 
 
-def test_fine_archive_cad_wiring_and_physical_filter():
+def test_cpu_classroom_archive_cad_wiring_and_physical_filter():
     import xml.etree.ElementTree as ET
     root=ET.parse(Path(__file__).resolve().parents[1]/"examples/engineering_shelf_bracket_3d.ghx")
     objects=root.findall('.//chunk[@name="Object"]/chunks/chunk[@name="Container"]')
@@ -89,7 +89,9 @@ def test_fine_archive_cad_wiring_and_physical_filter():
     assert len(sources(settings,16))==1 and len(sources(settings,17))==1
     sliders={c.find('./items/item[@name="NickName"]').text:c for c in objects if c.find('./items/item[@name="Name"]').text=='Number Slider'}
     def value(name):return float(sliders[name].find('./chunks/chunk[@name="Slider"]/items/item[@name="Value"]').text)
-    assert value('Cell size')==2.5
+    assert value('Cell size')==5
+    assert value('Backend 0=direct 1=CG 2=AMG 3=matrixfree 4=CUDA')==2
+    assert value('Iteration limit')==60
     assert value('Voxel limit')>=121875
     assert value('Physical filter radius / mm')==9
     assert value('CAD hole chord tolerance / mm')==.05
@@ -98,4 +100,4 @@ def test_fine_archive_cad_wiring_and_physical_filter():
 
     assert value('CAD web cleanup / mm / 0 off')==.01
 
-    assert value('Verification threshold')==.32
+    assert value('Verification threshold')==.35

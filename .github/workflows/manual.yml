@@ -17,6 +17,7 @@ jobs:
         run: |
           python tools/manual/check.py
           python tools/manual/check_course.py
+          python tools/yak/check_example_archives.py
       - name: Verify committed pages match their sources
         run: git diff --exit-code -- docs/manual
       - name: Build the Read the Docs HTML payload

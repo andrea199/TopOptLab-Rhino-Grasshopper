@@ -16,15 +16,21 @@
         <item name="plugin_version" type_name="gh_version" type_code="80">
           <Major>1</Major>
           <Minor>0</Minor>
-          <Revision>7</Revision>
+          <Revision>8</Revision>
         </item>
       </items>
       <chunks count="5">
         <chunk name="DocumentHeader">
-          <items count="3">
+          <items count="5">
             <item name="DocumentID" type_name="gh_guid" type_code="9">6cf82b23-30eb-48b9-831c-e1148268a62c</item>
             <item name="Preview" type_name="gh_string" type_code="10">Shaded</item>
             <item name="PreviewMeshType" type_name="gh_int32" type_code="3">1</item>
+            <item name="PreviewNormal" type_name="gh_drawing_color" type_code="36">
+              <ARGB>150;150;0;0</ARGB>
+            </item>
+            <item name="PreviewSelected" type_name="gh_drawing_color" type_code="36">
+              <ARGB>150;0;150;0</ARGB>
+            </item>
           </items>
         </chunk>
         <chunk name="DefinitionProperties">
@@ -63,8 +69,28 @@
         </chunk>
         <chunk name="GHALibraries">
           <items count="1">
-            <item name="Count" type_name="gh_int32" type_code="3">0</item>
+            <item name="Count" type_name="gh_int32" type_code="3">2</item>
           </items>
+          <chunks count="2">
+            <chunk name="Library" index="0">
+              <items count="4">
+                <item name="Author" type_name="gh_string" type_code="10">Robert McNeel &amp; Associates</item>
+                <item name="Id" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
+                <item name="Name" type_name="gh_string" type_code="10">Grasshopper</item>
+                <item name="Version" type_name="gh_string" type_code="10">8.37.26307.15001</item>
+              </items>
+            </chunk>
+            <chunk name="Library" index="1">
+              <items count="6">
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">TopoptLab.GH, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">0.0.0.0</item>
+                <item name="Author" type_name="gh_string" type_code="10">Andrea Detry; upstream TopOptLab by Stefan Hiemer</item>
+                <item name="Id" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
+                <item name="Name" type_name="gh_string" type_code="10">topoptlab-rhino</item>
+                <item name="Version" type_name="gh_string" type_code="10">0.4.0-alpha.2</item>
+              </items>
+            </chunk>
+          </chunks>
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
@@ -123,8 +149,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="1">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Example 3D</item>
               </items>
               <chunks count="1">
@@ -140,9 +167,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>41</X>
+                          <X>22</X>
                           <Y>268</Y>
-                          <W>76</W>
+                          <W>109</W>
                           <H>124</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -165,13 +192,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>270</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>280</Y>
                             </item>
                           </items>
@@ -212,13 +239,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>290</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>300</Y>
                             </item>
                           </items>
@@ -259,13 +286,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>310</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>320</Y>
                             </item>
                           </items>
@@ -306,13 +333,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>330</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>340</Y>
                             </item>
                           </items>
@@ -353,13 +380,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>350</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>360</Y>
                             </item>
                           </items>
@@ -400,13 +427,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>43</X>
+                              <X>24</X>
                               <Y>370</Y>
-                              <W>22</W>
+                              <W>41</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>55.5</X>
+                              <X>46</X>
                               <Y>380</Y>
                             </item>
                           </items>
@@ -448,11 +475,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>95</X>
                               <Y>270</Y>
-                              <W>20</W>
+                              <W>34</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>105</X>
+                              <X>112</X>
                               <Y>285</Y>
                             </item>
                           </items>
@@ -474,11 +501,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>95</X>
                               <Y>300</Y>
-                              <W>20</W>
+                              <W>34</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>105</X>
+                              <X>112</X>
                               <Y>315</Y>
                             </item>
                           </items>
@@ -500,11 +527,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>95</X>
                               <Y>330</Y>
-                              <W>20</W>
+                              <W>34</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>105</X>
+                              <X>112</X>
                               <Y>345</Y>
                             </item>
                           </items>
@@ -527,11 +554,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>95</X>
                               <Y>360</Y>
-                              <W>20</W>
+                              <W>34</W>
                               <H>30</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>105</X>
+                              <X>112</X>
                               <Y>375</Y>
                             </item>
                           </items>
@@ -543,8 +570,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="2">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000001</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Domain 3D</item>
               </items>
               <chunks count="1">
@@ -556,13 +584,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <item name="Name" type_name="gh_string" type_code="10">TopOpt Domain 3D</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Domain 3D</item>
                   </items>
-                  <chunks count="8">
+                  <chunks count="9">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>326</X>
+                          <X>312</X>
                           <Y>238</Y>
-                          <W>70</W>
+                          <W>96</W>
                           <H>104</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -585,13 +613,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>328</X>
+                              <X>314</X>
                               <Y>240</Y>
-                              <W>17</W>
+                              <W>31</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>338</X>
+                              <X>331</X>
                               <Y>250</Y>
                             </item>
                           </items>
@@ -612,13 +640,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>328</X>
+                              <X>314</X>
                               <Y>260</Y>
-                              <W>17</W>
+                              <W>31</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>338</X>
+                              <X>331</X>
                               <Y>270</Y>
                             </item>
                           </items>
@@ -640,13 +668,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>328</X>
+                              <X>314</X>
                               <Y>280</Y>
-                              <W>17</W>
+                              <W>31</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>338</X>
+                              <X>331</X>
                               <Y>290</Y>
                             </item>
                           </items>
@@ -667,13 +695,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>328</X>
+                              <X>314</X>
                               <Y>300</Y>
-                              <W>17</W>
+                              <W>31</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>338</X>
+                              <X>331</X>
                               <Y>310</Y>
                             </item>
                           </items>
@@ -713,13 +741,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>328</X>
+                              <X>314</X>
                               <Y>320</Y>
-                              <W>17</W>
+                              <W>31</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>338</X>
+                              <X>331</X>
                               <Y>330</Y>
                             </item>
                           </items>
@@ -761,12 +789,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>375</X>
                               <Y>240</Y>
-                              <W>19</W>
-                              <H>50</H>
+                              <W>31</W>
+                              <H>33</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>384.5</X>
-                              <Y>265</Y>
+                              <X>390.5</X>
+                              <Y>256.66666</Y>
                             </item>
                           </items>
                         </chunk>
@@ -786,13 +814,39 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>375</X>
-                              <Y>290</Y>
-                              <W>19</W>
-                              <H>50</H>
+                              <Y>273</Y>
+                              <W>31</W>
+                              <H>33</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>384.5</X>
-                              <Y>315</Y>
+                              <X>390.5</X>
+                              <Y>290</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_output" index="2">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Bounding/active cells and geometry memory preflight</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">b3da9851-1945-4b89-83f4-847fe4016927</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Resources</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Info</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="1">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>375</X>
+                              <Y>306</Y>
+                              <W>31</W>
+                              <H>34</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>390.5</X>
+                              <Y>323.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -823,7 +877,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>80</X>
                           <Y>630</Y>
-                          <W>164</W>
+                          <W>198</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -864,9 +918,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>455</X>
+                          <X>452</X>
                           <Y>600</Y>
-                          <W>50</W>
+                          <W>56</W>
                           <H>20</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -880,8 +934,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="5">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Support 3D</item>
               </items>
               <chunks count="1">
@@ -896,9 +951,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>624</X>
+                          <X>618</X>
                           <Y>228</Y>
-                          <W>55</W>
+                          <W>67</W>
                           <H>104</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -921,13 +976,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>230</Y>
-                              <W>9</W>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
+                              <X>629</X>
                               <Y>240</Y>
                             </item>
                           </items>
@@ -949,13 +1004,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>250</Y>
-                              <W>9</W>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
+                              <X>629</X>
                               <Y>260</Y>
                             </item>
                           </items>
@@ -975,13 +1030,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>270</Y>
-                              <W>9</W>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
+                              <X>629</X>
                               <Y>280</Y>
                             </item>
                           </items>
@@ -1021,13 +1076,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>290</Y>
-                              <W>9</W>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
+                              <X>629</X>
                               <Y>300</Y>
                             </item>
                           </items>
@@ -1067,13 +1122,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>310</Y>
-                              <W>9</W>
+                              <W>15</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
+                              <X>629</X>
                               <Y>320</Y>
                             </item>
                           </items>
@@ -1115,11 +1170,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>665</X>
                               <Y>230</Y>
-                              <W>12</W>
+                              <W>18</W>
                               <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>671</X>
+                              <X>674</X>
                               <Y>255</Y>
                             </item>
                           </items>
@@ -1142,11 +1197,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>665</X>
                               <Y>280</Y>
-                              <W>12</W>
+                              <W>18</W>
                               <H>50</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>671</X>
+                              <X>674</X>
                               <Y>305</Y>
                             </item>
                           </items>
@@ -1158,8 +1213,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="6">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000003</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load 3D</item>
               </items>
               <chunks count="1">
@@ -1174,10 +1230,10 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>624</X>
-                          <Y>448</Y>
-                          <W>55</W>
-                          <H>64</H>
+                          <X>618</X>
+                          <Y>446</Y>
+                          <W>67</W>
+                          <H>67</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>650</X>
@@ -1199,14 +1255,14 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
-                              <Y>450</Y>
-                              <W>9</W>
-                              <H>20</H>
+                              <X>620</X>
+                              <Y>448</Y>
+                              <W>15</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
-                              <Y>460</Y>
+                              <X>629</X>
+                              <Y>458.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1227,14 +1283,14 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
-                              <Y>470</Y>
-                              <W>9</W>
-                              <H>20</H>
+                              <X>620</X>
+                              <Y>469</Y>
+                              <W>15</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
-                              <Y>480</Y>
+                              <X>629</X>
+                              <Y>479.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1254,14 +1310,14 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>626</X>
+                              <X>620</X>
                               <Y>490</Y>
-                              <W>9</W>
-                              <H>20</H>
+                              <W>15</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>632</X>
-                              <Y>500</Y>
+                              <X>629</X>
+                              <Y>500.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1305,13 +1361,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>665</X>
-                              <Y>450</Y>
-                              <W>12</W>
-                              <H>20</H>
+                              <Y>448</Y>
+                              <W>18</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>671</X>
-                              <Y>460</Y>
+                              <X>674</X>
+                              <Y>458.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1332,13 +1388,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>665</X>
-                              <Y>470</Y>
-                              <W>12</W>
-                              <H>20</H>
+                              <Y>469</Y>
+                              <W>18</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>671</X>
-                              <Y>480</Y>
+                              <X>674</X>
+                              <Y>479.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1360,12 +1416,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>665</X>
                               <Y>490</Y>
-                              <W>12</W>
-                              <H>20</H>
+                              <W>18</W>
+                              <H>21</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>671</X>
-                              <Y>500</Y>
+                              <X>674</X>
+                              <Y>500.5</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1394,9 +1450,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>365</X>
+                          <X>345</X>
                           <Y>500</Y>
-                          <W>50</W>
+                          <W>89</W>
                           <H>20</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -1434,8 +1490,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="8">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000004</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt FEM Analyze 3D</item>
               </items>
               <chunks count="1">
@@ -1450,9 +1507,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>939</X>
+                          <X>918</X>
                           <Y>278</Y>
-                          <W>70</W>
+                          <W>96</W>
                           <H>164</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -1475,13 +1532,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>280</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>290</Y>
                             </item>
                           </items>
@@ -1503,13 +1560,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>300</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>310</Y>
                             </item>
                           </items>
@@ -1531,13 +1588,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>320</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>330</Y>
                             </item>
                           </items>
@@ -1558,13 +1615,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>340</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>350</Y>
                             </item>
                           </items>
@@ -1605,13 +1662,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>360</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>370</Y>
                             </item>
                           </items>
@@ -1652,13 +1709,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>380</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>390</Y>
                             </item>
                           </items>
@@ -1699,13 +1756,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>400</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>410</Y>
                             </item>
                           </items>
@@ -1746,13 +1803,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>941</X>
+                              <X>920</X>
                               <Y>420</Y>
-                              <W>24</W>
+                              <W>45</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>954.5</X>
+                              <X>944</X>
                               <Y>430</Y>
                             </item>
                           </items>
@@ -1794,12 +1851,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>995</X>
                               <Y>280</Y>
-                              <W>12</W>
+                              <W>17</W>
                               <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1001</X>
-                              <Y>306.6667</Y>
+                              <X>1003.5</X>
+                              <Y>306.66666</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1820,11 +1877,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>995</X>
                               <Y>333</Y>
-                              <W>12</W>
+                              <W>17</W>
                               <H>53</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1001</X>
+                              <X>1003.5</X>
                               <Y>360</Y>
                             </item>
                           </items>
@@ -1846,11 +1903,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>995</X>
                               <Y>386</Y>
-                              <W>12</W>
+                              <W>17</W>
                               <H>54</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1001</X>
+                              <X>1003.5</X>
                               <Y>413.3333</Y>
                             </item>
                           </items>
@@ -1882,7 +1939,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>650</X>
                           <Y>720</Y>
-                          <W>167</W>
+                          <W>204</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -1962,16 +2019,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>0</X>
-                          <Y>0</Y>
-                          <W>91</W>
-                          <H>22</H>
-                        </item>
-                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>960</X>
                           <Y>660</Y>
+                          <W>116</W>
+                          <H>22</H>
                         </item>
                       </items>
                     </chunk>
@@ -1998,16 +2051,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>0</X>
-                          <Y>0</Y>
-                          <W>81</W>
-                          <H>22</H>
-                        </item>
-                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>960</X>
                           <Y>715</Y>
+                          <W>96</W>
+                          <H>22</H>
                         </item>
                       </items>
                     </chunk>
@@ -2034,16 +2083,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                   </items>
                   <chunks count="1">
                     <chunk name="Attributes">
-                      <items count="2">
+                      <items count="1">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>0</X>
-                          <Y>0</Y>
-                          <W>83</W>
-                          <H>22</H>
-                        </item>
-                        <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>960</X>
                           <Y>770</Y>
+                          <W>99</W>
+                          <H>22</H>
                         </item>
                       </items>
                     </chunk>
@@ -2052,8 +2097,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
               </chunks>
             </chunk>
             <chunk name="Object" index="14">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">6c8b1e31-0011-4e55-8001-010000000006</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Results 3D</item>
               </items>
               <chunks count="1">
@@ -2068,9 +2114,9 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                          <X>1308</X>
+                          <X>1287</X>
                           <Y>258</Y>
-                          <W>82</W>
+                          <W>120</W>
                           <H>184</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
@@ -2093,13 +2139,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>260</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>270</Y>
                             </item>
                           </items>
@@ -2120,13 +2166,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>280</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>290</Y>
                             </item>
                           </items>
@@ -2167,13 +2213,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>300</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>310</Y>
                             </item>
                           </items>
@@ -2214,13 +2260,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>320</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>330</Y>
                             </item>
                           </items>
@@ -2261,13 +2307,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>340</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>350</Y>
                             </item>
                           </items>
@@ -2308,13 +2354,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>360</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>370</Y>
                             </item>
                           </items>
@@ -2354,13 +2400,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>380</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>390</Y>
                             </item>
                           </items>
@@ -2400,13 +2446,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>400</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>410</Y>
                             </item>
                           </items>
@@ -2446,13 +2492,13 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <chunk name="Attributes">
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
-                              <X>1310</X>
+                              <X>1289</X>
                               <Y>420</Y>
-                              <W>25</W>
+                              <W>46</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1324</X>
+                              <X>1313.5</X>
                               <Y>430</Y>
                             </item>
                           </items>
@@ -2494,12 +2540,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>260</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>25</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
-                              <Y>272.8571</Y>
+                              <X>1385</X>
+                              <Y>272.85715</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2520,12 +2566,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>285</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>26</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
-                              <Y>298.5714</Y>
+                              <X>1385</X>
+                              <Y>298.57144</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2546,11 +2592,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>311</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>26</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
+                              <X>1385</X>
                               <Y>324.2857</Y>
                             </item>
                           </items>
@@ -2573,11 +2619,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>337</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>25</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
+                              <X>1385</X>
                               <Y>350</Y>
                             </item>
                           </items>
@@ -2600,11 +2646,11 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>362</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>26</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
+                              <X>1385</X>
                               <Y>375.7143</Y>
                             </item>
                           </items>
@@ -2627,12 +2673,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>388</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>26</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
-                              <Y>401.4286</Y>
+                              <X>1385</X>
+                              <Y>401.42856</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2654,12 +2700,12 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>1365</X>
                               <Y>414</Y>
-                              <W>23</W>
+                              <W>40</W>
                               <H>26</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
-                              <X>1376.5</X>
-                              <Y>427.1429</Y>
+                              <X>1385</X>
+                              <Y>427.14285</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2690,7 +2736,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1250</X>
                           <Y>680</Y>
-                          <W>182</W>
+                          <W>235</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -2731,7 +2777,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1250</X>
                           <Y>730</Y>
-                          <W>203</W>
+                          <W>277</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -2772,7 +2818,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1250</X>
                           <Y>780</Y>
-                          <W>175</W>
+                          <W>221</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -2813,7 +2859,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1250</X>
                           <Y>830</Y>
-                          <W>191</W>
+                          <W>253</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -2854,7 +2900,7 @@ Keep: 5 mm end layers. Illustrative data; use your actual material and loads.</i
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>1250</X>
                           <Y>880</Y>
-                          <W>160</W>
+                          <W>190</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3048,7 +3094,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>280</Y>
-                          <W>153</W>
+                          <W>176</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3089,7 +3135,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>340</Y>
-                          <W>152</W>
+                          <W>175</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3130,7 +3176,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>400</Y>
-                          <W>151</W>
+                          <W>172</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3171,7 +3217,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>460</Y>
-                          <W>155</W>
+                          <W>181</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3212,7 +3258,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>520</Y>
-                          <W>155</W>
+                          <W>181</W>
                           <H>20</H>
                         </item>
                       </items>
@@ -3253,7 +3299,7 @@ Initial limit: 8000 bounding-box voxels. WORLD XYZ.</item>
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>-300</X>
                           <Y>580</Y>
-                          <W>155</W>
+                          <W>181</W>
                           <H>20</H>
                         </item>
                       </items>
