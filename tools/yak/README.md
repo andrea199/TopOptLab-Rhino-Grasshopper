@@ -10,7 +10,7 @@ this package. No downloads occur merely by loading the GHA.
 2. If a manual TopOptLab GHA is already in Grasshopper/Libraries, back up its
    entire folder outside Grasshopper search paths before installing Yak. Do not
    load both copies of this plugin; they share component GUIDs.
-3. Install the .yak package. For local acceptance use `Yak.exe install FILE.yak`.
+3. In Rhino run `_PackageManager`, choose Online, enable **Include pre-releases**, search **topoptlab-rhino**, select **0.4.0-alpha.4** and click **Install**. Restart Rhino.
 4. Run SETUP-PYTHON.cmd from the package folder. In Grasshopper, right-click a
    TopOptLab component and choose **TopOptLab Python setup folder** to find it.
 5. Restart Rhino. Open source/tool/examples/engineering_workflow_2d.gh and run

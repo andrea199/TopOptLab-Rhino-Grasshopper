@@ -1,9 +1,13 @@
-# Windows Yak alpha acceptance
+# Windows Yak installation and acceptance
 
 Candidate: `topoptlab-rhino-0.4.0-alpha.4-rh8_37-win.yak`.
 Minimum target: Rhino 8 SR37, Windows x64. Python 3.13 x64 must already be
-installed; the first CPU setup downloads dependencies. This candidate has not
-been published to the public Yak server.
+installed; the first CPU setup downloads dependencies. Install from Rhino Package
+Manager: Online → Include pre-releases → search `topoptlab-rhino` → choose
+`0.4.0-alpha.4` → Install. Restart Rhino, then right-click any TopOptLab component
+and choose **TopOptLab Python setup folder**. Run `SETUP-PYTHON.cmd` once and
+restart Rhino. The same folder contains `source/docs/manual/index.html` and
+`source/tool/examples/`. See the [README walkthrough](../README.md#install-from-rhino-package-manager-windows).
 
 ## Changes
 

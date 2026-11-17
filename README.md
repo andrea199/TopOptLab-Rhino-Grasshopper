@@ -1,43 +1,46 @@
 # TopOptLab for Rhino 8 / Grasshopper
 
-**Experimental alpha: 0.4.0-dev — final geometry and engineering workflow preview.** Native Grasshopper components for
+**Experimental alpha: 0.4.0-alpha.4 — Windows Yak release.** Native Grasshopper components for
 2D/3D linear-elastic FEM and topology optimization using Stefan Hiemer's topoptlab.
 Numerical regression tests do not replace application-specific engineering qualification.
-The newest UI still requires interactive Rhino acceptance.
+The Windows default examples passed native Rhino/Grasshopper calculation acceptance;
+see the [full acceptance matrix](docs/YAK_NUMERICAL_ACCEPTANCE.md).
 
 [![Numerical validation](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/workflows/numerics.yml/badge.svg)](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/actions/workflows/numerics.yml)
 
 CPU tests and repository integrity run on pushes and pull requests. A green badge
 does not validate the Rhino UI, CUDA, or a physical design. Actions results are linked above.
 
-## Classroom downloads
+## Install from Rhino Package Manager (Windows)
 
-For the 26 October 2026 course, download **one complete ZIP for your computer**
-from the [classroom release](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/tag/v0.4.0-alpha.20261030). Each package contains the English HTML
-manual, HTML lesson slides, all exercise files and its matching offline CPU installer.
+**Package:** `topoptlab-rhino` · **Version:** `0.4.0-alpha.4` · **Platform:** Windows x64, Rhino 8 SR37 or later.
 
-| Computer | Complete course package | Size |
-| --- | --- | ---: |
-| Windows x64, Rhino 8 | [Windows](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Windows.zip) | 220.63 MB |
-| Mac Apple Silicon, macOS 15+, Rhino 8 | [Apple Silicon pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_AppleSilicon.zip) | 229.40 MB |
-| Mac Intel, macOS 15+, Rhino 8 | [Intel pilot](https://github.com/andrea199/TopOptLab-Rhino-Grasshopper/releases/download/v0.4.0-alpha.20261030/Lecture_26102026_Mac_Intel.zip) | 239.29 MB |
+1. Install **Python 3.13 (64 bit)** with the **Python Launcher** if it is not already installed. Python itself is not bundled; the first setup needs internet access. Official Python installers are available from [python.org](https://www.python.org/downloads/windows/).
+2. In Rhino, run **`_PackageManager`** and select the **Online** tab.
+3. Enable **Include pre-releases**, search for **`topoptlab-rhino`**, select **`0.4.0-alpha.4`**, then click **Install**. Restart Rhino.
+4. Run **`_Grasshopper`**, place any component from the **TopOptLab** tab, right-click it and choose **TopOptLab Python setup folder**.
+5. In that folder, double-click **`SETUP-PYTHON.cmd`** and wait for the CPU runtime validation to finish. This prepares an isolated persistent Python environment; it does not compile the plugin. Restart Rhino after setup.
+6. Open **`source/docs/manual/index.html`** from the same package folder to read the complete offline English manual, Component Guide and lessons.
+7. Open **`source/tool/examples/engineering_workflow_2d.gh`**. Run **BASELINE FEM → OPTIMIZATION → FINAL VERIFICATION**, waiting for each stage to finish. Use the CPU defaults first.
 
-All packages are below 250,000,000 bytes. Extract the entire ZIP, open
-`START_HERE.html`, then choose **Open the complete English manual**. Keep its
-`software` folder with that page. See [installation](docs/INSTALLATION.md) and
-the [release scope and checksums](docs/RELEASE_2026-10-26.md).
+The package folder is normally `%APPDATA%\McNeel\Rhinoceros\packages\8.0\topoptlab-rhino\0.4.0-alpha.4`.
+The numerical environment is stored separately under `%LOCALAPPDATA%\TopOptLab\Rhino8\runtimes` and survives package upgrades. Loading a Grasshopper component does not start downloads or calculations.
 
-This clean repository is private during publication review. Release downloads
-currently require a GitHub account with repository access.
-The Mac packages are pilots; native Rhino/Mac acceptance is pending.
-Windows runtime and bridge checks passed in isolation; a student Rhino session
-and a second Windows PC still require practical acceptance. There is no verified
-installer for Linux, Windows ARM or macOS versions below 15.
+**Upgrading from a manual installation:** save your work and close Rhino. Back up the old TopOptLab plugin folder outside Grasshopper's library/search paths before installing the Yak package. Both copies share component IDs and must not be loaded together. See [setup, migration and acceptance](docs/YAK_WINDOWS.md).
+
+If the package does not appear, check **Include pre-releases**, your Windows x64 platform and Rhino service release. The [official Package Manager help](https://docs.mcneel.com/rhino/8/help/en-us/commands/packagemanager.htm) describes the installation dialog.
+
+## Course manual and platform support
+
+The Yak package contains the complete English HTML manual, HTML lesson slides and all example/exercise files under `source/`. Keep that folder intact so its relative links and images work offline. PowerPoint files are not included.
+
+This Yak release is **Windows only**. Mac Apple Silicon and Intel source/classroom packages remain separate pilots, with native Mac acceptance pending. There is no verified installer for Linux, Windows ARM or macOS below 15. The historical 26 October classroom ZIP release remains a draft; it is not the current public installation route. A second Windows PC has not yet been qualified.
 
 ## Start here
 
 | Goal | Guide |
 | --- | --- |
+| Install on Windows | [Rhino Package Manager](#install-from-rhino-package-manager-windows) |
 | Run your first FEM and optimization | [Quick start](docs/QUICKSTART.md) |
 | Choose a ready-made model | [20-example gallery](docs/EXAMPLES.md) |
 | Learn or teach TopOptLab in English | [Unified manual: components and lessons](docs/manual/index.html) |
@@ -52,10 +55,9 @@ slides, illustrated installation, component explanations and exercise files.
 PowerPoint files are maintained separately by the instructor and are not included
 in the repository or its release packages.
 
-![Computed shelf bracket study](docs/shelf-bracket-fine-preview.png)
+![Shelf bracket development preview](docs/shelf-bracket-preview.png)
 
-*Computed fine-grid shelf study; final conforming FEM of this candidate remains
-incomplete. See the validation scope below.*
+*Shelf-bracket development preview. See the [current numerical acceptance](docs/YAK_NUMERICAL_ACCEPTANCE.md) for tested defaults, results and limitations.*
 
 ## Teaching manual
 
@@ -97,9 +99,7 @@ flags; Stage 4 shows the new tetrahedral FEM response.
 For a real-size 250 mm ABS-reference shelf bracket with four independent 4 kg load cases,
 open **tool/examples/engineering_shelf_bracket_3d.gh**. Parametric holes, protected plates
 and tool-clearance voids are included. See [Shelf Bracket](docs/SHELF_BRACKET.md).
-The updated 2.5 mm example passes voxel reanalysis at threshold 0.32; automatic
-tetrahedral meshing of its final CAD surface remains incomplete. The previous 5 mm
-shape completed the separate CAD/FEM workflow. See the exact [validation scope](docs/RESOLUTION_VALIDATION.md).
+The CPU classroom default uses CPU AMG, 5 mm cells, threshold 0.35 and 60 optimization steps over all four cases. Baseline, optimization, voxel verification, CAD extraction and conforming final FEM passed native acceptance. The former 2.5 mm refinement remains unqualified and has a documented automatic-meshing limitation. See [current acceptance](docs/YAK_NUMERICAL_ACCEPTANCE.md) and [resolution scope](docs/RESOLUTION_VALIDATION.md).
 
 ## Implemented
 
@@ -137,15 +137,10 @@ for snapshot provenance. New upstream features are not automatically available h
 - Saved project JSON, per-case FEM/optimization JSON, history, mass and HTML report.
 - Parametric dimensions and XYZ position in the examples.
 
-## Windows Yak candidate
-
-A tested Windows Yak alpha candidate is being prepared for publication. See
-[Yak setup, migration and native acceptance](docs/YAK_WINDOWS.md). It is not yet
-available from the public Package Manager; use the source route below meanwhile.
-
 ## Install from source on Windows
 
-For the offline classroom installer, use the platform ZIPs above.
+For a developer build or an optional CUDA environment, use the source route below.
+The Package Manager route above installs the precompiled Windows plugin.
 
 - Prerequisites: **Rhino 8 and Python 3.13 (64 bit)**, plus internet access.
 - Download/clone the complete repository into a permanent folder.
@@ -170,7 +165,7 @@ they do not mean every solver stage is parallel.
 
 - Linear isotropic small-strain elasticity only. Stress screening is not code compliance.
 - Default 3D Domain limit: 8,000 cells. The shelf example uses a 250,000-cell
-  user limit and 2.5 mm cells (60,000 bounding cells).
+  user limit and 5 mm default cells (7,500 bounding cells); finer grids are advanced studies.
 - Memory admission and absolute guards (2,000,000 bounding cells; 2,048 per axis)
   are not tested-capacity or accuracy claims. See [resolution evidence](docs/RESOLUTION_VALIDATION.md).
 - Stage 2 checks the original voxel grid; Stages 3/4 extract a smoothed surface
