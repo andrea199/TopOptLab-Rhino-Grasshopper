@@ -29,6 +29,11 @@ jobs:
         with:
           python-version: '3.13'
           architecture: ${{ matrix.python_arch }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check .NET macOS paths and actual memory preflight
+        run: dotnet run --project tools/yak/mac_host_probe/HostProbe.csproj --configuration Release
       - name: Validate repository integrity
         run: python tool/tools/verify_repository.py --tracked
       - name: Prepare isolated native runtime and run worker tests
