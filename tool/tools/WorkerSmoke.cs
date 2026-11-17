@@ -29,6 +29,11 @@ class WorkerSmoke
     [MethodImpl(MethodImplOptions.NoInlining)]
     static void Test(string fixture, string config)
     {
+        if(RuntimePaths.ParseMacAvailableMemory("Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free: 100.\nPages inactive: 200.\n")!=4915200UL)throw new Exception("Mac 16 KiB memory page parser failed");
+        if(RuntimePaths.ParseMacAvailableMemory("Mach Virtual Memory Statistics: (page size of 4096 bytes)\nPages free: 100.\nPages inactive: 200.\n")!=1228800UL)throw new Exception("Mac 4 KiB memory page parser failed");
+        bool missingMemoryRejected=false;
+        try{RuntimePaths.ParseMacAvailableMemory("Pages free: 100.\n");}catch(ArgumentException){missingMemoryRejected=true;}
+        if(!missingMemoryRejected)throw new Exception("Incomplete Mac memory data accepted");
         JObject request = JObject.Parse(File.ReadAllText(fixture));
         string hash = WorkerJob.Hash(request.ToString());
         if (hash != WorkerJob.Hash(request.ToString())) throw new Exception("Hash is not stable");

@@ -45,7 +45,7 @@ namespace TopoptLab.GH
         public const int MaximumAxis=2048,MaximumCells=2000000;
         [StructLayout(LayoutKind.Sequential)]struct MemoryStatus {public uint Length,Load;public ulong TotalPhysical,AvailablePhysical,TotalPageFile,AvailablePageFile,TotalVirtual,AvailableVirtual,AvailableExtendedVirtual;}
         [DllImport("kernel32.dll",SetLastError=true)]static extern bool GlobalMemoryStatusEx(ref MemoryStatus status);
-        public static ulong AvailableMemory() {var status=new MemoryStatus();status.Length=(uint)Marshal.SizeOf(typeof(MemoryStatus));if(!GlobalMemoryStatusEx(ref status))throw new ArgumentException("Cannot read available RAM for the 3D geometry preflight. Restart Rhino and retry.");return status.AvailablePhysical;}
+        public static ulong AvailableMemory() {if(RuntimePaths.IsMac)return RuntimePaths.MacAvailableMemory();var status=new MemoryStatus();status.Length=(uint)Marshal.SizeOf(typeof(MemoryStatus));if(!GlobalMemoryStatusEx(ref status))throw new ArgumentException("Cannot read available RAM for the 3D geometry preflight. Restart Rhino and retry.");return status.AvailablePhysical;}
         public static VoxelGeometryPlan Plan(double[] sizes,double h,int limit,ulong availableBytes)
         {
             if(!CadGeometry.Finite(h)||h<=0)throw new ArgumentException("Cell size must be finite and positive");
