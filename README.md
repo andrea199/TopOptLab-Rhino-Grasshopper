@@ -1,6 +1,6 @@
 # TopOptLab for Rhino 8 / Grasshopper
 
-**Experimental alpha: 0.4.0-alpha.4 — Windows Yak release.** Native Grasshopper components for
+**Experimental alpha releases: Windows `0.4.0-alpha.4`; Mac `0.4.0-alpha.5`.** Native Grasshopper components for
 2D/3D linear-elastic FEM and topology optimization using Stefan Hiemer's topoptlab.
 Numerical regression tests do not replace application-specific engineering qualification.
 The Windows default examples passed native Rhino/Grasshopper calculation acceptance;
@@ -34,7 +34,23 @@ If the package does not appear, check **Include pre-releases**, your Windows x64
 
 The Yak package contains the complete English HTML manual, HTML lesson slides and all example/exercise files under `source/`. Keep that folder intact so its relative links and images work offline. PowerPoint files are not included.
 
-This Yak release is **Windows only**. Mac Apple Silicon and Intel source/classroom packages remain separate pilots, with native Mac acceptance pending. There is no verified installer for Linux, Windows ARM or macOS below 15. The historical 26 October classroom ZIP release remains a draft; it is not the current public installation route. A second Windows PC has not yet been qualified.
+## Install from Rhino Package Manager (Mac — experimental)
+
+> **EXPERIMENTAL MAC ALPHA — NOT YET TESTED INSIDE RHINO OR GRASSHOPPER FOR MAC.**
+> Native CPU-worker tests pass on Apple Silicon and Intel; this does not validate GHA loading, menus/icons, preview, Run/Stop/Reset, save/reopen or Bake/Undo in Rhino. The Windows native acceptance results do not qualify the Mac application integration.
+
+**Package:** `topoptlab-rhino` · **Mac version:** `0.4.0-alpha.5` · **Requirements:** macOS 15+, Rhino 8 SR37+, native 64-bit Python 3.13. One Mac package serves both Apple Silicon (arm64) and Intel (x86_64). Rosetta Python is rejected.
+
+1. Save your work. If an older manual TopOptLab GHA is installed, close Rhino and back up that plugin folder outside Grasshopper search paths before installing Yak.
+2. Run **`_PackageManager`** in Rhino → **Online** → enable **Include pre-releases** → search **`topoptlab-rhino`** → select **`0.4.0-alpha.5`** → **Install**. Restart Rhino.
+3. In Grasshopper, right-click a TopOptLab component → **TopOptLab Python setup folder**. Run **`SETUP-PYTHON.command`** to prepare the native CPU runtime. Python itself must already be installed; first setup needs internet access.
+4. Restart Rhino. The package includes the English manual at **`source/docs/manual/index.html`** and examples under **`source/tool/examples/`**.
+
+If the untested component/menu integration does not load, the package folder is normally `~/Library/Application Support/McNeel/Rhinoceros/packages/8.0/topoptlab-rhino/0.4.0-alpha.5`. Run its setup launcher from Terminal with `bash "/full/path/to/SETUP-PYTHON.command"`. Setting up Python does not prove the plugin works inside Rhino.
+
+See [Mac installation and untested application checks](docs/YAK_MACOS.md) and [the exact test evidence](docs/YAK_MACOS_EVIDENCE.json). This Mac release is for experimental use; native Rhino/Grasshopper qualification is still pending. CUDA is not included on Mac.
+
+The historical 26 October classroom ZIP release remains a draft and is not the current public installation route. There is no verified installer for Linux, Windows ARM or macOS below 15. The Windows Package Manager release remains `0.4.0-alpha.4` and is unchanged.
 
 ## Start here
 

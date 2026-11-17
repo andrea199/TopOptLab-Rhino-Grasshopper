@@ -6,6 +6,8 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import pytest
+pytestmark = pytest.mark.skipif(sys.platform != "win32", reason="Windows source installer contract")
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]

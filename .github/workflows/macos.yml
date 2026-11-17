@@ -1,0 +1,48 @@
+name: macOS worker preparation
+on:
+  push:
+    branches: [codex/yak-macos]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: macos-worker-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-worker:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            architecture: arm64
+            python_arch: arm64
+          - runner: macos-15-intel
+            architecture: x86_64
+            python_arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          architecture: ${{ matrix.python_arch }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check .NET macOS paths and actual memory preflight
+        run: dotnet run --project tools/yak/mac_host_probe/HostProbe.csproj --configuration Release
+      - name: Validate repository integrity
+        run: python tool/tools/verify_repository.py --tracked
+      - name: Prepare isolated native runtime and run worker tests
+        run: python tools/yak/macos_ci.py --output "${{ runner.temp }}/TopOptLab acceptance" --expected-arch "${{ matrix.architecture }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: macos-worker-${{ matrix.architecture }}
+          path: |
+            ${{ runner.temp }}/TopOptLab acceptance/acceptance.json
+            ${{ runner.temp }}/TopOptLab acceptance/test-results.xml
+          if-no-files-found: warn

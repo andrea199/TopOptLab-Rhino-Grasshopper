@@ -137,8 +137,8 @@ namespace TopoptLab.GH
         {
             base.AppendAdditionalComponentMenuItems(menu);
             string folder = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            if (System.IO.File.Exists(System.IO.Path.Combine(folder, "SETUP-PYTHON.cmd")))
-                Menu_AppendItem(menu, "TopOptLab Python setup folder", delegate { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(folder) { UseShellExecute = true }); });
+            if (System.IO.File.Exists(System.IO.Path.Combine(folder, RuntimePaths.SetupFileName)))
+                Menu_AppendItem(menu, "TopOptLab Python setup folder", delegate { RuntimePaths.OpenFolder(folder); });
         }
 
         protected void Error(Exception e) { AddRuntimeMessage(GH_RuntimeMessageLevel.Error, e.Message); }

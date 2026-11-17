@@ -35,3 +35,7 @@ Thumbs.db
 *.ppt
 *.pptm
 *.pptx
+
+# Native Mac host probe build output
+tools/yak/mac_host_probe/bin/
+tools/yak/mac_host_probe/obj/

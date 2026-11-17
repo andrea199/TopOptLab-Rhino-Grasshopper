@@ -35,14 +35,14 @@ namespace TopoptLab.GH
         public static WorkerJob Start(JObject request, string fingerprint, string configPath)
         {
             bool persistentSettings = !File.Exists(configPath);
-            if (!File.Exists(configPath)) configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TopOptLab", "Rhino8", "settings.json");
-            if (!File.Exists(configPath)) throw new FileNotFoundException("Configure Python first: right-click a TopOptLab component and open the Python setup folder, then run SETUP-PYTHON.cmd. For a source install use INSTALL.cmd.", configPath);
+            if (!File.Exists(configPath)) configPath = Path.Combine(RuntimePaths.StateDirectory, "settings.json");
+            if (!File.Exists(configPath)) throw new FileNotFoundException("Configure Python first: right-click a TopOptLab component and open the Python setup folder, then run " + RuntimePaths.SetupFileName + ".", configPath);
             JObject config = JObject.Parse(File.ReadAllText(configPath));
             string runtimeIdentity = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "runtime-id.txt");
             if (persistentSettings && File.Exists(runtimeIdentity) && ((string)config["schema"] != "topoptlab-runtime-v1" || (string)config["runtime_id"] != File.ReadAllText(runtimeIdentity).Trim()))
-                throw new InvalidDataException("The configured Python worker belongs to another package runtime. Run SETUP-PYTHON.cmd for this Yak version.");
+                throw new InvalidDataException("The configured Python worker belongs to another package runtime. Run " + RuntimePaths.SetupFileName + " for this Yak version.");
             string python = (string)config["python"], worker = (string)config["worker"];
-            if (!File.Exists(python) || !File.Exists(worker)) throw new FileNotFoundException("Python or worker is missing. Run SETUP-PYTHON.cmd again (Yak) or INSTALL.cmd (source).");
+            if (!File.Exists(python) || !File.Exists(worker)) throw new FileNotFoundException("Python or worker is missing. Run " + RuntimePaths.SetupFileName + " again.");
             WorkerJob job = new WorkerJob { Id = Guid.NewGuid().ToString("N"), Fingerprint = fingerprint };
             job.Folder = Path.Combine(Path.GetTempPath(), "topoptlab-gh", job.Id);
             Directory.CreateDirectory(job.Folder);
@@ -211,6 +211,6 @@ namespace TopoptLab.GH
         public override string Description { get { return "Rhino 8 / external Python teaching integration for topoptlab"; } }
         public override Guid Id { get { return new Guid("f4f8bfcd-9314-42fd-bb29-0887143d49eb"); } }
         public override string AuthorName { get { return "Andrea Detry; upstream TopOptLab by Stefan Hiemer"; } }
-        public override string Version { get { return "0.4.0-alpha.4"; } }
+        public override string Version { get { return "0.4.0-alpha.5"; } }
     }
 }

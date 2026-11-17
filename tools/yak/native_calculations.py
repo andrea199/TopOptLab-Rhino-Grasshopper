@@ -10,11 +10,17 @@ GHX/manual copies. CPU defaults are validated separately before Yak build.
 """
 import os,json,time,traceback,math,clr
 import Rhino,System,scriptcontext
-clr.AddReference('Grasshopper');clr.AddReference('GH_IO');clr.AddReference('System.Windows.Forms')
+clr.AddReference('Grasshopper');clr.AddReference('GH_IO')
 import Grasshopper,GH_IO
 from Grasshopper.Kernel import GH_Document,GH_RuntimeMessageLevel
 from Grasshopper.Kernel.Types import GH_Curve,GH_Point
-from System.Windows.Forms import Timer
+IS_MAC=Rhino.Runtime.HostUtils.RunningOnOSX
+if IS_MAC:
+ clr.AddReference('Eto')
+ from Eto.Forms import UITimer as Timer
+else:
+ clr.AddReference('System.Windows.Forms')
+ from System.Windows.Forms import Timer
 ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__),'../..'))
 W=os.path.join(ROOT,'tool','build','yak-calculations')
 if not os.path.isdir(W):os.makedirs(W)
@@ -27,7 +33,7 @@ selection=os.path.join(W,'selection.json')
 if os.path.isfile(selection):paths=json.load(open(selection))
 report={'status':'running','pid':os.getpid(),'started':time.time(),'files':[],'queue':paths}
 state={'file':-1,'phase':'open','stage':0,'doc':None,'solvers':[],'deadline':time.time()+1800}
-timer=Timer();timer.Interval=300
+timer=Timer();timer.Interval=.3 if IS_MAC else 300
 def write():
  report['elapsed_seconds']=time.time()-report['started']
  report['current']={'file_index':state['file'],'phase':state['phase'],'stage_index':state['stage']}
@@ -203,7 +209,8 @@ def tick(sender,event):
     try:pulse(o,index+1,True);pulse(o,index+1,False)
     except:pass
   state['phase']='open';write()
-timer.Tick+=tick
+if IS_MAC:timer.Elapsed+=tick
+else:timer.Tick+=tick
 scriptcontext.sticky['TopOptExampleCalculationTimer']=timer
 scriptcontext.sticky['TopOptExampleCalculationState']=state
 scriptcontext.sticky['TopOptExampleCalculationReport']=report
