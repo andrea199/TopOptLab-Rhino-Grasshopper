@@ -15,7 +15,7 @@ from System.Drawing import Bitmap, Rectangle, Size
 
 W = os.path.abspath(os.path.join(os.path.dirname(__file__),'../../tool/build/yak-native'))
 if not os.path.isdir(W):os.makedirs(W)
-PKG = os.path.join(os.environ['APPDATA'],'McNeel','Rhinoceros','packages','8.0','topoptlab-rhino','0.4.0-alpha.2')
+PKG = os.path.join(os.environ['APPDATA'],'McNeel','Rhinoceros','packages','8.0','topoptlab-rhino','0.4.0-alpha.3')
 report = {'pid':os.getpid(), 'phases':[], 'status':'running'}
 state = {'phase':'baseline_start', 'started':time.time(), 'deadline':time.time()+240}
 timer = Timer()

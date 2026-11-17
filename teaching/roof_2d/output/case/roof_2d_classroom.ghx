@@ -16,15 +16,21 @@
         <item name="plugin_version" type_name="gh_version" type_code="80">
           <Major>1</Major>
           <Minor>0</Minor>
-          <Revision>7</Revision>
+          <Revision>8</Revision>
         </item>
       </items>
       <chunks count="5">
         <chunk name="DocumentHeader">
-          <items count="3">
+          <items count="5">
             <item name="DocumentID" type_name="gh_guid" type_code="9">888cbb43-d87c-424b-a2eb-4bad4f5a644c</item>
             <item name="Preview" type_name="gh_string" type_code="10">Shaded</item>
             <item name="PreviewMeshType" type_name="gh_int32" type_code="3">1</item>
+            <item name="PreviewNormal" type_name="gh_drawing_color" type_code="36">
+              <ARGB>150;150;0;0</ARGB>
+            </item>
+            <item name="PreviewSelected" type_name="gh_drawing_color" type_code="36">
+              <ARGB>150;0;150;0</ARGB>
+            </item>
           </items>
         </chunk>
         <chunk name="DefinitionProperties">
@@ -63,8 +69,28 @@
         </chunk>
         <chunk name="GHALibraries">
           <items count="1">
-            <item name="Count" type_name="gh_int32" type_code="3">0</item>
+            <item name="Count" type_name="gh_int32" type_code="3">2</item>
           </items>
+          <chunks count="2">
+            <chunk name="Library" index="0">
+              <items count="4">
+                <item name="Author" type_name="gh_string" type_code="10">Robert McNeel &amp; Associates</item>
+                <item name="Id" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
+                <item name="Name" type_name="gh_string" type_code="10">Grasshopper</item>
+                <item name="Version" type_name="gh_string" type_code="10">8.37.26307.15001</item>
+              </items>
+            </chunk>
+            <chunk name="Library" index="1">
+              <items count="6">
+                <item name="AssemblyFullName" type_name="gh_string" type_code="10">TopoptLab.GH, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</item>
+                <item name="AssemblyVersion" type_name="gh_string" type_code="10">0.0.0.0</item>
+                <item name="Author" type_name="gh_string" type_code="10">Andrea Detry; upstream TopOptLab by Stefan Hiemer</item>
+                <item name="Id" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
+                <item name="Name" type_name="gh_string" type_code="10">topoptlab-rhino</item>
+                <item name="Version" type_name="gh_string" type_code="10">0.4.0-alpha.2</item>
+              </items>
+            </chunk>
+          </chunks>
         </chunk>
         <chunk name="DefinitionObjects">
           <items count="1">
@@ -171,7 +197,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="294">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IEIUaBPTr3omBk6ox37/Z2IQgfrx2ZXrfu4vLwvuf8og0Myo9MFvzu7bf4DyF6HyAmwMBEDBdge84geKUOULlkP4CnOw60NXjwVguumDPZQB1csBpQWgtIgDKCTa1Yt2/a9naoDp4gYA</stream>
+                                  <stream length="310">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4gQZWRgYPpVz8TACfXY7/9MDCJQPz67ct3P/eVlwf1PGQSaGZU++M3ZffvPfyaGi1B5ATYoAyco2O6AV/xAEap8wXIIX2EOdn3o6rEATDd9sIcyoHo5oLQAlBZxAIVEu3rRrv/1TA0wXdwAAAAA//8DAA==</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -231,7 +257,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="277">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWBkIgUwH/OKE5HEDTLs/2EMZUL0cUFrAAeTTGSFffv2vZ2qAqeYGAA==</stream>
+                                  <stream length="293">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKwA0yHfCLE5LHDTDt/mAPZUD1ckBpAQeQT2eEfPn1v56pAaaaGwAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -241,7 +267,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="289">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMhhXbHBiwgYLtBMQzUeXh5uASRwBWdAGGD/ZQBlQtB5QWcAD5dKI7J8P/eqYGmGpuAA==</stream>
+                                  <stream length="305">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYFixzQHGRAEF2wmIZ6LKw83BJY4AcLvh4IM9lAFVywGlBRxAPp3ozsnwv56pAaaaGwAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -251,7 +277,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="294">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMhgelDhBGpQMDMghowS/+oBVVHGYOLnEkc1gZ0MEHeygDqoYDSgs4gHzqcujiv//1TA0w1dwA</stream>
+                                  <stream length="310">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYHhQ6gBhVEJpKAhowS/+oBVVHGYOLnEkc+B2w8EHeygDqoYDSgs4gHzqcujiv//1TA0w1dwAAAAA//8DAA==</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -261,7 +287,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="295">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMBompDmBaoceBARmcmIlf/MAkVHGYObjEkcxhZUAHH+yhDKgaDigt4ADy6Y6ICy3/65kaYKq5AQ==</stream>
+                                  <stream length="311">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYJCY6gCmFXogNAycmIlf/MAkVHGYObjEkcyB2w0HH+yhDKgaDigt4ADy6Y6ICy3/65kaYKq5AQAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -271,7 +297,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="296">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMhphFDmD6wVQHBmSwZQl+8QmzUMVh5uASRzKHlQEdfLCHMqBqOKC0gAPIp6uvHE3+X8/UAFPNDQA=</stream>
+                                  <stream length="311">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYIhZ5ACmH0yF0DCwZQl+8QmzUMVh5uASRzIHbjccfLCHMqBqOKC0gAPIp6uvHE3+X8/UAFPNDQAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -281,7 +307,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="295">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMBp1VDmD6wVQHBmTQsga/+IRZqOIwc3CJI5nDyoAOPthDGVA1HFBawAHk06De8rT/9UwNMNXcAA==</stream>
+                                  <stream length="311">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYNBZ5QCmH0yF0DDQsga/+IRZqOIwc3CJI5kDtxsOPthDGVA1HFBawAHk06De8rT/9UwNMNXcAAAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -291,7 +317,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="296">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWKEMhn8bHMC0Qo8DAzLQ2oRf/MAkVHGYObjEkcxhZUAHH+yhDKgaDigt4ADy6eO5jbf+1zM1wFRzAwA=</stream>
+                                  <stream length="311">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYPi3wQFMK/RAaBjQ2oRf/MAkVHGYObjEkcyB2w0HH+yhDKgaDigt4ADy6eO5jbf+1zM1wFRzAwAAAP//AwA=</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -301,7 +327,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                               <items count="4">
                                 <item name="EdgeIndex" type_name="gh_int32" type_code="3">-1</item>
                                 <item name="ON_Data" type_name="gh_bytearray" type_code="20">
-                                  <stream length="297">Y2BkYGD4DwQgGgR4mIBEeFBGZl6+c35ubn6ejkJYalFxZn6erYWesamekZmRqaGeobGBgaGOgnNpTklpUaptXmppSVFijo5CQGlSTmayd2plSH52ap6tqamRkYVhqqV5srmpqamxASvIFhmw4Xruqfm5qSVFlXoB+TmVOZl5qc6lRWWpLEAF7GUQC7kSi5IzMstSjVNyOfMLUvPySouSillSEksSQYo4ODiYQG4VUGdgMALSByYK83AyAxn8IOIrEDP9qmdieAn11+//TAwiUPazK9f93F9eFtz/lEGgmVHpg9+c3bf/AOU3QuUFWBlgKrc4MIEZlQ4MyEBoG05xcEA+aEUVB5qDSxzdHFYGdPDBHsqAquGA0gIOIJ/+1xH49b+eqQGmmhsA</stream>
+                                  <stream length="316">YmBkYGD4////fxANAjxMDAwM4UEZmXn5zvm5ufl5OgphqUXFmfl5thZ6xuZ6RmbGBuZ6hqYGBoY6Cs6lOSWlRam2eamlJUWJOToKAaVJOZnJ3qmVIfnZqXm2pqZGRhaGqZbmyeampqbGBqwgW2TAhuu5p+bnppYUVeoF5OdU5mTmpTqXFpWlsjAwMLCXQSzkSixKzsgsSzVOyeXML0jNyystSipmSUksSQQp4uDgYAK5VUCdgcGIgYEhbqYwDyczAwMDP4j4ysDAwPSrnonhJdRfv/8zMYhA2c+uXPdzf3lZcP9TBoFmRqUPfnN23/7zn4lhI1RegBXKYHi2xQFkBwNDpQNMCAyEtuEUBwfkg1ZU8WdbcIqjmwO3Gw4+2EMZUDUcUFrAAeTT/zoCv/7XMzXAVHMDAAAA//8DAA==</stream>
                                 </item>
                                 <item name="ON_Version" type_name="gh_int32" type_code="3">5</item>
                                 <item name="RefID" type_name="gh_guid" type_code="9">00000000-0000-0000-0000-000000000000</item>
@@ -316,8 +342,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
               </chunks>
             </chunk>
             <chunk name="Object" index="3">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">b8c177b6-11e6-44b8-9344-25e04c4d59bc</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Domain</item>
               </items>
               <chunks count="1">
@@ -549,7 +576,7 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>414</X>
-                              <Y>326.6667</Y>
+                              <Y>326.66666</Y>
                             </item>
                           </items>
                         </chunk>
@@ -713,8 +740,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
               </chunks>
             </chunk>
             <chunk name="Object" index="6">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">7ccf2a95-4300-46f0-8c6d-ec2fd3460fcc</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Support</item>
               </items>
               <chunks count="1">
@@ -1006,8 +1034,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
               </chunks>
             </chunk>
             <chunk name="Object" index="8">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">7ccf2a95-4300-46f0-8c6d-ec2fd3460fcc</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Support</item>
               </items>
               <chunks count="1">
@@ -1239,8 +1268,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
               </chunks>
             </chunk>
             <chunk name="Object" index="9">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000001</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Material</item>
               </items>
               <chunks count="1">
@@ -1746,8 +1776,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
               </chunks>
             </chunk>
             <chunk name="Object" index="11">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000003</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Engineering Settings</item>
               </items>
               <chunks count="1">
@@ -1758,14 +1789,14 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                     <item name="Name" type_name="gh_string" type_code="10">TopOpt Engineering Settings</item>
                     <item name="NickName" type_name="gh_string" type_code="10">Settings</item>
                   </items>
-                  <chunks count="18">
+                  <chunks count="20">
                     <chunk name="Attributes">
                       <items count="2">
                         <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                           <X>829</X>
-                          <Y>728</Y>
+                          <Y>708</Y>
                           <W>146</W>
-                          <H>324</H>
+                          <H>364</H>
                         </item>
                         <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                           <X>940</X>
@@ -1787,13 +1818,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>730</Y>
+                              <Y>710</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>740</Y>
+                              <Y>720</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1833,13 +1864,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>750</Y>
+                              <Y>730</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>760</Y>
+                              <Y>740</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1880,13 +1911,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>770</Y>
+                              <Y>750</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>780</Y>
+                              <Y>760</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1927,13 +1958,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>790</Y>
+                              <Y>770</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>800</Y>
+                              <Y>780</Y>
                             </item>
                           </items>
                         </chunk>
@@ -1974,13 +2005,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>810</Y>
+                              <Y>790</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>820</Y>
+                              <Y>800</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2020,13 +2051,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>830</Y>
+                              <Y>810</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>840</Y>
+                              <Y>820</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2066,13 +2097,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>850</Y>
+                              <Y>830</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>860</Y>
+                              <Y>840</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2112,13 +2143,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>870</Y>
+                              <Y>850</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>880</Y>
+                              <Y>860</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2158,13 +2189,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>890</Y>
+                              <Y>870</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>900</Y>
+                              <Y>880</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2204,13 +2235,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>910</Y>
+                              <Y>890</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>920</Y>
+                              <Y>900</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2251,13 +2282,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>930</Y>
+                              <Y>910</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>940</Y>
+                              <Y>920</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2297,13 +2328,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>950</Y>
+                              <Y>930</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>960</Y>
+                              <Y>940</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2343,13 +2374,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>970</Y>
+                              <Y>950</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>980</Y>
+                              <Y>960</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2389,13 +2420,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>990</Y>
+                              <Y>970</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>1000</Y>
+                              <Y>980</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2435,13 +2466,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>1010</Y>
+                              <Y>990</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>1020</Y>
+                              <Y>1000</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2481,13 +2512,13 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>831</X>
-                              <Y>1030</Y>
+                              <Y>1010</Y>
                               <W>94</W>
                               <H>20</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>879.5</X>
-                              <Y>1040</Y>
+                              <Y>1020</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2513,6 +2544,98 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                         </chunk>
                       </chunks>
                     </chunk>
+                    <chunk name="param_input" index="16">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">3D only: 0 uses 60% of currently free RAM. Positive value is a lower budget. Leave 0 for 2D.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">e20555a0-6237-4426-83c3-e8e2e93adb4f</item>
+                        <item name="Name" type_name="gh_string" type_code="10">RAM budget GiB</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">RAM</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>831</X>
+                              <Y>1030</Y>
+                              <W>94</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>879.5</X>
+                              <Y>1040</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">0</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
+                    <chunk name="param_input" index="17">
+                      <items count="6">
+                        <item name="Description" type_name="gh_string" type_code="10">Model length units; 0 uses Radius in cells. Keep this length fixed when comparing grid refinements.</item>
+                        <item name="InstanceGuid" type_name="gh_guid" type_code="9">987a7bc1-06d1-4ab8-9d24-406b05a8845e</item>
+                        <item name="Name" type_name="gh_string" type_code="10">Physical filter radius</item>
+                        <item name="NickName" type_name="gh_string" type_code="10">Radius length</item>
+                        <item name="Optional" type_name="gh_bool" type_code="1">false</item>
+                        <item name="SourceCount" type_name="gh_int32" type_code="3">0</item>
+                      </items>
+                      <chunks count="2">
+                        <chunk name="Attributes">
+                          <items count="2">
+                            <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
+                              <X>831</X>
+                              <Y>1050</Y>
+                              <W>94</W>
+                              <H>20</H>
+                            </item>
+                            <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
+                              <X>879.5</X>
+                              <Y>1060</Y>
+                            </item>
+                          </items>
+                        </chunk>
+                        <chunk name="PersistentData">
+                          <items count="1">
+                            <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                          </items>
+                          <chunks count="1">
+                            <chunk name="Branch" index="0">
+                              <items count="2">
+                                <item name="Count" type_name="gh_int32" type_code="3">1</item>
+                                <item name="Path" type_name="gh_string" type_code="10">{0}</item>
+                              </items>
+                              <chunks count="1">
+                                <chunk name="Item" index="0">
+                                  <items count="1">
+                                    <item name="number" type_name="gh_double" type_code="6">0</item>
+                                  </items>
+                                </chunk>
+                              </chunks>
+                            </chunk>
+                          </chunks>
+                        </chunk>
+                      </chunks>
+                    </chunk>
                     <chunk name="param_output" index="0">
                       <items count="6">
                         <item name="Description" type_name="gh_string" type_code="10">Connect to Engineering</item>
@@ -2527,9 +2650,9 @@ This is an elastic planar plate concept; it does not check buckling, anchorage o
                           <items count="2">
                             <item name="Bounds" type_name="gh_drawing_rectanglef" type_code="35">
                               <X>955</X>
-                              <Y>730</Y>
+                              <Y>710</Y>
                               <W>18</W>
-                              <H>320</H>
+                              <H>360</H>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>964</X>
@@ -2811,8 +2934,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="18">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load Case</item>
               </items>
               <chunks count="1">
@@ -2866,7 +2990,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>478.5</X>
-                              <Y>2695.333</Y>
+                              <Y>2695.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -2939,7 +3063,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>478.5</X>
-                              <Y>2744.667</Y>
+                              <Y>2744.6665</Y>
                             </item>
                           </items>
                         </chunk>
@@ -3114,8 +3238,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="21">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -3451,8 +3576,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="24">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -3788,8 +3914,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="27">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -4125,8 +4252,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="30">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -4462,8 +4590,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="33">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -4799,8 +4928,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="36">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -5018,8 +5148,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="37">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Gravity</item>
               </items>
               <chunks count="1">
@@ -5288,8 +5419,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="40">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load Case</item>
               </items>
               <chunks count="1">
@@ -5343,7 +5475,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1158.5</X>
-                              <Y>2695.333</Y>
+                              <Y>2695.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -5416,7 +5548,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1158.5</X>
-                              <Y>2744.667</Y>
+                              <Y>2744.6665</Y>
                             </item>
                           </items>
                         </chunk>
@@ -5591,8 +5723,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="43">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -5928,8 +6061,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="46">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -6265,8 +6399,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="49">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -6602,8 +6737,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="52">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -6939,8 +7075,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="55">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -7276,8 +7413,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="58">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -7495,8 +7633,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="59">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Gravity</item>
               </items>
               <chunks count="1">
@@ -7765,8 +7904,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="62">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load Case</item>
               </items>
               <chunks count="1">
@@ -7820,7 +7960,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1838.5</X>
-                              <Y>2695.333</Y>
+                              <Y>2695.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -7893,7 +8033,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>1838.5</X>
-                              <Y>2744.667</Y>
+                              <Y>2744.6665</Y>
                             </item>
                           </items>
                         </chunk>
@@ -8068,8 +8208,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="65">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -8405,8 +8546,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="68">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -8742,8 +8884,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="71">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -9079,8 +9222,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="74">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -9416,8 +9560,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="77">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -9753,8 +9898,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="80">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -9972,8 +10118,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="81">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Gravity</item>
               </items>
               <chunks count="1">
@@ -10242,8 +10389,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="84">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load Case</item>
               </items>
               <chunks count="1">
@@ -10297,7 +10445,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2518.5</X>
-                              <Y>2695.333</Y>
+                              <Y>2695.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -10370,7 +10518,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>2518.5</X>
-                              <Y>2744.667</Y>
+                              <Y>2744.6665</Y>
                             </item>
                           </items>
                         </chunk>
@@ -10545,8 +10693,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="87">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -10882,8 +11031,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="90">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -11219,8 +11369,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="93">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -11556,8 +11707,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="96">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -11893,8 +12045,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="99">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -12230,8 +12383,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="102">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -12449,8 +12603,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="103">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Gravity</item>
               </items>
               <chunks count="1">
@@ -12719,8 +12874,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="106">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000002</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load Case</item>
               </items>
               <chunks count="1">
@@ -12774,7 +12930,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3198.5</X>
-                              <Y>2695.333</Y>
+                              <Y>2695.3333</Y>
                             </item>
                           </items>
                         </chunk>
@@ -12847,7 +13003,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3198.5</X>
-                              <Y>2744.667</Y>
+                              <Y>2744.6665</Y>
                             </item>
                           </items>
                         </chunk>
@@ -13022,8 +13178,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="109">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -13359,8 +13516,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="112">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -13696,8 +13854,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="115">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -14033,8 +14192,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="118">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -14370,8 +14530,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="121">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -14707,8 +14868,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="124">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">c19c2185-75b5-4df9-a79e-084e84cd814d</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Load</item>
               </items>
               <chunks count="1">
@@ -14926,8 +15088,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="125">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000007</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Gravity</item>
               </items>
               <chunks count="1">
@@ -15146,8 +15309,9 @@ Weight=1 (objective weight, not a load factor).</item>
               </chunks>
             </chunk>
             <chunk name="Object" index="127">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000011</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Review Controls</item>
               </items>
               <chunks count="1">
@@ -15194,7 +15358,7 @@ Weight=1 (objective weight, not a load factor).</item>
                             </item>
                             <item name="Pivot" type_name="gh_drawing_pointf" type_code="31">
                               <X>3459.5</X>
-                              <Y>303.3333</Y>
+                              <Y>303.33334</Y>
                             </item>
                           </items>
                         </chunk>
@@ -15808,8 +15972,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="135">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000004</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Engineering</item>
               </items>
               <chunks count="1">
@@ -16421,8 +16586,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="139">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000009</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Case Result</item>
               </items>
               <chunks count="1">
@@ -16579,8 +16745,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="140">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">b60ce452-cb02-48ac-a917-1c047bc3dd73</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt FEM Results</item>
               </items>
               <chunks count="1">
@@ -17262,8 +17429,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="145">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000004</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Engineering</item>
               </items>
               <chunks count="1">
@@ -17875,8 +18043,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="149">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000009</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Case Result</item>
               </items>
               <chunks count="1">
@@ -18033,8 +18202,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="150">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">a31cbe86-489f-4e11-a715-dbf3c00785ca</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Results</item>
               </items>
               <chunks count="1">
@@ -18672,8 +18842,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="155">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000004</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Engineering</item>
               </items>
               <chunks count="1">
@@ -19286,8 +19457,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="159">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">42fe95a1-7700-4900-a000-000000000009</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt Case Result</item>
               </items>
               <chunks count="1">
@@ -19444,8 +19616,9 @@ Set deformation factor=100 only for display, then return to 0 before inspecting 
               </chunks>
             </chunk>
             <chunk name="Object" index="160">
-              <items count="2">
+              <items count="3">
                 <item name="GUID" type_name="gh_guid" type_code="9">b60ce452-cb02-48ac-a917-1c047bc3dd73</item>
+                <item name="Lib" type_name="gh_guid" type_code="9">f4f8bfcd-9314-42fd-bb29-0887143d49eb</item>
                 <item name="Name" type_name="gh_string" type_code="10">TopOpt FEM Results</item>
               </items>
               <chunks count="1">

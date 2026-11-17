@@ -211,6 +211,6 @@ namespace TopoptLab.GH
         public override string Description { get { return "Rhino 8 / external Python teaching integration for topoptlab"; } }
         public override Guid Id { get { return new Guid("f4f8bfcd-9314-42fd-bb29-0887143d49eb"); } }
         public override string AuthorName { get { return "Andrea Detry; upstream TopOptLab by Stefan Hiemer"; } }
-        public override string Version { get { return "0.4.0-alpha.2"; } }
+        public override string Version { get { return "0.4.0-alpha.3"; } }
     }
 }

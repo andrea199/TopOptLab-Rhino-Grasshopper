@@ -7,7 +7,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = '0.4.0-alpha.2'
+VERSION = '0.4.0-alpha.3'
 
 
 def main():
@@ -17,6 +17,7 @@ def main():
     output = args.output.resolve()
     if output.exists():
         p.error('Output must be a new directory; never reuse a configured package folder.')
+    subprocess.run([sys.executable, str(ROOT/'tools/yak/check_example_archives.py')], check=True)
     output.mkdir(parents=True)
     stage = output / 'package'
     stage.mkdir()

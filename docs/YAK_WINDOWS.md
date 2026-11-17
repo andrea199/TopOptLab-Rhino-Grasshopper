@@ -1,6 +1,6 @@
 # Windows Yak alpha acceptance
 
-Candidate: `topoptlab-rhino-0.4.0-alpha.2-rh8_37-win.yak`.
+Candidate: `topoptlab-rhino-0.4.0-alpha.3-rh8_37-win.yak`.
 Minimum target: Rhino 8 SR37, Windows x64. Python 3.13 x64 must already be
 installed; the first CPU setup downloads dependencies. This candidate has not
 been published to the public Yak server.
@@ -57,3 +57,9 @@ staging folder. See [setup and migration](../tools/yak/README.md).
 
 Public Yak publication requires Rhino Account authorization and is a separate
 step. Check the package on the official test server before the first public push.
+
+## Example archive repair (alpha.3)
+
+A native GH_IO audit reproduced missing parameter chunks in 40 of 106 repository GH/GHX archives. These archives predated appended ports in Engineering Settings, Domain 3D and Final Geometry 3D. They were re-saved by Rhino 8 Grasshopper with the current component schema. Component IDs, types, input/output parameter IDs, persistent values and wire source IDs were compared before and after migration. All 106 archives must now read without errors or warnings. This is archive compatibility acceptance, not a claim that every numerical example was rerun.
+
+Run python tools/yak/check_example_archives.py for the portable GHX/port/wire check (also in CI). Run tools/yak/native_archive_audit.py with Rhino RunPythonScript for binary and XML archive acceptance.
