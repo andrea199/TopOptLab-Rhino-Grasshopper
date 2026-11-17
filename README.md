@@ -137,6 +137,12 @@ for snapshot provenance. New upstream features are not automatically available h
 - Saved project JSON, per-case FEM/optimization JSON, history, mass and HTML report.
 - Parametric dimensions and XYZ position in the examples.
 
+## Windows Yak candidate
+
+A tested Windows Yak alpha candidate is being prepared for publication. See
+[Yak setup, migration and native acceptance](docs/YAK_WINDOWS.md). It is not yet
+available from the public Package Manager; use the source route below meanwhile.
+
 ## Install from source on Windows
 
 For the offline classroom installer, use the platform ZIPs above.
