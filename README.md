@@ -1,5 +1,7 @@
 # TopOptLab for Rhino 8 / Grasshopper
 
+<img src="docs/assets/topoptlab-icon.png" alt="TopOptLab icon: a turquoise topology-inspired structure on a navy background" width="120" height="120">
+
 **Experimental alpha releases: Windows `0.4.0-alpha.4`; Mac `0.4.0-alpha.5`.** Native Grasshopper components for
 2D/3D linear-elastic FEM and topology optimization using Stefan Hiemer's topoptlab.
 Numerical regression tests do not replace application-specific engineering qualification.
@@ -10,6 +12,13 @@ see the [full acceptance matrix](docs/YAK_NUMERICAL_ACCEPTANCE.md).
 
 CPU tests and repository integrity run on pushes and pull requests. A green badge
 does not validate the Rhino UI, CUDA, or a physical design. Actions results are linked above.
+
+![Actual TopOptLab topology optimization iterations](docs/assets/topoptlab-optimization.gif)
+
+*Real 2D solver iterations: an 80 × 40 grid, 45% volume fraction and 100 SIMP iterations,
+sampled every five steps and played back faster than real time. The animation shows
+the density field evolving; it does not establish convergence or qualify a physical design.*
+See the [animation provenance](docs/assets/README.md) for the source example and numerical evidence.
 
 ## Install from Rhino Package Manager (Windows)
 
